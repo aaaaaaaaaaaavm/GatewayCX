@@ -16,7 +16,7 @@
       "failure_mode": "The analogy fails if shared endpoints or ground infrastructure make the paths correlated rather than redundant.",
       "scores": {"impact": 5, "architectural_leverage": 5, "testability": 5, "evidence_reuse": 5, "implementation_independence": 5, "speculation_risk": 2},
       "priority_score": 23,
-      "status": "selected"
+      "status": "studying"
     },
     {
       "id": "X002",

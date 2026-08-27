@@ -42,6 +42,9 @@
 | C025 | Under the S009 RF-fallback inputs, strict priority delivers zero GX-T4 and GX-T5 bytes. | MODEL | S009 | Reproduced in CI; synthetic traffic |
 | C026 | Under the same inputs, bounded priority fully serves GX-T0/GX-T1 and preserves GX-T4/GX-T5 progress. | MODEL | S009 | Reproduced in CI; shares not safety-approved |
 | C027 | GatewayCX eliminates DSN scheduling contention. | — | No DSN integration or operational study | Rejected |
+| C028 | Under S010 assumptions, warm RF standby reduces maximum interactive interruption from 20 seconds to 0.5 seconds. | MODEL | S010 | Reproduced in CI; no transport session model |
+| C029 | RF and optical bearers are operationally independent. | ASSUMPTION | S010 omits common power, platform and ground failures | Open |
+| C030 | Make-before-break reachability automatically preserves every application session. | — | Transport and application semantics differ | Rejected |
 
 The ledger will grow when the evidence grows. A claim does not become stronger by appearing in the
 README.

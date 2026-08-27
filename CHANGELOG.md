@@ -20,3 +20,5 @@
 - Documented the boundary between a lunar regional Internet and the oversubscribed DSN.
 - Added a scored atlas of fifteen cross-industry mechanisms and selected three executable concept
   tracks spanning automotive systems, multipath networking, software distribution and edge AI.
+- Added S010, an RF/optical make-before-break replay inspired by hybrid torque fill and multipath
+  handover, with keepalive cost and correlation limits kept visible.

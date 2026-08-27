@@ -43,6 +43,9 @@ level `assumed`.
 4. A profile cannot claim `qualified` without linking a conformance report.
 5. Capacity is directional and is not meaningful without delay, availability and queue state.
 
+S010 shows that a later schema revision also needs readiness, acquisition and shared-failure-domain
+fields. A media label alone cannot distinguish cold fallback from session-preserving continuity.
+
 ## What conformance means today
 
 Passing the current checker means a document is structurally and semantically complete for the

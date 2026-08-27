@@ -25,6 +25,8 @@ jobs:
         run: python -m gatewaycx.placement
       - name: Reproduce deterministic contact admission
         run: python -m gatewaycx.admission
+      - name: Reproduce deterministic RF-optical handover
+        run: python -m gatewaycx.handover
       - name: Check bearer capability profiles
         run: python -m gatewaycx.conformance profiles/bearers/*.json
       - name: Run tests
@@ -32,4 +34,4 @@ jobs:
       - name: Audit engineering record
         run: python -m gatewaycx.cli audit
       - name: Check generated record
-        run: git diff --exit-code -- results/baseline.json results/S006_capacity_envelope.json results/S007_service_placement.json results/S009_admission.json
+        run: git diff --exit-code -- results/baseline.json results/S006_capacity_envelope.json results/S007_service_placement.json results/S009_admission.json results/S010_handover.json

@@ -17,6 +17,7 @@ This register prevents a passing test suite from being mistaken for a closed arc
 | Is the minimum bearer profile machine-readable? | S008 schema and semantic checker | Closed for pre-draft fields | Independent schema review and API binding |
 | Can two vendors interoperate? | Two illustrative S008 documents only | Open | Two independent adapters and traffic exchange |
 | Can contact admission expose queueing and starvation? | S009 strict/bounded comparison | Closed for synthetic byte budgets | Packet scheduler, deadlines and authorised safety policy |
+| Does warm RF reduce a declared optical handover gap? | S010 event replay | Closed for the synthetic trace | Correlated failures, packets, transport migration and terminal tests |
 | Is the system commercially viable? | None yet | Open | Demand, deployment and operating-cost model |
 
 CI closes consistency questions. It does not close physics, hardware, operations or markets.

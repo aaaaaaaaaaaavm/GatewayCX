@@ -96,6 +96,7 @@ Four committed studies establish the starting point:
 | S007 | Where should services run under lunar storage, compute and partition constraints? |
 | S008 | Can optical and RF bearers expose one vendor-neutral capability contract? |
 | S009 | How does RF fallback protect safety traffic without silently starving science? |
+| S010 | What continuity is gained by keeping RF warm around an optical outage? |
 
 The current declared inputs produce:
 

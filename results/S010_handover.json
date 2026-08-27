@@ -1,0 +1,154 @@
+{
+  "evidence_class": "MODEL",
+  "inputs": {
+    "duration_s": 180.0,
+    "optical_capacity_mbps": 500.0,
+    "optical_outage_start_s": 60.0,
+    "optical_reacquisition_s": 15.0,
+    "optical_return_s": 120.0,
+    "rf_capacity_mbps": 20.0,
+    "rf_cold_acquisition_s": 20.0,
+    "rf_keepalive_mbps": 0.1,
+    "step_s": 0.5,
+    "traffic": [
+      {
+        "deferred": false,
+        "name": "control",
+        "offered_mbps": 0.5
+      },
+      {
+        "deferred": false,
+        "name": "interactive",
+        "offered_mbps": 2.0
+      },
+      {
+        "deferred": true,
+        "name": "bulk",
+        "offered_mbps": 100.0
+      }
+    ],
+    "warm_switch_s": 0.5
+  },
+  "interpretation_boundary": [
+    "All capacities, traffic rates and event times are synthetic assumptions.",
+    "The optical and RF paths are assumed independent; shared failure domains are omitted.",
+    "The model allocates byte budgets, not packets, congestion windows or RF spectrum.",
+    "Warm standby consumes keepalive capacity but no terminal power is modelled.",
+    "Multipath transport support and end-to-end session migration are not implemented."
+  ],
+  "policies": [
+    {
+      "delivered_bytes": {
+        "bulk": 2250000000,
+        "control": 10000000,
+        "interactive": 40000000
+      },
+      "maximum_continuous_interruption_s": {
+        "control": 20.0,
+        "interactive": 20.0
+      },
+      "maximum_queued_bytes": {
+        "bulk": 817187500,
+        "control": 0,
+        "interactive": 0
+      },
+      "offered_bytes": {
+        "bulk": 2250000000,
+        "control": 11250000,
+        "interactive": 45000000
+      },
+      "path_active_seconds": {
+        "optical": 105.0,
+        "rf": 55.0
+      },
+      "policy": "cold_failover",
+      "queued_at_end_bytes": {
+        "bulk": 0,
+        "control": 0,
+        "interactive": 0
+      },
+      "rejected_bytes": {
+        "bulk": 0,
+        "control": 1250000,
+        "interactive": 5000000
+      },
+      "rf_keepalive_bytes": 0
+    },
+    {
+      "delivered_bytes": {
+        "bulk": 2250000000,
+        "control": 11218750,
+        "interactive": 44875000
+      },
+      "maximum_continuous_interruption_s": {
+        "control": 0.5,
+        "interactive": 0.5
+      },
+      "maximum_queued_bytes": {
+        "bulk": 774531250,
+        "control": 0,
+        "interactive": 0
+      },
+      "offered_bytes": {
+        "bulk": 2250000000,
+        "control": 11250000,
+        "interactive": 45000000
+      },
+      "path_active_seconds": {
+        "optical": 105.0,
+        "rf": 74.5
+      },
+      "policy": "warm_standby",
+      "queued_at_end_bytes": {
+        "bulk": 0,
+        "control": 0,
+        "interactive": 0
+      },
+      "rejected_bytes": {
+        "bulk": 0,
+        "control": 31250,
+        "interactive": 125000
+      },
+      "rf_keepalive_bytes": 1312500
+    },
+    {
+      "delivered_bytes": {
+        "bulk": 2250000000,
+        "control": 11250000,
+        "interactive": 45000000
+      },
+      "maximum_continuous_interruption_s": {
+        "control": 0.0,
+        "interactive": 0.0
+      },
+      "maximum_queued_bytes": {
+        "bulk": 773437500,
+        "control": 0,
+        "interactive": 0
+      },
+      "offered_bytes": {
+        "bulk": 2250000000,
+        "control": 11250000,
+        "interactive": 45000000
+      },
+      "path_active_seconds": {
+        "optical": 105.0,
+        "rf": 180.0
+      },
+      "policy": "split_continuity",
+      "queued_at_end_bytes": {
+        "bulk": 0,
+        "control": 0,
+        "interactive": 0
+      },
+      "rejected_bytes": {
+        "bulk": 0,
+        "control": 0,
+        "interactive": 0
+      },
+      "rf_keepalive_bytes": 0
+    }
+  ],
+  "study_id": "S010",
+  "title": "RF continuity around optical handover"
+}
