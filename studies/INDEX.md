@@ -13,3 +13,4 @@ separate prose run sheet is added only when method, interpretation or external d
 | S006 | Earth–Moon capacity and buffering envelope | DERIVATION | Implemented |
 | S007 | Constrained lunar service placement | MODEL | Implemented |
 | S008 | Vendor-neutral bearer profile conformance | TEST | Pre-draft schema and reference profiles implemented |
+| S009 | Contact-aware admission and anti-starvation | MODEL | Implemented with synthetic traffic |

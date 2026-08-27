@@ -95,6 +95,7 @@ Four committed studies establish the starting point:
 | S006 | What in-flight window and outage storage are implied by advertised backbone capacity? |
 | S007 | Where should services run under lunar storage, compute and partition constraints? |
 | S008 | Can optical and RF bearers expose one vendor-neutral capability contract? |
+| S009 | How does RF fallback protect safety traffic without silently starving science? |
 
 The current declared inputs produce:
 
@@ -127,6 +128,8 @@ deterministic model.
   standards are inherited, profiled or still untested.
 - [`docs/architecture/BEARER_CONTRACT.md`](docs/architecture/BEARER_CONTRACT.md) defines the first
   machine-readable GX-B1 hardware/service seam.
+- [`research/TRAFFIC_AND_DSN_BOUNDARY.md`](research/TRAFFIC_AND_DSN_BOUNDARY.md) separates a lunar
+  regional Internet from the already oversubscribed deep-space antenna network.
 - [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md) keeps unresolved engineering visible.
 - [`ROADMAP.md`](ROADMAP.md) gives the build order and exit criteria.
 

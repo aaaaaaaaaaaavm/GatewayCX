@@ -46,6 +46,14 @@ publishing organisation where possible. Accessed 2026-08-27.
 - NASA, [Lunar Laser Communications Demonstration](https://www.nasa.gov/mission/lunar-laser-communications-demonstration-llcd/)
 - NASA, [LLCD experiments with DTN over optical communications](https://www.nasa.gov/directorates/somd/space-communications-navigation-program/disruption-tolerant-networking-experiments-with-optical-communications/)
 - ESA, [Moonlight lunar communications and navigation](https://www.esa.int/Applications/Connectivity_and_Secure_Communications/Moonlight)
+- NASA, [Leveraging lunar relays](https://www.nasa.gov/technology/space-comms/near-space-network/leveraging-lunar-relays/)
+
+## Shared ground-network demand
+
+- NASA, [How the Deep Space Network supports agency missions](https://www.nasa.gov/technology/space-comms/deep-space-network/how-nasas-deep-space-network-supports-the-agencys-missions/)
+- NASA JPL, [Service Scheduling Software](https://ai.jpl.nasa.gov/public/projects/sss/)
+- NASA Office of Inspector General, [Revitalizing the Deep Space Network](https://oig.nasa.gov/news/revitalizing-the-deep-space-network-to-support-nasas-growing-space-exploration-program/)
+- NASA, [Lunar Communications Relay and Navigation Systems](https://www.nasa.gov/goddard/esc/lcrns/)
 
 ## Physical constants and geometry inputs
 

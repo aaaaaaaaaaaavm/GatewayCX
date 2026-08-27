@@ -1,4 +1,4 @@
-.PHONY: scenarios capacity placement conformance audit test verify
+.PHONY: scenarios capacity placement admission conformance audit test verify
 
 scenarios:
 	python -m gatewaycx.cli run-all
@@ -9,6 +9,9 @@ capacity:
 placement:
 	python -m gatewaycx.placement
 
+admission:
+	python -m gatewaycx.admission
+
 conformance:
 	python -m gatewaycx.conformance profiles/bearers/*.json
 
@@ -18,5 +21,5 @@ test:
 audit:
 	python -m gatewaycx.cli audit
 
-verify: scenarios capacity placement conformance audit test
-	git diff --exit-code -- results/baseline.json results/S006_capacity_envelope.json results/S007_service_placement.json
+verify: scenarios capacity placement admission conformance audit test
+	git diff --exit-code -- results/baseline.json results/S006_capacity_envelope.json results/S007_service_placement.json results/S009_admission.json

@@ -1,0 +1,366 @@
+{
+  "cases": {
+    "nominal_optical_plus_rf": {
+      "bounded_priority": {
+        "capacity_bytes": 45000000000,
+        "classes": [
+          {
+            "deferred_allowed": false,
+            "delivered_bytes": 500000000,
+            "name": "crew_safety",
+            "offered_bytes": 500000000,
+            "queued_bytes": 0,
+            "rejected_bytes": 0,
+            "status": "delivered",
+            "traffic_class": "GX-T0"
+          },
+          {
+            "deferred_allowed": false,
+            "delivered_bytes": 1000000000,
+            "name": "command_control_navigation",
+            "offered_bytes": 1000000000,
+            "queued_bytes": 0,
+            "rejected_bytes": 0,
+            "status": "delivered",
+            "traffic_class": "GX-T1"
+          },
+          {
+            "deferred_allowed": false,
+            "delivered_bytes": 4000000000,
+            "name": "crew_interactive",
+            "offered_bytes": 4000000000,
+            "queued_bytes": 0,
+            "rejected_bytes": 0,
+            "status": "delivered",
+            "traffic_class": "GX-T2"
+          },
+          {
+            "deferred_allowed": true,
+            "delivered_bytes": 10000000000,
+            "name": "settlement_operations",
+            "offered_bytes": 10000000000,
+            "queued_bytes": 0,
+            "rejected_bytes": 0,
+            "status": "delivered",
+            "traffic_class": "GX-T3"
+          },
+          {
+            "deferred_allowed": true,
+            "delivered_bytes": 27250000000,
+            "name": "science_return",
+            "offered_bytes": 30000000000,
+            "queued_bytes": 2750000000,
+            "rejected_bytes": 0,
+            "status": "partially_delivered_and_queued",
+            "traffic_class": "GX-T4"
+          },
+          {
+            "deferred_allowed": true,
+            "delivered_bytes": 2250000000,
+            "name": "background_replication",
+            "offered_bytes": 100000000000,
+            "queued_bytes": 97750000000,
+            "rejected_bytes": 0,
+            "status": "partially_delivered_and_queued",
+            "traffic_class": "GX-T5"
+          }
+        ],
+        "delivered_bytes": 45000000000,
+        "queued_bytes": 100500000000,
+        "rejected_bytes": 0,
+        "unused_bytes": 0
+      },
+      "contacts": [
+        {
+          "bearer": "optical",
+          "capacity_mbps": 500.0,
+          "duration_s": 600
+        },
+        {
+          "bearer": "rf",
+          "capacity_mbps": 100.0,
+          "duration_s": 600
+        }
+      ],
+      "strict_priority": {
+        "capacity_bytes": 45000000000,
+        "classes": [
+          {
+            "deferred_allowed": false,
+            "delivered_bytes": 500000000,
+            "name": "crew_safety",
+            "offered_bytes": 500000000,
+            "queued_bytes": 0,
+            "rejected_bytes": 0,
+            "status": "delivered",
+            "traffic_class": "GX-T0"
+          },
+          {
+            "deferred_allowed": false,
+            "delivered_bytes": 1000000000,
+            "name": "command_control_navigation",
+            "offered_bytes": 1000000000,
+            "queued_bytes": 0,
+            "rejected_bytes": 0,
+            "status": "delivered",
+            "traffic_class": "GX-T1"
+          },
+          {
+            "deferred_allowed": false,
+            "delivered_bytes": 4000000000,
+            "name": "crew_interactive",
+            "offered_bytes": 4000000000,
+            "queued_bytes": 0,
+            "rejected_bytes": 0,
+            "status": "delivered",
+            "traffic_class": "GX-T2"
+          },
+          {
+            "deferred_allowed": true,
+            "delivered_bytes": 10000000000,
+            "name": "settlement_operations",
+            "offered_bytes": 10000000000,
+            "queued_bytes": 0,
+            "rejected_bytes": 0,
+            "status": "delivered",
+            "traffic_class": "GX-T3"
+          },
+          {
+            "deferred_allowed": true,
+            "delivered_bytes": 29500000000,
+            "name": "science_return",
+            "offered_bytes": 30000000000,
+            "queued_bytes": 500000000,
+            "rejected_bytes": 0,
+            "status": "partially_delivered_and_queued",
+            "traffic_class": "GX-T4"
+          },
+          {
+            "deferred_allowed": true,
+            "delivered_bytes": 0,
+            "name": "background_replication",
+            "offered_bytes": 100000000000,
+            "queued_bytes": 100000000000,
+            "rejected_bytes": 0,
+            "status": "queued",
+            "traffic_class": "GX-T5"
+          }
+        ],
+        "delivered_bytes": 45000000000,
+        "queued_bytes": 100500000000,
+        "rejected_bytes": 0,
+        "unused_bytes": 0
+      }
+    },
+    "rf_fallback_only": {
+      "bounded_priority": {
+        "capacity_bytes": 7500000000,
+        "classes": [
+          {
+            "deferred_allowed": false,
+            "delivered_bytes": 500000000,
+            "name": "crew_safety",
+            "offered_bytes": 500000000,
+            "queued_bytes": 0,
+            "rejected_bytes": 0,
+            "status": "delivered",
+            "traffic_class": "GX-T0"
+          },
+          {
+            "deferred_allowed": false,
+            "delivered_bytes": 1000000000,
+            "name": "command_control_navigation",
+            "offered_bytes": 1000000000,
+            "queued_bytes": 0,
+            "rejected_bytes": 0,
+            "status": "delivered",
+            "traffic_class": "GX-T1"
+          },
+          {
+            "deferred_allowed": false,
+            "delivered_bytes": 3000000000,
+            "name": "crew_interactive",
+            "offered_bytes": 4000000000,
+            "queued_bytes": 0,
+            "rejected_bytes": 1000000000,
+            "status": "partially_delivered_and_rejected",
+            "traffic_class": "GX-T2"
+          },
+          {
+            "deferred_allowed": true,
+            "delivered_bytes": 1125000000,
+            "name": "settlement_operations",
+            "offered_bytes": 10000000000,
+            "queued_bytes": 8875000000,
+            "rejected_bytes": 0,
+            "status": "partially_delivered_and_queued",
+            "traffic_class": "GX-T3"
+          },
+          {
+            "deferred_allowed": true,
+            "delivered_bytes": 1500000000,
+            "name": "science_return",
+            "offered_bytes": 30000000000,
+            "queued_bytes": 28500000000,
+            "rejected_bytes": 0,
+            "status": "partially_delivered_and_queued",
+            "traffic_class": "GX-T4"
+          },
+          {
+            "deferred_allowed": true,
+            "delivered_bytes": 375000000,
+            "name": "background_replication",
+            "offered_bytes": 100000000000,
+            "queued_bytes": 99625000000,
+            "rejected_bytes": 0,
+            "status": "partially_delivered_and_queued",
+            "traffic_class": "GX-T5"
+          }
+        ],
+        "delivered_bytes": 7500000000,
+        "queued_bytes": 137000000000,
+        "rejected_bytes": 1000000000,
+        "unused_bytes": 0
+      },
+      "contacts": [
+        {
+          "bearer": "optical",
+          "capacity_mbps": 0.0,
+          "duration_s": 600
+        },
+        {
+          "bearer": "rf",
+          "capacity_mbps": 100.0,
+          "duration_s": 600
+        }
+      ],
+      "strict_priority": {
+        "capacity_bytes": 7500000000,
+        "classes": [
+          {
+            "deferred_allowed": false,
+            "delivered_bytes": 500000000,
+            "name": "crew_safety",
+            "offered_bytes": 500000000,
+            "queued_bytes": 0,
+            "rejected_bytes": 0,
+            "status": "delivered",
+            "traffic_class": "GX-T0"
+          },
+          {
+            "deferred_allowed": false,
+            "delivered_bytes": 1000000000,
+            "name": "command_control_navigation",
+            "offered_bytes": 1000000000,
+            "queued_bytes": 0,
+            "rejected_bytes": 0,
+            "status": "delivered",
+            "traffic_class": "GX-T1"
+          },
+          {
+            "deferred_allowed": false,
+            "delivered_bytes": 4000000000,
+            "name": "crew_interactive",
+            "offered_bytes": 4000000000,
+            "queued_bytes": 0,
+            "rejected_bytes": 0,
+            "status": "delivered",
+            "traffic_class": "GX-T2"
+          },
+          {
+            "deferred_allowed": true,
+            "delivered_bytes": 2000000000,
+            "name": "settlement_operations",
+            "offered_bytes": 10000000000,
+            "queued_bytes": 8000000000,
+            "rejected_bytes": 0,
+            "status": "partially_delivered_and_queued",
+            "traffic_class": "GX-T3"
+          },
+          {
+            "deferred_allowed": true,
+            "delivered_bytes": 0,
+            "name": "science_return",
+            "offered_bytes": 30000000000,
+            "queued_bytes": 30000000000,
+            "rejected_bytes": 0,
+            "status": "queued",
+            "traffic_class": "GX-T4"
+          },
+          {
+            "deferred_allowed": true,
+            "delivered_bytes": 0,
+            "name": "background_replication",
+            "offered_bytes": 100000000000,
+            "queued_bytes": 100000000000,
+            "rejected_bytes": 0,
+            "status": "queued",
+            "traffic_class": "GX-T5"
+          }
+        ],
+        "delivered_bytes": 7500000000,
+        "queued_bytes": 138000000000,
+        "rejected_bytes": 0,
+        "unused_bytes": 0
+      }
+    }
+  },
+  "evidence_class": "MODEL",
+  "inputs": {
+    "bounded_priority_minimum_shares": {
+      "GX-T0": 0.25,
+      "GX-T1": 0.2,
+      "GX-T2": 0.15,
+      "GX-T3": 0.15,
+      "GX-T4": 0.2,
+      "GX-T5": 0.05
+    },
+    "traffic": [
+      {
+        "deferred_allowed": false,
+        "name": "crew_safety",
+        "offered_bytes": 500000000,
+        "traffic_class": "GX-T0"
+      },
+      {
+        "deferred_allowed": false,
+        "name": "command_control_navigation",
+        "offered_bytes": 1000000000,
+        "traffic_class": "GX-T1"
+      },
+      {
+        "deferred_allowed": false,
+        "name": "crew_interactive",
+        "offered_bytes": 4000000000,
+        "traffic_class": "GX-T2"
+      },
+      {
+        "deferred_allowed": true,
+        "name": "settlement_operations",
+        "offered_bytes": 10000000000,
+        "traffic_class": "GX-T3"
+      },
+      {
+        "deferred_allowed": true,
+        "name": "science_return",
+        "offered_bytes": 30000000000,
+        "traffic_class": "GX-T4"
+      },
+      {
+        "deferred_allowed": true,
+        "name": "background_replication",
+        "offered_bytes": 100000000000,
+        "traffic_class": "GX-T5"
+      }
+    ]
+  },
+  "interpretation_boundary": [
+    "Traffic volumes, contacts, capacities and minimum shares are synthetic assumptions.",
+    "This is byte-budget admission, not antenna, orbital or packet scheduling.",
+    "Rejected interactive bytes represent unmet service, not silent loss.",
+    "Queued bytes require the durable storage declared by the active bearer and gateway.",
+    "Safety classes and shares require hazard analysis before any operational use."
+  ],
+  "study_id": "S009",
+  "title": "Contact-aware admission and anti-starvation comparison"
+}

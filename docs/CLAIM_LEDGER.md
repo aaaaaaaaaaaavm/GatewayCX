@@ -39,6 +39,9 @@
 | C022 | Service placement can trade replication bytes for lower interaction delay and partition survival. | MODEL | S007 Pareto frontier | Model only |
 | C023 | One machine-readable capability shape can describe the minimum GatewayCX fields for illustrative optical and RF bearers. | TEST | S008 reference profiles | Interface-shape test only |
 | C024 | A commercial bearer has passed GX-B1 qualification. | — | No provider profile or conformance report | Rejected |
+| C025 | Under the S009 RF-fallback inputs, strict priority delivers zero GX-T4 and GX-T5 bytes. | MODEL | S009 | Reproduced in CI; synthetic traffic |
+| C026 | Under the same inputs, bounded priority fully serves GX-T0/GX-T1 and preserves GX-T4/GX-T5 progress. | MODEL | S009 | Reproduced in CI; shares not safety-approved |
+| C027 | GatewayCX eliminates DSN scheduling contention. | — | No DSN integration or operational study | Rejected |
 
 The ledger will grow when the evidence grows. A claim does not become stronger by appearing in the
 README.

@@ -16,6 +16,7 @@ This register prevents a passing test suite from being mistaken for a closed arc
 | Is a lunar data centre feasible? | Abstract S007 resource budgets only | Open | Power, thermal, radiation, mass and maintenance models |
 | Is the minimum bearer profile machine-readable? | S008 schema and semantic checker | Closed for pre-draft fields | Independent schema review and API binding |
 | Can two vendors interoperate? | Two illustrative S008 documents only | Open | Two independent adapters and traffic exchange |
+| Can contact admission expose queueing and starvation? | S009 strict/bounded comparison | Closed for synthetic byte budgets | Packet scheduler, deadlines and authorised safety policy |
 | Is the system commercially viable? | None yet | Open | Demand, deployment and operating-cost model |
 
 CI closes consistency questions. It does not close physics, hardware, operations or markets.
