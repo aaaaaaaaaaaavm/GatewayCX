@@ -130,6 +130,8 @@ deterministic model.
   machine-readable GX-B1 hardware/service seam.
 - [`research/TRAFFIC_AND_DSN_BOUNDARY.md`](research/TRAFFIC_AND_DSN_BOUNDARY.md) separates a lunar
   regional Internet from the already oversubscribed deep-space antenna network.
+- [`docs/INNOVATION_METHOD.md`](docs/INNOVATION_METHOD.md) turns cross-industry inspiration into
+  falsifiable mechanism transfers rather than loose analogy.
 - [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md) keeps unresolved engineering visible.
 - [`ROADMAP.md`](ROADMAP.md) gives the build order and exit criteria.
 

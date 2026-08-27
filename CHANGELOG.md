@@ -18,3 +18,5 @@
 - Added S008, a machine-readable GX-B1 bearer profile and semantic conformance checks.
 - Added S009, a contact-capacity admission comparison with explicit anti-starvation behaviour.
 - Documented the boundary between a lunar regional Internet and the oversubscribed DSN.
+- Added a scored atlas of fifteen cross-industry mechanisms and selected three executable concept
+  tracks spanning automotive systems, multipath networking, software distribution and edge AI.

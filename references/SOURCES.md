@@ -69,6 +69,18 @@ publishing organisation where possible. Accessed 2026-08-27.
 - 3GPP, [Non-Terrestrial Networks overview](https://www.3gpp.org/technologies/ntn-overview)
 - 3GPP, [Release 17 work summary](https://www.3gpp.org/about-us/technologies/lte), including NR
   NTN, IoT over NTN and 5GC edge-computing support
+- 3GPP, [TS 24.193: Access Traffic Steering, Switching and Splitting](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3607)
+
+## Cross-industry mechanism sources
+
+- IETF, [RFC 8684: Multipath TCP](https://www.rfc-editor.org/rfc/rfc8684)
+- IETF, [RFC 6897: MPTCP application-interface considerations](https://www.rfc-editor.org/rfc/rfc6897),
+  including make-before-break and break-before-make handover
+- Android Open Source Project, [A/B seamless system updates](https://source.android.com/docs/core/ota/ab)
+- Uptane, [Standard for secure automotive software updates](https://uptane.org/docs/2.0.0/standard/uptane-standard)
+- Open Container Initiative, [Image specification](https://specs.opencontainers.org/image-spec/)
+- IEEE, [802.1DG automotive TSN profile](https://standards.ieee.org/ieee/802.1DG/7480/)
+- National Laboratory of the Rockies, [microgrid islanding and black start](https://www.nlr.gov/grid/black-start)
 
 ## Candidate commercial implementations
 
