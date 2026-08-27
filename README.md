@@ -99,6 +99,7 @@ The study register establishes the starting point:
 | S010 | What continuity is gained by keeping RF warm around an optical outage? |
 | S011 | Can lunar services update through interruption without overwriting the working version? |
 | S012 | Can forecast-driven prepositioning beat a simple cache baseline without risking essential content? |
+| S013 | Can the lunar network restart its essential services without Earth? |
 
 The current declared inputs produce:
 

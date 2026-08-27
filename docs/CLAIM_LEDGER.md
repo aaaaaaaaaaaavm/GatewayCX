@@ -53,6 +53,10 @@
 | C036 | Under S012 inputs, the overconfident forecast wastes 450 MB and avoids seven fewer remote requests than popularity. | MODEL | S012 | Reproduced in CI; outcome constructed for mechanism testing |
 | C037 | S012 establishes that a learned predictor outperforms the simple baseline. | — | Useful bytes and avoided requests are tied | Rejected |
 | C038 | A predictor may evict essential content when its confidence is high. | — | Essential reservation is outside predictor authority | Rejected |
+| C039 | Under the S013 graph, Earth-coupled dependencies allow only two of seven essential services to start during partition. | MODEL | S013 | Reproduced in CI; assumed graph |
+| C040 | Under the S013 islandable graph, all seven essential services start without Earth. | MODEL | S013 | Logical reachability only |
+| C041 | Under S013 single faults, loss of holdover time has the largest dependency impact. | MODEL | S013 | No oscillator or holdover-error model |
+| C042 | S013 demonstrates electrical, hardware or secure-boot black-start capability. | — | It models logical service dependencies only | Rejected |
 
 The ledger will grow when the evidence grows. A claim does not become stronger by appearing in the
 README.

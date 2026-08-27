@@ -64,11 +64,11 @@
       "mechanism": "Island cleanly from the upstream system, retain local reference services, then restore in a staged order.",
       "gatewaycx_transfer": "Define a minimum local control, time, naming and identity set that can restart the lunar region without Earth.",
       "falsifiable_hypothesis": "A declared black-start dependency graph restores essential lunar networking without circular Earth dependencies.",
-      "first_experiment": "Fault-injected dependency graph and staged recovery runbook.",
+      "first_experiment": "S013 fault-injected dependency graph and staged recovery model.",
       "failure_mode": "Logical service survival is irrelevant if power, clock or trust roots are not independently available.",
       "scores": {"impact": 5, "architectural_leverage": 5, "testability": 3, "evidence_reuse": 4, "implementation_independence": 5, "speculation_risk": 2},
       "priority_score": 20,
-      "status": "candidate"
+      "status": "studying"
     },
     {
       "id": "X006",

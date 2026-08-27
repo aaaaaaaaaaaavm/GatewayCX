@@ -1,0 +1,424 @@
+{
+  "evidence_class": "MODEL",
+  "fault_ranking": [
+    {
+      "blocked_or_failed_count": 6,
+      "failed_service": "holdover_time",
+      "remaining_essential_count": 1
+    },
+    {
+      "blocked_or_failed_count": 3,
+      "failed_service": "local_route_controller",
+      "remaining_essential_count": 4
+    },
+    {
+      "blocked_or_failed_count": 3,
+      "failed_service": "local_trust_root",
+      "remaining_essential_count": 4
+    },
+    {
+      "blocked_or_failed_count": 2,
+      "failed_service": "durable_queue",
+      "remaining_essential_count": 5
+    },
+    {
+      "blocked_or_failed_count": 2,
+      "failed_service": "local_identity_verifier",
+      "remaining_essential_count": 5
+    },
+    {
+      "blocked_or_failed_count": 2,
+      "failed_service": "local_name_root",
+      "remaining_essential_count": 5
+    },
+    {
+      "blocked_or_failed_count": 1,
+      "failed_service": "operations_api",
+      "remaining_essential_count": 6
+    }
+  ],
+  "inputs": {
+    "earth_coupled_dependencies": {
+      "durable_queue": [
+        "local_route_controller"
+      ],
+      "holdover_time": [],
+      "local_identity_verifier": [
+        "holdover_time",
+        "earth_identity"
+      ],
+      "local_name_root": [
+        "earth_dns"
+      ],
+      "local_route_controller": [
+        "holdover_time",
+        "earth_contact_control"
+      ],
+      "local_trust_root": [],
+      "operations_api": [
+        "local_name_root",
+        "local_identity_verifier",
+        "durable_queue"
+      ]
+    },
+    "earth_services": [
+      "earth_dns",
+      "earth_identity",
+      "earth_contact_control"
+    ],
+    "essential_services": [
+      "holdover_time",
+      "local_trust_root",
+      "local_name_root",
+      "local_identity_verifier",
+      "local_route_controller",
+      "durable_queue",
+      "operations_api"
+    ],
+    "islandable_dependencies": {
+      "durable_queue": [
+        "local_route_controller"
+      ],
+      "holdover_time": [],
+      "local_identity_verifier": [
+        "holdover_time",
+        "local_trust_root"
+      ],
+      "local_name_root": [
+        "holdover_time"
+      ],
+      "local_route_controller": [
+        "holdover_time"
+      ],
+      "local_trust_root": [],
+      "operations_api": [
+        "local_name_root",
+        "local_identity_verifier",
+        "durable_queue"
+      ]
+    }
+  },
+  "interpretation_boundary": [
+    "The graph models logical start dependencies, not electrical power or hardware boot.",
+    "A running node means dependencies are present; it does not prove correctness, security or capacity.",
+    "Service names and dependency edges are architecture assumptions for fault discovery.",
+    "Holdover duration, clock error, trust freshness and key compromise are not modelled.",
+    "Single faults do not cover correlated failure, Byzantine behaviour or recovery ordering after state divergence."
+  ],
+  "scenarios": {
+    "earth_coupled_after_earth_recovery": {
+      "blocked": {},
+      "failed_local": [],
+      "stages": [
+        [
+          "holdover_time",
+          "local_name_root",
+          "local_trust_root"
+        ],
+        [
+          "local_identity_verifier",
+          "local_route_controller"
+        ],
+        [
+          "durable_queue"
+        ],
+        [
+          "operations_api"
+        ]
+      ],
+      "started_essential": [
+        "holdover_time",
+        "local_trust_root",
+        "local_name_root",
+        "local_identity_verifier",
+        "local_route_controller",
+        "durable_queue",
+        "operations_api"
+      ],
+      "started_essential_count": 7
+    },
+    "earth_coupled_during_partition": {
+      "blocked": {
+        "durable_queue": [
+          "local_route_controller"
+        ],
+        "local_identity_verifier": [
+          "earth_identity"
+        ],
+        "local_name_root": [
+          "earth_dns"
+        ],
+        "local_route_controller": [
+          "earth_contact_control"
+        ],
+        "operations_api": [
+          "local_name_root",
+          "local_identity_verifier",
+          "durable_queue"
+        ]
+      },
+      "failed_local": [],
+      "stages": [
+        [
+          "holdover_time",
+          "local_trust_root"
+        ]
+      ],
+      "started_essential": [
+        "holdover_time",
+        "local_trust_root"
+      ],
+      "started_essential_count": 2
+    },
+    "islandable_during_partition": {
+      "blocked": {},
+      "failed_local": [],
+      "stages": [
+        [
+          "holdover_time",
+          "local_trust_root"
+        ],
+        [
+          "local_identity_verifier",
+          "local_name_root",
+          "local_route_controller"
+        ],
+        [
+          "durable_queue"
+        ],
+        [
+          "operations_api"
+        ]
+      ],
+      "started_essential": [
+        "holdover_time",
+        "local_trust_root",
+        "local_name_root",
+        "local_identity_verifier",
+        "local_route_controller",
+        "durable_queue",
+        "operations_api"
+      ],
+      "started_essential_count": 7
+    }
+  },
+  "single_local_faults": {
+    "durable_queue": {
+      "blocked": {
+        "operations_api": [
+          "durable_queue"
+        ]
+      },
+      "failed_local": [
+        "durable_queue"
+      ],
+      "stages": [
+        [
+          "holdover_time",
+          "local_trust_root"
+        ],
+        [
+          "local_identity_verifier",
+          "local_name_root",
+          "local_route_controller"
+        ]
+      ],
+      "started_essential": [
+        "holdover_time",
+        "local_trust_root",
+        "local_name_root",
+        "local_identity_verifier",
+        "local_route_controller"
+      ],
+      "started_essential_count": 5
+    },
+    "holdover_time": {
+      "blocked": {
+        "durable_queue": [
+          "local_route_controller"
+        ],
+        "local_identity_verifier": [
+          "holdover_time"
+        ],
+        "local_name_root": [
+          "holdover_time"
+        ],
+        "local_route_controller": [
+          "holdover_time"
+        ],
+        "operations_api": [
+          "local_name_root",
+          "local_identity_verifier",
+          "durable_queue"
+        ]
+      },
+      "failed_local": [
+        "holdover_time"
+      ],
+      "stages": [
+        [
+          "local_trust_root"
+        ]
+      ],
+      "started_essential": [
+        "local_trust_root"
+      ],
+      "started_essential_count": 1
+    },
+    "local_identity_verifier": {
+      "blocked": {
+        "operations_api": [
+          "local_identity_verifier"
+        ]
+      },
+      "failed_local": [
+        "local_identity_verifier"
+      ],
+      "stages": [
+        [
+          "holdover_time",
+          "local_trust_root"
+        ],
+        [
+          "local_name_root",
+          "local_route_controller"
+        ],
+        [
+          "durable_queue"
+        ]
+      ],
+      "started_essential": [
+        "holdover_time",
+        "local_trust_root",
+        "local_name_root",
+        "local_route_controller",
+        "durable_queue"
+      ],
+      "started_essential_count": 5
+    },
+    "local_name_root": {
+      "blocked": {
+        "operations_api": [
+          "local_name_root"
+        ]
+      },
+      "failed_local": [
+        "local_name_root"
+      ],
+      "stages": [
+        [
+          "holdover_time",
+          "local_trust_root"
+        ],
+        [
+          "local_identity_verifier",
+          "local_route_controller"
+        ],
+        [
+          "durable_queue"
+        ]
+      ],
+      "started_essential": [
+        "holdover_time",
+        "local_trust_root",
+        "local_identity_verifier",
+        "local_route_controller",
+        "durable_queue"
+      ],
+      "started_essential_count": 5
+    },
+    "local_route_controller": {
+      "blocked": {
+        "durable_queue": [
+          "local_route_controller"
+        ],
+        "operations_api": [
+          "durable_queue"
+        ]
+      },
+      "failed_local": [
+        "local_route_controller"
+      ],
+      "stages": [
+        [
+          "holdover_time",
+          "local_trust_root"
+        ],
+        [
+          "local_identity_verifier",
+          "local_name_root"
+        ]
+      ],
+      "started_essential": [
+        "holdover_time",
+        "local_trust_root",
+        "local_name_root",
+        "local_identity_verifier"
+      ],
+      "started_essential_count": 4
+    },
+    "local_trust_root": {
+      "blocked": {
+        "local_identity_verifier": [
+          "local_trust_root"
+        ],
+        "operations_api": [
+          "local_identity_verifier"
+        ]
+      },
+      "failed_local": [
+        "local_trust_root"
+      ],
+      "stages": [
+        [
+          "holdover_time"
+        ],
+        [
+          "local_name_root",
+          "local_route_controller"
+        ],
+        [
+          "durable_queue"
+        ]
+      ],
+      "started_essential": [
+        "holdover_time",
+        "local_name_root",
+        "local_route_controller",
+        "durable_queue"
+      ],
+      "started_essential_count": 4
+    },
+    "operations_api": {
+      "blocked": {},
+      "failed_local": [
+        "operations_api"
+      ],
+      "stages": [
+        [
+          "holdover_time",
+          "local_trust_root"
+        ],
+        [
+          "local_identity_verifier",
+          "local_name_root",
+          "local_route_controller"
+        ],
+        [
+          "durable_queue"
+        ]
+      ],
+      "started_essential": [
+        "holdover_time",
+        "local_trust_root",
+        "local_name_root",
+        "local_identity_verifier",
+        "local_route_controller",
+        "durable_queue"
+      ],
+      "started_essential_count": 6
+    }
+  },
+  "study_id": "S013",
+  "title": "Lunar network islanding and black-start dependency model"
+}

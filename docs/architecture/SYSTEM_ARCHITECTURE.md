@@ -71,6 +71,10 @@ and commercial; they do not define the user's Internet protocol.
 - Regional identity validation must account for stale revocation information during a partition.
 - Operations telemetry must separate service observability from user-content access.
 
+[`S013`](../../studies/S013_LUNAR_BLACK_START.md) applies a microgrid-style islanding and black-start
+test to the logical dependencies of the lunar region. A locally hosted service is not independent
+if its time, trust, naming or route-control start path still requires Earth.
+
 ## Architecture invariants
 
 1. Same-region traffic stays in-region unless policy explicitly exports it.
@@ -78,4 +82,3 @@ and commercial; they do not define the user's Internet protocol.
 3. Accepted deferred traffic has a visible state until delivery or explicit expiry.
 4. Priority does not mean undocumented starvation.
 5. A precise model output is still a model output.
-

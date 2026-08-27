@@ -40,7 +40,10 @@ class ConceptAtlasTests(unittest.TestCase):
 
     def test_selected_concepts_have_named_studies(self) -> None:
         active = [item for item in self.concepts if item["status"] in {"selected", "studying"}]
-        self.assertEqual({item["id"] for item in active}, {"X001", "X002", "X003", "X004"})
+        self.assertEqual(
+            {item["id"] for item in active},
+            {"X001", "X002", "X003", "X004", "X005"},
+        )
         self.assertTrue(all(item["first_experiment"].startswith("S0") for item in active))
 
 

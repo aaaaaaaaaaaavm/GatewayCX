@@ -26,3 +26,5 @@
   automotive OTA, mobile rollback and container distribution.
 - Added S012, a predictive cache admission study that keeps essential reservation outside model
   authority and rejects learned-policy superiority on the current synthetic trace.
+- Added S013, a microgrid-inspired islanding and black-start dependency model with single-local-
+  fault injection.
