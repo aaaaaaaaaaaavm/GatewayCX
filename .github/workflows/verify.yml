@@ -21,9 +21,11 @@ jobs:
         run: python -m gatewaycx.cli run-all
       - name: Reproduce deterministic capacity envelope
         run: python -m gatewaycx.capacity
+      - name: Reproduce deterministic service placement
+        run: python -m gatewaycx.placement
       - name: Run tests
         run: python -m unittest discover -s tests -v
       - name: Audit engineering record
         run: python -m gatewaycx.cli audit
       - name: Check generated record
-        run: git diff --exit-code -- results/baseline.json results/S006_capacity_envelope.json
+        run: git diff --exit-code -- results/baseline.json results/S006_capacity_envelope.json results/S007_service_placement.json

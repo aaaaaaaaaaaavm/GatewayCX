@@ -12,7 +12,8 @@ This register prevents a passing test suite from being mistaken for a closed arc
 | Where should IP terminate and DTN begin? | ADR-0002 | Open decision | Gateway prototypes and security analysis |
 | What state is required to use a declared capacity? | S006 BDP and outage derivation | Closed for stated arithmetic inputs | Transport implementation and queue measurements |
 | What backbone capacity is available? | Scenario assumption | Open | Link budgets, contact geometry and terminal data |
-| Is a lunar data centre feasible? | None yet | Open | Power, thermal, radiation, mass and maintenance models |
+| Where should declared services be placed? | S007 exhaustive bounded search | Closed for stated abstract inputs | Trace-derived demand and physical resource models |
+| Is a lunar data centre feasible? | Abstract S007 resource budgets only | Open | Power, thermal, radiation, mass and maintenance models |
 | Can two vendors interoperate? | Interface intent only | Open | Two implementations and conformance results |
 | Is the system commercially viable? | None yet | Open | Demand, deployment and operating-cost model |
 

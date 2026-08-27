@@ -34,6 +34,9 @@
 | C017 | Reusing the S004 HTTPS connection avoids a second TLS handshake. | MEASUREMENT | S004 `num_connects` and `time_appconnect` | Reproduced by CI at reduced delay |
 | C018 | A 622 Mbps flow at mean lunar RTT has a bandwidth-delay product of about 199.38 MB. | DERIVATION | S006 | Reproduced in CI |
 | C019 | Continuing to admit 100 Mbps for a one-day outage requires 1.08 TB before overhead and margin. | DERIVATION | S006 | Reproduced in CI |
+| C020 | Under the S007 assumptions, 19 of 243 placements are both resource-feasible and partition-resilient. | MODEL | S007 | Reproduced in CI; not a demand forecast |
+| C021 | A lunar replica always reduces cislunar backbone traffic. | — | S007 provides a counterexample when update traffic exceeds avoided user traffic | Rejected |
+| C022 | Service placement can trade replication bytes for lower interaction delay and partition survival. | MODEL | S007 Pareto frontier | Model only |
 
 The ledger will grow when the evidence grows. A claim does not become stronger by appearing in the
 README.

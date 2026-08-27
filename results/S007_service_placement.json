@@ -1,0 +1,210 @@
+{
+  "earth_central_baseline": {
+    "cislunar_bytes_per_hour": 12771600000,
+    "essential_services_available_during_partition": 0,
+    "interactive_delay_seconds_per_hour": 57751.206005,
+    "placements": {
+      "dns": "earth",
+      "identity": "earth",
+      "operations_api": "earth",
+      "science_archive": "earth",
+      "static_content": "earth"
+    },
+    "resource_use": {
+      "lunar_orbit": {
+        "compute_units": 0,
+        "storage_gb": 0.0
+      },
+      "lunar_surface": {
+        "compute_units": 0,
+        "storage_gb": 0.0
+      }
+    }
+  },
+  "evidence_class": "MODEL",
+  "inputs": {
+    "lunar_site_budgets": {
+      "lunar_orbit": {
+        "compute_units": 5,
+        "storage_gb": 25.0
+      },
+      "lunar_surface": {
+        "compute_units": 7,
+        "storage_gb": 100.0
+      }
+    },
+    "services": [
+      {
+        "compute_units": 1,
+        "essential_during_partition": true,
+        "name": "dns",
+        "replica_storage_gb": 0.1,
+        "replication_bytes_per_hour": 1000000,
+        "request_bytes": 100,
+        "requests_per_hour": 10000,
+        "response_bytes": 300,
+        "sequential_round_trips": 1
+      },
+      {
+        "compute_units": 2,
+        "essential_during_partition": true,
+        "name": "identity",
+        "replica_storage_gb": 5.0,
+        "replication_bytes_per_hour": 50000000,
+        "request_bytes": 2000,
+        "requests_per_hour": 1000,
+        "response_bytes": 5000,
+        "sequential_round_trips": 2
+      },
+      {
+        "compute_units": 4,
+        "essential_during_partition": true,
+        "name": "operations_api",
+        "replica_storage_gb": 20.0,
+        "replication_bytes_per_hour": 500000000,
+        "request_bytes": 2000,
+        "requests_per_hour": 5000,
+        "response_bytes": 50000,
+        "sequential_round_trips": 2
+      },
+      {
+        "compute_units": 2,
+        "essential_during_partition": false,
+        "name": "static_content",
+        "replica_storage_gb": 80.0,
+        "replication_bytes_per_hour": 5000000000,
+        "request_bytes": 1000,
+        "requests_per_hour": 500,
+        "response_bytes": 5000000,
+        "sequential_round_trips": 1
+      },
+      {
+        "compute_units": 2,
+        "essential_during_partition": false,
+        "name": "science_archive",
+        "replica_storage_gb": 15.0,
+        "replication_bytes_per_hour": 100000000000,
+        "request_bytes": 5000,
+        "requests_per_hour": 20,
+        "response_bytes": 500000000,
+        "sequential_round_trips": 1
+      }
+    ],
+    "sites": {
+      "earth": {
+        "round_trip_s": 2.564440764
+      },
+      "lunar_orbit": {
+        "round_trip_s": 0.12
+      },
+      "lunar_surface": {
+        "round_trip_s": 0.02
+      }
+    }
+  },
+  "interpretation_boundary": [
+    "Demand, storage, compute, update and local-delay values are study assumptions.",
+    "Storage and compute units do not constitute a lunar data-centre feasibility model.",
+    "Cislunar bytes count user transfers for Earth placement or replica updates for lunar placement.",
+    "The model omits consistency protocols, replica fan-out, failures, power and thermal limits.",
+    "No weighted score selects a preferred plan; the Pareto frontier preserves the trade-off."
+  ],
+  "minimum_backbone_plan": {
+    "cislunar_bytes_per_hour": 13051600000,
+    "essential_services_available_during_partition": 3,
+    "interactive_delay_seconds_per_hour": 1773.509197,
+    "placements": {
+      "dns": "lunar_surface",
+      "identity": "lunar_surface",
+      "operations_api": "lunar_surface",
+      "science_archive": "earth",
+      "static_content": "earth"
+    },
+    "resource_use": {
+      "lunar_orbit": {
+        "compute_units": 0,
+        "storage_gb": 0.0
+      },
+      "lunar_surface": {
+        "compute_units": 7,
+        "storage_gb": 25.1
+      }
+    }
+  },
+  "minimum_latency_plan": {
+    "cislunar_bytes_per_hour": 15551100000,
+    "essential_services_available_during_partition": 3,
+    "interactive_delay_seconds_per_hour": 1501.288815,
+    "placements": {
+      "dns": "lunar_surface",
+      "identity": "lunar_surface",
+      "operations_api": "lunar_orbit",
+      "science_archive": "earth",
+      "static_content": "lunar_surface"
+    },
+    "resource_use": {
+      "lunar_orbit": {
+        "compute_units": 4,
+        "storage_gb": 20.0
+      },
+      "lunar_surface": {
+        "compute_units": 5,
+        "storage_gb": 85.1
+      }
+    }
+  },
+  "resilient_pareto_frontier": [
+    {
+      "cislunar_bytes_per_hour": 13051600000,
+      "essential_services_available_during_partition": 3,
+      "interactive_delay_seconds_per_hour": 1773.509197,
+      "placements": {
+        "dns": "lunar_surface",
+        "identity": "lunar_surface",
+        "operations_api": "lunar_surface",
+        "science_archive": "earth",
+        "static_content": "earth"
+      },
+      "resource_use": {
+        "lunar_orbit": {
+          "compute_units": 0,
+          "storage_gb": 0.0
+        },
+        "lunar_surface": {
+          "compute_units": 7,
+          "storage_gb": 25.1
+        }
+      }
+    },
+    {
+      "cislunar_bytes_per_hour": 15551100000,
+      "essential_services_available_during_partition": 3,
+      "interactive_delay_seconds_per_hour": 1501.288815,
+      "placements": {
+        "dns": "lunar_surface",
+        "identity": "lunar_surface",
+        "operations_api": "lunar_orbit",
+        "science_archive": "earth",
+        "static_content": "lunar_surface"
+      },
+      "resource_use": {
+        "lunar_orbit": {
+          "compute_units": 4,
+          "storage_gb": 20.0
+        },
+        "lunar_surface": {
+          "compute_units": 5,
+          "storage_gb": 85.1
+        }
+      }
+    }
+  ],
+  "search": {
+    "candidate_combinations": 243,
+    "pareto_frontier_size": 2,
+    "partition_resilient_combinations": 19,
+    "resource_feasible_combinations": 108
+  },
+  "study_id": "S007",
+  "title": "Constrained lunar service placement"
+}

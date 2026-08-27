@@ -32,6 +32,10 @@ pointing, protocol headers, compute time or user demand distributions.
 S006 adds cited closest/mean/farthest distance cases, bandwidth-delay-product arithmetic and
 constant-rate outage storage. It still does not contain an operational ephemeris or contact plan.
 
+S007 uses synthetic request rates, object sizes, update volumes, compute units, storage sizes and
+local RTTs. Its exhaustive enumeration is reproducible; its input case is not empirical demand or
+physical data-centre qualification.
+
 ## Validation status
 
 The tests verify equations, parsing, invariants and relative scenario outcomes. They do not

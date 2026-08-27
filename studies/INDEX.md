@@ -11,5 +11,5 @@ separate prose run sheet is added only when method, interpretation or external d
 | S004 | Native HTTPS through delayed byte relay | MEASUREMENT | Socket method implemented; packet method pending |
 | S005 | IP/DTN boundary and recovery | MODEL + EMULATION | Planned |
 | S006 | Earth–Moon capacity and buffering envelope | DERIVATION | Implemented |
-| S007 | Surface versus orbital data-centre placement | MODEL | Planned |
+| S007 | Constrained lunar service placement | MODEL | Implemented |
 | S008 | Multi-provider bearer conformance | TEST | Planned |

@@ -25,8 +25,13 @@ An early lunar compute region may provide:
 | Earth | Mature capacity and operations | Every dependency pays cislunar delay and fails with the backbone |
 | Hybrid | Service-specific placement and redundancy | Consistency, routing and operational complexity |
 
-No placement is selected in the current baseline. P09 remains open until power, thermal,
-radiation, mass, maintenance and demand models exist.
+No placement is selected for deployment. P09 remains open until power, thermal, radiation, mass,
+maintenance and demand models exist.
+
+The first executable placement trade is [`S007`](../../studies/S007_SERVICE_PLACEMENT.md). It
+enumerates Earth, lunar-orbit and lunar-surface placement under explicit abstract resource budgets
+and keeps delay and replication traffic as separate objectives. It does not close physical
+data-centre feasibility.
 
 ## Data semantics
 
@@ -41,4 +46,3 @@ Every service must classify data as one of:
 
 "Put a cache on the Moon" is not a consistency model. Encrypted third-party content also cannot be
 silently cached by the network; the service provider must participate or publish reusable objects.
-
