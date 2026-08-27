@@ -1,0 +1,252 @@
+{
+  "evidence_class": "MODEL",
+  "model_version": "0.1.0",
+  "record": "GatewayCX deterministic baseline",
+  "result_count": 3,
+  "results": [
+    {
+      "completed_backbone_bytes": 5254096,
+      "elapsed_s": 16.046972263,
+      "evidence_class": "MODEL",
+      "model_version": "0.1.0",
+      "operations": [
+        {
+          "delivery_mode": "continuous",
+          "duration_s": 2.604768444,
+          "name": "earth_dns_resolution",
+          "path": "earth_moon",
+          "path_kind": "cislunar",
+          "phase": 1,
+          "reason": null,
+          "required_for_user_completion": true,
+          "sequential_round_trips": 1.0,
+          "status": "completed",
+          "transfer_bytes": 4096
+        },
+        {
+          "delivery_mode": "continuous",
+          "duration_s": 5.224881528,
+          "name": "secure_session_and_index",
+          "path": "earth_moon",
+          "path_kind": "cislunar",
+          "phase": 2,
+          "reason": null,
+          "required_for_user_completion": true,
+          "sequential_round_trips": 2.0,
+          "status": "completed",
+          "transfer_bytes": 200000
+        },
+        {
+          "delivery_mode": "continuous",
+          "duration_s": 8.217322292,
+          "name": "application_dependencies",
+          "path": "earth_moon",
+          "path_kind": "cislunar",
+          "phase": 3,
+          "reason": null,
+          "required_for_user_completion": true,
+          "sequential_round_trips": 3.0,
+          "status": "completed",
+          "transfer_bytes": 5050000
+        }
+      ],
+      "paths": {
+        "earth_moon": {
+          "available": true,
+          "capacity_mbps": 100.0,
+          "distance_km": 384400.0,
+          "kind": "cislunar",
+          "processing_one_way_s": 0.02,
+          "propagation_one_way_s": 1.282220382,
+          "round_trip_s": 2.604440764
+        },
+        "lunar_local": {
+          "available": true,
+          "capacity_mbps": 1000.0,
+          "distance_km": 5.0,
+          "kind": "local",
+          "processing_one_way_s": 0.002,
+          "propagation_one_way_s": 1.6678e-05,
+          "round_trip_s": 0.004033356
+        }
+      },
+      "queued_backbone_bytes": 0,
+      "scenario_id": "S001",
+      "source": "scenarios/S001_native_direct.json",
+      "status_counts": {
+        "completed": 3,
+        "failed": 0,
+        "queued": 0
+      },
+      "title": "Native direct Earth service",
+      "user_transaction_complete": true
+    },
+    {
+      "completed_backbone_bytes": 50000,
+      "elapsed_s": 5.262581009,
+      "evidence_class": "MODEL",
+      "model_version": "0.1.0",
+      "operations": [
+        {
+          "delivery_mode": "local-only",
+          "duration_s": 0.004066124,
+          "name": "lunar_dns_and_identity",
+          "path": "lunar_local",
+          "path_kind": "local",
+          "phase": 1,
+          "reason": null,
+          "required_for_user_completion": true,
+          "sequential_round_trips": 1.0,
+          "status": "completed",
+          "transfer_bytes": 4096
+        },
+        {
+          "delivery_mode": "continuous",
+          "duration_s": 5.212881528,
+          "name": "earth_authoritative_operation",
+          "path": "earth_moon",
+          "path_kind": "cislunar",
+          "phase": 2,
+          "reason": null,
+          "required_for_user_completion": true,
+          "sequential_round_trips": 2.0,
+          "status": "completed",
+          "transfer_bytes": 50000
+        },
+        {
+          "delivery_mode": "local-only",
+          "duration_s": 0.045633356,
+          "name": "lunar_application_and_assets",
+          "path": "lunar_local",
+          "path_kind": "local",
+          "phase": 3,
+          "reason": null,
+          "required_for_user_completion": true,
+          "sequential_round_trips": 1.0,
+          "status": "completed",
+          "transfer_bytes": 5200000
+        }
+      ],
+      "paths": {
+        "earth_moon": {
+          "available": true,
+          "capacity_mbps": 100.0,
+          "distance_km": 384400.0,
+          "kind": "cislunar",
+          "processing_one_way_s": 0.02,
+          "propagation_one_way_s": 1.282220382,
+          "round_trip_s": 2.604440764
+        },
+        "lunar_local": {
+          "available": true,
+          "capacity_mbps": 1000.0,
+          "distance_km": 5.0,
+          "kind": "local",
+          "processing_one_way_s": 0.002,
+          "propagation_one_way_s": 1.6678e-05,
+          "round_trip_s": 0.004033356
+        }
+      },
+      "queued_backbone_bytes": 0,
+      "scenario_id": "S002",
+      "source": "scenarios/S002_lunar_edge.json",
+      "status_counts": {
+        "completed": 3,
+        "failed": 0,
+        "queued": 0
+      },
+      "title": "Lunar edge-assisted service",
+      "user_transaction_complete": true
+    },
+    {
+      "completed_backbone_bytes": 0,
+      "elapsed_s": 0.008899481,
+      "evidence_class": "MODEL",
+      "model_version": "0.1.0",
+      "operations": [
+        {
+          "delivery_mode": "local-only",
+          "duration_s": 0.004066124,
+          "name": "lunar_name_and_identity_validation",
+          "path": "lunar_local",
+          "path_kind": "local",
+          "phase": 1,
+          "reason": null,
+          "required_for_user_completion": true,
+          "sequential_round_trips": 1.0,
+          "status": "completed",
+          "transfer_bytes": 4096
+        },
+        {
+          "delivery_mode": "local-only",
+          "duration_s": 0.004833356,
+          "name": "essential_lunar_messaging",
+          "path": "lunar_local",
+          "path_kind": "local",
+          "phase": 2,
+          "reason": null,
+          "required_for_user_completion": true,
+          "sequential_round_trips": 1.0,
+          "status": "completed",
+          "transfer_bytes": 100000
+        },
+        {
+          "delivery_mode": "deferred",
+          "duration_s": 0.0,
+          "name": "background_earth_replication",
+          "path": "earth_moon",
+          "path_kind": "cislunar",
+          "phase": 3,
+          "reason": "path unavailable; deferred delivery accepted",
+          "required_for_user_completion": false,
+          "sequential_round_trips": 0.0,
+          "status": "queued",
+          "transfer_bytes": 10000000
+        },
+        {
+          "delivery_mode": "continuous",
+          "duration_s": 0.0,
+          "name": "optional_live_earth_dashboard",
+          "path": "earth_moon",
+          "path_kind": "cislunar",
+          "phase": 3,
+          "reason": "path unavailable and delivery is not deferred",
+          "required_for_user_completion": false,
+          "sequential_round_trips": 1.0,
+          "status": "failed",
+          "transfer_bytes": 100000
+        }
+      ],
+      "paths": {
+        "earth_moon": {
+          "available": false,
+          "capacity_mbps": 100.0,
+          "distance_km": 384400.0,
+          "kind": "cislunar",
+          "processing_one_way_s": 0.02,
+          "propagation_one_way_s": 1.282220382,
+          "round_trip_s": 2.604440764
+        },
+        "lunar_local": {
+          "available": true,
+          "capacity_mbps": 1000.0,
+          "distance_km": 5.0,
+          "kind": "local",
+          "processing_one_way_s": 0.002,
+          "propagation_one_way_s": 1.6678e-05,
+          "round_trip_s": 0.004033356
+        }
+      },
+      "queued_backbone_bytes": 10000000,
+      "scenario_id": "S003",
+      "source": "scenarios/S003_partitioned_lunar_region.json",
+      "status_counts": {
+        "completed": 2,
+        "failed": 1,
+        "queued": 1
+      },
+      "title": "Partitioned lunar region",
+      "user_transaction_complete": true
+    }
+  ]
+}

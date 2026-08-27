@@ -1,0 +1,52 @@
+{
+  "description": "The same logical service uses lunar naming, identity and static content while a small authoritative operation remains on Earth.",
+  "evidence_class": "MODEL",
+  "id": "S002",
+  "operations": [
+    {
+      "delivery_mode": "local-only",
+      "name": "lunar_dns_and_identity",
+      "path": "lunar_local",
+      "phase": 1,
+      "required_for_user_completion": true,
+      "sequential_round_trips": 1,
+      "transfer_bytes": 4096
+    },
+    {
+      "delivery_mode": "continuous",
+      "name": "earth_authoritative_operation",
+      "path": "earth_moon",
+      "phase": 2,
+      "required_for_user_completion": true,
+      "sequential_round_trips": 2,
+      "transfer_bytes": 50000
+    },
+    {
+      "delivery_mode": "local-only",
+      "name": "lunar_application_and_assets",
+      "path": "lunar_local",
+      "phase": 3,
+      "required_for_user_completion": true,
+      "sequential_round_trips": 1,
+      "transfer_bytes": 5200000
+    }
+  ],
+  "paths": {
+    "earth_moon": {
+      "available": true,
+      "capacity_mbps": 100,
+      "distance_km": 384400,
+      "kind": "cislunar",
+      "one_way_processing_ms": 20
+    },
+    "lunar_local": {
+      "available": true,
+      "capacity_mbps": 1000,
+      "distance_km": 5,
+      "kind": "local",
+      "one_way_processing_ms": 2
+    }
+  },
+  "title": "Lunar edge-assisted service"
+}
+

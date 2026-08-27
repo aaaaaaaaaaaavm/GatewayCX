@@ -1,0 +1,52 @@
+{
+  "description": "A lunar client resolves and loads one simplified Earth-hosted service. The declared round trips are assumptions for a first-order dependency chain, not a packet trace.",
+  "evidence_class": "MODEL",
+  "id": "S001",
+  "operations": [
+    {
+      "delivery_mode": "continuous",
+      "name": "earth_dns_resolution",
+      "path": "earth_moon",
+      "phase": 1,
+      "required_for_user_completion": true,
+      "sequential_round_trips": 1,
+      "transfer_bytes": 4096
+    },
+    {
+      "delivery_mode": "continuous",
+      "name": "secure_session_and_index",
+      "path": "earth_moon",
+      "phase": 2,
+      "required_for_user_completion": true,
+      "sequential_round_trips": 2,
+      "transfer_bytes": 200000
+    },
+    {
+      "delivery_mode": "continuous",
+      "name": "application_dependencies",
+      "path": "earth_moon",
+      "phase": 3,
+      "required_for_user_completion": true,
+      "sequential_round_trips": 3,
+      "transfer_bytes": 5050000
+    }
+  ],
+  "paths": {
+    "earth_moon": {
+      "available": true,
+      "capacity_mbps": 100,
+      "distance_km": 384400,
+      "kind": "cislunar",
+      "one_way_processing_ms": 20
+    },
+    "lunar_local": {
+      "available": true,
+      "capacity_mbps": 1000,
+      "distance_km": 5,
+      "kind": "local",
+      "one_way_processing_ms": 2
+    }
+  },
+  "title": "Native direct Earth service"
+}
+

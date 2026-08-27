@@ -1,0 +1,61 @@
+{
+  "description": "The cislunar path is unavailable. Essential lunar services complete locally, background replication queues and an optional live Earth view fails honestly.",
+  "evidence_class": "MODEL",
+  "id": "S003",
+  "operations": [
+    {
+      "delivery_mode": "local-only",
+      "name": "lunar_name_and_identity_validation",
+      "path": "lunar_local",
+      "phase": 1,
+      "required_for_user_completion": true,
+      "sequential_round_trips": 1,
+      "transfer_bytes": 4096
+    },
+    {
+      "delivery_mode": "local-only",
+      "name": "essential_lunar_messaging",
+      "path": "lunar_local",
+      "phase": 2,
+      "required_for_user_completion": true,
+      "sequential_round_trips": 1,
+      "transfer_bytes": 100000
+    },
+    {
+      "delivery_mode": "deferred",
+      "name": "background_earth_replication",
+      "path": "earth_moon",
+      "phase": 3,
+      "required_for_user_completion": false,
+      "sequential_round_trips": 0,
+      "transfer_bytes": 10000000
+    },
+    {
+      "delivery_mode": "continuous",
+      "name": "optional_live_earth_dashboard",
+      "path": "earth_moon",
+      "phase": 3,
+      "required_for_user_completion": false,
+      "sequential_round_trips": 1,
+      "transfer_bytes": 100000
+    }
+  ],
+  "paths": {
+    "earth_moon": {
+      "available": false,
+      "capacity_mbps": 100,
+      "distance_km": 384400,
+      "kind": "cislunar",
+      "one_way_processing_ms": 20
+    },
+    "lunar_local": {
+      "available": true,
+      "capacity_mbps": 1000,
+      "distance_km": 5,
+      "kind": "local",
+      "one_way_processing_ms": 2
+    }
+  },
+  "title": "Partitioned lunar region"
+}
+
