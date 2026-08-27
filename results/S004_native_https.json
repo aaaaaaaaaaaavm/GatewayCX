@@ -1,0 +1,69 @@
+{
+  "checks": {
+    "all_http_200": true,
+    "certificate_verified": true,
+    "experiment_passed": true,
+    "second_request_reused_connection": true,
+    "second_request_skipped_new_tls_handshake": true
+  },
+  "client": "unmodified curl",
+  "configuration": {
+    "capacity_mbps": 100.0,
+    "distance_km": 384400.0,
+    "ideal_round_trip_s": 2.564440764,
+    "object_bytes": 65536,
+    "one_way_delay_s": 1.282220382
+  },
+  "environment": {
+    "curl": "curl 8.5.0 (x86_64-pc-linux-gnu) libcurl/8.5.0 OpenSSL/3.0.13 zlib/1.3 brotli/1.1.0 zstd/1.5.5 libidn2/2.3.7 libpsl/0.21.2 (+libidn2/2.3.7) libssh/0.10.6/openssl/zlib nghttp2/1.59.0 librtmp/2.3 OpenLDAP/2.6.7",
+    "generated_at_utc": "2026-08-27T14:03:36.380442+00:00",
+    "openssl": "OpenSSL 3.0.13 30 Jan 2024 (Library: OpenSSL 3.0.13 30 Jan 2024)",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+    "python": "3.12.13"
+  },
+  "evidence_class": "MEASUREMENT",
+  "limitations": [
+    "The client-to-relay TCP handshake is local and is not delayed.",
+    "The relay delays byte chunks; it does not emulate packets, loss, jitter or congestion control.",
+    "The origin is a loopback test server, not a remote lunar or terrestrial endpoint.",
+    "The measurement validates compatibility behaviour, not flight or hardware performance."
+  ],
+  "measurements": {
+    "cold_connection": {
+      "http_code": 200,
+      "http_version": "1.1",
+      "num_connects": 1,
+      "size_download": 65536,
+      "ssl_verify_result": 0,
+      "time_appconnect": 2.569848,
+      "time_connect": 0.000192,
+      "time_starttransfer": 5.141729,
+      "time_total": 5.185347
+    },
+    "reuse_sequence_first": {
+      "http_code": 200,
+      "http_version": "1.1",
+      "num_connects": 1,
+      "size_download": 65536,
+      "ssl_verify_result": 0,
+      "time_appconnect": 2.570976,
+      "time_connect": 0.000172,
+      "time_starttransfer": 5.144335,
+      "time_total": 5.188487
+    },
+    "reuse_sequence_second": {
+      "http_code": 200,
+      "http_version": "1.1",
+      "num_connects": 0,
+      "size_download": 65536,
+      "ssl_verify_result": 0,
+      "time_appconnect": 0.0,
+      "time_connect": 0.0,
+      "time_starttransfer": 2.572204,
+      "time_total": 2.615447
+    }
+  },
+  "protocol_under_test": "TLS 1.3 and HTTP/1.1 over a TCP byte stream",
+  "study_id": "S004",
+  "title": "Unmodified HTTPS through a delayed cislunar byte relay"
+}

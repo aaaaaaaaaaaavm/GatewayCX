@@ -30,6 +30,8 @@
 | C013 | The current CCSDS BPv7 publication is experimental 734.20-O-1; 734.2-B-1 is RFC 5050/BPv6-based. | STANDARD | CCSDS active-publications catalogue | Source reviewed |
 | C014 | LNIS V5 is the current NASA/ESA/JAXA lunar interoperability specification baseline. | PUBLIC FACT | NASA LNIS page and V5 document | Source reviewed |
 | C015 | A performance-enhancing proxy is required for native lunar Internet service. | — | No comparative measurement | Rejected as a general requirement |
+| C016 | An unmodified curl client can complete verified TLS 1.3 and HTTP/1.1 through the mean-distance delayed-byte harness. | MEASUREMENT | S004 | Socket-level only; TCP setup not delayed |
+| C017 | Reusing the S004 HTTPS connection avoids a second TLS handshake. | MEASUREMENT | S004 `num_connects` and `time_appconnect` | Reproduced by CI at reduced delay |
 
 The ledger will grow when the evidence grows. A claim does not become stronger by appearing in the
 README.

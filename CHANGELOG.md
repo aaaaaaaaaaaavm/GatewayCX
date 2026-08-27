@@ -12,3 +12,4 @@
 - Established the dated standards baseline and corrected the CCSDS BPv6/BPv7 publication boundary.
 - Added a programme/prior-art map with explicit commercial evidence levels.
 - Decided to regionalise services before considering transport-splitting optimisations.
+- Added S004, a repeatable TLS 1.3/HTTP socket experiment using an unmodified curl client.

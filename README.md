@@ -84,13 +84,14 @@ python -m gatewaycx.cli run-all
 python -m unittest discover -s tests -v
 ```
 
-Three committed scenarios establish the starting point:
+Four committed studies establish the starting point:
 
 | Study | Question |
 |---|---|
 | S001 | What does an ordinary Earth-hosted web transaction pay across a continuous lunar link? |
 | S002 | How much latency and backbone traffic disappear when static and identity services are local? |
 | S003 | Which services remain available when the Earth–Moon backbone is down? |
+| S004 | Can an unmodified HTTPS client operate through a mean-distance delayed byte path? |
 
 The current declared inputs produce:
 
@@ -105,6 +106,10 @@ or network.
 
 The generated record is [`results/baseline.json`](results/baseline.json). Its checks are tested in
 CI. It is not a network simulator, a link-budget tool or evidence of hardware performance yet.
+
+S004 adds the first socket measurement with an unmodified client. Its
+[`method and limitations`](studies/S004_NATIVE_HTTPS.md) are deliberately separate from the
+deterministic model.
 
 ## Engineering record
 
