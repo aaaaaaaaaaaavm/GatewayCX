@@ -115,6 +115,8 @@ CI. It is not a network simulator, a link-budget tool or evidence of hardware pe
   initial system boundary and planes.
 - [`docs/CLAIM_LEDGER.md`](docs/CLAIM_LEDGER.md) labels every material claim by evidence class.
 - [`docs/PROVENANCE.md`](docs/PROVENANCE.md) says what the present results are and are not.
+- [`research/STANDARDS_BASELINE.md`](research/STANDARDS_BASELINE.md) records which public
+  standards are inherited, profiled or still untested.
 - [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md) keeps unresolved engineering visible.
 - [`ROADMAP.md`](ROADMAP.md) gives the build order and exit criteria.
 

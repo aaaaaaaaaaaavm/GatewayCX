@@ -9,4 +9,6 @@
 - Added the first requirements, architecture decisions, claim ledger and open-problem register.
 - Added a deterministic latency and availability model.
 - Added direct, lunar-edge and partitioned baseline scenarios with regression tests.
-
+- Established the dated standards baseline and corrected the CCSDS BPv6/BPv7 publication boundary.
+- Added a programme/prior-art map with explicit commercial evidence levels.
+- Decided to regionalise services before considering transport-splitting optimisations.

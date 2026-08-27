@@ -15,6 +15,11 @@ GatewayCX enters a field with substantial prior work.
 - Commercial and institutional programmes are developing lunar relays, optical terminals, ground
   networks, edge computing and space-based data storage.
 
+The evidence and the integration boundary are expanded in
+[`research/PROGRAMMES_AND_PRIOR_ART.md`](../research/PROGRAMMES_AND_PRIOR_ART.md). The standards
+status is kept separately in [`research/STANDARDS_BASELINE.md`](../research/STANDARDS_BASELINE.md)
+so a demonstrated technology is not accidentally described as a normative interface.
+
 ## What GatewayCX does not claim
 
 It does not claim to have invented Internet Protocol in space, DTN, laser communication, a lunar
@@ -29,4 +34,3 @@ service placement, failure semantics and evidence needed to make that sentence t
 
 That contribution is a programme objective. It becomes demonstrated only when the public
 requirements and conformance tests are implemented independently.
-

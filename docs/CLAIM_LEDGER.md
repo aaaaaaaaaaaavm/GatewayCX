@@ -25,7 +25,11 @@
 | C008 | BPv7 is suitable for all GatewayCX traffic. | — | P02 remains open | Not claimed |
 | C009 | A named commercial terminal satisfies a GatewayCX cislunar bearer profile. | PARTNER DATA REQUIRED | No profile-qualified data yet | Open |
 | C010 | GatewayCX has been deployed or hardware-validated. | — | No hardware exists in this record | Rejected |
+| C011 | LLCD demonstrated lunar-orbit optical downlinks up to 622 Mbps and uplinks up to 20 Mbps. | PUBLIC FACT | NASA LLCD project page | Public demonstration; not a GatewayCX measurement |
+| C012 | Optical communications and DTN have been exercised together over the LLCD lunar optical trunk. | PUBLIC FACT | NASA LLCD/DTN experiment record | Public demonstration; topology partly virtual |
+| C013 | The current CCSDS BPv7 publication is experimental 734.20-O-1; 734.2-B-1 is RFC 5050/BPv6-based. | STANDARD | CCSDS active-publications catalogue | Source reviewed |
+| C014 | LNIS V5 is the current NASA/ESA/JAXA lunar interoperability specification baseline. | PUBLIC FACT | NASA LNIS page and V5 document | Source reviewed |
+| C015 | A performance-enhancing proxy is required for native lunar Internet service. | — | No comparative measurement | Rejected as a general requirement |
 
 The ledger will grow when the evidence grows. A claim does not become stronger by appearing in the
 README.
-
