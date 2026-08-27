@@ -50,3 +50,8 @@ silently cached by the network; the service provider must participate or publish
 [`S011`](../../studies/S011_CONTENT_ADDRESSED_AB_UPDATES.md) adds a first model for distributing
 immutable service layers through interrupted contacts and activating them without overwriting the
 running slot. Mutable application data remains a separate consistency problem.
+
+[`S012`](../../studies/S012_PREDICTIVE_PREPOSITIONING.md) separates cache prediction from cache
+authority. A model may rank eligible immutable objects, but a deterministic allocator preserves
+essential reservations and records useful and wasted cislunar bytes. A neural implementation has
+no architectural privilege over a popularity baseline.

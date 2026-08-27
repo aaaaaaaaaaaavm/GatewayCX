@@ -24,3 +24,5 @@
   handover, with keepalive cost and correlation limits kept visible.
 - Added S011, a content-addressed interrupted-transfer and A/B activation model drawn from
   automotive OTA, mobile rollback and container distribution.
+- Added S012, a predictive cache admission study that keeps essential reservation outside model
+  authority and rejects learned-policy superiority on the current synthetic trace.

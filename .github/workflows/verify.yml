@@ -29,6 +29,8 @@ jobs:
         run: python -m gatewaycx.handover
       - name: Reproduce deterministic update delivery
         run: python -m gatewaycx.update_delivery
+      - name: Reproduce deterministic predictive prepositioning
+        run: python -m gatewaycx.preposition
       - name: Check bearer capability profiles
         run: python -m gatewaycx.conformance profiles/bearers/*.json
       - name: Run tests
@@ -36,4 +38,4 @@ jobs:
       - name: Audit engineering record
         run: python -m gatewaycx.cli audit
       - name: Check generated record
-        run: git diff --exit-code -- results/baseline.json results/S006_capacity_envelope.json results/S007_service_placement.json results/S009_admission.json results/S010_handover.json results/S011_update_delivery.json
+        run: git diff --exit-code -- results/baseline.json results/S006_capacity_envelope.json results/S007_service_placement.json results/S009_admission.json results/S010_handover.json results/S011_update_delivery.json results/S012_prepositioning.json

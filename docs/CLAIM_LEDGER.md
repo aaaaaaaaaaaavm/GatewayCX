@@ -49,6 +49,10 @@
 | C032 | Under the S011 state machine, interruption before activation leaves slot A/v1 active. | MODEL | S011 | State model only |
 | C033 | A/B activation makes shared database migrations rollback-safe. | — | Shared mutable state is outside the slot model | Rejected |
 | C034 | S011 implements Uptane, OCI Distribution or secure boot. | — | It models selected semantics only | Rejected |
+| C035 | Under S012 inputs, calibrated and popularity policies both prefetch 850 MB of useful content and avoid 27 remote requests. | MODEL | S012 | Reproduced in CI; one synthetic trace |
+| C036 | Under S012 inputs, the overconfident forecast wastes 450 MB and avoids seven fewer remote requests than popularity. | MODEL | S012 | Reproduced in CI; outcome constructed for mechanism testing |
+| C037 | S012 establishes that a learned predictor outperforms the simple baseline. | — | Useful bytes and avoided requests are tied | Rejected |
+| C038 | A predictor may evict essential content when its confidence is high. | — | Essential reservation is outside predictor authority | Rejected |
 
 The ledger will grow when the evidence grows. A claim does not become stronger by appearing in the
 README.

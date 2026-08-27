@@ -98,6 +98,7 @@ The study register establishes the starting point:
 | S009 | How does RF fallback protect safety traffic without silently starving science? |
 | S010 | What continuity is gained by keeping RF warm around an optical outage? |
 | S011 | Can lunar services update through interruption without overwriting the working version? |
+| S012 | Can forecast-driven prepositioning beat a simple cache baseline without risking essential content? |
 
 The current declared inputs produce:
 

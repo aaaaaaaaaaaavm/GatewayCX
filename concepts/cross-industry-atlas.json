@@ -55,7 +55,7 @@
       "failure_mode": "Overconfident predictions consume contact capacity and storage that essential data needed.",
       "scores": {"impact": 4, "architectural_leverage": 4, "testability": 5, "evidence_reuse": 4, "implementation_independence": 5, "speculation_risk": 3},
       "priority_score": 19,
-      "status": "selected"
+      "status": "studying"
     },
     {
       "id": "X005",

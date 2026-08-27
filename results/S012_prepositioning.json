@@ -1,0 +1,204 @@
+{
+  "comparison": {
+    "calibrated_matches_oracle_selection": true,
+    "calibrated_minus_popularity_useful_bytes": 0,
+    "learned_policy_admission_result": "not established",
+    "overconfident_minus_popularity_wasted_bytes": 450000000
+  },
+  "decision_boundary": {
+    "deterministic_authority": "essential reservation plus exhaustive capacity-constrained selection",
+    "predictor_output": "request probability per immutable object",
+    "rule": "a predictor cannot evict essential content or exceed the declared cache budget"
+  },
+  "evidence_class": "MODEL",
+  "inputs": {
+    "cache_budget_bytes": 900000000,
+    "contents": [
+      {
+        "actual_requested": true,
+        "calibrated_probability": 0.98,
+        "content_id": "emergency_maps",
+        "essential": true,
+        "overconfident_probability": 0.99,
+        "popularity_probability": 0.97,
+        "requests_if_needed": 8,
+        "size_bytes": 180000000
+      },
+      {
+        "actual_requested": true,
+        "calibrated_probability": 0.97,
+        "content_id": "medical_reference",
+        "essential": true,
+        "overconfident_probability": 0.99,
+        "popularity_probability": 0.95,
+        "requests_if_needed": 6,
+        "size_bytes": 120000000
+      },
+      {
+        "actual_requested": true,
+        "calibrated_probability": 0.8,
+        "content_id": "software_patch",
+        "essential": false,
+        "overconfident_probability": 0.7,
+        "popularity_probability": 0.65,
+        "requests_if_needed": 4,
+        "size_bytes": 250000000
+      },
+      {
+        "actual_requested": true,
+        "calibrated_probability": 0.7,
+        "content_id": "crew_training",
+        "essential": false,
+        "overconfident_probability": 0.45,
+        "popularity_probability": 0.6,
+        "requests_if_needed": 3,
+        "size_bytes": 200000000
+      },
+      {
+        "actual_requested": false,
+        "calibrated_probability": 0.1,
+        "content_id": "entertainment_bundle",
+        "essential": false,
+        "overconfident_probability": 0.98,
+        "popularity_probability": 0.4,
+        "requests_if_needed": 5,
+        "size_bytes": 450000000
+      },
+      {
+        "actual_requested": false,
+        "calibrated_probability": 0.25,
+        "content_id": "science_catalog",
+        "essential": false,
+        "overconfident_probability": 0.85,
+        "popularity_probability": 0.35,
+        "requests_if_needed": 2,
+        "size_bytes": 300000000
+      },
+      {
+        "actual_requested": true,
+        "calibrated_probability": 0.65,
+        "content_id": "family_messages",
+        "essential": false,
+        "overconfident_probability": 0.6,
+        "popularity_probability": 0.75,
+        "requests_if_needed": 6,
+        "size_bytes": 100000000
+      },
+      {
+        "actual_requested": false,
+        "calibrated_probability": 0.3,
+        "content_id": "earth_news",
+        "essential": false,
+        "overconfident_probability": 0.75,
+        "popularity_probability": 0.45,
+        "requests_if_needed": 3,
+        "size_bytes": 150000000
+      }
+    ],
+    "earth_moon_round_trip_s": 2.564440764,
+    "unused_cost_s_per_100_mb": 0.75
+  },
+  "interpretation_boundary": [
+    "Content sizes, probabilities, outcomes and request counts are synthetic assumptions.",
+    "The calibrated label describes an input forecast; one realised batch cannot establish calibration.",
+    "No neural network is trained or executed; the model defines the contract a future predictor must satisfy.",
+    "The oracle uses outcomes unavailable at decision time and is only an upper-bound comparator.",
+    "Avoided round trips value latency; prefetching moves traffic earlier and does not make bytes free.",
+    "The model omits expiry, privacy, encryption, cache churn, multicast and contact uncertainty."
+  ],
+  "policies": {
+    "calibrated_forecast": {
+      "avoided_remote_requests": 27,
+      "avoided_round_trip_seconds": 69.239901,
+      "essential_reserved_bytes": 300000000,
+      "forecast_brier_score": 0.052038,
+      "optional_prefetched_bytes": 550000000,
+      "policy": "calibrated_forecast",
+      "prefetched_bytes": 850000000,
+      "selected_ids": [
+        "emergency_maps",
+        "medical_reference",
+        "software_patch",
+        "crew_training",
+        "family_messages"
+      ],
+      "useful_byte_fraction": 1.0,
+      "useful_prefetched_bytes": 850000000,
+      "wasted_prefetched_bytes": 0
+    },
+    "essential_only": {
+      "avoided_remote_requests": 14,
+      "avoided_round_trip_seconds": 35.902171,
+      "essential_reserved_bytes": 300000000,
+      "forecast_brier_score": null,
+      "optional_prefetched_bytes": 0,
+      "policy": "essential_only",
+      "prefetched_bytes": 300000000,
+      "selected_ids": [
+        "emergency_maps",
+        "medical_reference"
+      ],
+      "useful_byte_fraction": 1.0,
+      "useful_prefetched_bytes": 300000000,
+      "wasted_prefetched_bytes": 0
+    },
+    "oracle": {
+      "avoided_remote_requests": 27,
+      "avoided_round_trip_seconds": 69.239901,
+      "essential_reserved_bytes": 300000000,
+      "forecast_brier_score": 0.0,
+      "optional_prefetched_bytes": 550000000,
+      "policy": "oracle",
+      "prefetched_bytes": 850000000,
+      "selected_ids": [
+        "emergency_maps",
+        "medical_reference",
+        "software_patch",
+        "crew_training",
+        "family_messages"
+      ],
+      "useful_byte_fraction": 1.0,
+      "useful_prefetched_bytes": 850000000,
+      "wasted_prefetched_bytes": 0
+    },
+    "overconfident_forecast": {
+      "avoided_remote_requests": 20,
+      "avoided_round_trip_seconds": 51.288815,
+      "essential_reserved_bytes": 300000000,
+      "forecast_brier_score": 0.349762,
+      "optional_prefetched_bytes": 550000000,
+      "policy": "overconfident_forecast",
+      "prefetched_bytes": 850000000,
+      "selected_ids": [
+        "emergency_maps",
+        "medical_reference",
+        "entertainment_bundle",
+        "family_messages"
+      ],
+      "useful_byte_fraction": 0.470588,
+      "useful_prefetched_bytes": 400000000,
+      "wasted_prefetched_bytes": 450000000
+    },
+    "popularity_only": {
+      "avoided_remote_requests": 27,
+      "avoided_round_trip_seconds": 69.239901,
+      "essential_reserved_bytes": 300000000,
+      "forecast_brier_score": 0.104175,
+      "optional_prefetched_bytes": 550000000,
+      "policy": "popularity_only",
+      "prefetched_bytes": 850000000,
+      "selected_ids": [
+        "emergency_maps",
+        "medical_reference",
+        "software_patch",
+        "crew_training",
+        "family_messages"
+      ],
+      "useful_byte_fraction": 1.0,
+      "useful_prefetched_bytes": 850000000,
+      "wasted_prefetched_bytes": 0
+    }
+  },
+  "study_id": "S012",
+  "title": "Predictive prepositioning with forecast error cost"
+}

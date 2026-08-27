@@ -19,3 +19,4 @@ close it.
 | P12 | Commercial case | No cost model | Demand scenarios and cost per delivered/retained bit |
 | P13 | Ownership and trademark | Exploratory public record | Written organisational policy before commercial release |
 | P14 | Lunar software and data update safety | S011 descriptor and A/B state model | Signed registry, secure boot, schema migration and fault-injected deployment |
+| P15 | Predictive cache value | S012 synthetic admission trace | Held-out lunar demand, calibrated candidate, drift and contact-aware replay |
