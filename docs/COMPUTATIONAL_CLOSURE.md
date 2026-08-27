@@ -14,7 +14,8 @@ This register prevents a passing test suite from being mistaken for a closed arc
 | What backbone capacity is available? | Scenario assumption | Open | Link budgets, contact geometry and terminal data |
 | Where should declared services be placed? | S007 exhaustive bounded search | Closed for stated abstract inputs | Trace-derived demand and physical resource models |
 | Is a lunar data centre feasible? | Abstract S007 resource budgets only | Open | Power, thermal, radiation, mass and maintenance models |
-| Can two vendors interoperate? | Interface intent only | Open | Two implementations and conformance results |
+| Is the minimum bearer profile machine-readable? | S008 schema and semantic checker | Closed for pre-draft fields | Independent schema review and API binding |
+| Can two vendors interoperate? | Two illustrative S008 documents only | Open | Two independent adapters and traffic exchange |
 | Is the system commercially viable? | None yet | Open | Demand, deployment and operating-cost model |
 
 CI closes consistency questions. It does not close physics, hardware, operations or markets.

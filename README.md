@@ -94,6 +94,7 @@ Four committed studies establish the starting point:
 | S004 | Can an unmodified HTTPS client operate through a mean-distance delayed byte path? |
 | S006 | What in-flight window and outage storage are implied by advertised backbone capacity? |
 | S007 | Where should services run under lunar storage, compute and partition constraints? |
+| S008 | Can optical and RF bearers expose one vendor-neutral capability contract? |
 
 The current declared inputs produce:
 
@@ -124,6 +125,8 @@ deterministic model.
 - [`docs/PROVENANCE.md`](docs/PROVENANCE.md) says what the present results are and are not.
 - [`research/STANDARDS_BASELINE.md`](research/STANDARDS_BASELINE.md) records which public
   standards are inherited, profiled or still untested.
+- [`docs/architecture/BEARER_CONTRACT.md`](docs/architecture/BEARER_CONTRACT.md) defines the first
+  machine-readable GX-B1 hardware/service seam.
 - [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md) keeps unresolved engineering visible.
 - [`ROADMAP.md`](ROADMAP.md) gives the build order and exit criteria.
 

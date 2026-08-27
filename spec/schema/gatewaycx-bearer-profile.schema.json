@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gatewaycx.example/spec/schema/gatewaycx-bearer-profile.schema.json",
+  "title": "GatewayCX GX-B1 Bearer Capability Profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "bearer_id",
+    "media",
+    "endpoints",
+    "performance",
+    "availability",
+    "queue",
+    "security",
+    "telemetry",
+    "evidence"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "bearer_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{2,63}$"},
+    "media": {"enum": ["optical", "rf", "hybrid", "other"]},
+    "endpoints": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["node_id", "region"],
+        "properties": {
+          "node_id": {"type": "string", "minLength": 1},
+          "region": {"enum": ["earth", "cislunar", "lunar_orbit", "lunar_surface"]}
+        }
+      }
+    },
+    "performance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "forward_capacity_mbps",
+        "return_capacity_mbps",
+        "one_way_latency_min_ms",
+        "one_way_latency_max_ms",
+        "acquisition_max_s",
+        "maximum_traffic_unit_bytes"
+      ],
+      "properties": {
+        "forward_capacity_mbps": {"type": "number", "exclusiveMinimum": 0},
+        "return_capacity_mbps": {"type": "number", "exclusiveMinimum": 0},
+        "one_way_latency_min_ms": {"type": "number", "minimum": 0},
+        "one_way_latency_max_ms": {"type": "number", "minimum": 0},
+        "acquisition_max_s": {"type": "number", "minimum": 0},
+        "maximum_traffic_unit_bytes": {"type": "integer", "minimum": 256}
+      }
+    },
+    "availability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "weather_sensitive", "prediction_horizon_s"],
+      "properties": {
+        "mode": {"enum": ["continuous", "scheduled", "opportunistic"]},
+        "weather_sensitive": {"type": "boolean"},
+        "prediction_horizon_s": {"type": "integer", "minimum": 0},
+        "contact_plan_uri": {"type": "string", "format": "uri"}
+      }
+    },
+    "queue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["deferred_delivery", "durable_bytes", "backpressure"],
+      "properties": {
+        "deferred_delivery": {"type": "boolean"},
+        "durable_bytes": {"type": "integer", "minimum": 0},
+        "backpressure": {"enum": ["reject", "queue", "best_effort_drop"]}
+      }
+    },
+    "security": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["payload_treatment", "management_authentication"],
+      "properties": {
+        "payload_treatment": {"enum": ["transparent", "terminated", "transformed"]},
+        "management_authentication": {"type": "string", "minLength": 1},
+        "termination_disclosure": {"type": "string", "minLength": 1}
+      }
+    },
+    "telemetry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["capabilities", "freshness_max_s"],
+      "properties": {
+        "capabilities": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "link_state",
+              "tx_rate_mbps",
+              "rx_rate_mbps",
+              "queue_bytes",
+              "next_contact_utc",
+              "fault_codes"
+            ]
+          }
+        },
+        "freshness_max_s": {"type": "integer", "minimum": 1}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level", "source_uri", "as_of", "conditions"],
+      "properties": {
+        "level": {"enum": ["assumed", "marketed", "specified", "demonstrated", "qualified"]},
+        "source_uri": {"type": "string", "format": "uri"},
+        "as_of": {"type": "string", "format": "date"},
+        "conditions": {"type": "array", "items": {"type": "string"}},
+        "conformance_report_uri": {"type": "string", "format": "uri"}
+      }
+    },
+    "provider_extensions": {
+      "type": "object",
+      "propertyNames": {"pattern": "^[a-z0-9.-]+/"}
+    }
+  }
+}

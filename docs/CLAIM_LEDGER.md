@@ -37,6 +37,8 @@
 | C020 | Under the S007 assumptions, 19 of 243 placements are both resource-feasible and partition-resilient. | MODEL | S007 | Reproduced in CI; not a demand forecast |
 | C021 | A lunar replica always reduces cislunar backbone traffic. | — | S007 provides a counterexample when update traffic exceeds avoided user traffic | Rejected |
 | C022 | Service placement can trade replication bytes for lower interaction delay and partition survival. | MODEL | S007 Pareto frontier | Model only |
+| C023 | One machine-readable capability shape can describe the minimum GatewayCX fields for illustrative optical and RF bearers. | TEST | S008 reference profiles | Interface-shape test only |
+| C024 | A commercial bearer has passed GX-B1 qualification. | — | No provider profile or conformance report | Rejected |
 
 The ledger will grow when the evidence grows. A claim does not become stronger by appearing in the
 README.

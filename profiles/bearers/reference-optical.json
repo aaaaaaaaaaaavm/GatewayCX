@@ -1,0 +1,49 @@
+{
+  "availability": {
+    "contact_plan_uri": "urn:gatewaycx:contact-plan:reference-optical",
+    "mode": "scheduled",
+    "prediction_horizon_s": 86400,
+    "weather_sensitive": true
+  },
+  "bearer_id": "gx-reference-optical",
+  "endpoints": [
+    {"node_id": "earth-optical-site", "region": "earth"},
+    {"node_id": "lunar-relay", "region": "lunar_orbit"}
+  ],
+  "evidence": {
+    "as_of": "2026-08-27",
+    "conditions": ["Illustrative values only", "No hardware or provider represented"],
+    "level": "assumed",
+    "source_uri": "urn:gatewaycx:example:reference-optical"
+  },
+  "media": "optical",
+  "performance": {
+    "acquisition_max_s": 60,
+    "forward_capacity_mbps": 500,
+    "maximum_traffic_unit_bytes": 65536,
+    "one_way_latency_max_ms": 1400,
+    "one_way_latency_min_ms": 1200,
+    "return_capacity_mbps": 50
+  },
+  "queue": {
+    "backpressure": "queue",
+    "deferred_delivery": true,
+    "durable_bytes": 50000000000
+  },
+  "schema_version": "0.1",
+  "security": {
+    "management_authentication": "mutual TLS",
+    "payload_treatment": "transparent"
+  },
+  "telemetry": {
+    "capabilities": [
+      "link_state",
+      "tx_rate_mbps",
+      "rx_rate_mbps",
+      "queue_bytes",
+      "next_contact_utc",
+      "fault_codes"
+    ],
+    "freshness_max_s": 5
+  }
+}

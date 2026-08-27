@@ -12,4 +12,4 @@ separate prose run sheet is added only when method, interpretation or external d
 | S005 | IP/DTN boundary and recovery | MODEL + EMULATION | Planned |
 | S006 | Earth–Moon capacity and buffering envelope | DERIVATION | Implemented |
 | S007 | Constrained lunar service placement | MODEL | Implemented |
-| S008 | Multi-provider bearer conformance | TEST | Planned |
+| S008 | Vendor-neutral bearer profile conformance | TEST | Pre-draft schema and reference profiles implemented |

@@ -15,3 +15,4 @@
 - Added S004, a repeatable TLS 1.3/HTTP socket experiment using an unmodified curl client.
 - Added S006, a deterministic bandwidth-delay-product and outage-buffer envelope.
 - Added S007, an exhaustive service-placement trade study with a preserved Pareto frontier.
+- Added S008, a machine-readable GX-B1 bearer profile and semantic conformance checks.

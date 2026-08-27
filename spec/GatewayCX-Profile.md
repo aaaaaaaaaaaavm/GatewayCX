@@ -69,3 +69,6 @@ A GX-B1 adapter will eventually report at least:
 
 No performance tier is defined until link-budget and operator evidence support one.
 
+The first machine-readable pre-draft of this description is the
+[`GX-B1 bearer capability contract`](../docs/architecture/BEARER_CONTRACT.md). Its reference
+profiles test fields and semantics only; they are not terminal specifications.

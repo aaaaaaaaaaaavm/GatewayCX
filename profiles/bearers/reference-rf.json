@@ -1,0 +1,49 @@
+{
+  "availability": {
+    "contact_plan_uri": "urn:gatewaycx:contact-plan:reference-rf",
+    "mode": "scheduled",
+    "prediction_horizon_s": 86400,
+    "weather_sensitive": false
+  },
+  "bearer_id": "gx-reference-rf",
+  "endpoints": [
+    {"node_id": "earth-rf-site", "region": "earth"},
+    {"node_id": "lunar-relay", "region": "lunar_orbit"}
+  ],
+  "evidence": {
+    "as_of": "2026-08-27",
+    "conditions": ["Illustrative values only", "No hardware or provider represented"],
+    "level": "assumed",
+    "source_uri": "urn:gatewaycx:example:reference-rf"
+  },
+  "media": "rf",
+  "performance": {
+    "acquisition_max_s": 20,
+    "forward_capacity_mbps": 100,
+    "maximum_traffic_unit_bytes": 65536,
+    "one_way_latency_max_ms": 1400,
+    "one_way_latency_min_ms": 1200,
+    "return_capacity_mbps": 20
+  },
+  "queue": {
+    "backpressure": "queue",
+    "deferred_delivery": true,
+    "durable_bytes": 10000000000
+  },
+  "schema_version": "0.1",
+  "security": {
+    "management_authentication": "mutual TLS",
+    "payload_treatment": "transparent"
+  },
+  "telemetry": {
+    "capabilities": [
+      "link_state",
+      "tx_rate_mbps",
+      "rx_rate_mbps",
+      "queue_bytes",
+      "next_contact_utc",
+      "fault_codes"
+    ],
+    "freshness_max_s": 5
+  }
+}
