@@ -15,3 +15,4 @@ separate prose run sheet is added only when method, interpretation or external d
 | S008 | Vendor-neutral bearer profile conformance | TEST | Pre-draft schema and reference profiles implemented |
 | S009 | Contact-aware admission and anti-starvation | MODEL | Implemented with synthetic traffic |
 | S010 | RF continuity around optical handover | MODEL | Implemented; transport and hardware validation open |
+| S011 | Content-addressed A/B lunar updates | MODEL | Implemented; security and real payload transfer open |

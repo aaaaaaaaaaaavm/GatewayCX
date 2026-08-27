@@ -22,3 +22,5 @@
   tracks spanning automotive systems, multipath networking, software distribution and edge AI.
 - Added S010, an RF/optical make-before-break replay inspired by hybrid torque fill and multipath
   handover, with keepalive cost and correlation limits kept visible.
+- Added S011, a content-addressed interrupted-transfer and A/B activation model drawn from
+  automotive OTA, mobile rollback and container distribution.

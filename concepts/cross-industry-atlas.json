@@ -29,7 +29,7 @@
       "failure_mode": "Two slots double some storage and do not protect shared mutable data or incompatible schema migrations.",
       "scores": {"impact": 5, "architectural_leverage": 4, "testability": 5, "evidence_reuse": 5, "implementation_independence": 5, "speculation_risk": 1},
       "priority_score": 23,
-      "status": "selected"
+      "status": "studying"
     },
     {
       "id": "X003",
@@ -42,7 +42,7 @@
       "failure_mode": "Poor chunk boundaries or encrypted per-recipient objects can eliminate deduplication.",
       "scores": {"impact": 5, "architectural_leverage": 4, "testability": 5, "evidence_reuse": 5, "implementation_independence": 5, "speculation_risk": 1},
       "priority_score": 23,
-      "status": "selected"
+      "status": "studying"
     },
     {
       "id": "X004",

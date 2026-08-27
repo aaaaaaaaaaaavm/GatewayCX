@@ -45,6 +45,10 @@
 | C028 | Under S010 assumptions, warm RF standby reduces maximum interactive interruption from 20 seconds to 0.5 seconds. | MODEL | S010 | Reproduced in CI; no transport session model |
 | C029 | RF and optical bearers are operationally independent. | ASSUMPTION | S010 omits common power, platform and ground failures | Open |
 | C030 | Make-before-break reachability automatically preserves every application session. | — | Transport and application semantics differ | Rejected |
+| C031 | Under S011 inputs, content addressing reduces wire bytes from 1.03 GB with monolithic resume to 430 MB. | MODEL | S011 | Reproduced in CI; synthetic layers |
+| C032 | Under the S011 state machine, interruption before activation leaves slot A/v1 active. | MODEL | S011 | State model only |
+| C033 | A/B activation makes shared database migrations rollback-safe. | — | Shared mutable state is outside the slot model | Rejected |
+| C034 | S011 implements Uptane, OCI Distribution or secure boot. | — | It models selected semantics only | Rejected |
 
 The ledger will grow when the evidence grows. A claim does not become stronger by appearing in the
 README.

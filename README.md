@@ -84,7 +84,7 @@ python -m gatewaycx.cli run-all
 python -m unittest discover -s tests -v
 ```
 
-Four committed studies establish the starting point:
+The study register establishes the starting point:
 
 | Study | Question |
 |---|---|
@@ -97,6 +97,7 @@ Four committed studies establish the starting point:
 | S008 | Can optical and RF bearers expose one vendor-neutral capability contract? |
 | S009 | How does RF fallback protect safety traffic without silently starving science? |
 | S010 | What continuity is gained by keeping RF warm around an optical outage? |
+| S011 | Can lunar services update through interruption without overwriting the working version? |
 
 The current declared inputs produce:
 

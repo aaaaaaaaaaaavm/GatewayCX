@@ -1,0 +1,181 @@
+{
+  "activation": {
+    "failed_health_check": [
+      {
+        "active_slot": "A",
+        "active_version": "v1",
+        "event": "start",
+        "slot_b": "empty"
+      },
+      {
+        "active_slot": "A",
+        "active_version": "v1",
+        "event": "first_contact_interrupted",
+        "slot_b": "incomplete"
+      },
+      {
+        "active_slot": "A",
+        "active_version": "v1",
+        "event": "missing_chunks_resumed",
+        "slot_b": "complete"
+      },
+      {
+        "active_slot": "A",
+        "active_version": "v1",
+        "event": "manifest_and_chunks_verified",
+        "slot_b": "verified"
+      },
+      {
+        "active_slot": "B",
+        "active_version": "v2-unconfirmed",
+        "event": "slot_b_trial_boot",
+        "slot_b": "bootable"
+      },
+      {
+        "active_slot": "B",
+        "active_version": "v2-unconfirmed",
+        "event": "health_check_failed",
+        "slot_b": "unbootable"
+      },
+      {
+        "active_slot": "A",
+        "active_version": "v1",
+        "event": "automatic_rollback",
+        "slot_b": "unbootable"
+      }
+    ],
+    "required_pre_activation_checks": [
+      "trusted manifest signature",
+      "manifest version monotonicity",
+      "target hardware identity",
+      "metadata freshness or approved holdover",
+      "every chunk length and digest",
+      "complete compatible bundle"
+    ],
+    "successful_update": [
+      {
+        "active_slot": "A",
+        "active_version": "v1",
+        "event": "start",
+        "slot_b": "empty"
+      },
+      {
+        "active_slot": "A",
+        "active_version": "v1",
+        "event": "first_contact_interrupted",
+        "slot_b": "incomplete"
+      },
+      {
+        "active_slot": "A",
+        "active_version": "v1",
+        "event": "missing_chunks_resumed",
+        "slot_b": "complete"
+      },
+      {
+        "active_slot": "A",
+        "active_version": "v1",
+        "event": "manifest_and_chunks_verified",
+        "slot_b": "verified"
+      },
+      {
+        "active_slot": "B",
+        "active_version": "v2-unconfirmed",
+        "event": "slot_b_trial_boot",
+        "slot_b": "bootable"
+      },
+      {
+        "active_slot": "B",
+        "active_version": "v2",
+        "event": "health_check_passed",
+        "slot_b": "successful"
+      }
+    ]
+  },
+  "comparisons": {
+    "content_addressed_wire_bytes": 430000000,
+    "monolithic_range_resume_wire_bytes": 1030000000,
+    "monolithic_restart_wire_bytes": 1280000000,
+    "saved_vs_monolithic_range_resume_bytes": 600000000,
+    "saved_vs_monolithic_restart_bytes": 850000000
+  },
+  "content_addressed_transfer": {
+    "bytes_retransmitted_after_interruption": 0,
+    "first_contact_delivered_bytes": 250000000,
+    "missing_chunks": 43,
+    "reused_chunks": 60,
+    "second_contact_resumed_bytes": 180000000,
+    "wire_bytes": 430000000
+  },
+  "evidence_class": "MODEL",
+  "inputs": {
+    "chunk_bytes": 10000000,
+    "current_layers": [
+      {
+        "generation": "2026.08",
+        "name": "base_os",
+        "size_bytes": 600000000
+      },
+      {
+        "generation": "4.1",
+        "name": "runtime",
+        "size_bytes": 200000000
+      },
+      {
+        "generation": "7.0",
+        "name": "application",
+        "size_bytes": 150000000
+      },
+      {
+        "generation": "41",
+        "name": "configuration",
+        "size_bytes": 50000000
+      }
+    ],
+    "first_contact_bytes": 250000000,
+    "target_layers": [
+      {
+        "generation": "2026.08",
+        "name": "base_os",
+        "size_bytes": 600000000
+      },
+      {
+        "generation": "4.2",
+        "name": "runtime",
+        "size_bytes": 220000000
+      },
+      {
+        "generation": "7.1",
+        "name": "application",
+        "size_bytes": 160000000
+      },
+      {
+        "generation": "42",
+        "name": "configuration",
+        "size_bytes": 50000000
+      }
+    ]
+  },
+  "interpretation_boundary": [
+    "Layer sizes, versions and contact bytes are synthetic assumptions.",
+    "Digests identify model descriptors; no gigabyte payloads are generated or transferred.",
+    "The model does not implement Uptane, OCI distribution, signatures or secure boot.",
+    "A/B slots do not make shared databases or incompatible schema changes rollback-safe.",
+    "Chunk reuse depends on stable boundaries and is reduced by per-recipient encryption."
+  ],
+  "manifests": {
+    "current": {
+      "descriptor_count": 100,
+      "manifest_digest": "sha256:8e91eb2c44302e1682c4a65e339048fb96629a6e62032e5bce3814b22c43aa5b",
+      "total_bytes": 1000000000,
+      "version": "v1"
+    },
+    "target": {
+      "descriptor_count": 103,
+      "manifest_digest": "sha256:f6f1852e088220eb9a1c9a0568ae1a7329b7e28d4ab2a841d2f54d46dd657db0",
+      "total_bytes": 1030000000,
+      "version": "v2"
+    }
+  },
+  "study_id": "S011",
+  "title": "Interruption-safe content-addressed A/B update"
+}

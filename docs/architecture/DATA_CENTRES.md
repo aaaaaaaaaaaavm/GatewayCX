@@ -46,3 +46,7 @@ Every service must classify data as one of:
 
 "Put a cache on the Moon" is not a consistency model. Encrypted third-party content also cannot be
 silently cached by the network; the service provider must participate or publish reusable objects.
+
+[`S011`](../../studies/S011_CONTENT_ADDRESSED_AB_UPDATES.md) adds a first model for distributing
+immutable service layers through interrupted contacts and activating them without overwriting the
+running slot. Mutable application data remains a separate consistency problem.

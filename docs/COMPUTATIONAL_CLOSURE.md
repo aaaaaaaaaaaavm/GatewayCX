@@ -18,6 +18,8 @@ This register prevents a passing test suite from being mistaken for a closed arc
 | Can two vendors interoperate? | Two illustrative S008 documents only | Open | Two independent adapters and traffic exchange |
 | Can contact admission expose queueing and starvation? | S009 strict/bounded comparison | Closed for synthetic byte budgets | Packet scheduler, deadlines and authorised safety policy |
 | Does warm RF reduce a declared optical handover gap? | S010 event replay | Closed for the synthetic trace | Correlated failures, packets, transport migration and terminal tests |
+| Can related updates resume without retransmitting completed chunks? | S011 manifest/chunk model | Closed for synthetic descriptors | Real blobs, registry, signatures and disrupted transfer |
+| Does a failed service image roll back? | S011 A/B state machine | Closed as a state model | Secure boot, health criteria and shared-data recovery |
 | Is the system commercially viable? | None yet | Open | Demand, deployment and operating-cost model |
 
 CI closes consistency questions. It does not close physics, hardware, operations or markets.
