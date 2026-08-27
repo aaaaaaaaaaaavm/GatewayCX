@@ -13,3 +13,4 @@
 - Added a programme/prior-art map with explicit commercial evidence levels.
 - Decided to regionalise services before considering transport-splitting optimisations.
 - Added S004, a repeatable TLS 1.3/HTTP socket experiment using an unmodified curl client.
+- Added S006, a deterministic bandwidth-delay-product and outage-buffer envelope.

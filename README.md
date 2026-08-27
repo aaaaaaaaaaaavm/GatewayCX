@@ -92,6 +92,7 @@ Four committed studies establish the starting point:
 | S002 | How much latency and backbone traffic disappear when static and identity services are local? |
 | S003 | Which services remain available when the Earth–Moon backbone is down? |
 | S004 | Can an unmodified HTTPS client operate through a mean-distance delayed byte path? |
+| S006 | What in-flight window and outage storage are implied by advertised backbone capacity? |
 
 The current declared inputs produce:
 

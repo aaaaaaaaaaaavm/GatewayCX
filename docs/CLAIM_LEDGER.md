@@ -32,6 +32,8 @@
 | C015 | A performance-enhancing proxy is required for native lunar Internet service. | — | No comparative measurement | Rejected as a general requirement |
 | C016 | An unmodified curl client can complete verified TLS 1.3 and HTTP/1.1 through the mean-distance delayed-byte harness. | MEASUREMENT | S004 | Socket-level only; TCP setup not delayed |
 | C017 | Reusing the S004 HTTPS connection avoids a second TLS handshake. | MEASUREMENT | S004 `num_connects` and `time_appconnect` | Reproduced by CI at reduced delay |
+| C018 | A 622 Mbps flow at mean lunar RTT has a bandwidth-delay product of about 199.38 MB. | DERIVATION | S006 | Reproduced in CI |
+| C019 | Continuing to admit 100 Mbps for a one-day outage requires 1.08 TB before overhead and margin. | DERIVATION | S006 | Reproduced in CI |
 
 The ledger will grow when the evidence grows. A claim does not become stronger by appearing in the
 README.

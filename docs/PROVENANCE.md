@@ -29,6 +29,9 @@ It does not presently model orbital geometry, atmospheric optical availability, 
 packet loss, transport congestion control, queue discipline, forward-error correction, antenna
 pointing, protocol headers, compute time or user demand distributions.
 
+S006 adds cited closest/mean/farthest distance cases, bandwidth-delay-product arithmetic and
+constant-rate outage storage. It still does not contain an operational ephemeris or contact plan.
+
 ## Validation status
 
 The tests verify equations, parsing, invariants and relative scenario outcomes. They do not

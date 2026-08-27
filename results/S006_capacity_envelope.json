@@ -1,0 +1,246 @@
+{
+  "evidence_class": "DERIVATION",
+  "inputs": {
+    "distance_source": "NASA Space Place cited closest/farthest miles; NASA mean km",
+    "outage_seconds": [
+      600,
+      3600,
+      86400
+    ],
+    "speed_of_light_km_s": 299792.458,
+    "window_bytes": [
+      1048576,
+      16777216,
+      67108864,
+      268435456
+    ]
+  },
+  "interpretation_boundary": [
+    "The LLCD rates are historical demonstration rates, not an operational service offer.",
+    "Bandwidth-delay product is necessary in-flight state, not a complete transport design.",
+    "The outage calculation assumes admitted traffic continues at a constant stated rate.",
+    "Protocol overhead, loss, congestion, contacts and relay processing are excluded."
+  ],
+  "outage_buffers": [
+    {
+      "admitted_rate_mbps": 10.0,
+      "required_bytes": {
+        "3600": 4500000000,
+        "600": 750000000,
+        "86400": 108000000000
+      }
+    },
+    {
+      "admitted_rate_mbps": 100.0,
+      "required_bytes": {
+        "3600": 45000000000,
+        "600": 7500000000,
+        "86400": 1080000000000
+      }
+    },
+    {
+      "admitted_rate_mbps": 622.0,
+      "required_bytes": {
+        "3600": 279900000000,
+        "600": 46650000000,
+        "86400": 6717600000000
+      }
+    }
+  ],
+  "paths": [
+    {
+      "distance_case": "closest_cited",
+      "distance_km": 362599.687296,
+      "one_way_light_time_s": 1.209502,
+      "rates": [
+        {
+          "bandwidth_delay_product_bytes": 6047512,
+          "bandwidth_delay_product_megabytes": 6.047512,
+          "basis": "LLCD demonstrated uplink maximum",
+          "capacity_mbps": 20.0,
+          "minimum_full_rate_window_bytes": 6047512,
+          "one_gib_serialization_s": 429.49673,
+          "window_limited_throughput_mbps": {
+            "1048576": 3.467793,
+            "16777216": 20.0,
+            "268435456": 20.0,
+            "67108864": 20.0
+          }
+        },
+        {
+          "bandwidth_delay_product_bytes": 30237560,
+          "bandwidth_delay_product_megabytes": 30.237559,
+          "basis": "GatewayCX comparison rate",
+          "capacity_mbps": 100.0,
+          "minimum_full_rate_window_bytes": 30237560,
+          "one_gib_serialization_s": 85.899346,
+          "window_limited_throughput_mbps": {
+            "1048576": 3.467793,
+            "16777216": 55.48469,
+            "268435456": 100.0,
+            "67108864": 100.0
+          }
+        },
+        {
+          "bandwidth_delay_product_bytes": 188077618,
+          "bandwidth_delay_product_megabytes": 188.077618,
+          "basis": "LLCD demonstrated downlink maximum",
+          "capacity_mbps": 622.0,
+          "minimum_full_rate_window_bytes": 188077618,
+          "one_gib_serialization_s": 13.810184,
+          "window_limited_throughput_mbps": {
+            "1048576": 3.467793,
+            "16777216": 55.48469,
+            "268435456": 622.0,
+            "67108864": 221.938761
+          }
+        },
+        {
+          "bandwidth_delay_product_bytes": 302375592,
+          "bandwidth_delay_product_megabytes": 302.375592,
+          "basis": "GatewayCX comparison rate",
+          "capacity_mbps": 1000.0,
+          "minimum_full_rate_window_bytes": 302375592,
+          "one_gib_serialization_s": 8.589935,
+          "window_limited_throughput_mbps": {
+            "1048576": 3.467793,
+            "16777216": 55.48469,
+            "268435456": 887.755042,
+            "67108864": 221.938761
+          }
+        }
+      ],
+      "round_trip_light_time_s": 2.419005
+    },
+    {
+      "distance_case": "mean",
+      "distance_km": 384400.0,
+      "one_way_light_time_s": 1.28222,
+      "rates": [
+        {
+          "bandwidth_delay_product_bytes": 6411102,
+          "bandwidth_delay_product_megabytes": 6.411102,
+          "basis": "LLCD demonstrated uplink maximum",
+          "capacity_mbps": 20.0,
+          "minimum_full_rate_window_bytes": 6411102,
+          "one_gib_serialization_s": 429.49673,
+          "window_limited_throughput_mbps": {
+            "1048576": 3.271126,
+            "16777216": 20.0,
+            "268435456": 20.0,
+            "67108864": 20.0
+          }
+        },
+        {
+          "bandwidth_delay_product_bytes": 32055510,
+          "bandwidth_delay_product_megabytes": 32.05551,
+          "basis": "GatewayCX comparison rate",
+          "capacity_mbps": 100.0,
+          "minimum_full_rate_window_bytes": 32055510,
+          "one_gib_serialization_s": 85.899346,
+          "window_limited_throughput_mbps": {
+            "1048576": 3.271126,
+            "16777216": 52.338011,
+            "268435456": 100.0,
+            "67108864": 100.0
+          }
+        },
+        {
+          "bandwidth_delay_product_bytes": 199385270,
+          "bandwidth_delay_product_megabytes": 199.385269,
+          "basis": "LLCD demonstrated downlink maximum",
+          "capacity_mbps": 622.0,
+          "minimum_full_rate_window_bytes": 199385270,
+          "one_gib_serialization_s": 13.810184,
+          "window_limited_throughput_mbps": {
+            "1048576": 3.271126,
+            "16777216": 52.338011,
+            "268435456": 622.0,
+            "67108864": 209.352043
+          }
+        },
+        {
+          "bandwidth_delay_product_bytes": 320555096,
+          "bandwidth_delay_product_megabytes": 320.555095,
+          "basis": "GatewayCX comparison rate",
+          "capacity_mbps": 1000.0,
+          "minimum_full_rate_window_bytes": 320555096,
+          "one_gib_serialization_s": 8.589935,
+          "window_limited_throughput_mbps": {
+            "1048576": 3.271126,
+            "16777216": 52.338011,
+            "268435456": 837.40817,
+            "67108864": 209.352043
+          }
+        }
+      ],
+      "round_trip_light_time_s": 2.564441
+    },
+    {
+      "distance_case": "farthest_cited",
+      "distance_km": 405398.581632,
+      "one_way_light_time_s": 1.352264,
+      "rates": [
+        {
+          "bandwidth_delay_product_bytes": 6761321,
+          "bandwidth_delay_product_megabytes": 6.761321,
+          "basis": "LLCD demonstrated uplink maximum",
+          "capacity_mbps": 20.0,
+          "minimum_full_rate_window_bytes": 6761321,
+          "one_gib_serialization_s": 429.49673,
+          "window_limited_throughput_mbps": {
+            "1048576": 3.10169,
+            "16777216": 20.0,
+            "268435456": 20.0,
+            "67108864": 20.0
+          }
+        },
+        {
+          "bandwidth_delay_product_bytes": 33806603,
+          "bandwidth_delay_product_megabytes": 33.806603,
+          "basis": "GatewayCX comparison rate",
+          "capacity_mbps": 100.0,
+          "minimum_full_rate_window_bytes": 33806603,
+          "one_gib_serialization_s": 85.899346,
+          "window_limited_throughput_mbps": {
+            "1048576": 3.10169,
+            "16777216": 49.627039,
+            "268435456": 100.0,
+            "67108864": 100.0
+          }
+        },
+        {
+          "bandwidth_delay_product_bytes": 210277070,
+          "bandwidth_delay_product_megabytes": 210.277069,
+          "basis": "LLCD demonstrated downlink maximum",
+          "capacity_mbps": 622.0,
+          "minimum_full_rate_window_bytes": 210277070,
+          "one_gib_serialization_s": 13.810184,
+          "window_limited_throughput_mbps": {
+            "1048576": 3.10169,
+            "16777216": 49.627039,
+            "268435456": 622.0,
+            "67108864": 198.508157
+          }
+        },
+        {
+          "bandwidth_delay_product_bytes": 338066028,
+          "bandwidth_delay_product_megabytes": 338.066028,
+          "basis": "GatewayCX comparison rate",
+          "capacity_mbps": 1000.0,
+          "minimum_full_rate_window_bytes": 338066028,
+          "one_gib_serialization_s": 8.589935,
+          "window_limited_throughput_mbps": {
+            "1048576": 3.10169,
+            "16777216": 49.627039,
+            "268435456": 794.032627,
+            "67108864": 198.508157
+          }
+        }
+      ],
+      "round_trip_light_time_s": 2.704528
+    }
+  ],
+  "study_id": "S006",
+  "title": "Earth\u2013Moon bandwidth-delay and outage-buffer envelope"
+}
