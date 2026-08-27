@@ -28,3 +28,5 @@
   authority and rejects learned-policy superiority on the current synthetic trace.
 - Added S013, a microgrid-inspired islanding and black-start dependency model with single-local-
   fault injection.
+- Added S005, an IP/DTN interruption replay separating local durable acceptance, BP adapter
+  delivery and remote application completion across native, terminating and opaque modes.

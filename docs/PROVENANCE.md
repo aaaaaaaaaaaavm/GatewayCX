@@ -36,6 +36,10 @@ S007 uses synthetic request rates, object sizes, update volumes, compute units, 
 local RTTs. Its exhaustive enumeration is reproducible; its input case is not empirical demand or
 physical data-centre qualification.
 
+S005 is a deterministic semantic replay. It does not run TCP, TLS, BPv7 or BPSec. Its chunk ledger,
+reconnection cost, local persistence and application receipt are declared assumptions intended to
+expose acknowledgement and trust boundaries before a gateway implementation exists.
+
 ## Validation status
 
 The tests verify equations, parsing, invariants and relative scenario outcomes. They do not

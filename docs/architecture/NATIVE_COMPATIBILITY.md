@@ -28,6 +28,17 @@ visible to the application or user.
 
 This is resilient operation, not perfectly transparent native transport.
 
+[`S005`](../../studies/S005_IP_DTN_RECOVERY.md) separates three acknowledgements that an
+implementation must not collapse:
+
+| State | Meaning |
+|---|---|
+| `accepted_pending` | A local ingress has persisted the object under a declared retention policy. |
+| `bp_delivered` | The destination BP application agent or adapter has received the payload. |
+| `remote_completed` | The remote application returned an idempotency-bound processing receipt. |
+
+BP delivery is not application processing. Deduplication is not an exactly-once guarantee.
+
 ## Compatibility contract
 
 GatewayCX will not claim that every terrestrial application works well unchanged. It will measure
@@ -38,4 +49,3 @@ jitter sensitivity and partition tolerance. The target is:
 - ordinary service names and identities for regional instances;
 - optional delay-aware APIs for applications that want stronger disruption behaviour; and
 - honest failure or pending states where synchronous semantics cannot be preserved.
-

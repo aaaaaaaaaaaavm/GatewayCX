@@ -92,6 +92,7 @@ The study register establishes the starting point:
 | S002 | How much latency and backbone traffic disappear when static and identity services are local? |
 | S003 | Which services remain available when the Earth–Moon backbone is down? |
 | S004 | Can an unmodified HTTPS client operate through a mean-distance delayed byte path? |
+| S005 | What does an application, gateway and remote service know during interruption and recovery? |
 | S006 | What in-flight window and outage storage are implied by advertised backbone capacity? |
 | S007 | Where should services run under lunar storage, compute and partition constraints? |
 | S008 | Can optical and RF bearers expose one vendor-neutral capability contract? |

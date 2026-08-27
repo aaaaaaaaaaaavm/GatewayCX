@@ -9,7 +9,7 @@ separate prose run sheet is added only when method, interpretation or external d
 | S002 | Lunar edge-assisted service | MODEL | Implemented |
 | S003 | Lunar regional service during backbone partition | MODEL | Implemented |
 | S004 | Native HTTPS through delayed byte relay | MEASUREMENT | Socket method implemented; packet method pending |
-| S005 | IP/DTN boundary and recovery | MODEL + EMULATION | Planned |
+| S005 | IP/DTN boundary and recovery | MODEL | Semantic replay implemented; protocol emulation pending |
 | S006 | Earth–Moon capacity and buffering envelope | DERIVATION | Implemented |
 | S007 | Constrained lunar service placement | MODEL | Implemented |
 | S008 | Vendor-neutral bearer profile conformance | TEST | Pre-draft schema and reference profiles implemented |

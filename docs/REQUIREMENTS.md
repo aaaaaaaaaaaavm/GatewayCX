@@ -30,6 +30,8 @@ engineering inputs, not permission to choose a convenient number inside a model.
 | GX-INT-003 | Traffic policy shall distinguish life-safety, command/control, interactive, operational, science and background classes. | Policy and starvation test |
 | GX-INT-004 | Failure of the preferred bearer shall not silently discard traffic accepted for deferred delivery. | Bearer-loss fault injection |
 | GX-INT-005 | Continuous IP and deferred delivery modes shall have explicit transition semantics. | State-transition test |
+| GX-INT-006 | Local durable acceptance, destination-adapter delivery and remote application completion shall be exposed as distinct states. | Gateway API and fault-injection test |
+| GX-INT-007 | A deferred non-idempotent operation shall declare its idempotency and duplicate-effect policy without claiming exactly-once execution. | Duplicate-delivery conformance test |
 
 ## Core Internet services
 
@@ -56,4 +58,3 @@ engineering inputs, not permission to choose a convenient number inside a model.
 | GX-EVD-001 | Every numerical output shall identify its input, model version and evidence class. | CI audit |
 | GX-EVD-002 | Generated results shall be reproducible from committed source and inputs. | Clean-checkout CI run |
 | GX-EVD-003 | Model output shall not be labelled measurement, qualification or flight performance. | Claim-ledger review |
-

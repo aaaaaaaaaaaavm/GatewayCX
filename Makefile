@@ -1,7 +1,10 @@
-.PHONY: scenarios capacity placement admission handover updates preposition black-start conformance audit test verify
+.PHONY: scenarios disruption capacity placement admission handover updates preposition black-start conformance audit test verify
 
 scenarios:
 	python -m gatewaycx.cli run-all
+
+disruption:
+	python -m gatewaycx.disruption
 
 capacity:
 	python -m gatewaycx.capacity
@@ -33,5 +36,5 @@ test:
 audit:
 	python -m gatewaycx.cli audit
 
-verify: scenarios capacity placement admission handover updates preposition black-start conformance audit test
-	git diff --exit-code -- results/baseline.json results/S006_capacity_envelope.json results/S007_service_placement.json results/S009_admission.json results/S010_handover.json results/S011_update_delivery.json results/S012_prepositioning.json results/S013_black_start.json
+verify: scenarios disruption capacity placement admission handover updates preposition black-start conformance audit test
+	git diff --exit-code -- results/baseline.json results/S005_disruption.json results/S006_capacity_envelope.json results/S007_service_placement.json results/S009_admission.json results/S010_handover.json results/S011_update_delivery.json results/S012_prepositioning.json results/S013_black_start.json

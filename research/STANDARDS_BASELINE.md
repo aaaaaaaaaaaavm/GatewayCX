@@ -13,7 +13,7 @@ mapping. It does not mean the underlying protocol is being replaced.
 | Local addressing and forwarding | IPv6, RFC 8200 | Inherit | Standard reviewed; implementation not tested |
 | Secure web service | TLS 1.3, HTTP/2, HTTP/3 | Inherit and test | Standards identified; socket tests pending |
 | Continuous-path transport | TCP and QUIC | Inherit and measure | Satellite guidance exists; cislunar behaviour pending |
-| Disrupted delivery | BPv7, RFC 9171 and updates | Profile by traffic class | Standard reviewed; no GatewayCX node yet |
+| Disrupted delivery | BPv7, RFC 9171 and updates | Profile by traffic class | S005 semantic model; no GatewayCX node yet |
 | Bundle security | BPSec, RFC 9172 | Profile | Standard identified; threat model pending |
 | Scheduled routing | CCSDS SABR | Evaluate | Public recommended standard; no contact-plan trial yet |
 | Lunar service interoperability | LNIS V5 | Align | Current public specification reviewed at programme level |
@@ -59,13 +59,19 @@ LunaNet excludes Internet protocols or edge services.
 5. **Cellular access is one layer, not the entire Internet.** 3GPP NTN can inform lunar access and
    mobility while DNS, identity, service placement, backbone scheduling and disrupted delivery
    remain separate responsibilities.
+6. **Bundle delivery is not application completion.** RFC 9171 delivery reporting ends at the
+   destination Application Agent. GatewayCX needs a separate application receipt when processing
+   completion matters.
+7. **BPv7 custody cannot be inherited from BPv6 by vocabulary.** The BPv7 base protocol does not
+   retain BPv6's custody-transfer flag; any stronger retention contract must name its mechanism.
 
 ## Next conformance work
 
-- Run an unmodified HTTPS client through a repeatable user-space cislunar delay path.
+- Extend the existing unmodified HTTPS socket result to packet-level DNS, IPv6, HTTP/2 and HTTP/3.
 - Measure cold TLS, first byte and connection reuse separately.
 - Define a bearer capability document independent of optical or RF supplier telemetry.
 - Map each GatewayCX service interface to the exact LNIS V5 section before claiming alignment.
 - Trial two BPv7 implementations before choosing any implementation-specific gateway contract.
+- Implement the S005 acceptance, adapter-delivery and application-receipt states across that trial.
 
 All source links are recorded in [`references/SOURCES.md`](../references/SOURCES.md).

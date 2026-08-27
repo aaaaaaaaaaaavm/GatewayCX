@@ -9,7 +9,7 @@ This register prevents a passing test suite from being mistaken for a closed arc
 | Does local placement remove declared remote dependencies? | S001/S002 comparison | Closed inside this model | Trace-driven application experiment |
 | Can local work complete during declared backbone loss? | S003 | Closed inside this state model | Fault-injected distributed system |
 | Do unmodified Internet protocols behave as assumed? | S004 TLS 1.3/HTTP 1.1 socket test | Partially closed for one client and method | DNS, IPv6, HTTP/2, HTTP/3, packet method and captures |
-| Where should IP terminate and DTN begin? | ADR-0002 | Open decision | Gateway prototypes and security analysis |
+| Where should IP terminate and DTN begin? | ADR-0002 + S005 semantic replay | Partially closed as an explicit contract | Gateway prototypes, BPv7 interoperability and security analysis |
 | What state is required to use a declared capacity? | S006 BDP and outage derivation | Closed for stated arithmetic inputs | Transport implementation and queue measurements |
 | What backbone capacity is available? | Scenario assumption | Open | Link budgets, contact geometry and terminal data |
 | Where should declared services be placed? | S007 exhaustive bounded search | Closed for stated abstract inputs | Trace-derived demand and physical resource models |

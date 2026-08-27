@@ -57,6 +57,12 @@
 | C040 | Under the S013 islandable graph, all seven essential services start without Earth. | MODEL | S013 | Logical reachability only |
 | C041 | Under S013 single faults, loss of holdover time has the largest dependency impact. | MODEL | S013 | No oscillator or holdover-error model |
 | C042 | S013 demonstrates electrical, hardware or secure-boot black-start capability. | — | It models logical service dependencies only | Rejected |
+| C043 | Under S005 inputs, native HTTPS retry sends 14 MB while the durable object modes send 10 MB. | MODEL | S005 | Reproduced in CI; persistent chunk ledger assumed |
+| C044 | BPv7 delivery status means delivery to the destination Application Agent, not proof that the application processed the payload. | STANDARD | RFC 9171 §5.7 | Source reviewed |
+| C045 | BPv7 retains BPv6-style native custody transfer. | — | RFC 9171 moves custody transfer outside the base protocol | Rejected |
+| C046 | A terminating deferred proxy preserves the original end-to-end TLS boundary. | — | TLS terminates at the proxy | Rejected |
+| C047 | Idempotency and deduplication prove exactly-once execution. | — | Duplicate effects can be suppressed without proving exactly-once delivery or execution | Rejected |
+| C048 | An arbitrary synchronous HTTPS session survives an indefinite cislunar partition transparently. | — | Application-visible semantics must change or the session fails | Rejected |
 
 The ledger will grow when the evidence grows. A claim does not become stronger by appearing in the
 README.

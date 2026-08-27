@@ -1,0 +1,230 @@
+{
+  "comparison": {
+    "native_minus_durable_remote_completion_s": 7.991102,
+    "native_minus_durable_wire_bytes": 4000000,
+    "opaque_object_preserves_payload_confidentiality_from_application_to_application": true,
+    "ordinary_https_preserves_application_tls_end_to_end": true,
+    "terminating_proxy_preserves_application_tls_end_to_end": false
+  },
+  "evidence_class": "MODEL",
+  "inputs": {
+    "bytes_before_outage": 4000000,
+    "capacity_mbps": 20.0,
+    "chunk_ledger_assumption": "receiver inventory survives the outage",
+    "distance_km": 384400.0,
+    "local_acceptance_s": 0.02,
+    "native_reconnect_round_trips": 3,
+    "object_bytes": 10000000,
+    "outage_s": 120.0,
+    "remote_processing_s": 0.02
+  },
+  "interpretation_boundary": [
+    "The replay is deterministic and does not execute TCP, TLS, BPv7 or BPSec software.",
+    "The 4 MB receiver chunk ledger is an application/object-layer assumption, not a BPv7 guarantee.",
+    "The reconnect cost is a declared three-RTT approximation and not a packet trace.",
+    "Status-report loss, bundle expiration, storage depletion and route selection are not simulated.",
+    "Opaque payload confidentiality requires application-managed object encryption and key distribution.",
+    "Remote processing receipts and idempotency semantics are application contracts outside BPv7."
+  ],
+  "modes": {
+    "native_https_retry": {
+      "acknowledgement": {
+        "final_http_response_is_application_defined_completion": true,
+        "local_durable_acceptance": false,
+        "transport_ack_means_remote_application_processed": false
+      },
+      "client_contract": "ordinary end-to-end HTTPS",
+      "delivery_contract": "synchronous; retry belongs to the application or user",
+      "events": [
+        {
+          "at_s": 0.0,
+          "event": "https_request_started",
+          "user_state": "waiting"
+        },
+        {
+          "at_s": 1.6,
+          "event": "path_lost_after_partial_transfer",
+          "user_state": "failed_or_timed_out"
+        },
+        {
+          "at_s": 121.6,
+          "event": "path_restored",
+          "user_state": "retry_required"
+        },
+        {
+          "at_s": 133.293322,
+          "event": "retry_http_response_received",
+          "user_state": "remote_completion_known"
+        }
+      ],
+      "mode": "native_https_retry",
+      "mutation_retry": {
+        "duplicate_effect_possible_without_idempotency_key": true,
+        "exactly_once_claimed": false,
+        "outcome_after_lost_response": "unknown"
+      },
+      "security": {
+        "application_tls_endpoints": [
+          "lunar_client",
+          "earth_service"
+        ],
+        "gateway_can_read_application_plaintext": false,
+        "payload_object_encryption_required": false
+      },
+      "timing": {
+        "completion_s": 133.293322,
+        "reconnect_round_trips": 3
+      },
+      "traffic": {
+        "durable_bytes_retained_across_outage": 0,
+        "retransmitted_bytes": 4000000,
+        "wire_bytes": 14000000
+      }
+    },
+    "opaque_deferred_object": {
+      "acknowledgement": {
+        "application_receipt_required_for_remote_completion": true,
+        "bp_delivery_report_means_remote_application_processed": false,
+        "local_acceptance_means_remote_completion": false,
+        "local_durable_acceptance": true,
+        "status_reports_assumed_always_available": false
+      },
+      "client_contract": "delay-aware object submission over ordinary local HTTPS",
+      "delivery_contract": "durable local acceptance followed by asynchronous remote completion",
+      "events": [
+        {
+          "at_s": 0.02,
+          "event": "object_persisted_and_accepted",
+          "user_state": "accepted_pending"
+        },
+        {
+          "at_s": 1.6,
+          "event": "path_lost_with_chunk_ledger_persisted",
+          "user_state": "accepted_pending"
+        },
+        {
+          "at_s": 121.6,
+          "event": "path_restored_and_missing_chunks_resumed",
+          "user_state": "accepted_pending"
+        },
+        {
+          "at_s": 125.28222,
+          "event": "bp_payload_delivered_to_remote_adapter",
+          "user_state": "delivered_not_yet_processed"
+        },
+        {
+          "at_s": 125.30222,
+          "event": "remote_application_receipt_recorded",
+          "user_state": "remote_completion_known"
+        }
+      ],
+      "mode": "opaque_deferred_object",
+      "mutation_retry": {
+        "duplicate_application_effect_suppressed_by_model": true,
+        "duplicate_transport_delivery_possible": true,
+        "exactly_once_claimed": false,
+        "idempotency_key_required": true
+      },
+      "security": {
+        "application_tls_endpoints": [
+          "lunar_client",
+          "lunar_ingress"
+        ],
+        "boundary": "application object remains encrypted across storage and DTN forwarding",
+        "bpsec_role": "candidate integrity/confidentiality protection between BP security endpoints",
+        "gateway_can_read_application_plaintext": false,
+        "payload_object_encryption_required": true
+      },
+      "timing": {
+        "local_acceptance_s": 0.02,
+        "remote_completion_s": 125.30222
+      },
+      "traffic": {
+        "durable_bytes_retained_across_outage": 4000000,
+        "retransmitted_bytes": 0,
+        "wire_bytes": 10000000
+      }
+    },
+    "terminating_deferred_proxy": {
+      "acknowledgement": {
+        "application_receipt_required_for_remote_completion": true,
+        "bp_delivery_report_means_remote_application_processed": false,
+        "local_acceptance_means_remote_completion": false,
+        "local_durable_acceptance": true,
+        "status_reports_assumed_always_available": false
+      },
+      "client_contract": "service-owner terminating HTTPS proxy with explicit pending response",
+      "delivery_contract": "durable local acceptance followed by asynchronous remote completion",
+      "events": [
+        {
+          "at_s": 0.02,
+          "event": "object_persisted_and_accepted",
+          "user_state": "accepted_pending"
+        },
+        {
+          "at_s": 1.6,
+          "event": "path_lost_with_chunk_ledger_persisted",
+          "user_state": "accepted_pending"
+        },
+        {
+          "at_s": 121.6,
+          "event": "path_restored_and_missing_chunks_resumed",
+          "user_state": "accepted_pending"
+        },
+        {
+          "at_s": 125.28222,
+          "event": "bp_payload_delivered_to_remote_adapter",
+          "user_state": "delivered_not_yet_processed"
+        },
+        {
+          "at_s": 125.30222,
+          "event": "remote_application_receipt_recorded",
+          "user_state": "remote_completion_known"
+        }
+      ],
+      "mode": "terminating_deferred_proxy",
+      "mutation_retry": {
+        "duplicate_application_effect_suppressed_by_model": true,
+        "duplicate_transport_delivery_possible": true,
+        "exactly_once_claimed": false,
+        "idempotency_key_required": true
+      },
+      "security": {
+        "application_tls_endpoints": [
+          "lunar_client",
+          "lunar_proxy"
+        ],
+        "boundary": "TLS terminates at the approved lunar proxy; a new protected leg begins",
+        "bpsec_role": "candidate integrity/confidentiality protection between BP security endpoints",
+        "gateway_can_read_application_plaintext": true,
+        "payload_object_encryption_required": false
+      },
+      "timing": {
+        "local_acceptance_s": 0.02,
+        "remote_completion_s": 125.30222
+      },
+      "traffic": {
+        "durable_bytes_retained_across_outage": 4000000,
+        "retransmitted_bytes": 0,
+        "wire_bytes": 10000000
+      }
+    }
+  },
+  "rejected_claims": [
+    "An arbitrary synchronous HTTPS connection survives an indefinite partition transparently.",
+    "A transport acknowledgement proves that the remote application processed a request.",
+    "A BP delivery status report proves that the remote application processed a payload.",
+    "BPv7 provides native BPv6-style custody transfer semantics.",
+    "Deduplication and idempotency provide exactly-once execution.",
+    "A terminating proxy preserves the original end-to-end TLS boundary."
+  ],
+  "semantic_contract": {
+    "accepted_pending": "persisted locally under a declared retention policy",
+    "bp_delivered": "payload delivered to the destination BP application agent/adapter",
+    "expired": "accepted object reached its lifetime without remote completion",
+    "failed": "not accepted durably and no remote completion is asserted",
+    "remote_completed": "remote application returned an idempotency-bound receipt"
+  },
+  "study_id": "S005",
+  "title": "IP/DTN interruption and recovery semantics"
+}

@@ -33,6 +33,7 @@ The roadmap is gated by evidence, not file count. A phase closes when its exit c
 - Evaluate BPv7/DTN gateways, contact-plan routing, queues and custody policy.
 - Preserve end-to-end security or state explicitly where a gateway terminates it.
 - Model optical weather outages and RF fallback.
+- Implement the S005 `accepted_pending`, `bp_delivered` and `remote_completed` state contract.
 
 **Exit:** a reference interconnect survives scheduled and unscheduled link loss without corrupting
 or silently dropping committed traffic classes.
@@ -86,4 +87,3 @@ Each transition requires an owner, partner data, cost model, safety case and reg
 
 Generalise the regional architecture for orbital settlements, Mars and deep-space missions.
 Earth–Moon is the first deployment problem, not the last boundary.
-
