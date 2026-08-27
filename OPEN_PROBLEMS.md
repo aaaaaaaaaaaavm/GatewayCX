@@ -21,3 +21,4 @@ close it.
 | P14 | Lunar software and data update safety | S011 descriptor and A/B state model | Signed registry, secure boot, schema migration and fault-injected deployment |
 | P15 | Predictive cache value | S012 synthetic admission trace | Held-out lunar demand, calibrated candidate, drift and contact-aware replay |
 | P16 | Lunar black start | S013 logical graph and single faults | Time/trust holdover, electrical start, real service graph and reconnection tests |
+| P17 | Federated diagnostics | S014 GX-O1 generated reference trace | Independent adapters, authenticated event transport, clock model and observed fault replay |

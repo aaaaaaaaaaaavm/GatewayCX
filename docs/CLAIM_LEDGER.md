@@ -63,6 +63,10 @@
 | C046 | A terminating deferred proxy preserves the original end-to-end TLS boundary. | — | TLS terminates at the proxy | Rejected |
 | C047 | Idempotency and deduplication prove exactly-once execution. | — | Duplicate effects can be suppressed without proving exactly-once delivery or execution | Rejected |
 | C048 | An arbitrary synchronous HTTPS session survives an indefinite cislunar partition transparently. | — | Application-visible semantics must change or the session fails | Rejected |
+| C049 | The S014 reference trace passes the GX-O1 v0.1 semantic validator. | TEST | S014 | Reproduced in CI; one generated trace |
+| C050 | At S014 contact loss, the portable freeze frame records 6 MB queued, zero transmit rate and no payload/user content. | MODEL + TEST | S005 offsets + GX-O1 validator | Synthetic trace only |
+| C051 | A portable GX-O1 fault code proves a hardware root cause. | — | Portable codes classify traffic consequences, not internal physics | Rejected |
+| C052 | GX-O1 replaces provider-specific diagnostic telemetry. | — | Provider extensions remain necessary | Rejected |
 
 The ledger will grow when the evidence grows. A claim does not become stronger by appearing in the
 README.

@@ -50,6 +50,8 @@ engineering inputs, not permission to choose a convenient number inside a model.
 | GX-OPS-002 | Capacity reservation, accounting and service-level data shall use open interfaces. | Schema and implementation conformance |
 | GX-OPS-003 | No conformance requirement shall name one commercial vendor as its only implementation. | Specification review |
 | GX-OPS-004 | Safety-priority policy shall prevent unbounded starvation of lower classes outside declared emergencies. | Load and policy test |
+| GX-OPS-005 | Provider boundaries shall expose portable fault codes and a minimum pre/post-transition freeze frame. | GX-O1 conformance and cross-adapter replay |
+| GX-OPS-006 | Portable diagnostic records shall correlate traffic state without payload plaintext or direct user identifiers. | Schema inspection and privacy-negative tests |
 
 ## Evidence requirements
 

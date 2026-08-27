@@ -101,6 +101,7 @@ The study register establishes the starting point:
 | S011 | Can lunar services update through interruption without overwriting the working version? |
 | S012 | Can forecast-driven prepositioning beat a simple cache baseline without risking essential content? |
 | S013 | Can the lunar network restart its essential services without Earth? |
+| S014 | Can one provider-neutral flight record reconstruct an interrupted delivery without payload access? |
 
 The current declared inputs produce:
 
@@ -133,6 +134,8 @@ deterministic model.
   standards are inherited, profiled or still untested.
 - [`docs/architecture/BEARER_CONTRACT.md`](docs/architecture/BEARER_CONTRACT.md) defines the first
   machine-readable GX-B1 hardware/service seam.
+- [`docs/architecture/OPERATIONS_DIAGNOSTICS.md`](docs/architecture/OPERATIONS_DIAGNOSTICS.md)
+  defines the GX-O1 portable fault-code and network flight-recorder seam.
 - [`research/TRAFFIC_AND_DSN_BOUNDARY.md`](research/TRAFFIC_AND_DSN_BOUNDARY.md) separates a lunar
   regional Internet from the already oversubscribed deep-space antenna network.
 - [`docs/INNOVATION_METHOD.md`](docs/INNOVATION_METHOD.md) turns cross-industry inspiration into

@@ -22,6 +22,7 @@ This register prevents a passing test suite from being mistaken for a closed arc
 | Does a failed service image roll back? | S011 A/B state machine | Closed as a state model | Secure boot, health criteria and shared-data recovery |
 | Does predictive prepositioning beat a simple baseline? | S012 five-policy comparison | Not established | Held-out time series, drift, contact uncertainty and a trained candidate |
 | Can essential lunar network services start without Earth? | S013 dependency execution | Closed for the assumed graph | Real services, time/trust holdover, power and fault-injected deployment |
+| Can one portable trace preserve S005 acknowledgement and bearer transitions? | S014 GX-O1 validator | Closed for the generated trace | Independent optical/RF adapters, authenticated collection and observed faults |
 | Is the system commercially viable? | None yet | Open | Demand, deployment and operating-cost model |
 
 CI closes consistency questions. It does not close physics, hardware, operations or markets.

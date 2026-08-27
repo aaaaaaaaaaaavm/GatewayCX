@@ -30,3 +30,5 @@
   fault injection.
 - Added S005, an IP/DTN interruption replay separating local durable acceptance, BP adapter
   delivery and remote application completion across native, terminating and opaque modes.
+- Added S014 and GX-O1, a provider-neutral network flight recorder with stable fault classes,
+  privacy-negative checks and S005 acknowledgement-order validation.

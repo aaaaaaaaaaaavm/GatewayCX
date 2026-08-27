@@ -1,0 +1,154 @@
+{
+  "events": [
+    {
+      "event_id": "evt-001",
+      "event_type": "delivery_status",
+      "fault_code": "GX.QUEUE.ACCEPTED_PENDING",
+      "freeze_frame": {
+        "bearer_id": "gx-reference-optical",
+        "link_state": "available",
+        "missing_bytes": 10000000,
+        "queue_bytes": 10000000,
+        "tx_rate_mbps": 20.0
+      },
+      "observed_offset_ms": 20,
+      "privacy": {
+        "payload_plaintext_included": false,
+        "user_identifier_included": false
+      },
+      "severity": "info",
+      "source": {
+        "component": "durable-ingress",
+        "node_id": "gx-reference-lunar-surface",
+        "region": "lunar_surface"
+      },
+      "state": {
+        "current": "accepted_pending",
+        "previous": "submitted"
+      }
+    },
+    {
+      "event_id": "evt-002",
+      "event_type": "fault_asserted",
+      "fault_code": "GX.BEARER.CONTACT_LOST",
+      "freeze_frame": {
+        "bearer_id": "gx-reference-optical",
+        "link_state": "unavailable",
+        "missing_bytes": 6000000,
+        "queue_bytes": 6000000,
+        "tx_rate_mbps": 0.0
+      },
+      "observed_offset_ms": 1600,
+      "privacy": {
+        "payload_plaintext_included": false,
+        "user_identifier_included": false
+      },
+      "severity": "error",
+      "source": {
+        "component": "bearer-adapter",
+        "node_id": "gx-reference-lunar-surface",
+        "region": "lunar_surface"
+      },
+      "state": {
+        "current": "unavailable",
+        "previous": "available"
+      }
+    },
+    {
+      "event_id": "evt-003",
+      "event_type": "fault_cleared",
+      "fault_code": "GX.BEARER.CONTACT_RESTORED",
+      "freeze_frame": {
+        "bearer_id": "gx-reference-optical",
+        "link_state": "available",
+        "missing_bytes": 6000000,
+        "queue_bytes": 6000000,
+        "tx_rate_mbps": 20.0
+      },
+      "observed_offset_ms": 121600,
+      "privacy": {
+        "payload_plaintext_included": false,
+        "user_identifier_included": false
+      },
+      "severity": "info",
+      "source": {
+        "component": "bearer-adapter",
+        "node_id": "gx-reference-lunar-surface",
+        "region": "lunar_surface"
+      },
+      "state": {
+        "current": "available",
+        "previous": "unavailable"
+      }
+    },
+    {
+      "event_id": "evt-004",
+      "event_type": "delivery_status",
+      "fault_code": "GX.DELIVERY.ADAPTER_DELIVERED",
+      "freeze_frame": {
+        "bearer_id": "gx-reference-optical",
+        "link_state": "available",
+        "missing_bytes": 0,
+        "queue_bytes": 0,
+        "tx_rate_mbps": 20.0
+      },
+      "observed_offset_ms": 125282,
+      "privacy": {
+        "payload_plaintext_included": false,
+        "user_identifier_included": false
+      },
+      "severity": "info",
+      "source": {
+        "component": "delivery-adapter",
+        "node_id": "gx-reference-earth",
+        "region": "earth"
+      },
+      "state": {
+        "current": "bp_delivered",
+        "previous": "accepted_pending"
+      }
+    },
+    {
+      "event_id": "evt-005",
+      "event_type": "delivery_status",
+      "fault_code": "GX.DELIVERY.REMOTE_COMPLETED",
+      "freeze_frame": {
+        "bearer_id": "gx-reference-optical",
+        "link_state": "available",
+        "missing_bytes": 0,
+        "queue_bytes": 0,
+        "tx_rate_mbps": 20.0
+      },
+      "observed_offset_ms": 125302,
+      "privacy": {
+        "payload_plaintext_included": false,
+        "user_identifier_included": false
+      },
+      "severity": "info",
+      "source": {
+        "component": "application-receipt",
+        "node_id": "gx-reference-earth",
+        "region": "earth"
+      },
+      "state": {
+        "current": "remote_completed",
+        "previous": "bp_delivered"
+      }
+    }
+  ],
+  "interpretation_boundary": [
+    "The trace is generated from S005 synthetic offsets and does not contain observed telemetry.",
+    "Freeze-frame fields are the portable minimum, not a replacement for provider diagnostics.",
+    "The trace identifier correlates events but contains no user or payload identity."
+  ],
+  "profile_id": "GX-O1",
+  "schema_version": "0.1",
+  "time_basis": "synthetic_replay_offset",
+  "trace_id": "gx-s005-opaque-001",
+  "traffic_unit": {
+    "payload_bytes": 10000000,
+    "payload_content_recorded": false,
+    "traffic_class": "GX-T3-operational",
+    "traffic_unit_id": "urn:gatewaycx:synthetic:s005-object-001"
+  }
+}

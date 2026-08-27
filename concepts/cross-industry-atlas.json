@@ -90,11 +90,11 @@
       "mechanism": "Use stable fault codes, freeze-frame state and bounded event history across replaceable subsystems.",
       "gatewaycx_transfer": "Extend GX-O1 with portable fault codes and pre/post-contact evidence that survives provider boundaries.",
       "falsifiable_hypothesis": "A common diagnostic record reduces time to isolate bearer, gateway and service faults without payload access.",
-      "first_experiment": "Replay identical fault cases through optical and RF reference adapters.",
+      "first_experiment": "S014 GX-O1 registry, freeze-frame trace and semantic validator.",
       "failure_mode": "A lowest-common-denominator schema can erase the provider detail needed for root cause.",
       "scores": {"impact": 4, "architectural_leverage": 4, "testability": 5, "evidence_reuse": 5, "implementation_independence": 5, "speculation_risk": 1},
       "priority_score": 22,
-      "status": "candidate"
+      "status": "studying"
     },
     {
       "id": "X008",

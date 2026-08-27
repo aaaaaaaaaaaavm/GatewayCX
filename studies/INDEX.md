@@ -18,3 +18,4 @@ separate prose run sheet is added only when method, interpretation or external d
 | S011 | Content-addressed A/B lunar updates | MODEL | Implemented; security and real payload transfer open |
 | S012 | Predictive prepositioning with forecast error cost | MODEL | Implemented; learned-policy admission not established |
 | S013 | Lunar network islanding and black start | MODEL | Implemented as logical dependency and single-fault study |
+| S014 | GX-O1 network flight recorder | TEST | Reference registry, trace and semantic validator implemented |

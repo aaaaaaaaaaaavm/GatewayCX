@@ -35,6 +35,10 @@ jobs:
         run: python -m gatewaycx.preposition
       - name: Reproduce deterministic lunar black start
         run: python -m gatewaycx.black_start
+      - name: Reproduce and validate GX-O1 diagnostic trace
+        run: |
+          python -m gatewaycx.diagnostics
+          python -m gatewaycx.diagnostics --validate results/S014_diagnostic_trace.json
       - name: Check bearer capability profiles
         run: python -m gatewaycx.conformance profiles/bearers/*.json
       - name: Run tests
@@ -42,4 +46,4 @@ jobs:
       - name: Audit engineering record
         run: python -m gatewaycx.cli audit
       - name: Check generated record
-        run: git diff --exit-code -- results/baseline.json results/S005_disruption.json results/S006_capacity_envelope.json results/S007_service_placement.json results/S009_admission.json results/S010_handover.json results/S011_update_delivery.json results/S012_prepositioning.json results/S013_black_start.json
+        run: git diff --exit-code -- results/baseline.json results/S005_disruption.json results/S006_capacity_envelope.json results/S007_service_placement.json results/S009_admission.json results/S010_handover.json results/S011_update_delivery.json results/S012_prepositioning.json results/S013_black_start.json results/S014_diagnostic_trace.json profiles/diagnostics/gx-o1-fault-codes.json

@@ -1,0 +1,59 @@
+{
+  "boundary": [
+    "Codes identify portable event classes, not vendor root causes.",
+    "Provider detail may be attached separately without changing the portable code.",
+    "A terminal delivery state is not evidence of physical link or hardware qualification."
+  ],
+  "codes": [
+    {
+      "category": "bearer",
+      "code": "GX.BEARER.CONTACT_LOST",
+      "description": "The selected bearer became unavailable during an active transfer.",
+      "terminal": false
+    },
+    {
+      "category": "bearer",
+      "code": "GX.BEARER.CONTACT_RESTORED",
+      "description": "The selected bearer returned to an available state.",
+      "terminal": false
+    },
+    {
+      "category": "delivery",
+      "code": "GX.DELIVERY.ADAPTER_DELIVERED",
+      "description": "The destination delivery adapter received the payload.",
+      "terminal": false
+    },
+    {
+      "category": "delivery",
+      "code": "GX.DELIVERY.EXPIRED",
+      "description": "The traffic unit lifetime ended without remote application completion.",
+      "terminal": true
+    },
+    {
+      "category": "delivery",
+      "code": "GX.DELIVERY.REMOTE_COMPLETED",
+      "description": "The remote application returned an idempotency-bound processing receipt.",
+      "terminal": true
+    },
+    {
+      "category": "queue",
+      "code": "GX.QUEUE.ACCEPTED_PENDING",
+      "description": "A traffic unit was persisted locally and remains pending remote completion.",
+      "terminal": false
+    },
+    {
+      "category": "security",
+      "code": "GX.SECURITY.RECEIPT_INVALID",
+      "description": "A remote application receipt failed identity, integrity or binding checks.",
+      "terminal": false
+    },
+    {
+      "category": "storage",
+      "code": "GX.STORAGE.DEPLETED",
+      "description": "Durable storage could not retain another accepted traffic unit.",
+      "terminal": false
+    }
+  ],
+  "profile_id": "GX-O1",
+  "schema_version": "0.1"
+}

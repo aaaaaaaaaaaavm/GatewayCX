@@ -54,6 +54,10 @@ Observes the system and coordinates multiple providers. OSS/BSS, service assuran
 management, capacity reservation, settlement and policy live here. They make the network operable
 and commercial; they do not define the user's Internet protocol.
 
+[`GX-O1`](OPERATIONS_DIAGNOSTICS.md) defines the first provider-neutral diagnostic seam: portable
+fault classes, correlated state transitions and a minimum freeze frame without application
+plaintext.
+
 ## Operating modes
 
 | Mode | Backbone state | Expected behaviour |
