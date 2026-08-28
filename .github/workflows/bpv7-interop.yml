@@ -27,7 +27,7 @@ jobs:
       - name: Install GatewayCX
         run: python -m pip install -e .
       - name: Build pinned Rust BPv7 implementation
-        run: cargo install --git https://github.com/dtn7/bp7-rs.git --rev e3289bca2aed8f86585790d7aebd340d7bde7289 --package bp7 --bin bp7 --root /tmp/gx-rust
+        run: cargo install --git https://github.com/dtn7/bp7-rs.git --rev e3289bca2aed8f86585790d7aebd340d7bde7289 bp7 --bin bp7 --root /tmp/gx-rust
       - name: Build pinned Go BPv7 bridge
         run: |
           mkdir -p /tmp/gx-go
