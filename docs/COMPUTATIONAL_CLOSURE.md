@@ -33,5 +33,7 @@ This register prevents a passing test suite from being mistaken for a closed arc
 | Can the service plane call GX-A1 without sharing the adapter process? | S018 transport + S019 authentication + S021 standalone server | Closed for local authenticated software and bounded separate code paths | Stable standard, external adapter, confidential transport and terminal SDK |
 | Can the local process boundary reject unauthorised modification and replay? | S019 HMAC and durable-sequence probe | Closed for one pre-shared-key client and clean restart | Confidential transport, PKI/key lifecycle, roles, independent adapter and abrupt-fault test |
 | Is the system commercially viable? | None yet | Open | Demand, deployment and operating-cost model |
+| Can lunar demand be isolated from a deep-space pool? | S023 synthetic model | Closed as load-isolation arithmetic | Actual schedules, constraints, capacity, costs and authority |
+| Do optical ISLs remove Earth egress bottlenecks? | S023 minimum-stage pipeline | No | Link budgets, weather diversity and measured throughput |
 
 CI closes consistency questions. It does not close physics, hardware, operations or markets.

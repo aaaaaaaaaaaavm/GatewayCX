@@ -48,5 +48,6 @@
   binding without importing GatewayCX runtime code while keeping external validation open.
 - Added S022, a two-body lunar relay-shell envelope that rejects a simple circular lunar-GSO
   baseline and quantifies the first-order coverage-versus-range trade without selecting an orbit.
+- Added S023, separating synthetic lunar/deep-space pools and exposing the Earth-egress bottleneck behind optical ISLs.
 - Added deterministic SVG figures generated from the architecture and committed results, including
   the S019 trust and replay boundary.

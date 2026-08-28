@@ -16,7 +16,7 @@ close it.
 | P09 | Lunar data-centre feasibility | Not modelled | Power, thermal, radiation, mass and operations trade study |
 | P10 | Safety traffic policy | S009 synthetic anti-starvation model | Hazard-derived shares, deadlines and fault-injected scheduler |
 | P11 | Multi-provider governance | No operating agreement | Interface, liability, settlement and incident model |
-| P12 | Commercial case | No cost model | Demand scenarios and cost per delivered/retained bit |
+| P12 | Commercial case | S023 synthetic isolation only; no cost model | Evidence-backed demand and cost per delivered/retained bit |
 | P13 | Ownership and trademark | Exploratory public record | Written organisational policy before commercial release |
 | P14 | Lunar software and data update safety | S011 descriptor and A/B state model | Signed registry, secure boot, schema migration and fault-injected deployment |
 | P15 | Predictive cache value | S012 synthetic admission trace | Held-out lunar demand, calibrated candidate, drift and contact-aware replay |

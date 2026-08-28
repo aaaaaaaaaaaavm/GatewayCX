@@ -1,0 +1,234 @@
+{
+  "checks": {
+    "deep_space_pool_clears_synthetic_demand_after_separation": true,
+    "earth_trunk_limits_high_capacity_isls": true,
+    "lunar_pool_clears_synthetic_demand": true,
+    "optical_isls_alone_do_not_create_earth_delivery": true,
+    "scaling_earth_trunk_moves_bottleneck_to_ground_gateway": true,
+    "separation_increases_deep_space_service": true,
+    "separation_removes_lunar_demand_from_deep_space_pool": true,
+    "shared_case_is_oversubscribed": true
+  },
+  "evidence_class": "MODEL",
+  "inputs": {
+    "dedicated_lunar_capacity_units": 70.0,
+    "demands": [
+      {
+        "archetype": "distant_probe_return",
+        "domain": "deep_space",
+        "service_units": 18.0
+      },
+      {
+        "archetype": "space_observatory_return",
+        "domain": "deep_space",
+        "service_units": 20.0
+      },
+      {
+        "archetype": "solar_probe_return",
+        "domain": "deep_space",
+        "service_units": 16.0
+      },
+      {
+        "archetype": "other_deep_space",
+        "domain": "deep_space",
+        "service_units": 26.0
+      },
+      {
+        "archetype": "crew_command_and_safety",
+        "domain": "lunar",
+        "service_units": 15.0
+      },
+      {
+        "archetype": "lunar_science_return",
+        "domain": "lunar",
+        "service_units": 20.0
+      },
+      {
+        "archetype": "settlement_internet_transit",
+        "domain": "lunar",
+        "service_units": 25.0
+      }
+    ],
+    "shared_deep_space_capacity_units": 100.0,
+    "unit_meaning": "synthetic scheduled-service unit; not an antenna-hour, byte or mission request"
+  },
+  "interpretation_boundary": [
+    "Every demand and capacity value is synthetic and dimensionless; none represents Voyager, JWST, Parker Solar Probe, Artemis, DSN or a provider schedule.",
+    "The model demonstrates load separation, not actual antenna scheduling, mission priority, visibility or cost.",
+    "A lunar relay network protects deep-space capacity by avoiding new lunar demand on that pool; it does not relay or replace support for distant missions by itself.",
+    "Optical inter-satellite links redistribute traffic inside the relay network but deliver nothing to Earth without an Earth-facing trunk and compatible ground gateway.",
+    "RF and optical egress, geographical ground diversity, weather, custody, storage and terrestrial backhaul must be sized as one pipeline.",
+    "Actual DSN offload requires NASA and partner schedule data, mission constraints, regulatory authority and independently operated near-space capacity."
+  ],
+  "relay_pipeline_cases": [
+    {
+      "delivered_units": 0.0,
+      "limiting_stage": "earth_trunk",
+      "name": "optical_isls_without_earth_egress",
+      "stage_capacity_units": {
+        "earth_trunk": 0.0,
+        "ground_gateway": 70.0,
+        "lunar_ingress": 80.0,
+        "optical_inter_satellite": 120.0
+      }
+    },
+    {
+      "delivered_units": 50.0,
+      "limiting_stage": "earth_trunk",
+      "name": "high_capacity_isls_with_constrained_earth_trunk",
+      "stage_capacity_units": {
+        "earth_trunk": 50.0,
+        "ground_gateway": 70.0,
+        "lunar_ingress": 80.0,
+        "optical_inter_satellite": 120.0
+      }
+    },
+    {
+      "delivered_units": 70.0,
+      "limiting_stage": "ground_gateway",
+      "name": "isls_with_scaled_optical_rf_earth_egress",
+      "stage_capacity_units": {
+        "earth_trunk": 100.0,
+        "ground_gateway": 70.0,
+        "lunar_ingress": 80.0,
+        "optical_inter_satellite": 120.0
+      }
+    }
+  ],
+  "separated_pools": {
+    "deep_space": {
+      "allocation_rule": "proportional synthetic service-unit allocation",
+      "backlog_units": 0.0,
+      "capacity_units": 100.0,
+      "demands": [
+        {
+          "archetype": "distant_probe_return",
+          "backlog_units": 0.0,
+          "domain": "deep_space",
+          "served_units": 18.0,
+          "service_units": 18.0
+        },
+        {
+          "archetype": "space_observatory_return",
+          "backlog_units": 0.0,
+          "domain": "deep_space",
+          "served_units": 20.0,
+          "service_units": 20.0
+        },
+        {
+          "archetype": "solar_probe_return",
+          "backlog_units": 0.0,
+          "domain": "deep_space",
+          "served_units": 16.0,
+          "service_units": 16.0
+        },
+        {
+          "archetype": "other_deep_space",
+          "backlog_units": 0.0,
+          "domain": "deep_space",
+          "served_units": 26.0,
+          "service_units": 26.0
+        }
+      ],
+      "offered_units": 80.0,
+      "served_units": 80.0,
+      "utilisation": 0.8
+    },
+    "deep_space_service_gain_units": 22.857143,
+    "lunar": {
+      "allocation_rule": "proportional synthetic service-unit allocation",
+      "backlog_units": 0.0,
+      "capacity_units": 70.0,
+      "demands": [
+        {
+          "archetype": "crew_command_and_safety",
+          "backlog_units": 0.0,
+          "domain": "lunar",
+          "served_units": 15.0,
+          "service_units": 15.0
+        },
+        {
+          "archetype": "lunar_science_return",
+          "backlog_units": 0.0,
+          "domain": "lunar",
+          "served_units": 20.0,
+          "service_units": 20.0
+        },
+        {
+          "archetype": "settlement_internet_transit",
+          "backlog_units": 0.0,
+          "domain": "lunar",
+          "served_units": 25.0,
+          "service_units": 25.0
+        }
+      ],
+      "offered_units": 60.0,
+      "served_units": 60.0,
+      "utilisation": 0.857143
+    },
+    "lunar_units_removed_from_deep_space_pool": 60.0
+  },
+  "shared_pool": {
+    "allocation_rule": "proportional synthetic service-unit allocation",
+    "backlog_units": 40.0,
+    "capacity_units": 100.0,
+    "deep_space_served_units": 57.142857,
+    "demands": [
+      {
+        "archetype": "distant_probe_return",
+        "backlog_units": 5.142857,
+        "domain": "deep_space",
+        "served_units": 12.857143,
+        "service_units": 18.0
+      },
+      {
+        "archetype": "space_observatory_return",
+        "backlog_units": 5.714286,
+        "domain": "deep_space",
+        "served_units": 14.285714,
+        "service_units": 20.0
+      },
+      {
+        "archetype": "solar_probe_return",
+        "backlog_units": 4.571429,
+        "domain": "deep_space",
+        "served_units": 11.428571,
+        "service_units": 16.0
+      },
+      {
+        "archetype": "other_deep_space",
+        "backlog_units": 7.428571,
+        "domain": "deep_space",
+        "served_units": 18.571429,
+        "service_units": 26.0
+      },
+      {
+        "archetype": "crew_command_and_safety",
+        "backlog_units": 4.285714,
+        "domain": "lunar",
+        "served_units": 10.714286,
+        "service_units": 15.0
+      },
+      {
+        "archetype": "lunar_science_return",
+        "backlog_units": 5.714286,
+        "domain": "lunar",
+        "served_units": 14.285714,
+        "service_units": 20.0
+      },
+      {
+        "archetype": "settlement_internet_transit",
+        "backlog_units": 7.142857,
+        "domain": "lunar",
+        "served_units": 17.857143,
+        "service_units": 25.0
+      }
+    ],
+    "lunar_served_units": 42.857143,
+    "offered_units": 140.0,
+    "served_units": 100.0,
+    "utilisation": 1.0
+  },
+  "study_id": "S023",
+  "title": "Deep-space protection and lunar ground-network offload envelope"
+}

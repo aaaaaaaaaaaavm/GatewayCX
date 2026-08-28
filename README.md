@@ -114,6 +114,7 @@ The study register establishes the starting point:
 | S020 | Does the durable ledger recover around a `SIGKILL` at transaction boundaries? |
 | S021 | Can the authenticated client operate a separately implemented adapter code path? |
 | S022 | Does a lunar-GSO analogue survive a first physics screen, and how do relay shells trade coverage for range? |
+| S023 | What lunar demand can a separate ground network keep off the deep-space pool, and where do optical ISLs stop helping? |
 
 The current declared inputs produce:
 
@@ -150,6 +151,8 @@ or network.
 <p align="center">
   <img src="figures/s022-lunar-orbit-envelope.svg" alt="S022 lunar relay shell coverage and Moon-synchronous Hill-radius screen" width="100%">
 </p>
+
+<p align="center"><img src="figures/s023-ground-offload.svg" alt="S023 shared versus separated ground pools and optical relay pipeline" width="100%"></p>
 
 <p align="center"><sub>All three charts are generated from committed model or test results. They
 are not terminal measurements or flight evidence.</sub></p>

@@ -98,6 +98,9 @@
 | C081 | A roughly 24-hour circular lunar orbit is stationary over the lunar surface. | — | The Moon's sidereal rotation is about 27.32 days | Rejected |
 | C082 | Under S022 zero-elevation equatorial geometry, the ideal minimum falls from ten satellites at 100 km to three at 5,000–8,000 km. | DERIVATION | S022 | Not global coverage or a constellation design |
 | C083 | S022 selects the production lunar relay orbit. | — | No multi-body propagation, sites, link budgets, failures or capacity | Rejected |
+| C084 | In S023, separating 60 synthetic lunar units clears both constructed pools. | MODEL | S023 | Not real DSN demand or capacity |
+| C085 | Optical inter-satellite links alone deliver lunar data to Earth. | — | Earth trunk and ground gateway remain required | Rejected |
+| C086 | A lunar relay automatically offloads Voyager, JWST or Parker Solar Probe traffic. | — | Those missions require compatible end-to-end services | Rejected |
 
 The ledger will grow when the evidence grows. A claim does not become stronger by appearing in the
 README.

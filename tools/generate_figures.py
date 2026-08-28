@@ -410,6 +410,40 @@ def lunar_orbit_envelope() -> None:
     )
 
 
+def ground_offload() -> None:
+    result = load("S023_ground_offload.json")
+    shared = result["shared_pool"]
+    separated = result["separated_pools"]
+    pipelines = result["relay_pipeline_cases"]
+    body = [
+        text(80, 82, "PROTECT DEEP-SPACE CAPACITY BY SEPARATING LUNAR DEMAND", 32, TEXT, weight=700),
+        text(80, 120, "S023 synthetic service units · not mission schedules or antenna hours", 21, MUTED),
+        text(80, 195, "SHARED POOL", 18, RED, weight=700),
+        rect(80, 225, 600, 62, BLUE, radius=8),
+        rect(80 + 600 * shared["served_units"] / shared["offered_units"], 225,
+             600 * shared["backlog_units"] / shared["offered_units"], 62, RED, radius=8),
+        text(100, 265, f'{shared["served_units"]:.0f} served', 20, INK, weight=700),
+        text(660, 265, f'{shared["backlog_units"]:.0f} backlog', 18, TEXT, anchor="end"),
+        text(820, 195, "SEPARATED POOLS", 18, CYAN, weight=700),
+        rect(820, 225, 320, 62, CYAN, radius=8),
+        rect(1160, 225, 280, 62, GOLD, radius=8),
+        text(840, 265, f'deep space {separated["deep_space"]["served_units"]:.0f}', 19, INK, weight=700),
+        text(1180, 265, f'lunar {separated["lunar"]["served_units"]:.0f}', 19, INK, weight=700),
+        text(80, 390, "RELAY PIPELINE DELIVERY", 18, CYAN, weight=700),
+    ]
+    for index, case in enumerate(pipelines):
+        y = 430 + index * 82
+        body.extend([
+            text(80, y + 32, case["name"].replace("_", " "), 17, TEXT),
+            rect(600, y, 700, 48, "#18253b", radius=7),
+            rect(600, y, 700 * case["delivered_units"] / 80, 48, (RED, GOLD, CYAN)[index], radius=7),
+            text(1360, y + 32, f'{case["delivered_units"]:.0f} delivered', 18, MUTED),
+        ])
+    body.extend([text(80, 730, "BOUNDARY", 16, RED, weight=700),
+                 text(205, 730, "synthetic isolation model · no DSN, provider or mission data", 19, MUTED)])
+    write("s023-ground-offload.svg", svg(1600, 790, "S023 ground-network offload", body))
+
+
 def main() -> int:
     architecture()
     latency()
@@ -419,7 +453,8 @@ def main() -> int:
     transaction_recovery()
     independent_adapter()
     lunar_orbit_envelope()
-    print("wrote 8 GatewayCX SVG figures")
+    ground_offload()
+    print("wrote 9 GatewayCX SVG figures")
     return 0
 
 

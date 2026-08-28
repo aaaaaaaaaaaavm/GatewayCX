@@ -42,3 +42,12 @@ It is not a DSN antenna scheduler, flight-operations authority or mission priori
 a regional byte-budget model that makes delivery, queuing and rejection visible. Real scheduling
 requires ephemerides, antenna visibility, spacecraft constraints, ground weather, maintenance,
 mission events and authorised safety policy.
+
+## Executable separation boundary
+
+S023 makes the separation argument executable without inventing mission data. Its units are
+synthetic and dimensionless. Optical inter-satellite capacity can aggregate and route lunar
+traffic, but Earth delivery remains the minimum of lunar ingress, ISLs, Earth-facing trunk and
+ground gateway. A mesh with no Earth egress delivers zero to Earth. Distant-probe, observatory and
+solar-probe missions remain on compatible deep-space services unless they independently adopt
+another complete end-to-end path.
