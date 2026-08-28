@@ -25,6 +25,16 @@ FAULT_CODES = {
         "description": "The selected bearer returned to an available state.",
         "terminal": False,
     },
+    "GX.BEARER.FALLBACK_ACTIVE": {
+        "category": "bearer",
+        "description": "A lower-capacity fallback bearer is carrying admitted traffic.",
+        "terminal": False,
+    },
+    "GX.BEARER.PREFERRED_RESTORED": {
+        "category": "bearer",
+        "description": "The preferred bearer completed reacquisition and resumed traffic.",
+        "terminal": False,
+    },
     "GX.DELIVERY.ADAPTER_DELIVERED": {
         "category": "delivery",
         "description": "The destination delivery adapter received the payload.",
@@ -52,7 +62,7 @@ FAULT_CODES = {
     },
 }
 
-EVENT_TYPES = {"delivery_status", "fault_asserted", "fault_cleared"}
+EVENT_TYPES = {"delivery_status", "fault_asserted", "fault_cleared", "state_transition"}
 SEVERITIES = {"info", "warning", "error", "critical"}
 REGIONS = {"earth", "cislunar", "lunar_orbit", "lunar_surface"}
 DELIVERY_STAGES = {"accepted_pending": 1, "bp_delivered": 2, "remote_completed": 3}
@@ -81,7 +91,7 @@ def build_fault_registry() -> dict[str, Any]:
     }
 
 
-def _event(
+def make_event(
     event_id: str,
     offset_ms: int,
     component: str,
@@ -133,12 +143,12 @@ def build_reference_trace() -> dict[str, Any]:
             "payload_content_recorded": False,
         },
         "events": [
-            _event(
+            make_event(
                 "evt-001", 20, "durable-ingress", "lunar_surface", "delivery_status",
                 "info", "GX.QUEUE.ACCEPTED_PENDING", "submitted", "accepted_pending",
                 bearer_up,
             ),
-            _event(
+            make_event(
                 "evt-002", 1_600, "bearer-adapter", "lunar_surface", "fault_asserted",
                 "error", "GX.BEARER.CONTACT_LOST", "available", "unavailable",
                 {
@@ -149,7 +159,7 @@ def build_reference_trace() -> dict[str, Any]:
                     "missing_bytes": 6_000_000,
                 },
             ),
-            _event(
+            make_event(
                 "evt-003", 121_600, "bearer-adapter", "lunar_surface", "fault_cleared",
                 "info", "GX.BEARER.CONTACT_RESTORED", "unavailable", "available",
                 {
@@ -158,7 +168,7 @@ def build_reference_trace() -> dict[str, Any]:
                     "missing_bytes": 6_000_000,
                 },
             ),
-            _event(
+            make_event(
                 "evt-004", 125_282, "delivery-adapter", "earth", "delivery_status",
                 "info", "GX.DELIVERY.ADAPTER_DELIVERED", "accepted_pending", "bp_delivered",
                 {
@@ -167,7 +177,7 @@ def build_reference_trace() -> dict[str, Any]:
                     "missing_bytes": 0,
                 },
             ),
-            _event(
+            make_event(
                 "evt-005", 125_302, "application-receipt", "earth", "delivery_status",
                 "info", "GX.DELIVERY.REMOTE_COMPLETED", "bp_delivered", "remote_completed",
                 {

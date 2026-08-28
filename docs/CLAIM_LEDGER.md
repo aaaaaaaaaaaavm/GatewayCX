@@ -67,6 +67,10 @@
 | C050 | At S014 contact loss, the portable freeze frame records 6 MB queued, zero transmit rate and no payload/user content. | MODEL + TEST | S005 offsets + GX-O1 validator | Synthetic trace only |
 | C051 | A portable GX-O1 fault code proves a hardware root cause. | — | Portable codes classify traffic consequences, not internal physics | Rejected |
 | C052 | GX-O1 replaces provider-specific diagnostic telemetry. | — | Provider extensions remain necessary | Rejected |
+| C053 | S015 reproduces S010 warm-standby control rejection, interactive rejection and RF keepalive bytes on its shared timeline. | MODEL + TEST | S015 composition checks | Reproduced in CI; same synthetic assumptions |
+| C054 | Under S015 inputs, optical carries 837.031 MB and RF carries 162.969 MB of one accepted 1 GB durable object. | MODEL | S015 | Byte-budget replay only |
+| C055 | Under S015 inputs, the object reaches the adapter at 139.782 s and remote application completion at 139.802 s. | MODEL | S015 | Mean propagation plus declared processing interval |
+| C056 | S015 demonstrates an operational BPv7 gateway or RF/optical handover. | — | No protocol or hardware executes | Rejected |
 
 The ledger will grow when the evidence grows. A claim does not become stronger by appearing in the
 README.

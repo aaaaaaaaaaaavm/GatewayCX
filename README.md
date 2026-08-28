@@ -102,6 +102,7 @@ The study register establishes the starting point:
 | S012 | Can forecast-driven prepositioning beat a simple cache baseline without risking essential content? |
 | S013 | Can the lunar network restart its essential services without Earth? |
 | S014 | Can one provider-neutral flight record reconstruct an interrupted delivery without payload access? |
+| S015 | Do bearer handover, durable recovery and diagnostics agree on one traffic ledger? |
 
 The current declared inputs produce:
 

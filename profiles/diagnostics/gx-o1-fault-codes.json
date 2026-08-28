@@ -18,6 +18,18 @@
       "terminal": false
     },
     {
+      "category": "bearer",
+      "code": "GX.BEARER.FALLBACK_ACTIVE",
+      "description": "A lower-capacity fallback bearer is carrying admitted traffic.",
+      "terminal": false
+    },
+    {
+      "category": "bearer",
+      "code": "GX.BEARER.PREFERRED_RESTORED",
+      "description": "The preferred bearer completed reacquisition and resumed traffic.",
+      "terminal": false
+    },
+    {
       "category": "delivery",
       "code": "GX.DELIVERY.ADAPTER_DELIVERED",
       "description": "The destination delivery adapter received the payload.",

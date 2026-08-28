@@ -28,9 +28,9 @@ GX-O1 v0.1 requires every event to carry:
 - a minimum bearer/queue freeze frame; and
 - explicit confirmation that payload plaintext and user identity are absent.
 
-The initial registry covers durable acceptance, bearer loss and restoration, adapter delivery,
-remote completion, expiry, storage depletion and invalid receipts. It is deliberately smaller than
-a real provider fault catalogue.
+The initial registry covers durable acceptance, bearer loss, fallback activation, preferred-path
+restoration, adapter delivery, remote completion, expiry, storage depletion and invalid receipts.
+It is deliberately smaller than a real provider fault catalogue.
 
 ## Method
 

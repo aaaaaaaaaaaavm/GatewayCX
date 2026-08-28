@@ -58,6 +58,10 @@ and commercial; they do not define the user's Internet protocol.
 fault classes, correlated state transitions and a minimum freeze frame without application
 plaintext.
 
+[`S015`](../../studies/S015_INTEGRATED_RECOVERY.md) is the first composition test across the bearer,
+resilience and operations planes. It forces RF/optical state, durable queue bytes and application
+acknowledgements onto one event ledger.
+
 ## Operating modes
 
 | Mode | Backbone state | Expected behaviour |

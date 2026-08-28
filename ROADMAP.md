@@ -34,6 +34,7 @@ The roadmap is gated by evidence, not file count. A phase closes when its exit c
 - Preserve end-to-end security or state explicitly where a gateway terminates it.
 - Model optical weather outages and RF fallback.
 - Implement the S005 `accepted_pending`, `bp_delivered` and `remote_completed` state contract.
+- Replace the S015 composed byte model with executable adapters and a fault-injected durable store.
 
 **Exit:** a reference interconnect survives scheduled and unscheduled link loss without corrupting
 or silently dropping committed traffic classes.

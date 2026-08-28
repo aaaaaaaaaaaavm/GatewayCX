@@ -32,3 +32,5 @@ The executable registry is
 [`profiles/diagnostics/gx-o1-fault-codes.json`](../../profiles/diagnostics/gx-o1-fault-codes.json).
 The first conforming trace is
 [`results/S014_diagnostic_trace.json`](../../results/S014_diagnostic_trace.json).
+The first cross-plane trace is embedded in
+[`results/S015_integrated_replay.json`](../../results/S015_integrated_replay.json).

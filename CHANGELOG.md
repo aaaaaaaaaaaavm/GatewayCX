@@ -32,3 +32,5 @@
   delivery and remote application completion across native, terminating and opaque modes.
 - Added S014 and GX-O1, a provider-neutral network flight recorder with stable fault classes,
   privacy-negative checks and S005 acknowledgement-order validation.
+- Added S015, a single-timeline composition of warm RF/optical handover, durable object recovery
+  and GX-O1 diagnostics with a conserved 1 GB byte ledger.
