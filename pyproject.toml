@@ -20,6 +20,12 @@ classifiers = [
 ]
 dependencies = []
 
+[project.optional-dependencies]
+lab = [
+  "aioquic==1.3.0",
+  "h2==4.3.0",
+]
+
 [project.scripts]
 gatewaycx = "gatewaycx.cli:main"
 

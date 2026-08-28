@@ -127,6 +127,7 @@ The study register establishes the starting point:
 | S026 | How do surface, orbital and hybrid lunar compute classes trade power, heat rejection, radiation, mass and storage? |
 | S027 | What do declared utilisation and availability do to cost per delivered and retained bit? |
 | S028 | Do lunar identity, consistency, updates, black start and storage recovery fail safely in executable software? |
+| S029 | Do DNS/IPv6, TLS 1.3, HTTP/2, HTTP/3, SMTP and file transfer complete under two independent impairment methods? |
 
 The current declared inputs produce:
 

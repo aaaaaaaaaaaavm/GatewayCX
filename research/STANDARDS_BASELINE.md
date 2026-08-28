@@ -10,8 +10,8 @@ mapping. It does not mean the underlying protocol is being replaced.
 
 | Plane | Existing base | GatewayCX action | Present evidence |
 |---|---|---|---|
-| Local addressing and forwarding | IPv6, RFC 8200 | Inherit | Standard reviewed; implementation not tested |
-| Secure web service | TLS 1.3, HTTP/2, HTTP/3 | Inherit and test | Standards identified; socket tests pending |
+| Local addressing and forwarding | IPv6, RFC 8200 | Inherit | S029 IPv6 socket and DNS AAAA harness; external dual-method run pending |
+| Secure web service | TLS 1.3, HTTP/2, HTTP/3 | Inherit and test | S004 HTTP/1.1 measurement; S029 H2/H3 harness pending external run |
 | Continuous-path transport | TCP and QUIC | Inherit and measure | Satellite guidance exists; cislunar behaviour pending |
 | Disrupted delivery | LNIS V5 §3.1.2; BPv7, RFC 9171 and updates | Inherit BPv7; profile service/operations semantics around it | S005 semantic model; real implementation interop pending |
 | Bundle security | BPSec, RFC 9172 | Profile | Standard identified; threat model pending |
@@ -77,7 +77,7 @@ protocols or edge services. The exact boundary is recorded in
 
 ## Next conformance work
 
-- Extend the existing unmodified HTTPS socket result to packet-level DNS, IPv6, HTTP/2 and HTTP/3.
+- Run and review the S029 dual-method DNS/IPv6/TLS/HTTP2/HTTP3/SMTP/file packet artifact at lunar delay and under loss/reordering.
 - Measure cold TLS, first byte and connection reuse separately.
 - Define a bearer capability document independent of optical or RF supplier telemetry.
 - Extend the LNIS section mapping into field-level conformance cases as applicable documents mature.

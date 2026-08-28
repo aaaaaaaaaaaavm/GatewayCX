@@ -1,0 +1,59 @@
+name: native-protocol-lab
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "gatewaycx/native_protocol_lab.py"
+      - "tests/test_native_protocol_lab.py"
+      - ".github/workflows/protocol-lab.yml"
+      - "pyproject.toml"
+
+permissions:
+  contents: read
+
+jobs:
+  dual-emulation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install protocol laboratory
+        run: python -m pip install -e '.[lab]'
+      - name: Install capture and impairment tools
+        run: sudo apt-get update && sudo apt-get install -y iproute2 tcpdump
+      - name: Start packet capture
+        run: |
+          mkdir -p protocol-artifacts
+          sudo tcpdump -U -i lo -w protocol-artifacts/s029-dual-method.pcap >protocol-artifacts/tcpdump.log 2>&1 &
+          echo $! > protocol-artifacts/tcpdump.pid
+      - name: Run userspace packet/stream impairment
+        run: python -m gatewaycx.native_protocol_lab --method userspace --one-way-delay-ms 25 --output protocol-artifacts/S029_userspace.json
+      - name: Run independent kernel netem impairment
+        run: |
+          sudo tc qdisc add dev lo root netem delay 25ms rate 100mbit
+          trap 'sudo tc qdisc del dev lo root || true' EXIT
+          python -m gatewaycx.native_protocol_lab --method kernel-netem --one-way-delay-ms 25 --output protocol-artifacts/S029_kernel_netem.json
+      - name: Stop packet capture
+        if: always()
+        run: |
+          if test -f protocol-artifacts/tcpdump.pid; then sudo kill -INT "$(cat protocol-artifacts/tcpdump.pid)" || true; fi
+          sudo chown -R "$USER:$USER" protocol-artifacts
+      - name: Assert both independent methods passed
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          records = [json.loads(path.read_text()) for path in sorted(Path("protocol-artifacts").glob("S029_*.json"))]
+          assert {record["method"] for record in records} == {"userspace", "kernel-netem"}
+          assert all(all(record["checks"].values()) for record in records)
+          assert Path("protocol-artifacts/s029-dual-method.pcap").stat().st_size > 24
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: s029-native-protocol-evidence
+          path: protocol-artifacts/

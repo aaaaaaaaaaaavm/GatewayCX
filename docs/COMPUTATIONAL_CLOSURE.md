@@ -8,7 +8,7 @@ This register prevents a passing test suite from being mistaken for a closed arc
 | Does the committed scenario reproduce? | CI regeneration and diff | Closed for committed inputs | Independent implementation |
 | Does local placement remove declared remote dependencies? | S001/S002 comparison | Closed inside this model | Trace-driven application experiment |
 | Can local work complete during declared backbone loss? | S003 | Closed inside this state model | Fault-injected distributed system |
-| Do unmodified Internet protocols behave as assumed? | S004 TLS 1.3/HTTP 1.1 socket test | Partially closed for one client and method | DNS, IPv6, HTTP/2, HTTP/3, packet method and captures |
+| Do native Internet protocols traverse impaired IPv6 paths? | S004 socket result + S029 dual-method packet laboratory | Harness covers DNS, TLS 1.3, HTTP/2, HTTP/3, SMTP and file bytes; CI run pending | Lunar-delay/loss matrix, ordinary browser/MUA clients and reviewed captures |
 | Where should IP terminate and DTN begin? | ADR-0002 + S005 semantic replay | Partially closed as an explicit contract | Gateway prototypes, BPv7 interoperability and security analysis |
 | What state is required to use a declared capacity? | S006 BDP and outage derivation | Closed for stated arithmetic inputs | Transport implementation and queue measurements |
 | What backbone capacity is available? | S024 contact/capacity simulation + S025 class budgets | Partially closed for declared classes | Terminal data, operational ephemerides, interference and measured availability |

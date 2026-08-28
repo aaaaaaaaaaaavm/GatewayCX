@@ -32,6 +32,12 @@ boundary and is not part of the current build push.
 
 **Exit:** at least two independent emulation methods reproduce the critical observations.
 
+**Current executable gate:** S029 runs the same DNS/IPv6, TLS 1.3, HTTP/2, HTTP/3, SMTP and file
+matrix through a userspace TCP/UDP impairment engine and an independently configured Linux netem
+qdisc. CI captures both methods into one pcap and uploads the two measurement records. This closes
+the harness requirement only after the external job passes; lunar-delay and ordinary GUI clients
+remain follow-on evidence.
+
 ## M2: Resilient cislunar interconnect
 
 **Purpose:** retain native IP where possible and add disruption tolerance where necessary.
