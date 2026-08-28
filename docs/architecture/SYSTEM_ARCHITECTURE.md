@@ -62,6 +62,11 @@ plaintext.
 resilience and operations planes. It forces RF/optical state, durable queue bytes and application
 acknowledgements onto one event ledger.
 
+[`GX-A1`](ADAPTER_RUNTIME.md) and
+[`S016`](../../studies/S016_BEARER_ADAPTER.md) turn the static bearer profiles into an executable
+runtime seam for capabilities, contact, acquisition, transmission, queue state and faults. The
+current binding remains an in-process reference implementation.
+
 ## Operating modes
 
 | Mode | Backbone state | Expected behaviour |

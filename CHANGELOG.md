@@ -34,3 +34,5 @@
   privacy-negative checks and S005 acknowledgement-order validation.
 - Added S015, a single-timeline composition of warm RF/optical handover, durable object recovery
   and GX-O1 diagnostics with a conserved 1 GB byte ledger.
+- Added GX-A1 and S016, an executable profile-backed bearer adapter probe with MTU, duplicate,
+  acquisition, capacity, fault-preservation and reacquisition checks across optical and RF inputs.

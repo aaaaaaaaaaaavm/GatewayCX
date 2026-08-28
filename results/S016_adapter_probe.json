@@ -1,0 +1,311 @@
+{
+  "adapters": [
+    {
+      "accepted_bytes": 7995392,
+      "accepted_units": 122,
+      "acquisition_ready_at_s": 61.0,
+      "bearer_id": "gx-reference-optical",
+      "checks": {
+        "all_units_accepted_pending": true,
+        "byte_ledger_conserved": true,
+        "duplicate_not_requeued": true,
+        "fault_blocks_transmission": true,
+        "oversize_rejected_at_mtu": true,
+        "profile_acquisition_applied": true,
+        "profile_capacity_applied": true,
+        "queue_drained_after_recovery": true,
+        "queue_survives_fault": true,
+        "recovery_requires_reacquisition": true
+      },
+      "fault": {
+        "blocked_transmitted_bytes": 0,
+        "code": "GX.BEARER.CONTACT_LOST",
+        "link_state": "unavailable",
+        "queue_before_bytes": 1745392,
+        "queue_during_bytes": 1745392
+      },
+      "final_ledger": {
+        "accepted_bytes": 7995392,
+        "link_epoch": 2,
+        "queue_bytes": 0,
+        "transmitted_bytes": 7995392
+      },
+      "first_window": {
+        "duration_s": 0.1,
+        "expected_bytes": 6250000,
+        "queued_after_bytes": 1745392,
+        "transmitted_bytes": 6250000
+      },
+      "media": "optical",
+      "operation_signatures": {
+        "acquire": [
+          "api_version",
+          "bearer_id",
+          "link_state",
+          "observed_offset_s",
+          "operation",
+          "ready_at_s",
+          "status"
+        ],
+        "advance": [
+          "api_version",
+          "bearer_id",
+          "link_state",
+          "observed_offset_s",
+          "operation",
+          "status",
+          "transitioned"
+        ],
+        "capabilities": [
+          "api_version",
+          "bearer_id",
+          "observed_offset_s",
+          "operation",
+          "operations",
+          "profile",
+          "reference_persistence_scope",
+          "status"
+        ],
+        "clear_faults": [
+          "api_version",
+          "bearer_id",
+          "cleared_fault_codes",
+          "observed_offset_s",
+          "operation",
+          "status"
+        ],
+        "inject_fault": [
+          "api_version",
+          "bearer_id",
+          "fault_code",
+          "link_state",
+          "observed_offset_s",
+          "operation",
+          "queue_bytes",
+          "status"
+        ],
+        "set_contact": [
+          "api_version",
+          "bearer_id",
+          "contact_available",
+          "link_state",
+          "observed_offset_s",
+          "operation",
+          "status"
+        ],
+        "snapshot": [
+          "accepted_bytes",
+          "api_version",
+          "bearer_id",
+          "fault_codes",
+          "link_epoch",
+          "link_state",
+          "next_contact_utc",
+          "observed_offset_s",
+          "operation",
+          "queue_bytes",
+          "reference_persistence_scope",
+          "rx_rate_mbps",
+          "status",
+          "transmitted_bytes",
+          "tx_rate_mbps"
+        ],
+        "submit": [
+          "accepted_bytes",
+          "api_version",
+          "bearer_id",
+          "observed_offset_s",
+          "operation",
+          "queue_bytes",
+          "status",
+          "traffic_unit_id"
+        ],
+        "transmit": [
+          "api_version",
+          "bearer_id",
+          "fragments",
+          "observed_offset_s",
+          "operation",
+          "queue_bytes",
+          "status",
+          "transmitted_bytes"
+        ]
+      },
+      "profile_path": "profiles/bearers/reference-optical.json",
+      "queued_before_contact_bytes": 7995392,
+      "recovery": {
+        "last_operation_offset_s": 121.4,
+        "reacquired_at_s": 121.3,
+        "transmit_windows": 1,
+        "transmitted_bytes": 1745392
+      }
+    },
+    {
+      "accepted_bytes": 7995392,
+      "accepted_units": 122,
+      "acquisition_ready_at_s": 21.0,
+      "bearer_id": "gx-reference-rf",
+      "checks": {
+        "all_units_accepted_pending": true,
+        "byte_ledger_conserved": true,
+        "duplicate_not_requeued": true,
+        "fault_blocks_transmission": true,
+        "oversize_rejected_at_mtu": true,
+        "profile_acquisition_applied": true,
+        "profile_capacity_applied": true,
+        "queue_drained_after_recovery": true,
+        "queue_survives_fault": true,
+        "recovery_requires_reacquisition": true
+      },
+      "fault": {
+        "blocked_transmitted_bytes": 0,
+        "code": "GX.BEARER.CONTACT_LOST",
+        "link_state": "unavailable",
+        "queue_before_bytes": 6745392,
+        "queue_during_bytes": 6745392
+      },
+      "final_ledger": {
+        "accepted_bytes": 7995392,
+        "link_epoch": 2,
+        "queue_bytes": 0,
+        "transmitted_bytes": 7995392
+      },
+      "first_window": {
+        "duration_s": 0.1,
+        "expected_bytes": 1250000,
+        "queued_after_bytes": 6745392,
+        "transmitted_bytes": 1250000
+      },
+      "media": "rf",
+      "operation_signatures": {
+        "acquire": [
+          "api_version",
+          "bearer_id",
+          "link_state",
+          "observed_offset_s",
+          "operation",
+          "ready_at_s",
+          "status"
+        ],
+        "advance": [
+          "api_version",
+          "bearer_id",
+          "link_state",
+          "observed_offset_s",
+          "operation",
+          "status",
+          "transitioned"
+        ],
+        "capabilities": [
+          "api_version",
+          "bearer_id",
+          "observed_offset_s",
+          "operation",
+          "operations",
+          "profile",
+          "reference_persistence_scope",
+          "status"
+        ],
+        "clear_faults": [
+          "api_version",
+          "bearer_id",
+          "cleared_fault_codes",
+          "observed_offset_s",
+          "operation",
+          "status"
+        ],
+        "inject_fault": [
+          "api_version",
+          "bearer_id",
+          "fault_code",
+          "link_state",
+          "observed_offset_s",
+          "operation",
+          "queue_bytes",
+          "status"
+        ],
+        "set_contact": [
+          "api_version",
+          "bearer_id",
+          "contact_available",
+          "link_state",
+          "observed_offset_s",
+          "operation",
+          "status"
+        ],
+        "snapshot": [
+          "accepted_bytes",
+          "api_version",
+          "bearer_id",
+          "fault_codes",
+          "link_epoch",
+          "link_state",
+          "next_contact_utc",
+          "observed_offset_s",
+          "operation",
+          "queue_bytes",
+          "reference_persistence_scope",
+          "rx_rate_mbps",
+          "status",
+          "transmitted_bytes",
+          "tx_rate_mbps"
+        ],
+        "submit": [
+          "accepted_bytes",
+          "api_version",
+          "bearer_id",
+          "observed_offset_s",
+          "operation",
+          "queue_bytes",
+          "status",
+          "traffic_unit_id"
+        ],
+        "transmit": [
+          "api_version",
+          "bearer_id",
+          "fragments",
+          "observed_offset_s",
+          "operation",
+          "queue_bytes",
+          "status",
+          "transmitted_bytes"
+        ]
+      },
+      "profile_path": "profiles/bearers/reference-rf.json",
+      "queued_before_contact_bytes": 7995392,
+      "recovery": {
+        "last_operation_offset_s": 41.9,
+        "reacquired_at_s": 41.3,
+        "transmit_windows": 6,
+        "transmitted_bytes": 6745392
+      }
+    }
+  ],
+  "cross_adapter_checks": {
+    "all_adapter_checks_pass": true,
+    "both_media_families_exercised": true,
+    "payload_content_recorded": false,
+    "same_operation_signatures": true
+  },
+  "evidence_class": "MODEL + TEST",
+  "inputs": {
+    "fault_code": "GX.BEARER.CONTACT_LOST",
+    "first_transmit_window_s": 0.1,
+    "payload_content_supplied": false,
+    "profile_paths": [
+      "profiles/bearers/reference-optical.json",
+      "profiles/bearers/reference-rf.json"
+    ],
+    "traffic_unit_bytes": 65536,
+    "traffic_unit_count": 122
+  },
+  "interpretation_boundary": [
+    "Both reference instances use one profile-backed Python implementation; this is interface parity, not independent multi-vendor interoperability.",
+    "The GX-B1 capacities and acquisition ceilings are illustrative assumed inputs, not hardware measurements.",
+    "Transmission is a byte-budget ledger with no waveform, pointing, packet, BPv7 or payload implementation.",
+    "Fault injection is an in-process state transition; no physical link or provider control plane is connected.",
+    "GX-A1/0.1 is an exploratory runtime seam and not a published standard."
+  ],
+  "study_id": "S016",
+  "title": "GX-A1 profile-backed bearer adapter probe"
+}

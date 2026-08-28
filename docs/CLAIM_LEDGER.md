@@ -71,6 +71,10 @@
 | C054 | Under S015 inputs, optical carries 837.031 MB and RF carries 162.969 MB of one accepted 1 GB durable object. | MODEL | S015 | Byte-budget replay only |
 | C055 | Under S015 inputs, the object reaches the adapter at 139.782 s and remote application completion at 139.802 s. | MODEL | S015 | Mean propagation plus declared processing interval |
 | C056 | S015 demonstrates an operational BPv7 gateway or RF/optical handover. | — | No protocol or hardware executes | Rejected |
+| C057 | The same GX-A1 response-field signatures are exercised for both GX-B1 reference media profiles. | TEST | S016 | One shared Python implementation only |
+| C058 | Under S016 profile inputs, a 100 ms window moves 6.25 MB through optical and 1.25 MB through RF. | MODEL + TEST | S016 | Profile-driven byte budgets, not measurements |
+| C059 | The S016 reference adapter preserves 1,745,392 optical-queue bytes and 6,745,392 RF-queue bytes across its injected fault. | MODEL + TEST | S016 | In-process state only; not crash durability |
+| C060 | S016 demonstrates independent vendor or hardware interoperability. | — | Both instances share one implementation and no hardware | Rejected |
 
 The ledger will grow when the evidence grows. A claim does not become stronger by appearing in the
 README.

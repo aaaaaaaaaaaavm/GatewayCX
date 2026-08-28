@@ -20,3 +20,4 @@ separate prose run sheet is added only when method, interpretation or external d
 | S013 | Lunar network islanding and black start | MODEL | Implemented as logical dependency and single-fault study |
 | S014 | GX-O1 network flight recorder | TEST | Reference registry, trace and semantic validator implemented |
 | S015 | Integrated RF/optical durable recovery | MODEL + TEST | S010, S005 and GX-O1 composed on one synthetic timeline |
+| S016 | GX-A1 executable bearer adapter probe | MODEL + TEST | Optical/RF profiles exercised through one reference runtime seam |

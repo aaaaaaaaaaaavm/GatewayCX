@@ -34,7 +34,7 @@ The roadmap is gated by evidence, not file count. A phase closes when its exit c
 - Preserve end-to-end security or state explicitly where a gateway terminates it.
 - Model optical weather outages and RF fallback.
 - Implement the S005 `accepted_pending`, `bp_delivered` and `remote_completed` state contract.
-- Replace the S015 composed byte model with executable adapters and a fault-injected durable store.
+- Replace the S015 composed byte model with the S016 adapter seam and a fault-injected durable store.
 
 **Exit:** a reference interconnect survives scheduled and unscheduled link loss without corrupting
 or silently dropping committed traffic classes.
@@ -58,6 +58,7 @@ within bounded time after recovery.
 - Define optical, RF and hybrid bearer capability profiles.
 - Model link acquisition, pointing, weather, handover, capacity and failure.
 - Connect at least two independently implemented bearer adapters to the reference service plane.
+- Move GX-A1 from its in-process reference class to an authenticated process boundary.
 
 **Exit:** a traffic session changes bearer or provider without changing the user application.
 

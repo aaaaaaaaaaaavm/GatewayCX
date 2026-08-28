@@ -103,6 +103,7 @@ The study register establishes the starting point:
 | S013 | Can the lunar network restart its essential services without Earth? |
 | S014 | Can one provider-neutral flight record reconstruct an interrupted delivery without payload access? |
 | S015 | Do bearer handover, durable recovery and diagnostics agree on one traffic ledger? |
+| S016 | Can one executable runtime seam apply optical and RF profiles through fault and recovery? |
 
 The current declared inputs produce:
 
@@ -135,6 +136,8 @@ deterministic model.
   standards are inherited, profiled or still untested.
 - [`docs/architecture/BEARER_CONTRACT.md`](docs/architecture/BEARER_CONTRACT.md) defines the first
   machine-readable GX-B1 hardware/service seam.
+- [`docs/architecture/ADAPTER_RUNTIME.md`](docs/architecture/ADAPTER_RUNTIME.md) defines the GX-A1
+  executable runtime seam beneath the service plane.
 - [`docs/architecture/OPERATIONS_DIAGNOSTICS.md`](docs/architecture/OPERATIONS_DIAGNOSTICS.md)
   defines the GX-O1 portable fault-code and network flight-recorder seam.
 - [`research/TRAFFIC_AND_DSN_BOUNDARY.md`](research/TRAFFIC_AND_DSN_BOUNDARY.md) separates a lunar

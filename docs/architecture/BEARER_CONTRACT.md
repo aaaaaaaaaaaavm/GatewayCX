@@ -23,6 +23,9 @@ waveform, pointing system or regulatory approval.
 The reference profiles represent no company and no hardware. Every numerical value has evidence
 level `assumed`.
 
+[`GX-A1`](ADAPTER_RUNTIME.md) is the corresponding executable runtime seam. GX-B1 remains the
+static evidence-bearing description; GX-A1 consumes that description for live control and state.
+
 ## Contract groups
 
 | Group | What the gateway needs to know |
@@ -51,7 +54,8 @@ fields. A media label alone cannot distinguish cold fallback from session-preser
 Passing the current checker means a document is structurally and semantically complete for the
 pre-draft 0.1 fields. It does not prove that a terminal delivers the declared values. The two
 reference documents test the interface shape, not multi-vendor interoperability. GX-INT-001 remains
-open until two independent adapters exchange live state and traffic through the same gateway.
+open until two independent adapters exchange live state and traffic through the same gateway. S016
+exercises two GX-B1 profiles through one reference adapter and does not satisfy that criterion.
 
 ## Supplier fit
 

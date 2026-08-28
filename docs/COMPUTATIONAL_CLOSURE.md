@@ -24,6 +24,7 @@ This register prevents a passing test suite from being mistaken for a closed arc
 | Can essential lunar network services start without Earth? | S013 dependency execution | Closed for the assumed graph | Real services, time/trust holdover, power and fault-injected deployment |
 | Can one portable trace preserve S005 acknowledgement and bearer transitions? | S014 GX-O1 validator | Closed for the generated trace | Independent optical/RF adapters, authenticated collection and observed faults |
 | Do warm handover, durable delivery and GX-O1 conserve the same traffic state? | S015 integrated replay | Closed for the shared synthetic ledger | Executable adapters, durable store, packets and injected link process |
+| Can one runtime seam drive the optical and RF profile semantics? | S016 GX-A1 adapter probe | Closed for two profiles using one reference class | Out-of-process binding, independent implementation and hardware control |
 | Is the system commercially viable? | None yet | Open | Demand, deployment and operating-cost model |
 
 CI closes consistency questions. It does not close physics, hardware, operations or markets.
