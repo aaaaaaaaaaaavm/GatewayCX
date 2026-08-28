@@ -111,6 +111,7 @@ The study register establishes the starting point:
 | S017 | Does accepted partial-transfer state survive a clean gateway-process restart? |
 | S018 | Can the GX-A1 adapter run across a process boundary and reject malformed traffic safely? |
 | S019 | Can the process boundary authenticate a client and reject replay across restart? |
+| S020 | Does the durable ledger recover around a `SIGKILL` at transaction boundaries? |
 
 The current declared inputs produce:
 
@@ -134,6 +135,10 @@ or network.
 
 <p align="center">
   <img src="figures/s019-authenticated-binding.svg" alt="S019 authenticated request and durable replay-state boundary" width="100%">
+</p>
+
+<p align="center">
+  <img src="figures/s020-transaction-recovery.svg" alt="S020 SQLite transaction recovery before and after commit" width="100%">
 </p>
 
 <p align="center"><sub>All three charts are generated from committed model or test results. They

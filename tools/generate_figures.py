@@ -275,13 +275,52 @@ def authenticated_binding() -> None:
     )
 
 
+def transaction_recovery() -> None:
+    result = load("S020_abrupt_restart.json")
+    observations = result["observations"]
+    stages = [
+        ("STABLE COMMIT", observations["stable_snapshot"], BLUE, "seed closes cleanly"),
+        ("KILL BEFORE COMMIT", observations["after_precommit_kill"], GOLD, "new row rolls back"),
+        ("KILL AFTER COMMIT", observations["after_postcommit_kill"], CYAN, "new row survives"),
+        ("RECOVERED WRITE", observations["final_snapshot"], RED, "store accepts work"),
+    ]
+    maximum = max(float(values["accepted_bytes"]) for _, values, _, _ in stages)
+    body = [
+        text(80, 82, "COMMIT IS THE RECOVERY BOUNDARY", 34, TEXT, weight=700),
+        text(80, 120, "S020 coordinated SIGKILL probe · SQLite WAL · synchronous FULL", 21, MUTED),
+    ]
+    for index, (label, values, color, note) in enumerate(stages):
+        y = 195 + index * 125
+        width = 960 * float(values["accepted_bytes"]) / maximum
+        body.extend(
+            [
+                text(80, y + 38, label, 18, color, weight=700),
+                rect(355, y, 960, 62, "#18253b", radius=8),
+                rect(355, y, width, 62, color, radius=8),
+                text(380, y + 40, f'{values["accepted_bytes"]:,} committed bytes', 20, INK, weight=700),
+                text(1510, y + 40, note, 18, MUTED, anchor="end"),
+            ]
+        )
+    body.extend(
+        [
+            text(80, 730, "BOUNDARY", 16, RED, weight=700),
+            text(205, 730, "coordinated process kill · not electrical power loss or storage qualification", 19, MUTED),
+        ]
+    )
+    write(
+        "s020-transaction-recovery.svg",
+        svg(1600, 790, "S020 transaction-boundary recovery", body),
+    )
+
+
 def main() -> int:
     architecture()
     latency()
     bearer_window()
     durable_restart()
     authenticated_binding()
-    print("wrote 5 GatewayCX SVG figures")
+    transaction_recovery()
+    print("wrote 6 GatewayCX SVG figures")
     return 0
 
 

@@ -1,0 +1,75 @@
+{
+  "checks": {
+    "fault_workers_are_distinct_processes": true,
+    "final_byte_ledger_is_conserved": true,
+    "integrity_after_postcommit_kill": true,
+    "integrity_after_precommit_kill": true,
+    "payload_content_was_supplied": false,
+    "postcommit_bytes_survive_kill": true,
+    "postcommit_unit_survives_kill": true,
+    "precommit_kill_preserves_stable_state": true,
+    "precommit_unit_is_rolled_back": true,
+    "stable_unit_was_committed": true,
+    "store_accepts_new_work_after_recovery": true
+  },
+  "evidence_class": "TEST",
+  "inputs": {
+    "fault_points": [
+      "after insert before commit",
+      "after commit before close"
+    ],
+    "journal_mode": "WAL",
+    "payload_content_supplied": false,
+    "synchronous_mode": "FULL",
+    "termination": "SIGKILL via subprocess.kill"
+  },
+  "interpretation_boundary": [
+    "The probe sends SIGKILL to a separate writer while a transaction is open and again after commit but before a clean close.",
+    "The fault points are coordinated software boundaries, not arbitrary instruction, kernel, filesystem, device-cache or electrical power-loss points.",
+    "A passing SQLite integrity check establishes recovery for these temporary local files only; it does not qualify storage media or a flight computer.",
+    "The test stores traffic identifiers, classes and byte counts but no payload content.",
+    "WAL and synchronous FULL are active configuration observations, not a guarantee against every storage failure mode."
+  ],
+  "observations": {
+    "after_postcommit_kill": {
+      "accepted_bytes": 81920,
+      "pending_units": 2,
+      "queue_bytes": 81920,
+      "traffic_units": 2,
+      "transmitted_bytes": 0
+    },
+    "after_precommit_kill": {
+      "accepted_bytes": 65536,
+      "pending_units": 1,
+      "queue_bytes": 65536,
+      "traffic_units": 1,
+      "transmitted_bytes": 0
+    },
+    "final_recovered_ids": [
+      "gx-s020-stable",
+      "gx-s020-committed",
+      "gx-s020-recovery"
+    ],
+    "final_snapshot": {
+      "accepted_bytes": 90112,
+      "pending_units": 3,
+      "queue_bytes": 90112,
+      "traffic_units": 3,
+      "transmitted_bytes": 0
+    },
+    "postcommit_integrity_check": "ok",
+    "precommit_integrity_check": "ok",
+    "precommit_recovered_ids": [
+      "gx-s020-stable"
+    ],
+    "stable_snapshot": {
+      "accepted_bytes": 65536,
+      "pending_units": 1,
+      "queue_bytes": 65536,
+      "traffic_units": 1,
+      "transmitted_bytes": 0
+    }
+  },
+  "study_id": "S020",
+  "title": "Abrupt process termination at SQLite transaction boundaries"
+}

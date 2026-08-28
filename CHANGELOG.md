@@ -42,5 +42,7 @@
   ledger reopen, while leaving authentication and independent supplier implementation open.
 - Added S019, a versioned HMAC-authenticated GX-A1 binding with signed responses, transactional
   per-client sequence state and replay rejection that survives a clean server restart.
+- Added S020, a two-boundary `SIGKILL` recovery probe that distinguishes uncommitted rollback from
+  committed-state survival without claiming electrical power-loss or flight qualification.
 - Added deterministic SVG figures generated from the architecture and committed results, including
   the S019 trust and replay boundary.

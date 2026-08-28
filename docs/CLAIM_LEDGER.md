@@ -88,6 +88,9 @@
 | C071 | The S019 replay table contains the client identifier and last sequence but no secret column. | TEST | S019 schema inspection | Secret still exists in a process-readable key file |
 | C072 | S019 provides confidentiality, PKI, key lifecycle or flight-qualified security. | — | None of these mechanisms is implemented | Rejected |
 | C073 | S019 demonstrates independent supplier or terminal interoperability. | — | Both endpoints are GatewayCX reference software | Rejected |
+| C074 | S020 rolls back an uncommitted traffic unit and preserves an earlier committed unit after `SIGKILL`. | TEST | S020 | Coordinated pre-commit fault point on local SQLite |
+| C075 | S020 preserves a committed traffic unit when the writer is killed before closing and subsequently accepts new work. | TEST | S020 | Coordinated post-commit fault point on local SQLite |
+| C076 | S020 qualifies storage for electrical power loss or flight. | — | No power, device-cache, filesystem-corruption or flight-hardware test | Rejected |
 
 The ledger will grow when the evidence grows. A claim does not become stronger by appearing in the
 README.
