@@ -52,7 +52,8 @@ validate the model against a lunar communication link. There are currently:
 
 - no hardware measurements;
 - one socket-level delayed-byte HTTPS result, with a local undelayed TCP handshake;
-- no packet-level network-emulation results;
+- one short-delay dual-method S029 packet artifact covering DNS/IPv6, TLS 1.3, HTTP/2, HTTP/3,
+  SMTP and file transfer; no lunar-delay capture yet;
 - no vendor-private performance inputs;
 - no flight data; and
 - no independent implementation.

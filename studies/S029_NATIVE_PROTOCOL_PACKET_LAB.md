@@ -32,6 +32,14 @@ The kernel method requires `CAP_NET_ADMIN`; capture requires `CAP_NET_RAW`. The 
 configures and removes the qdisc in an isolated hosted runner and uploads the pcap/results as the
 `s029-native-protocol-evidence` artifact.
 
+## First external run
+
+[GitHub run 33220236500](https://github.com/aaaaaaaaaaaavm/GatewayCX/actions/runs/33220236500)
+passed both impairment methods and every protocol assertion on commit
+`539b8535bee86377f8cd36ff18bfb26064ace16e`. Artifact `9704881339` contains both JSON measurement
+records and the 124,067-byte pcap; its recorded digest is
+`sha256:8692117f99a8103b6d4f28a2ca10cd9b83627a8bf942343f515ffc53d5b98f95`.
+
 ## Boundary
 
 The HTTP clients are standards libraries, not an ordinary browser, and the SMTP agent is minimal.

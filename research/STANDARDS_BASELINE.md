@@ -10,8 +10,8 @@ mapping. It does not mean the underlying protocol is being replaced.
 
 | Plane | Existing base | GatewayCX action | Present evidence |
 |---|---|---|---|
-| Local addressing and forwarding | IPv6, RFC 8200 | Inherit | S029 IPv6 socket and DNS AAAA harness; external dual-method run pending |
-| Secure web service | TLS 1.3, HTTP/2, HTTP/3 | Inherit and test | S004 HTTP/1.1 measurement; S029 H2/H3 harness pending external run |
+| Local addressing and forwarding | IPv6, RFC 8200 | Inherit | S029 dual-method IPv6/DNS packet run passed at short delay |
+| Secure web service | TLS 1.3, HTTP/2, HTTP/3 | Inherit and test | S004 HTTP/1.1 and S029 short-delay H2/H3 measurements |
 | Continuous-path transport | TCP and QUIC | Inherit and measure | Satellite guidance exists; cislunar behaviour pending |
 | Disrupted delivery | LNIS V5 §3.1.2; BPv7, RFC 9171 and updates | Inherit BPv7; profile service/operations semantics around it | S005 semantic model; real implementation interop pending |
 | Bundle security | BPSec, RFC 9172 | Profile | Standard identified; threat model pending |

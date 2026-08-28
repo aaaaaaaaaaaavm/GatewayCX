@@ -36,9 +36,10 @@ where continuity permits. Local lunar compute keeps local work local. Caches and
 avoidable Earth round trips. Delay-tolerant delivery carries data through interruptions. RF and
 optical links are interchangeable bearers beneath an open service interface.
 
-> **Current state, 2026-08-28:** architecture, deterministic models and local software probes. No flight
+> **Current state, 2026-08-28:** architecture, deterministic models, local fault probes and one
+> short-delay dual-method native protocol packet run. No flight
 > hardware has been built, no optical terminal has been tested, and no lunar network has been
-> demonstrated. The committed results are model outputs, not measurements.
+> demonstrated. Every result is labelled as model, test, measurement or external evidence pointer.
 
 ## The requirement
 

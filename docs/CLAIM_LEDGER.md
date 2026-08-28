@@ -116,7 +116,7 @@
 | C099 | S028 rejects a corrupt update payload and rolls back an interrupted SQLite schema migration while slot A stays active. | TEST | S028 X14 | No secure boot, registry or real application deployment |
 | C100 | S028 performs electrical lunar black start. | — | X16 launches local child processes only | Rejected |
 | C101 | S028 restores exactly 23 committed rows after 60 seeded transaction cases and deliberate SQLite header corruption. | TEST | S028 X18 | Local file/backup test, not raw-device or power-loss qualification |
-| C102 | S029 defines two independent impairment methods and a loopback packet-capture gate for DNS/IPv6, TLS 1.3, HTTP/2, HTTP/3, SMTP and file transfer. | TEST | S029 source and workflow | Execution evidence remains pending until the external CI job passes |
+| C102 | S029 passes two independent impairment methods and a loopback packet-capture gate for DNS/IPv6, TLS 1.3, HTTP/2, HTTP/3, SMTP and file transfer. | MEASUREMENT | GitHub run 33220236500 and artifact 9704881339 | 25 ms one-way configuration; standards-library clients and minimal SMTP |
 | C103 | The existence of the S029 harness proves native lunar Internet performance. | — | Short-delay loopback tests do not establish lunar-delay usability | Rejected |
 
 The ledger will grow when the evidence grows. A claim does not become stronger by appearing in the

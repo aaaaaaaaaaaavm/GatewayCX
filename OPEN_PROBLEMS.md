@@ -5,7 +5,7 @@ close it.
 
 | ID | Problem | Present state | Closure evidence |
 |---|---|---|---|
-| P01 | Native protocol behaviour | S029 dual-method lab executes DNS/IPv6, TLS 1.3, HTTP/2, HTTP/3, SMTP and file transfer with CI packet capture; first external run pending | Lunar-delay matrix, browser/MUA clients, loss/reordering cases and reviewed captures |
+| P01 | Native protocol behaviour | S029 GitHub run 33220236500 passed DNS/IPv6, TLS 1.3, HTTP/2, HTTP/3, SMTP and file transfer through userspace and kernel-netem methods with a 124,067-byte pcap artifact | Lunar-delay matrix, browser/MUA clients, loss/reordering cases and reviewed captures |
 | P02 | IP/DTN boundary | S005 semantic and trust-boundary model | Working gateway, two BPv7 implementations and fault-injected security evidence |
 | P03 | Lunar regional topology | S024 time-samples three circular candidate constellations, three sites, contacts, capacity and one-node failure | SPICE/n-body candidate trajectories, terrain, ground sites and externally reviewed constellation design |
 | P04 | Optical link performance | S025 class budget covers geometry, photon margin, pointing, weather and RF fallback | Terminal-specific acquisition model plus hardware/field data |
