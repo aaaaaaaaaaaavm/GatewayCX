@@ -13,7 +13,7 @@ mapping. It does not mean the underlying protocol is being replaced.
 | Local addressing and forwarding | IPv6, RFC 8200 | Inherit | S029 dual-method IPv6/DNS packet run passed at short delay |
 | Secure web service | TLS 1.3, HTTP/2, HTTP/3 | Inherit and test | S004 HTTP/1.1 and S029 short-delay H2/H3 measurements |
 | Continuous-path transport | TCP and QUIC | Inherit and measure | Satellite guidance exists; cislunar behaviour pending |
-| Disrupted delivery | LNIS V5 §3.1.2; BPv7, RFC 9171 and updates | Inherit BPv7; profile service/operations semantics around it | S005 semantic model; real implementation interop pending |
+| Disrupted delivery | LNIS V5 §3.1.2; BPv7, RFC 9171 and updates | Inherit BPv7; profile service/operations semantics around it | S030 pinned dtn7-go/bp7-rs bidirectional harness pending external run |
 | Bundle security | BPSec, RFC 9172 | Profile | Standard identified; threat model pending |
 | Scheduled routing | CCSDS SABR | Evaluate | Public recommended standard; no contact-plan trial yet |
 | Lunar service interoperability | LNIS V5 | Treat as the current baseline and map every applicable seam | Sections 3.1.1.2, 3.1.2, 3.1.3, 4.5, 5.1, 6.1 and 6.4 mapped |
@@ -81,7 +81,7 @@ protocols or edge services. The exact boundary is recorded in
 - Measure cold TLS, first byte and connection reuse separately.
 - Define a bearer capability document independent of optical or RF supplier telemetry.
 - Extend the LNIS section mapping into field-level conformance cases as applicable documents mature.
-- Trial two BPv7 implementations before choosing any implementation-specific gateway contract.
+- Extend S030 wire interoperability into full daemon and convergence-layer sessions before choosing an implementation-specific gateway contract.
 - Implement the S005 acceptance, adapter-delivery and application-receipt states across that trial.
 
 All source links are recorded in [`references/SOURCES.md`](../references/SOURCES.md).

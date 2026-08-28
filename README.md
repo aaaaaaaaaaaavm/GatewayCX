@@ -129,6 +129,7 @@ The study register establishes the starting point:
 | S027 | What do declared utilisation and availability do to cost per delivered and retained bit? |
 | S028 | Do lunar identity, consistency, updates, black start and storage recovery fail safely in executable software? |
 | S029 | Do DNS/IPv6, TLS 1.3, HTTP/2, HTTP/3, SMTP and file transfer complete under two independent impairment methods? |
+| S030 | Can two independent BPv7 implementations preserve exact payloads through authenticated GatewayCX truncation/retry and ledger recovery? |
 
 The current declared inputs produce:
 

@@ -9,7 +9,7 @@ This register prevents a passing test suite from being mistaken for a closed arc
 | Does local placement remove declared remote dependencies? | S001/S002 comparison | Closed inside this model | Trace-driven application experiment |
 | Can local work complete during declared backbone loss? | S003 | Closed inside this state model | Fault-injected distributed system |
 | Do native Internet protocols traverse impaired IPv6 paths? | S004 socket result + S029 dual-method packet laboratory | Closed for the short-delay userspace/kernel-netem matrix in run 33220236500 | Lunar-delay/loss matrix, ordinary browser/MUA clients and reviewed captures |
-| Where should IP terminate and DTN begin? | ADR-0002 + S005 semantic replay | Partially closed as an explicit contract | Gateway prototypes, BPv7 interoperability and security analysis |
+| Where should IP terminate and DTN begin? | ADR-0002 + S005 + S030 external wire-interoperability harness | Gateway/ledger/auth fault path implemented; external run pending | Full BP daemons, convergence layers, BPSec, contact routing and application policy |
 | What state is required to use a declared capacity? | S006 BDP and outage derivation | Closed for stated arithmetic inputs | Transport implementation and queue measurements |
 | What backbone capacity is available? | S024 contact/capacity simulation + S025 class budgets | Partially closed for declared classes | Terminal data, operational ephemerides, interference and measured availability |
 | Is a circular Moon-synchronous “lunar GSO” a valid baseline? | S022 two-body/Hill-radius derivation | Rejected as a simple baseline under stated inputs | Multi-body trajectory propagation for candidate orbit families |

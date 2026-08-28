@@ -52,6 +52,12 @@ lunar-delay, loss/reordering and ordinary GUI clients remain follow-on evidence 
 **Exit:** a reference interconnect survives scheduled and unscheduled link loss without corrupting
 or silently dropping committed traffic classes.
 
+**Current executable gate:** S030 fetches pinned `dtn7-go` and `bp7-rs` revisions without vendoring
+them, exchanges RFC 9171 bundle wire images in both directions, and passes each through the existing
+GX-A1 adapter, SQLite byte ledger and S019 HMAC/replay mechanism. Each first wire attempt is
+truncated and must be rejected before a complete retry. External CI must pass before this becomes
+interop evidence; full daemons, convergence layers, BPSec and contact routing remain outside it.
+
 ## M3: Lunar regional Internet and compute
 
 **Purpose:** make the lunar experience local-first.

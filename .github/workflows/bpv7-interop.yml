@@ -1,0 +1,74 @@
+name: bpv7-external-interop
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "gatewaycx/bpv7_interop_lab.py"
+      - "tests/test_bpv7_interop_lab.py"
+      - ".github/workflows/bpv7-interop.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  two-implementations:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.25.x"
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Install GatewayCX
+        run: python -m pip install -e .
+      - name: Build pinned Rust BPv7 implementation
+        run: cargo install --git https://github.com/dtn7/bp7-rs.git --rev e3289bca2aed8f86585790d7aebd340d7bde7289 --bin bp7 --root /tmp/gx-rust
+      - name: Build pinned Go BPv7 bridge
+        run: |
+          mkdir -p /tmp/gx-go
+          cd /tmp/gx-go
+          go mod init gatewaycx.invalid/s030
+          go get github.com/dtn7/dtn7-go@53d0208fe8da6dc3d4cb5d54c859cd4d59d921e7
+          cat > main.go <<'GO'
+          package main
+          import (
+            "fmt"
+            "io"
+            "os"
+            "time"
+            "github.com/dtn7/dtn7-go/pkg/bpv7"
+          )
+          func fail(err error) { fmt.Fprintln(os.Stderr, err); os.Exit(1) }
+          func main() {
+            if len(os.Args) != 2 { fail(fmt.Errorf("usage: bridge encode|decode")) }
+            data, err := io.ReadAll(os.Stdin); if err != nil { fail(err) }
+            if os.Args[1] == "encode" {
+              bundle, err := bpv7.Builder().CRC(bpv7.CRC32).Source("dtn://go/source").Destination("dtn://rust/destination").CreationTimestampNow().Lifetime(time.Hour).PayloadBlock(data).Build()
+              if err != nil { fail(err) }; if err = bundle.WriteBundle(os.Stdout); err != nil { fail(err) }
+            } else if os.Args[1] == "decode" {
+              bundle, err := bpv7.ParseBundle(os.Stdin); if err != nil { fail(err) }
+              payload, ok := bundle.PayloadBlock.Value.(*bpv7.PayloadBlock); if !ok { fail(fmt.Errorf("payload type")) }
+              if _, err = os.Stdout.Write(payload.Data()); err != nil { fail(err) }
+            } else { fail(fmt.Errorf("unknown mode")) }
+          }
+          GO
+          go build -o /tmp/gx-go-bridge .
+      - name: Exchange bundles through fault-injected GatewayCX
+        run: python -m gatewaycx.bpv7_interop_lab --go-bridge /tmp/gx-go-bridge --rust-bp7 /tmp/gx-rust/bin/bp7 --output S030_bpv7_interop.json
+      - name: Assert external interop and ledger checks
+        run: |
+          python - <<'PY'
+          import json
+          result = json.load(open("S030_bpv7_interop.json"))
+          assert all(result["checks"].values()), result["checks"]
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: s030-bpv7-external-interop
+          path: S030_bpv7_interop.json

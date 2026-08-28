@@ -10,6 +10,8 @@
   consistency, signed real-payload updates, child-process black start and SQLite corruption recovery.
 - Added S029, a dependency-pinned native protocol laboratory that exercises DNS over IPv6, TLS 1.3,
   HTTP/2, HTTP/3, SMTP and file transfer through userspace and Linux netem impairment with pcap evidence.
+- Added S030, a non-vendored external BPv7 interoperability harness joining dtn7-go and bp7-rs wire
+  images to the GX-A1 adapter, durable ledger, authenticated sequence state and truncation/retry fault.
 
 - Replaced Apache License 2.0 with the GatewayCX Proprietary Licence, asserting Avisys Services
   ownership for current and later versions while preserving the legal history of earlier grants.

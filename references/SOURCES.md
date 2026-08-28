@@ -35,6 +35,10 @@ publishing organisation where possible. Accessed 2026-08-28.
   September 2015. This is based on RFC 5050/BPv6; it must not be cited as a BPv7 profile.
 - CCSDS, [734.3-B-1: Schedule-Aware Bundle Routing](https://ccsds.org/searchpubs/), Blue Book,
   July 2019
+- dtn7, [`dtn7-go`](https://github.com/dtn7/dtn7-go), independent Go BPv7 implementation used
+  at pinned revision `53d0208fe8da6dc3d4cb5d54c859cd4d59d921e7` by the S030 external test
+- dtn7, [`bp7-rs`](https://github.com/dtn7/bp7-rs), independent Rust BPv7 implementation used
+  at pinned revision `e3289bca2aed8f86585790d7aebd340d7bde7289` by the S030 external test
 
 ## Lunar networks and optical communications
 
