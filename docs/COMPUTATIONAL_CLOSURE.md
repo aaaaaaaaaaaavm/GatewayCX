@@ -27,6 +27,7 @@ This register prevents a passing test suite from being mistaken for a closed arc
 | Can one runtime seam drive the optical and RF profile semantics? | S016 GX-A1 adapter probe | Closed for two profiles using one reference class | Out-of-process binding, independent implementation and hardware control |
 | Does accepted adapter progress survive a gateway-process restart? | S017 SQLite restart probe | Closed for a clean two-process local restart | Abrupt kill, power loss, corrupt media, multi-node store and flight hardware |
 | Can the service plane call GX-A1 without sharing the adapter process? | S018 loopback JSONL probe | Closed for the reference implementation and local transport | Authentication, stable schema, independent adapter and terminal SDK |
+| Can the local process boundary reject unauthorised modification and replay? | S019 HMAC and durable-sequence probe | Closed for one pre-shared-key client and clean restart | Confidential transport, PKI/key lifecycle, roles, independent adapter and abrupt-fault test |
 | Is the system commercially viable? | None yet | Open | Demand, deployment and operating-cost model |
 
 CI closes consistency questions. It does not close physics, hardware, operations or markets.

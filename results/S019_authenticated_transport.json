@@ -1,0 +1,46 @@
+{
+  "checks": {
+    "next_sequence_after_restart_is_accepted": true,
+    "payload_content_crossed_rpc": false,
+    "replay_store_contains_no_secret_column": true,
+    "response_is_authenticated": true,
+    "restart_replay_is_rejected": true,
+    "same_process_replay_is_rejected": true,
+    "tampered_request_is_rejected": true,
+    "traffic_ledger_survives_restart": true,
+    "traffic_submission_is_accepted": true,
+    "valid_request_is_authenticated": true,
+    "wrong_key_is_rejected": true
+  },
+  "evidence_class": "TEST",
+  "inputs": {
+    "authentication": "HMAC-SHA256 with 256-bit pre-shared key",
+    "ordering": "strictly increasing per-client integer sequence",
+    "payload_content_supplied": false,
+    "replay_state": "SQLite last accepted sequence",
+    "rpc_version": "GX-A1-JSONL-HMAC/0.1",
+    "transport": "TCP loopback JSONL"
+  },
+  "interpretation_boundary": [
+    "HMAC possession authenticates this reference client and detects request or response modification; it does not provide confidentiality.",
+    "The pre-shared-key mechanism is not a PKI, key-rotation system, hardware root of trust or flight security design.",
+    "A valid sequence is consumed before operation dispatch. A lost response therefore requires operation-specific reconciliation; only traffic submission has an explicit idempotency key here.",
+    "Replay state survives a clean process restart, not abrupt power loss or corrupted storage.",
+    "Both endpoints remain GatewayCX reference software on one host; no supplier adapter, terminal or physical link participates.",
+    "Secrets, message authentication codes, process identifiers and ephemeral ports are excluded from the committed result."
+  ],
+  "observations": {
+    "accepted_bytes_after_restart": 32768,
+    "accepted_sequence_before_restart": 3,
+    "replay_store_columns": [
+      "client_id",
+      "last_sequence"
+    ],
+    "restart_replay_error": "replayed_sequence",
+    "same_process_replay_error": "replayed_sequence",
+    "tampered_request_error": "authentication_failed",
+    "wrong_key_error": "authentication_failed"
+  },
+  "study_id": "S019",
+  "title": "Authenticated GX-A1 binding and durable replay rejection"
+}

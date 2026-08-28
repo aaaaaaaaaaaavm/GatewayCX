@@ -43,4 +43,5 @@ to acquire a bearer, inject a fault or spend capacity.
 - the service process never imports a provider-specific terminal API.
 
 Both server processes still run the GatewayCX reference implementation. Independent supplier
-interoperability, authentication and hardware control remain open.
+interoperability and hardware control remain open. S019 preserves this binding as a baseline and
+adds the separately versioned [authenticated reference binding](AUTHENTICATED_ADAPTER_BINDING.md).

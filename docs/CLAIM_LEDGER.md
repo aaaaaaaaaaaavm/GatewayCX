@@ -83,6 +83,11 @@
 | C066 | The S018 server rejects malformed JSON and remains available for a subsequent operation. | TEST | S018 | Local loopback test only |
 | C067 | Restricting the reference binding to loopback authenticates or authorises its client. | — | Reachability is not identity or policy | Rejected |
 | C068 | S018 demonstrates independent supplier or terminal interoperability. | — | No external adapter or hardware participates | Rejected |
+| C069 | S019 accepts a correctly authenticated request and rejects modification or an incorrect pre-shared key. | TEST | S019 | Local HMAC reference mechanism only |
+| C070 | S019 rejects the same valid sequence before and after a clean server restart. | TEST | S019 | SQLite single-node replay state |
+| C071 | The S019 replay table contains the client identifier and last sequence but no secret column. | TEST | S019 schema inspection | Secret still exists in a process-readable key file |
+| C072 | S019 provides confidentiality, PKI, key lifecycle or flight-qualified security. | — | None of these mechanisms is implemented | Rejected |
+| C073 | S019 demonstrates independent supplier or terminal interoperability. | — | Both endpoints are GatewayCX reference software | Rejected |
 
 The ledger will grow when the evidence grows. A claim does not become stronger by appearing in the
 README.

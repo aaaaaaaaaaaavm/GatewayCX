@@ -224,12 +224,64 @@ def durable_restart() -> None:
     write("s017-durable-restart.svg", svg(1600, 850, "S017 cross-process durable restart", body))
 
 
+def authenticated_binding() -> None:
+    result = load("S019_authenticated_transport.json")
+    observations = result["observations"]
+    body = [
+        text(80, 82, "AUTHENTICATE THE CALLER · PRESERVE REPLAY STATE", 34, TEXT, weight=700),
+        text(80, 120, "S019 local reference binding · HMAC-SHA256 · clean restart", 21, MUTED),
+    ]
+    stages = [
+        (80, "SERVICE CLIENT", "client ID + sequence", "sign canonical request", BLUE),
+        (455, "TRUST CHECK", "verify request MAC", "reject wrong key / change", CYAN),
+        (830, "REPLAY LEDGER", "last sequence only", "survives server restart", GOLD),
+        (1205, "GX-A1 ADAPTER", "dispatch operation", "payload-blind ledger", RED),
+    ]
+    for x, heading, main, detail, color in stages:
+        body.extend(
+            [
+                rect(x, 215, 315, 260, PANEL, stroke=color, stroke_width=3),
+                rect(x + 24, 243, 72, 8, color, radius=4),
+                text(x + 24, 295, heading, 19, color, weight=700),
+                text(x + 24, 355, main, 24, TEXT, weight=650),
+                text(x + 24, 400, detail, 18, MUTED),
+            ]
+        )
+    for x1, x2 in ((395, 455), (770, 830), (1145, 1205)):
+        body.append(line(x1, 345, x2 - 10, 345, BLUE, 5, marker=True))
+    checks = [
+        ("MODIFIED", observations["tampered_request_error"]),
+        ("WRONG KEY", observations["wrong_key_error"]),
+        ("REPLAY", observations["restart_replay_error"]),
+    ]
+    for index, (label, outcome) in enumerate(checks):
+        x = 80 + index * 390
+        body.extend(
+            [
+                rect(x, 550, 350, 88, "#0e1829", stroke=LINE, stroke_width=2),
+                text(x + 22, 584, label, 16, RED, weight=700),
+                text(x + 22, 618, outcome, 19, TEXT),
+            ]
+        )
+    body.extend(
+        [
+            text(80, 715, "BOUNDARY", 16, RED, weight=700),
+            text(205, 715, "no confidentiality · no PKI · no independent adapter · no flight claim", 19, MUTED),
+        ]
+    )
+    write(
+        "s019-authenticated-binding.svg",
+        svg(1600, 780, "S019 authenticated GX-A1 reference binding", body),
+    )
+
+
 def main() -> int:
     architecture()
     latency()
     bearer_window()
     durable_restart()
-    print("wrote 4 GatewayCX SVG figures")
+    authenticated_binding()
+    print("wrote 5 GatewayCX SVG figures")
     return 0
 
 

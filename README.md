@@ -29,7 +29,7 @@ where continuity permits. Local lunar compute keeps local work local. Caches and
 avoidable Earth round trips. Delay-tolerant delivery carries data through interruptions. RF and
 optical links are interchangeable bearers beneath an open service interface.
 
-> **Current state, 2026-08-27:** architecture and deterministic analytical model. No flight
+> **Current state, 2026-08-28:** architecture, deterministic models and local software probes. No flight
 > hardware has been built, no optical terminal has been tested, and no lunar network has been
 > demonstrated. The committed results are model outputs, not measurements.
 
@@ -110,6 +110,7 @@ The study register establishes the starting point:
 | S016 | Can one executable runtime seam apply optical and RF profiles through fault and recovery? |
 | S017 | Does accepted partial-transfer state survive a clean gateway-process restart? |
 | S018 | Can the GX-A1 adapter run across a process boundary and reject malformed traffic safely? |
+| S019 | Can the process boundary authenticate a client and reject replay across restart? |
 
 The current declared inputs produce:
 
@@ -129,6 +130,10 @@ or network.
 <p align="center">
   <img src="figures/s016-bearer-window.svg" alt="S016 optical and RF profile capacity comparison" width="49%">
   <img src="figures/s017-durable-restart.svg" alt="S017 traffic-ledger state across process restart" width="49%">
+</p>
+
+<p align="center">
+  <img src="figures/s019-authenticated-binding.svg" alt="S019 authenticated request and durable replay-state boundary" width="100%">
 </p>
 
 <p align="center"><sub>All three charts are generated from committed model or test results. They
@@ -160,6 +165,8 @@ deterministic model.
   defines the payload-blind persistent queue and byte-ledger invariants.
 - [`docs/architecture/ADAPTER_PROCESS_BINDING.md`](docs/architecture/ADAPTER_PROCESS_BINDING.md)
   defines the local GX-A1 JSONL process boundary and its unfinished security requirements.
+- [`docs/architecture/AUTHENTICATED_ADAPTER_BINDING.md`](docs/architecture/AUTHENTICATED_ADAPTER_BINDING.md)
+  defines the S019 pre-shared-key integrity and durable replay-rejection boundary.
 - [`docs/FIGURE_INDEX.md`](docs/FIGURE_INDEX.md) maps generated visuals back to their sources and
   evidence limits.
 - [`docs/architecture/OPERATIONS_DIAGNOSTICS.md`](docs/architecture/OPERATIONS_DIAGNOSTICS.md)

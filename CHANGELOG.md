@@ -40,4 +40,7 @@
   transmitted byte state across separate seed and recovery processes.
 - Added S018, a loopback JSONL GX-A1 process binding with malformed-input isolation and persistent
   ledger reopen, while leaving authentication and independent supplier implementation open.
-- Added four deterministic SVG figures generated from the architecture and committed results.
+- Added S019, a versioned HMAC-authenticated GX-A1 binding with signed responses, transactional
+  per-client sequence state and replay rejection that survives a clean server restart.
+- Added deterministic SVG figures generated from the architecture and committed results, including
+  the S019 trust and replay boundary.

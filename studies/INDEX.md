@@ -23,3 +23,4 @@ separate prose run sheet is added only when method, interpretation or external d
 | S016 | GX-A1 executable bearer adapter probe | MODEL + TEST | Optical/RF profiles exercised through one reference runtime seam |
 | S017 | Cross-process durable traffic-ledger restart | TEST | Clean restart preserves partial progress and duplicate semantics |
 | S018 | GX-A1 local process-boundary transport | TEST | Loopback JSONL binding, malformed-input isolation and ledger reopen |
+| S019 | Authenticated GX-A1 transport | TEST | HMAC request/response integrity and restart-surviving replay rejection |

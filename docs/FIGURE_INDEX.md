@@ -10,6 +10,7 @@ legible in the repository without storing a second raster copy.
 | [`baseline-latency.svg`](../figures/baseline-latency.svg) | `results/baseline.json` | Deterministic scenario model, not user measurement |
 | [`s016-bearer-window.svg`](../figures/s016-bearer-window.svg) | `results/S016_adapter_probe.json` | Assumed profile capacities, no terminal |
 | [`s017-durable-restart.svg`](../figures/s017-durable-restart.svg) | `results/S017_durable_restart.json` | Clean local restart, not power-loss qualification |
+| [`s019-authenticated-binding.svg`](../figures/s019-authenticated-binding.svg) | `results/S019_authenticated_transport.json` | Local HMAC/replay test, not deployed or flight security |
 
 Generated figures are checked for byte-for-byte drift in CI. A changed result therefore changes
 its visual in the same commit or fails verification.
