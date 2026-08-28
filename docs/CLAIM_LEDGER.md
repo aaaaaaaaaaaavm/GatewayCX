@@ -105,6 +105,12 @@
 | C088 | LNIS V5 permits IPv4, IPv6 and BPv7 at LNSP-user network-layer interfaces, including over bilaterally defined non-LNIS links. | STANDARD | LNIS V5 §4.5 Table 12 | Source reviewed |
 | C089 | NASA reports that DTN became operational in the Near Space Network and Deep Space Network after its DTN Project completed in January 2026. | PUBLIC FACT | NASA SCaN DTN page | Source reviewed 2026-08-28; not a GatewayCX result |
 | C090 | A GatewayCX profile test establishes LunaNet compliance. | — | LNIS defines compliance at its own service/interface level and applicable documents | Rejected |
+| C091 | S024 is an operational lunar ephemeris or production constellation design. | — | It uses circular two-body propagation and synthetic capacities | Rejected |
+| C092 | Under S024 inputs, the medium 8-node class maintains a routed path for all three sampled sites through the named single-node fault. | SIMULATION | S024 | 48-hour, 600-second sample; simplified geometry and link graph |
+| C093 | S025 shows the declared DWE Ka class loses its positive paper margin under 6 dB additional loss. | DERIVATION | S025 | Architecture inputs; no terminal or field measurement |
+| C094 | A positive S025 optical or RF margin proves service availability. | — | Acquisition, weather, interference and hardware are not closed | Rejected |
+| C095 | S026 sizes a flight-ready lunar data centre. | — | Comparative class model omits major subsystems and qualification | Rejected |
+| C096 | S027 establishes a viable market or customer price. | — | Cost and utilisation inputs are synthetic | Rejected |
 
 The ledger will grow when the evidence grows. A claim does not become stronger by appearing in the
 README.

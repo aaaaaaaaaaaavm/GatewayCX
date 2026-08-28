@@ -1,0 +1,209 @@
+{
+  "checks": {
+    "higher_optical_availability_increases_hybrid_capacity": true,
+    "optical_pointing_error_reduces_margin": true,
+    "rf_degradation_reduces_margin_by_six_db": true,
+    "rf_fallback_preserves_nonzero_weather_blocked_service": true
+  },
+  "evidence_class": "DERIVATION + MODEL",
+  "interpretation_boundary": [
+    "Every terminal parameter is a declared architecture class, not vendor data or measured performance.",
+    "RF uses free-space loss and a simplified C/N0-to-Eb/N0 budget; coding implementation loss, interference, polarisation dynamics and regulatory constraints require separate inputs.",
+    "Optical capture uses a far-field spot approximation and Gaussian pointing penalty; atmospheric turbulence, scintillation, cloud correlation and acquisition dynamics are not resolved.",
+    "A positive paper margin is not availability, acquisition success, hardware qualification or a service guarantee."
+  ],
+  "optical_classes": [
+    {
+      "class": "lunar_crosslink",
+      "pointing_sensitivity": [
+        {
+          "capture_fraction": 1.6e-07,
+          "margin_db": 10.963749,
+          "photons_per_bit": 1248.460909,
+          "pointing_error_urad": 0.0,
+          "pointing_loss_db": -0.0,
+          "received_power_w": 8.000000000000003e-08,
+          "spot_radius_m": 250.0
+        },
+        {
+          "capture_fraction": 1.6e-07,
+          "margin_db": 10.616314,
+          "photons_per_bit": 1152.474673,
+          "pointing_error_urad": 5.0,
+          "pointing_loss_db": 0.347436,
+          "received_power_w": 7.384930771093089e-08,
+          "spot_radius_m": 250.0
+        },
+        {
+          "capture_fraction": 1.6e-07,
+          "margin_db": 9.574007,
+          "photons_per_bit": 906.568687,
+          "pointing_error_urad": 10.0,
+          "pointing_loss_db": 1.389742,
+          "received_power_w": 5.8091922965895284e-08,
+          "spot_radius_m": 250.0
+        },
+        {
+          "capture_fraction": 1.6e-07,
+          "margin_db": 5.40478,
+          "photons_per_bit": 347.118701,
+          "pointing_error_urad": 20.0,
+          "pointing_loss_db": 5.558969,
+          "received_power_w": 2.2242984036255536e-08,
+          "spot_radius_m": 250.0
+        }
+      ],
+      "profile": {
+        "divergence_urad": 25.0,
+        "efficiency": 0.25,
+        "name": "lunar_crosslink",
+        "range_km": 10000.0,
+        "rate_mbps": 500.0,
+        "required_photons_per_bit": 100.0,
+        "rx_aperture_m": 0.2,
+        "tx_aperture_m": 0.08,
+        "tx_power_w": 2.0,
+        "wavelength_nm": 1550.0
+      }
+    },
+    {
+      "class": "lunar_earth_trunk",
+      "pointing_sensitivity": [
+        {
+          "capture_fraction": 4.23e-09,
+          "margin_db": -4.814318,
+          "photons_per_bit": 33.004125,
+          "pointing_error_urad": 0.0,
+          "pointing_loss_db": -0.0,
+          "received_power_w": 4.22973597784999e-09,
+          "spot_radius_m": 7688.0
+        },
+        {
+          "capture_fraction": 4.23e-09,
+          "margin_db": -5.357186,
+          "photons_per_bit": 29.126038,
+          "pointing_error_urad": 5.0,
+          "pointing_loss_db": 0.542868,
+          "received_power_w": 3.732728899203241e-09,
+          "spot_radius_m": 7688.0
+        },
+        {
+          "capture_fraction": 4.23e-09,
+          "margin_db": -6.98579,
+          "photons_per_bit": 20.018014,
+          "pointing_error_urad": 10.0,
+          "pointing_loss_db": 2.171472,
+          "received_power_w": 2.565464553055615e-09,
+          "spot_radius_m": 7688.0
+        },
+        {
+          "capture_fraction": 4.23e-09,
+          "margin_db": -13.500207,
+          "photons_per_bit": 4.466623,
+          "pointing_error_urad": 20.0,
+          "pointing_loss_db": 8.68589,
+          "received_power_w": 5.724325165784194e-10,
+          "spot_radius_m": 7688.0
+        }
+      ],
+      "profile": {
+        "divergence_urad": 20.0,
+        "efficiency": 0.2,
+        "name": "lunar_earth_trunk",
+        "range_km": 384400.0,
+        "rate_mbps": 1000.0,
+        "required_photons_per_bit": 100.0,
+        "rx_aperture_m": 1.0,
+        "tx_aperture_m": 0.2,
+        "tx_power_w": 5.0,
+        "wavelength_nm": 1550.0
+      }
+    }
+  ],
+  "rf_classes": [
+    {
+      "class": "surface_s_band",
+      "clear": {
+        "cn0_db_hz": 77.087967,
+        "ebn0_db": 17.087967,
+        "extra_loss_db": 0.0,
+        "free_space_path_loss_db": 165.512033,
+        "margin_db": 13.087967
+      },
+      "degraded": {
+        "cn0_db_hz": 71.087967,
+        "ebn0_db": 11.087967,
+        "extra_loss_db": 6.0,
+        "free_space_path_loss_db": 165.512033,
+        "margin_db": 7.087967
+      },
+      "profile": {
+        "frequency_ghz": 2.25,
+        "loss_db": 3.0,
+        "name": "surface_s_band",
+        "range_km": 2000.0,
+        "rate_mbps": 1.0,
+        "required_ebn0_db": 4.0,
+        "rx_gt_db_k": -1.0,
+        "tx_gain_dbi": 8.0,
+        "tx_power_dbw": 10.0
+      }
+    },
+    {
+      "class": "dwe_ka_band",
+      "clear": {
+        "cn0_db_hz": 90.35355,
+        "ebn0_db": 10.35355,
+        "extra_loss_db": 0.0,
+        "free_space_path_loss_db": 234.24645,
+        "margin_db": 5.35355
+      },
+      "degraded": {
+        "cn0_db_hz": 84.35355,
+        "ebn0_db": 4.35355,
+        "extra_loss_db": 6.0,
+        "free_space_path_loss_db": 234.24645,
+        "margin_db": -0.64645
+      },
+      "profile": {
+        "frequency_ghz": 32.0,
+        "loss_db": 4.0,
+        "name": "dwe_ka_band",
+        "range_km": 384400.0,
+        "rate_mbps": 100.0,
+        "required_ebn0_db": 5.0,
+        "rx_gt_db_k": 35.0,
+        "tx_gain_dbi": 45.0,
+        "tx_power_dbw": 20.0
+      }
+    }
+  ],
+  "study_id": "S025",
+  "title": "Class-based RF and optical link-budget sensitivity",
+  "weather_and_fallback": [
+    {
+      "hybrid_average_mbps": 550.0,
+      "optical_availability": 0.5,
+      "optical_mbps": 500.0,
+      "rf_fallback_mbps": 100.0
+    },
+    {
+      "hybrid_average_mbps": 820.0,
+      "optical_availability": 0.8,
+      "optical_mbps": 800.0,
+      "rf_fallback_mbps": 100.0
+    },
+    {
+      "hybrid_average_mbps": 955.0,
+      "optical_availability": 0.95,
+      "optical_mbps": 950.0,
+      "rf_fallback_mbps": 100.0
+    },
+    {
+      "hybrid_average_mbps": 991.0,
+      "optical_availability": 0.99,
+      "optical_mbps": 990.0,
+      "rf_fallback_mbps": 100.0
+    }
+  ]
+}

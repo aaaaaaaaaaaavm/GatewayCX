@@ -4,6 +4,8 @@
 
 - Reframed GatewayCX explicitly as an interoperable service and operations profile around LNIS V5,
   Internet standards and operational NASA DTN rather than a competing Bundle Protocol architecture.
+- Added S024–S027, replacing unmodelled topology, link, data-centre and commercial rows with
+  deterministic ephemeris, link-budget, physical-resource and unit-economics simulations.
 
 - Replaced Apache License 2.0 with the GatewayCX Proprietary Licence, asserting Avisys Services
   ownership for current and later versions while preserving the legal history of earlier grants.

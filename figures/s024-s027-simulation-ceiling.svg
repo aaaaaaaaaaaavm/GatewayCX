@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="760" viewBox="0 0 1600 760" role="img" aria-labelledby="title">
+<title id="title">GatewayCX S024 to S027 simulation ceiling</title>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4f8cff"/></marker></defs>
+<rect x="0" y="0" width="1600" height="760" rx="0" fill="#0b1220" stroke="none" stroke-width="0"/>
+<text x="80" y="82" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="32" text-anchor="start" font-weight="700">FROM UNMODELLED ROWS TO EXECUTABLE SENSITIVITIES</text>
+<text x="80" y="120" fill="#9fb0c9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" text-anchor="start" font-weight="400">S024–S027 · architecture classes, not hardware or market evidence</text>
+<rect x="80" y="215" width="315" height="330" rx="18" fill="#121d31" stroke="#4f8cff" stroke-width="3"/>
+<rect x="104" y="245" width="72" height="8" rx="4" fill="#4f8cff" stroke="none" stroke-width="0"/>
+<text x="104" y="300" fill="#4f8cff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" text-anchor="start" font-weight="700">EPHEMERIS + FAILURE</text>
+<text x="104" y="385" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="26" text-anchor="start" font-weight="650">3 / 3 sites routed</text>
+<text x="104" y="440" fill="#9fb0c9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" text-anchor="start" font-weight="400">100% far-side sampled availability</text>
+<rect x="455" y="215" width="315" height="330" rx="18" fill="#121d31" stroke="#31d2c2" stroke-width="3"/>
+<rect x="479" y="245" width="72" height="8" rx="4" fill="#31d2c2" stroke="none" stroke-width="0"/>
+<text x="479" y="300" fill="#31d2c2" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" text-anchor="start" font-weight="700">RF / OPTICAL LINKS</text>
+<text x="479" y="385" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="26" text-anchor="start" font-weight="650">5.35 dB Ka margin</text>
+<text x="479" y="440" fill="#9fb0c9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" text-anchor="start" font-weight="400">-0.65 dB with +6 dB loss</text>
+<rect x="830" y="215" width="315" height="330" rx="18" fill="#121d31" stroke="#ffbf47" stroke-width="3"/>
+<rect x="854" y="245" width="72" height="8" rx="4" fill="#ffbf47" stroke="none" stroke-width="0"/>
+<text x="854" y="300" fill="#ffbf47" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" text-anchor="start" font-weight="700">LUNAR COMPUTE</text>
+<text x="854" y="385" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="26" text-anchor="start" font-weight="650">35.67 kW facility</text>
+<text x="854" y="440" fill="#9fb0c9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" text-anchor="start" font-weight="400">60.79 m² radiator class</text>
+<rect x="1205" y="215" width="315" height="330" rx="18" fill="#121d31" stroke="#ff6b6b" stroke-width="3"/>
+<rect x="1229" y="245" width="72" height="8" rx="4" fill="#ff6b6b" stroke="none" stroke-width="0"/>
+<text x="1229" y="300" fill="#ff6b6b" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" text-anchor="start" font-weight="700">UNIT ECONOMICS</text>
+<text x="1229" y="385" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="26" text-anchor="start" font-weight="650">$9.86e-09 / bit</text>
+<text x="1229" y="440" fill="#9fb0c9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" text-anchor="start" font-weight="400">synthetic 80% utilisation case</text>
+<rect x="80" y="610" width="1440" height="82" rx="18" fill="#0e1829" stroke="#31415f" stroke-width="2"/>
+<text x="110" y="644" fill="#ff6b6b" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" text-anchor="start" font-weight="700">EVIDENCE RULE</text>
+<text x="110" y="677" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" text-anchor="start" font-weight="400">replace assumptions with controlled inputs; never relabel a model as a measurement</text>
+</svg>

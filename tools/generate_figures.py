@@ -444,6 +444,41 @@ def ground_offload() -> None:
     write("s023-ground-offload.svg", svg(1600, 790, "S023 ground-network offload", body))
 
 
+def simulation_ceiling() -> None:
+    ephemeris = load("S024_ephemeris.json")
+    links = load("S025_link_budgets.json")
+    datacentre = load("S026_datacentre_trade.json")
+    economics = load("S027_economics.json")
+    medium = next(case for case in ephemeris["cases"] if case["constellation"] == "medium_inclined_8")
+    ka = next(case for case in links["rf_classes"] if case["class"] == "dwe_ka_band")
+    surface = next(case for case in datacentre["configurations"] if case["configuration"] == "surface_shielded")
+    economic = next(case for case in economics["cases"] if case["utilisation"] == 0.8 and case["optical_availability"] == 0.9)
+    panels = [
+        (80, "EPHEMERIS + FAILURE", "3 / 3 sites routed", f'{medium["single_satellite_failure"]["sites"]["far_side_equator"]["availability_fraction"]:.0%} far-side sampled availability', BLUE),
+        (455, "RF / OPTICAL LINKS", f'{ka["clear"]["margin_db"]:.2f} dB Ka margin', f'{ka["degraded"]["margin_db"]:.2f} dB with +6 dB loss', CYAN),
+        (830, "LUNAR COMPUTE", f'{surface["outputs"]["facility_power_kw"]:.2f} kW facility', f'{surface["outputs"]["radiator_area_m2"]:.2f} m² radiator class', GOLD),
+        (1205, "UNIT ECONOMICS", f'${economic["cost_per_delivered_bit_usd"]:.2e} / bit', "synthetic 80% utilisation case", RED),
+    ]
+    body = [
+        text(80, 82, "FROM UNMODELLED ROWS TO EXECUTABLE SENSITIVITIES", 32, TEXT, weight=700),
+        text(80, 120, "S024–S027 · architecture classes, not hardware or market evidence", 21, MUTED),
+    ]
+    for x, heading, main_value, detail, color in panels:
+        body.extend([
+            rect(x, 215, 315, 330, PANEL, stroke=color, stroke_width=3),
+            rect(x + 24, 245, 72, 8, color, radius=4),
+            text(x + 24, 300, heading, 17, color, weight=700),
+            text(x + 24, 385, main_value, 26, TEXT, weight=650),
+            text(x + 24, 440, detail, 17, MUTED),
+        ])
+    body.extend([
+        rect(80, 610, 1440, 82, "#0e1829", stroke=LINE, stroke_width=2),
+        text(110, 644, "EVIDENCE RULE", 16, RED, weight=700),
+        text(110, 677, "replace assumptions with controlled inputs; never relabel a model as a measurement", 21, TEXT),
+    ])
+    write("s024-s027-simulation-ceiling.svg", svg(1600, 760, "GatewayCX S024 to S027 simulation ceiling", body))
+
+
 def main() -> int:
     architecture()
     latency()
@@ -454,7 +489,8 @@ def main() -> int:
     independent_adapter()
     lunar_orbit_envelope()
     ground_offload()
-    print("wrote 9 GatewayCX SVG figures")
+    simulation_ceiling()
+    print("wrote 10 GatewayCX SVG figures")
     return 0
 
 

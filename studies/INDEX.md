@@ -28,3 +28,7 @@ separate prose run sheet is added only when method, interpretation or external d
 | S021 | Independent-code GX-A1 adapter | TEST | Authenticated client crosses into a standalone standard-library server |
 | S022 | Lunar relay-shell envelope | DERIVATION | Synchronous/Hill-radius screen and ideal equatorial shell trade |
 | S023 | Lunar ground-network offload | MODEL | Synthetic pool separation and relay-pipeline bottleneck |
+| S024 | Lunar relay ephemeris and failures | SIMULATION | Circular time-sampled positions, contacts, capacity and one-node faults |
+| S025 | RF/optical link budgets | DERIVATION + MODEL | Class margins plus pointing, weather and fallback sensitivities |
+| S026 | Lunar data-centre physical trade | MODEL | Power, radiator, radiation, mass and protected-storage classes |
+| S027 | Delivered/retained-bit economics | MODEL | Synthetic utilisation, availability and annualised-cost sensitivity |

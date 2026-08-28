@@ -1,0 +1,119 @@
+{
+  "cases": [
+    {
+      "annual_network_cost_usd": 219126539.83,
+      "annual_storage_cost_usd": 35048688.17,
+      "cost_per_delivered_bit_usd": 7.890569359584026e-08,
+      "cost_per_retained_bit_year_usd": 7.30181003571026e-10,
+      "delivered_bits_year": 2777068800000000,
+      "optical_availability": 0.7,
+      "retained_bits": 4.8e+16,
+      "utilisation": 0.1
+    },
+    {
+      "annual_network_cost_usd": 219126539.83,
+      "annual_storage_cost_usd": 35048688.17,
+      "cost_per_delivered_bit_usd": 7.890569359584026e-08,
+      "cost_per_retained_bit_year_usd": 7.30181003571026e-10,
+      "delivered_bits_year": 2777068800000000,
+      "optical_availability": 0.9,
+      "retained_bits": 4.8e+16,
+      "utilisation": 0.1
+    },
+    {
+      "annual_network_cost_usd": 219126539.83,
+      "annual_storage_cost_usd": 35048688.17,
+      "cost_per_delivered_bit_usd": 7.890569359584026e-08,
+      "cost_per_retained_bit_year_usd": 7.30181003571026e-10,
+      "delivered_bits_year": 2777068800000000,
+      "optical_availability": 0.99,
+      "retained_bits": 4.8e+16,
+      "utilisation": 0.1
+    },
+    {
+      "annual_network_cost_usd": 219126539.83,
+      "annual_storage_cost_usd": 35048688.17,
+      "cost_per_delivered_bit_usd": 1.9726423398960065e-08,
+      "cost_per_retained_bit_year_usd": 7.30181003571026e-10,
+      "delivered_bits_year": 11108275200000000,
+      "optical_availability": 0.7,
+      "retained_bits": 4.8e+16,
+      "utilisation": 0.4
+    },
+    {
+      "annual_network_cost_usd": 219126539.83,
+      "annual_storage_cost_usd": 35048688.17,
+      "cost_per_delivered_bit_usd": 1.9726423398960065e-08,
+      "cost_per_retained_bit_year_usd": 7.30181003571026e-10,
+      "delivered_bits_year": 11108275200000000,
+      "optical_availability": 0.9,
+      "retained_bits": 4.8e+16,
+      "utilisation": 0.4
+    },
+    {
+      "annual_network_cost_usd": 219126539.83,
+      "annual_storage_cost_usd": 35048688.17,
+      "cost_per_delivered_bit_usd": 1.9726423398960065e-08,
+      "cost_per_retained_bit_year_usd": 7.30181003571026e-10,
+      "delivered_bits_year": 11108275200000000,
+      "optical_availability": 0.99,
+      "retained_bits": 4.8e+16,
+      "utilisation": 0.4
+    },
+    {
+      "annual_network_cost_usd": 219126539.83,
+      "annual_storage_cost_usd": 35048688.17,
+      "cost_per_delivered_bit_usd": 1.0808999122717843e-08,
+      "cost_per_retained_bit_year_usd": 7.30181003571026e-10,
+      "delivered_bits_year": 20272602240000000,
+      "optical_availability": 0.7,
+      "retained_bits": 4.8e+16,
+      "utilisation": 0.8
+    },
+    {
+      "annual_network_cost_usd": 219126539.83,
+      "annual_storage_cost_usd": 35048688.17,
+      "cost_per_delivered_bit_usd": 9.863211699480033e-09,
+      "cost_per_retained_bit_year_usd": 7.30181003571026e-10,
+      "delivered_bits_year": 22216550400000000,
+      "optical_availability": 0.9,
+      "retained_bits": 4.8e+16,
+      "utilisation": 0.8
+    },
+    {
+      "annual_network_cost_usd": 219126539.83,
+      "annual_storage_cost_usd": 35048688.17,
+      "cost_per_delivered_bit_usd": 9.863211699480033e-09,
+      "cost_per_retained_bit_year_usd": 7.30181003571026e-10,
+      "delivered_bits_year": 22216550400000000,
+      "optical_availability": 0.99,
+      "retained_bits": 4.8e+16,
+      "utilisation": 0.8
+    }
+  ],
+  "checks": {
+    "every_case_has_delivered_and_retained_bit_cost": true,
+    "rf_fallback_keeps_available_capacity_nonzero": true,
+    "utilisation_spreads_fixed_cost": true
+  },
+  "evidence_class": "MODEL",
+  "input_contract": {
+    "annual_opex_usd": 85000000,
+    "delivery_efficiency": 0.88,
+    "discount_rate": 0.08,
+    "economic_life_years": 10,
+    "network_capex_usd": 900000000,
+    "optical_capacity_bps": 1000000000,
+    "protected_copies": 3,
+    "retained_storage_pb": 2,
+    "rf_fallback_bps": 100000000
+  },
+  "interpretation_boundary": [
+    "All cost, utilisation, availability and demand inputs are synthetic architecture sensitivities, not supplier quotes, financing terms or a market forecast.",
+    "Cost per delivered bit annualises a shared network and excludes price discrimination, taxes, spectrum, insurance, launch schedule risk and demand growth.",
+    "Cost per retained bit-year covers a synthetic protected storage pool; it is not a customer price and does not include the full data-centre mass model.",
+    "The model is executable so real partner, terminal and launch inputs can replace assumptions without changing the accounting equation."
+  ],
+  "study_id": "S027",
+  "title": "Cost per delivered and retained bit sensitivity"
+}

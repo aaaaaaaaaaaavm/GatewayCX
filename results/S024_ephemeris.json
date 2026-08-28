@@ -1,0 +1,373 @@
+{
+  "cases": [
+    {
+      "constellation": "low_polar_8",
+      "nominal": {
+        "far_side_equator": {
+          "availability_fraction": 0.0,
+          "delivered_terabits": 0.0,
+          "maximum_blackout_s": 172800,
+          "mean_visible_access_nodes": 0.184028
+        },
+        "near_side_equator": {
+          "availability_fraction": 0.09375,
+          "delivered_terabits": 1.26,
+          "maximum_blackout_s": 103200,
+          "mean_visible_access_nodes": 0.184028
+        },
+        "south_pole": {
+          "availability_fraction": 0.256944,
+          "delivered_terabits": 3.78,
+          "maximum_blackout_s": 9600,
+          "mean_visible_access_nodes": 0.513889
+        }
+      },
+      "orbit_elements": [
+        {
+          "altitude_km": 100.0,
+          "inclination_deg": 88.0,
+          "name": "lp-1",
+          "phase_deg": 0.0,
+          "raan_deg": 0.0
+        },
+        {
+          "altitude_km": 100.0,
+          "inclination_deg": 92.0,
+          "name": "lp-2",
+          "phase_deg": 0.0,
+          "raan_deg": 180.0
+        },
+        {
+          "altitude_km": 100.0,
+          "inclination_deg": 88.0,
+          "name": "lp-3",
+          "phase_deg": 90.0,
+          "raan_deg": 0.0
+        },
+        {
+          "altitude_km": 100.0,
+          "inclination_deg": 92.0,
+          "name": "lp-4",
+          "phase_deg": 90.0,
+          "raan_deg": 180.0
+        },
+        {
+          "altitude_km": 100.0,
+          "inclination_deg": 88.0,
+          "name": "lp-5",
+          "phase_deg": 180.0,
+          "raan_deg": 0.0
+        },
+        {
+          "altitude_km": 100.0,
+          "inclination_deg": 92.0,
+          "name": "lp-6",
+          "phase_deg": 180.0,
+          "raan_deg": 180.0
+        },
+        {
+          "altitude_km": 100.0,
+          "inclination_deg": 88.0,
+          "name": "lp-7",
+          "phase_deg": 270.0,
+          "raan_deg": 0.0
+        },
+        {
+          "altitude_km": 100.0,
+          "inclination_deg": 92.0,
+          "name": "lp-8",
+          "phase_deg": 270.0,
+          "raan_deg": 180.0
+        }
+      ],
+      "satellite_count": 8,
+      "single_satellite_failure": {
+        "failed": "lp-1",
+        "sites": {
+          "far_side_equator": {
+            "availability_fraction": 0.0,
+            "delivered_terabits": 0.0,
+            "maximum_blackout_s": 172800,
+            "mean_visible_access_nodes": 0.159722
+          },
+          "near_side_equator": {
+            "availability_fraction": 0.09375,
+            "delivered_terabits": 1.26,
+            "maximum_blackout_s": 103200,
+            "mean_visible_access_nodes": 0.159722
+          },
+          "south_pole": {
+            "availability_fraction": 0.256944,
+            "delivered_terabits": 3.78,
+            "maximum_blackout_s": 9600,
+            "mean_visible_access_nodes": 0.454861
+          }
+        }
+      }
+    },
+    {
+      "constellation": "medium_inclined_8",
+      "nominal": {
+        "far_side_equator": {
+          "availability_fraction": 1.0,
+          "delivered_terabits": 15.12,
+          "maximum_blackout_s": 0,
+          "mean_visible_access_nodes": 2.861111
+        },
+        "near_side_equator": {
+          "availability_fraction": 1.0,
+          "delivered_terabits": 15.12,
+          "maximum_blackout_s": 0,
+          "mean_visible_access_nodes": 2.861111
+        },
+        "south_pole": {
+          "availability_fraction": 1.0,
+          "delivered_terabits": 15.12,
+          "maximum_blackout_s": 0,
+          "mean_visible_access_nodes": 2.826389
+        }
+      },
+      "orbit_elements": [
+        {
+          "altitude_km": 5000.0,
+          "inclination_deg": 70.0,
+          "name": "mi-1",
+          "phase_deg": 0.0,
+          "raan_deg": 0.0
+        },
+        {
+          "altitude_km": 5000.0,
+          "inclination_deg": 110.0,
+          "name": "mi-2",
+          "phase_deg": 0.0,
+          "raan_deg": 180.0
+        },
+        {
+          "altitude_km": 5000.0,
+          "inclination_deg": 70.0,
+          "name": "mi-3",
+          "phase_deg": 90.0,
+          "raan_deg": 0.0
+        },
+        {
+          "altitude_km": 5000.0,
+          "inclination_deg": 110.0,
+          "name": "mi-4",
+          "phase_deg": 90.0,
+          "raan_deg": 180.0
+        },
+        {
+          "altitude_km": 5000.0,
+          "inclination_deg": 70.0,
+          "name": "mi-5",
+          "phase_deg": 180.0,
+          "raan_deg": 0.0
+        },
+        {
+          "altitude_km": 5000.0,
+          "inclination_deg": 110.0,
+          "name": "mi-6",
+          "phase_deg": 180.0,
+          "raan_deg": 180.0
+        },
+        {
+          "altitude_km": 5000.0,
+          "inclination_deg": 70.0,
+          "name": "mi-7",
+          "phase_deg": 270.0,
+          "raan_deg": 0.0
+        },
+        {
+          "altitude_km": 5000.0,
+          "inclination_deg": 110.0,
+          "name": "mi-8",
+          "phase_deg": 270.0,
+          "raan_deg": 180.0
+        }
+      ],
+      "satellite_count": 8,
+      "single_satellite_failure": {
+        "failed": "mi-1",
+        "sites": {
+          "far_side_equator": {
+            "availability_fraction": 1.0,
+            "delivered_terabits": 15.12,
+            "maximum_blackout_s": 0,
+            "mean_visible_access_nodes": 2.513889
+          },
+          "near_side_equator": {
+            "availability_fraction": 1.0,
+            "delivered_terabits": 15.12,
+            "maximum_blackout_s": 0,
+            "mean_visible_access_nodes": 2.496528
+          },
+          "south_pole": {
+            "availability_fraction": 1.0,
+            "delivered_terabits": 15.12,
+            "maximum_blackout_s": 0,
+            "mean_visible_access_nodes": 2.520833
+          }
+        }
+      }
+    },
+    {
+      "constellation": "medium_inclined_12",
+      "nominal": {
+        "far_side_equator": {
+          "availability_fraction": 1.0,
+          "delivered_terabits": 15.12,
+          "maximum_blackout_s": 0,
+          "mean_visible_access_nodes": 4.291667
+        },
+        "near_side_equator": {
+          "availability_fraction": 1.0,
+          "delivered_terabits": 15.12,
+          "maximum_blackout_s": 0,
+          "mean_visible_access_nodes": 4.291667
+        },
+        "south_pole": {
+          "availability_fraction": 1.0,
+          "delivered_terabits": 15.12,
+          "maximum_blackout_s": 0,
+          "mean_visible_access_nodes": 4.243056
+        }
+      },
+      "orbit_elements": [
+        {
+          "altitude_km": 5000.0,
+          "inclination_deg": 70.0,
+          "name": "mi12-1",
+          "phase_deg": 0.0,
+          "raan_deg": 0.0
+        },
+        {
+          "altitude_km": 5000.0,
+          "inclination_deg": 110.0,
+          "name": "mi12-2",
+          "phase_deg": 0.0,
+          "raan_deg": 180.0
+        },
+        {
+          "altitude_km": 5000.0,
+          "inclination_deg": 70.0,
+          "name": "mi12-3",
+          "phase_deg": 60.0,
+          "raan_deg": 0.0
+        },
+        {
+          "altitude_km": 5000.0,
+          "inclination_deg": 110.0,
+          "name": "mi12-4",
+          "phase_deg": 60.0,
+          "raan_deg": 180.0
+        },
+        {
+          "altitude_km": 5000.0,
+          "inclination_deg": 70.0,
+          "name": "mi12-5",
+          "phase_deg": 120.0,
+          "raan_deg": 0.0
+        },
+        {
+          "altitude_km": 5000.0,
+          "inclination_deg": 110.0,
+          "name": "mi12-6",
+          "phase_deg": 120.0,
+          "raan_deg": 180.0
+        },
+        {
+          "altitude_km": 5000.0,
+          "inclination_deg": 70.0,
+          "name": "mi12-7",
+          "phase_deg": 180.0,
+          "raan_deg": 0.0
+        },
+        {
+          "altitude_km": 5000.0,
+          "inclination_deg": 110.0,
+          "name": "mi12-8",
+          "phase_deg": 180.0,
+          "raan_deg": 180.0
+        },
+        {
+          "altitude_km": 5000.0,
+          "inclination_deg": 70.0,
+          "name": "mi12-9",
+          "phase_deg": 240.0,
+          "raan_deg": 0.0
+        },
+        {
+          "altitude_km": 5000.0,
+          "inclination_deg": 110.0,
+          "name": "mi12-10",
+          "phase_deg": 240.0,
+          "raan_deg": 180.0
+        },
+        {
+          "altitude_km": 5000.0,
+          "inclination_deg": 70.0,
+          "name": "mi12-11",
+          "phase_deg": 300.0,
+          "raan_deg": 0.0
+        },
+        {
+          "altitude_km": 5000.0,
+          "inclination_deg": 110.0,
+          "name": "mi12-12",
+          "phase_deg": 300.0,
+          "raan_deg": 180.0
+        }
+      ],
+      "satellite_count": 12,
+      "single_satellite_failure": {
+        "failed": "mi12-1",
+        "sites": {
+          "far_side_equator": {
+            "availability_fraction": 1.0,
+            "delivered_terabits": 15.12,
+            "maximum_blackout_s": 0,
+            "mean_visible_access_nodes": 3.944444
+          },
+          "near_side_equator": {
+            "availability_fraction": 1.0,
+            "delivered_terabits": 15.12,
+            "maximum_blackout_s": 0,
+            "mean_visible_access_nodes": 3.927083
+          },
+          "south_pole": {
+            "availability_fraction": 1.0,
+            "delivered_terabits": 15.12,
+            "maximum_blackout_s": 0,
+            "mean_visible_access_nodes": 3.9375
+          }
+        }
+      }
+    }
+  ],
+  "checks": {
+    "all_sites_and_failures_are_time_sampled": true,
+    "failure_never_increases_delivered_capacity": true,
+    "far_side_requires_relay_path": true,
+    "more_medium_satellites_improve_worst_nominal_availability": true
+  },
+  "evidence_class": "SIMULATION",
+  "inputs": {
+    "access_capacity_mbps": 100.0,
+    "duration_s": 172800,
+    "isl_limit_km": 14000.0,
+    "minimum_elevation_deg": 10.0,
+    "optical_earth_trunk_mbps": 500.0,
+    "rf_fallback_mbps": 50.0,
+    "step_s": 600,
+    "weather_pattern": "two hours optical unavailable in each deterministic eight-hour block"
+  },
+  "interpretation_boundary": [
+    "Positions are propagated circular two-body ephemerides sampled in a rotating Moon-fixed frame; this is not SPICE, n-body or flight-dynamics propagation.",
+    "Earth is approximated as infinitely far on the Moon-fixed +X axis; lunar libration and Earth-station geometry are excluded.",
+    "Terrain, antenna patterns, link acquisition time, interference, station diversity, queueing and protocol overhead are excluded.",
+    "The deterministic weather pattern and capacities are sensitivity inputs, not forecasts or terminal specifications.",
+    "The model compares candidate classes and failures; it does not select a production constellation."
+  ],
+  "study_id": "S024",
+  "title": "Time-sampled lunar relay ephemeris, contact, capacity and failure envelope"
+}

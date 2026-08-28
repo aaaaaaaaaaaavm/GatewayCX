@@ -1,0 +1,96 @@
+{
+  "checks": {
+    "every_case_models_all_requested_domains": true,
+    "every_radiator_and_mass_is_positive": true,
+    "shielded_surface_has_lower_residual_upset_target_than_orbit": true
+  },
+  "configurations": [
+    {
+      "configuration": "surface_shielded",
+      "inputs": {
+        "compute_kg_per_kw": 22.0,
+        "compute_kw": 20.0,
+        "name": "surface_shielded",
+        "network_kw": 3.0,
+        "overhead_factor": 1.45,
+        "radiation_factor": 0.2,
+        "radiator_emissivity": 0.88,
+        "radiator_k": 330.0,
+        "shielding_kg": 6000.0,
+        "storage_kg_per_pb": 180.0,
+        "storage_pb": 2.0
+      },
+      "outputs": {
+        "estimated_dry_mass_kg": 7286.318221,
+        "facility_power_kw": 35.67,
+        "it_power_kw": 24.6,
+        "radiator_area_m2": 60.789778,
+        "radiator_mass_kg": 486.318221,
+        "raw_upsets_per_year": 200.0,
+        "residual_upsets_per_year_target": 0.02,
+        "storage_energy_j_per_gb_year": 562829.796
+      }
+    },
+    {
+      "configuration": "orbital_service_node",
+      "inputs": {
+        "compute_kg_per_kw": 18.0,
+        "compute_kw": 8.0,
+        "name": "orbital_service_node",
+        "network_kw": 2.0,
+        "overhead_factor": 1.35,
+        "radiation_factor": 1.0,
+        "radiator_emissivity": 0.88,
+        "radiator_k": 345.0,
+        "shielding_kg": 900.0,
+        "storage_kg_per_pb": 150.0,
+        "storage_pb": 0.5
+      },
+      "outputs": {
+        "estimated_dry_mass_kg": 1279.015747,
+        "facility_power_kw": 14.04,
+        "it_power_kw": 10.4,
+        "radiator_area_m2": 20.001968,
+        "radiator_mass_kg": 160.015747,
+        "raw_upsets_per_year": 1000.0,
+        "residual_upsets_per_year_target": 0.1,
+        "storage_energy_j_per_gb_year": 886137.408
+      }
+    },
+    {
+      "configuration": "hybrid_surface_orbit",
+      "inputs": {
+        "compute_kg_per_kw": 20.0,
+        "compute_kw": 14.0,
+        "name": "hybrid_surface_orbit",
+        "network_kw": 4.0,
+        "overhead_factor": 1.4,
+        "radiation_factor": 0.45,
+        "radiator_emissivity": 0.88,
+        "radiator_k": 335.0,
+        "shielding_kg": 3500.0,
+        "storage_kg_per_pb": 170.0,
+        "storage_pb": 1.5
+      },
+      "outputs": {
+        "estimated_dry_mass_kg": 4379.911502,
+        "facility_power_kw": 26.88,
+        "it_power_kw": 19.2,
+        "radiator_area_m2": 43.113938,
+        "radiator_mass_kg": 344.911502,
+        "raw_upsets_per_year": 450.0,
+        "residual_upsets_per_year_target": 0.045000000000000005,
+        "storage_energy_j_per_gb_year": 565512.192
+      }
+    }
+  ],
+  "evidence_class": "MODEL",
+  "interpretation_boundary": [
+    "Inputs are architecture classes, not qualified components, launch quotes or a settlement demand forecast.",
+    "Radiator sizing is steady-state black-body rejection to a 100 K sink and excludes view factors, dust, sunlight, deployment and fluid loops.",
+    "Radiation figures are comparative upset-rate assumptions with an ECC/scrubbing target, not a radiation transport analysis or parts qualification.",
+    "Mass includes compute, storage, radiator and a shielding allowance but excludes structure, power generation, batteries, cabling, spares, landing and maintenance."
+  ],
+  "study_id": "S026",
+  "title": "Lunar regional data-centre physical trade"
+}

@@ -11,11 +11,11 @@ This register prevents a passing test suite from being mistaken for a closed arc
 | Do unmodified Internet protocols behave as assumed? | S004 TLS 1.3/HTTP 1.1 socket test | Partially closed for one client and method | DNS, IPv6, HTTP/2, HTTP/3, packet method and captures |
 | Where should IP terminate and DTN begin? | ADR-0002 + S005 semantic replay | Partially closed as an explicit contract | Gateway prototypes, BPv7 interoperability and security analysis |
 | What state is required to use a declared capacity? | S006 BDP and outage derivation | Closed for stated arithmetic inputs | Transport implementation and queue measurements |
-| What backbone capacity is available? | Scenario assumption | Open | Link budgets, contact geometry and terminal data |
+| What backbone capacity is available? | S024 contact/capacity simulation + S025 class budgets | Partially closed for declared classes | Terminal data, operational ephemerides, interference and measured availability |
 | Is a circular Moon-synchronous “lunar GSO” a valid baseline? | S022 two-body/Hill-radius derivation | Rejected as a simple baseline under stated inputs | Multi-body trajectory propagation for candidate orbit families |
 | How does circular relay altitude change first-order visibility? | S022 ideal equatorial horizon geometry | Closed for zero-elevation great-circle arithmetic | Global sites, terrain, elevation margin, planes, failures, contacts and capacity |
 | Where should declared services be placed? | S007 exhaustive bounded search | Closed for stated abstract inputs | Trace-derived demand and physical resource models |
-| Is a lunar data centre feasible? | Abstract S007 resource budgets only | Open | Power, thermal, radiation, mass and maintenance models |
+| Is a lunar data centre feasible? | S026 power/thermal/radiation/mass/storage classes | Partially closed for declared inputs | Qualified parts, site environment, maintenance, power generation and launch/deployment design |
 | Is the minimum bearer profile machine-readable? | S008 schema and semantic checker | Closed for pre-draft fields | Independent schema review and API binding |
 | Can two vendors interoperate? | S021 has separate code paths but one project and no vendors | Open | Two external supplier adapters and traffic exchange |
 | Can separately implemented client/server code paths interoperate? | S021 authenticated standalone-adapter probe | Closed for the bounded RF software subset | External implementation, complete conformance suite and hardware traffic exchange |
@@ -32,8 +32,8 @@ This register prevents a passing test suite from being mistaken for a closed arc
 | Does the local ledger recover if a writer dies around commit? | S020 coordinated `SIGKILL` probe | Closed at pre-commit and post-commit software boundaries | Arbitrary timing, kernel/filesystem faults, electrical power loss and hardware qualification |
 | Can the service plane call GX-A1 without sharing the adapter process? | S018 transport + S019 authentication + S021 standalone server | Closed for local authenticated software and bounded separate code paths | Stable standard, external adapter, confidential transport and terminal SDK |
 | Can the local process boundary reject unauthorised modification and replay? | S019 HMAC and durable-sequence probe | Closed for one pre-shared-key client and clean restart | Confidential transport, PKI/key lifecycle, roles, independent adapter and abrupt-fault test |
-| Is the system commercially viable? | None yet | Open | Demand, deployment and operating-cost model |
+| Is the system commercially viable? | S027 delivered/retained-bit sensitivity | Modelled, not established | Demand evidence, supplier quotes, financing, pricing, insurance and regulatory costs |
 | Can lunar demand be isolated from a deep-space pool? | S023 synthetic model | Closed as load-isolation arithmetic | Actual schedules, constraints, capacity, costs and authority |
-| Do optical ISLs remove Earth egress bottlenecks? | S023 minimum-stage pipeline | No | Link budgets, weather diversity and measured throughput |
+| Do optical ISLs remove Earth egress bottlenecks? | S023 pipeline + S024 contacts + S025 class budgets | No; the trunk/ground stage remains explicit | Ground diversity and measured end-to-end throughput |
 
 CI closes consistency questions. It does not close physics, hardware, operations or markets.

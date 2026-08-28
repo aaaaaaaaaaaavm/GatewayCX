@@ -25,12 +25,17 @@ The baseline uses:
 - declared sequential dependency round trips; and
 - declared transfer bytes and availability.
 
-It does not presently model orbital geometry, atmospheric optical availability, congestion,
-packet loss, transport congestion control, queue discipline, forward-error correction, antenna
-pointing, protocol headers, compute time or user demand distributions.
+S024 now time-samples circular two-body relay ephemerides, line-of-sight contacts, declared
+capacity, deterministic optical weather and one-satellite failures. S025 adds architecture-class RF
+and optical budgets with pointing and fallback sensitivities. Neither is operational mission design
+or terminal evidence; multi-body dynamics, terrain, interference and measured weather remain open.
 
 S006 adds cited closest/mean/farthest distance cases, bandwidth-delay-product arithmetic and
 constant-rate outage storage. It still does not contain an operational ephemeris or contact plan.
+
+S026 and S027 replace the previous unmodelled data-centre and commercial rows with explicit,
+synthetic physical and economic sensitivities. Their equations are executable; their component,
+cost and demand inputs are not vendor or market evidence.
 
 S007 uses synthetic request rates, object sizes, update volumes, compute units, storage sizes and
 local RTTs. Its exhaustive enumeration is reproducible; its input case is not empirical demand or

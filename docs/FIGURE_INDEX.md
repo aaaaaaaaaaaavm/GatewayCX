@@ -15,6 +15,7 @@ legible in the repository without storing a second raster copy.
 | [`s021-independent-adapter.svg`](../figures/s021-independent-adapter.svg) | `results/S021_independent_adapter.json` | Separate project code paths, not external supplier interoperability |
 | [`s022-lunar-orbit-envelope.svg`](../figures/s022-lunar-orbit-envelope.svg) | `results/S022_lunar_orbits.json` | Two-body and ideal equatorial screen, not constellation selection |
 | [`s023-ground-offload.svg`](../figures/s023-ground-offload.svg) | `results/S023_ground_offload.json` | Synthetic isolation, not mission or DSN scheduling data |
+| [`s024-s027-simulation-ceiling.svg`](../figures/s024-s027-simulation-ceiling.svg) | `results/S024_ephemeris.json` through `S027_economics.json` | Architecture-class simulations, not hardware, operations or market evidence |
 
 Generated figures are checked for byte-for-byte drift in CI. A changed result therefore changes
 its visual in the same commit or fails verification.
