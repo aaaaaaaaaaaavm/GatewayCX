@@ -143,7 +143,7 @@ def build_bpv7_interop_lab(go_bridge: Path, rust_bp7: Path) -> dict[str, Any]:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__); parser.add_argument("--go-bridge", type=Path, required=True); parser.add_argument("--rust-bp7", type=Path, required=True); parser.add_argument("--output", type=Path, required=True); args = parser.parse_args(argv)
-    write_json(args.output, build_bpv7_interop_lab(args.go_bridge, args.rust_bpv7)); print(f"wrote {args.output}"); return 0
+    write_json(args.output, build_bpv7_interop_lab(args.go_bridge, args.rust_bp7)); print(f"wrote {args.output}"); return 0
 
 
 if __name__ == "__main__": raise SystemExit(main())

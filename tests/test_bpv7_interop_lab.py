@@ -1,8 +1,9 @@
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
-from gatewaycx.bpv7_interop_lab import FaultInjectedGateway
+from gatewaycx.bpv7_interop_lab import FaultInjectedGateway, main
 
 
 class BPv7GatewayUnitTests(unittest.TestCase):
@@ -20,6 +21,14 @@ class BPv7GatewayUnitTests(unittest.TestCase):
                 self.assertEqual(record["gx_a1_transmitted_bytes"], len(payload))
             finally:
                 gateway.close()
+
+    def test_cli_passes_both_external_binary_paths(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            output = Path(temporary) / "result.json"
+            with patch("gatewaycx.bpv7_interop_lab.build_bpv7_interop_lab", return_value={"checks": {}}) as build:
+                self.assertEqual(main(["--go-bridge", "/go", "--rust-bp7", "/rust", "--output", str(output)]), 0)
+            build.assert_called_once_with(Path("/go"), Path("/rust"))
+            self.assertTrue(output.exists())
 
 
 if __name__ == "__main__": unittest.main()
