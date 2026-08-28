@@ -3,7 +3,7 @@
 **One Internet across Earth and the Moon.**
 
 [![verify](https://github.com/aaaaaaaaaaaavm/GatewayCX/actions/workflows/verify.yml/badge.svg)](https://github.com/aaaaaaaaaaaavm/GatewayCX/actions/workflows/verify.yml)
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![License: Proprietary](https://img.shields.io/badge/license-proprietary-red.svg)](LICENSE)
 [![Maturity: architecture study](https://img.shields.io/badge/maturity-architecture%20study-orange.svg)](OPEN_PROBLEMS.md)
 [![Validation: model only](https://img.shields.io/badge/validation-model%20only%2C%20unverified-red.svg)](docs/PROVENANCE.md)
 
@@ -209,5 +209,11 @@ record says so explicitly.
 
 ## Licence
 
-Code, models and documentation are released under the [Apache License 2.0](LICENSE). See
-[`NOTICE`](NOTICE) for project attribution. Product names and trademarks remain with their owners.
+GatewayCX is proprietary intellectual property of Avisys Services and is published under the
+[GatewayCX Proprietary Licence](LICENSE). All rights are reserved. Public visibility is not
+permission to copy, implement, modify, deploy, redistribute or commercialise the code, protocols,
+models, specifications, documentation or figures.
+
+Earlier repository versions were published under Apache License 2.0. Rights already granted for
+those earlier versions cannot be retroactively revoked; the proprietary licence applies from the
+commit that introduces it onward. See [`NOTICE`](NOTICE) and [`CONTRIBUTING.md`](CONTRIBUTING.md).

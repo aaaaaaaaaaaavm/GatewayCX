@@ -2,6 +2,9 @@
 
 ## 0.1.0-dev — 2026-08-27
 
+- Replaced Apache License 2.0 with the GatewayCX Proprietary Licence, asserting Avisys Services
+  ownership for current and later versions while preserving the legal history of earlier grants.
+
 - Established GatewayCX as a native Earth–Moon Internet architecture, not a relay CRM or BSS/OSS
   product.
 - Recorded the April 2026 project origin without backdating the public Git history.

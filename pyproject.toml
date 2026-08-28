@@ -8,13 +8,13 @@ version = "0.1.0.dev0"
 description = "Executable reference studies for a native Earth-Moon Internet"
 readme = "README.md"
 requires-python = ">=3.10"
-license = {text = "Apache-2.0"}
+license = {text = "Proprietary"}
 authors = [
   {name = "Adityavardhan Mishra"}
 ]
 classifiers = [
   "Development Status :: 2 - Pre-Alpha",
-  "License :: OSI Approved :: Apache Software License",
+  "License :: Other/Proprietary License",
   "Programming Language :: Python :: 3",
   "Topic :: Communications"
 ]
@@ -25,4 +25,3 @@ gatewaycx = "gatewaycx.cli:main"
 
 [tool.setuptools.packages.find]
 include = ["gatewaycx*"]
-

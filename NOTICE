@@ -1,10 +1,13 @@
 GatewayCX
-Copyright 2026 GatewayCX contributors
+Copyright (c) 2026 Avisys Services. All rights reserved.
 
-GatewayCX is exploratory cislunar telecommunications architecture work initiated by
-Adityavardhan Mishra at Avisys Services in April 2026.
+GatewayCX is proprietary intellectual property of Avisys Services. Public
+visibility does not grant permission to copy, implement, modify, distribute,
+deploy or commercialise it.
 
-The names Avisys, Astrogate, NASA, ESA, CCSDS and other organisations or products referenced in
-the research record are the property of their respective owners. Reference does not imply
-endorsement, partnership or implementation.
+Earlier repository versions were published under Apache License 2.0. Rights
+validly granted for those earlier versions are not revoked by the current
+proprietary licence.
 
+Third-party names, standards and trademarks belong to their respective owners.
+Reference to them does not imply affiliation, partnership or endorsement.

@@ -1,21 +1,12 @@
-# Contributing
+# Contributions
 
-GatewayCX is an engineering record before it is a community showcase. Contributions are welcome
-when they make a claim more testable, a model more faithful or an interface more interoperable.
+GatewayCX is a proprietary Avisys Services engineering programme. It is not an open-source
+community project, and unsolicited code, design, specification or documentation contributions are
+not accepted.
 
-## Rules
+Do not submit confidential information, employer-owned material, third-party proprietary material
+or a pull request. A contribution can be considered only after a separate written agreement covers
+ownership, confidentiality, licensing and authority to contribute.
 
-1. Distinguish measurement, public source, model output and assumption.
-2. Do not replace uncertainty with a precise-looking number.
-3. Add or update a requirement, claim, decision or open problem when a change affects one.
-4. Commit generated results only with the input and command that reproduce them.
-5. Do not imply vendor participation or endorsement.
-6. Use first person only for work or judgment you can actually attribute to yourself.
-7. Run `make verify` before proposing a change.
-
-## Efficient record format
-
-Use a scenario file plus generated result for parameter studies. Use an ADR only for a durable
-architectural decision. Use an issue for work that has not yet produced evidence. This keeps the
-record rigorous without creating a document for every thought.
-
+Issues may report an apparent error in public material. Opening an issue transfers no intellectual
+property, creates no confidentiality obligation and does not authorise use of GatewayCX.
