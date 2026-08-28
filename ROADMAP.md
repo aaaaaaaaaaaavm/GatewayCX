@@ -60,7 +60,8 @@ within bounded time after recovery.
 - Connect at least two independently implemented bearer adapters to the reference service plane.
 - Mature the S019 authenticated process boundary into a reviewed confidential transport with key
   lifecycle, role policy and operation-reconciliation semantics.
-- Connect an independently implemented adapter through the versioned binding.
+- Extend the S021 separate code path into a complete conformance target and connect an externally
+  implemented adapter through the versioned binding.
 
 **Exit:** a traffic session changes bearer or provider without changing the user application.
 

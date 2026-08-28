@@ -313,6 +313,52 @@ def transaction_recovery() -> None:
     )
 
 
+def independent_adapter() -> None:
+    result = load("S021_independent_adapter.json")
+    observations = result["observations"]
+    body = [
+        text(80, 82, "ONE CONTRACT, TWO SEPARATE CODE PATHS", 34, TEXT, weight=700),
+        text(80, 120, "S021 authenticated local interoperability · no shared runtime imports", 21, MUTED),
+    ]
+    stages = [
+        (80, "GATEWAYCX CLIENT", "authenticated_rpc", "build + verify envelope", BLUE),
+        (455, "GX-A1 BINDING", observations["rpc_version"], "canonical JSONL + HMAC", CYAN),
+        (830, "STANDALONE SERVER", "standard library only", "distinct implementation ID", GOLD),
+        (1205, "SEPARATE LEDGER", observations["persistence_scope"], "restart retains progress", RED),
+    ]
+    for x, heading, main, detail, color in stages:
+        body.extend(
+            [
+                rect(x, 215, 315, 270, PANEL, stroke=color, stroke_width=3),
+                rect(x + 24, 243, 72, 8, color, radius=4),
+                text(x + 24, 295, heading, 18, color, weight=700),
+                text(x + 24, 355, main, 22, TEXT, weight=650),
+                text(x + 24, 405, detail, 16, MUTED),
+            ]
+        )
+    for x1, x2 in ((395, 455), (770, 830), (1145, 1205)):
+        body.append(line(x1, 350, x2 - 10, 350, BLUE, 5, marker=True))
+    body.extend(
+        [
+            rect(80, 560, 1440, 94, "#0e1829", stroke=LINE, stroke_width=2),
+            text(110, 596, "OBSERVED", 16, CYAN, weight=700),
+            text(
+                110,
+                632,
+                f'{observations["transmitted_bytes"]:,} bytes transmitted · duplicate recognised · ledger reopened',
+                22,
+                TEXT,
+            ),
+            text(80, 730, "BOUNDARY", 16, RED, weight=700),
+            text(205, 730, "same project · bounded subset · no supplier, terminal or physical link", 19, MUTED),
+        ]
+    )
+    write(
+        "s021-independent-adapter.svg",
+        svg(1600, 790, "S021 independent-code adapter interoperability", body),
+    )
+
+
 def main() -> int:
     architecture()
     latency()
@@ -320,7 +366,8 @@ def main() -> int:
     durable_restart()
     authenticated_binding()
     transaction_recovery()
-    print("wrote 6 GatewayCX SVG figures")
+    independent_adapter()
+    print("wrote 7 GatewayCX SVG figures")
     return 0
 
 

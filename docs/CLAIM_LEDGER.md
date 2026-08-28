@@ -91,6 +91,9 @@
 | C074 | S020 rolls back an uncommitted traffic unit and preserves an earlier committed unit after `SIGKILL`. | TEST | S020 | Coordinated pre-commit fault point on local SQLite |
 | C075 | S020 preserves a committed traffic unit when the writer is killed before closing and subsequently accepts new work. | TEST | S020 | Coordinated post-commit fault point on local SQLite |
 | C076 | S020 qualifies storage for electrical power loss or flight. | — | No power, device-cache, filesystem-corruption or flight-hardware test | Rejected |
+| C077 | S021 drives GX-A1 operations through an authenticated server implementation that imports no GatewayCX runtime module. | TEST | S021 source inspection and process probe | Separate code path in the same repository |
+| C078 | S021 preserves accepted and transmitted byte state across a restart of the standalone adapter. | TEST | S021 | Local standalone SQLite implementation |
+| C079 | S021 proves external supplier, multi-organisation or hardware interoperability. | — | Both implementations are authored in this project and no hardware participates | Rejected |
 
 The ledger will grow when the evidence grows. A claim does not become stronger by appearing in the
 README.

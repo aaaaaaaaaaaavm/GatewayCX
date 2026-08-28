@@ -1,0 +1,60 @@
+{
+  "checks": {
+    "adapter_reaches_ready": true,
+    "authenticated_wire_version_matches": true,
+    "duplicate_submission_is_idempotent": true,
+    "gatewaycx_client_accepts_standalone_response": true,
+    "initial_link_is_unavailable": true,
+    "payload_content_crossed_binding": false,
+    "portable_adapter_version_matches": true,
+    "profile_capacity_drains_unit": true,
+    "server_runs_as_separate_process": true,
+    "standalone_implementation_identifies_itself": true,
+    "standalone_ledger_survives_restart": true,
+    "standalone_source_has_no_gatewaycx_import": true,
+    "traffic_submission_is_accepted": true
+  },
+  "evidence_class": "TEST",
+  "inputs": {
+    "adapter_imports": [
+      "__future__",
+      "argparse",
+      "hashlib",
+      "hmac",
+      "json",
+      "pathlib",
+      "socket",
+      "sqlite3",
+      "typing"
+    ],
+    "adapter_path": "adapters/standalone_rf_adapter.py",
+    "adapter_source_sha256": "c626e3b14ffbfda75ed0ca6d0b9da2d1f7fadef914825184b4893910044387ca",
+    "client_implementation": "gatewaycx.authenticated_rpc",
+    "payload_content_supplied": false,
+    "profile_path": "profiles/bearers/reference-rf.json",
+    "server_implementation": "standalone Python standard-library process",
+    "traffic_unit_bytes": 65536
+  },
+  "interpretation_boundary": [
+    "The server is a separately written standard-library implementation and imports no GatewayCX runtime module.",
+    "Both implementations remain authored in this repository by the same project; this is code-path independence, not independent organisational validation.",
+    "No supplier, optical terminal, RF modem, spacecraft, antenna or physical link participates.",
+    "The standalone server implements the bounded S021 operation subset and is not a production daemon or complete conformance target.",
+    "The binding carries traffic metadata and byte counts, never payload content."
+  ],
+  "observations": {
+    "api_version": "GX-A1/0.1",
+    "duplicate_status": "duplicate_known",
+    "implementation_id": "gatewaycx-standalone-rf-example/0.1",
+    "persistence_scope": "standalone_sqlite_file",
+    "ready_at_s": 21.0,
+    "restart_accepted_bytes": 65536,
+    "restart_queue_bytes": 0,
+    "restart_transmitted_bytes": 65536,
+    "rpc_version": "GX-A1-JSONL-HMAC/0.1",
+    "submit_status": "accepted_pending",
+    "transmitted_bytes": 65536
+  },
+  "study_id": "S021",
+  "title": "Independent-code GX-A1 adapter interoperability"
+}

@@ -15,7 +15,8 @@ This register prevents a passing test suite from being mistaken for a closed arc
 | Where should declared services be placed? | S007 exhaustive bounded search | Closed for stated abstract inputs | Trace-derived demand and physical resource models |
 | Is a lunar data centre feasible? | Abstract S007 resource budgets only | Open | Power, thermal, radiation, mass and maintenance models |
 | Is the minimum bearer profile machine-readable? | S008 schema and semantic checker | Closed for pre-draft fields | Independent schema review and API binding |
-| Can two vendors interoperate? | Two illustrative S008 documents only | Open | Two independent adapters and traffic exchange |
+| Can two vendors interoperate? | S021 has separate code paths but one project and no vendors | Open | Two external supplier adapters and traffic exchange |
+| Can separately implemented client/server code paths interoperate? | S021 authenticated standalone-adapter probe | Closed for the bounded RF software subset | External implementation, complete conformance suite and hardware traffic exchange |
 | Can contact admission expose queueing and starvation? | S009 strict/bounded comparison | Closed for synthetic byte budgets | Packet scheduler, deadlines and authorised safety policy |
 | Does warm RF reduce a declared optical handover gap? | S010 event replay | Closed for the synthetic trace | Correlated failures, packets, transport migration and terminal tests |
 | Can related updates resume without retransmitting completed chunks? | S011 manifest/chunk model | Closed for synthetic descriptors | Real blobs, registry, signatures and disrupted transfer |
@@ -27,7 +28,7 @@ This register prevents a passing test suite from being mistaken for a closed arc
 | Can one runtime seam drive the optical and RF profile semantics? | S016 GX-A1 adapter probe | Closed for two profiles using one reference class | Out-of-process binding, independent implementation and hardware control |
 | Does accepted adapter progress survive a gateway-process restart? | S017 clean restart + S020 transaction-boundary kill probes | Closed for clean restart and two coordinated `SIGKILL` boundaries | Arbitrary fault timing, power loss, corrupt media, multi-node store and flight hardware |
 | Does the local ledger recover if a writer dies around commit? | S020 coordinated `SIGKILL` probe | Closed at pre-commit and post-commit software boundaries | Arbitrary timing, kernel/filesystem faults, electrical power loss and hardware qualification |
-| Can the service plane call GX-A1 without sharing the adapter process? | S018 loopback JSONL probe | Closed for the reference implementation and local transport | Authentication, stable schema, independent adapter and terminal SDK |
+| Can the service plane call GX-A1 without sharing the adapter process? | S018 transport + S019 authentication + S021 standalone server | Closed for local authenticated software and bounded separate code paths | Stable standard, external adapter, confidential transport and terminal SDK |
 | Can the local process boundary reject unauthorised modification and replay? | S019 HMAC and durable-sequence probe | Closed for one pre-shared-key client and clean restart | Confidential transport, PKI/key lifecycle, roles, independent adapter and abrupt-fault test |
 | Is the system commercially viable? | None yet | Open | Demand, deployment and operating-cost model |
 

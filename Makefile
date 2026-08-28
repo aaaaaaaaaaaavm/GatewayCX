@@ -1,4 +1,4 @@
-.PHONY: scenarios disruption capacity placement admission handover updates preposition black-start diagnostics integrated adapters durable transport authenticated abrupt figures conformance audit test verify
+.PHONY: scenarios disruption capacity placement admission handover updates preposition black-start diagnostics integrated adapters durable transport authenticated abrupt independent figures conformance audit test verify
 
 scenarios:
 	python -m gatewaycx.cli run-all
@@ -49,6 +49,9 @@ authenticated:
 abrupt:
 	python -m gatewaycx.abrupt_restart
 
+independent:
+	python -m gatewaycx.independent_adapter_probe
+
 figures:
 	python tools/generate_figures.py
 
@@ -61,5 +64,5 @@ test:
 audit:
 	python -m gatewaycx.cli audit
 
-verify: scenarios disruption capacity placement admission handover updates preposition black-start diagnostics integrated adapters durable transport authenticated abrupt figures conformance audit test
-	git diff --exit-code -- results/baseline.json results/S005_disruption.json results/S006_capacity_envelope.json results/S007_service_placement.json results/S009_admission.json results/S010_handover.json results/S011_update_delivery.json results/S012_prepositioning.json results/S013_black_start.json results/S014_diagnostic_trace.json results/S015_integrated_replay.json results/S016_adapter_probe.json results/S017_durable_restart.json results/S018_adapter_transport.json results/S019_authenticated_transport.json results/S020_abrupt_restart.json profiles/diagnostics/gx-o1-fault-codes.json figures/*.svg
+verify: scenarios disruption capacity placement admission handover updates preposition black-start diagnostics integrated adapters durable transport authenticated abrupt independent figures conformance audit test
+	git diff --exit-code -- results/baseline.json results/S005_disruption.json results/S006_capacity_envelope.json results/S007_service_placement.json results/S009_admission.json results/S010_handover.json results/S011_update_delivery.json results/S012_prepositioning.json results/S013_black_start.json results/S014_diagnostic_trace.json results/S015_integrated_replay.json results/S016_adapter_probe.json results/S017_durable_restart.json results/S018_adapter_transport.json results/S019_authenticated_transport.json results/S020_abrupt_restart.json results/S021_independent_adapter.json profiles/diagnostics/gx-o1-fault-codes.json figures/*.svg

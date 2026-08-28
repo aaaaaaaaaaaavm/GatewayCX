@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="790" viewBox="0 0 1600 790" role="img" aria-labelledby="title">
+<title id="title">S021 independent-code adapter interoperability</title>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4f8cff"/></marker></defs>
+<rect x="0" y="0" width="1600" height="790" rx="0" fill="#0b1220" stroke="none" stroke-width="0"/>
+<text x="80" y="82" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="34" text-anchor="start" font-weight="700">ONE CONTRACT, TWO SEPARATE CODE PATHS</text>
+<text x="80" y="120" fill="#9fb0c9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" text-anchor="start" font-weight="400">S021 authenticated local interoperability · no shared runtime imports</text>
+<rect x="80" y="215" width="315" height="270" rx="18" fill="#121d31" stroke="#4f8cff" stroke-width="3"/>
+<rect x="104" y="243" width="72" height="8" rx="4" fill="#4f8cff" stroke="none" stroke-width="0"/>
+<text x="104" y="295" fill="#4f8cff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" text-anchor="start" font-weight="700">GATEWAYCX CLIENT</text>
+<text x="104" y="355" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" text-anchor="start" font-weight="650">authenticated_rpc</text>
+<text x="104" y="405" fill="#9fb0c9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" text-anchor="start" font-weight="400">build + verify envelope</text>
+<rect x="455" y="215" width="315" height="270" rx="18" fill="#121d31" stroke="#31d2c2" stroke-width="3"/>
+<rect x="479" y="243" width="72" height="8" rx="4" fill="#31d2c2" stroke="none" stroke-width="0"/>
+<text x="479" y="295" fill="#31d2c2" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" text-anchor="start" font-weight="700">GX-A1 BINDING</text>
+<text x="479" y="355" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" text-anchor="start" font-weight="650">GX-A1-JSONL-HMAC/0.1</text>
+<text x="479" y="405" fill="#9fb0c9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" text-anchor="start" font-weight="400">canonical JSONL + HMAC</text>
+<rect x="830" y="215" width="315" height="270" rx="18" fill="#121d31" stroke="#ffbf47" stroke-width="3"/>
+<rect x="854" y="243" width="72" height="8" rx="4" fill="#ffbf47" stroke="none" stroke-width="0"/>
+<text x="854" y="295" fill="#ffbf47" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" text-anchor="start" font-weight="700">STANDALONE SERVER</text>
+<text x="854" y="355" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" text-anchor="start" font-weight="650">standard library only</text>
+<text x="854" y="405" fill="#9fb0c9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" text-anchor="start" font-weight="400">distinct implementation ID</text>
+<rect x="1205" y="215" width="315" height="270" rx="18" fill="#121d31" stroke="#ff6b6b" stroke-width="3"/>
+<rect x="1229" y="243" width="72" height="8" rx="4" fill="#ff6b6b" stroke="none" stroke-width="0"/>
+<text x="1229" y="295" fill="#ff6b6b" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" text-anchor="start" font-weight="700">SEPARATE LEDGER</text>
+<text x="1229" y="355" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" text-anchor="start" font-weight="650">standalone_sqlite_file</text>
+<text x="1229" y="405" fill="#9fb0c9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" text-anchor="start" font-weight="400">restart retains progress</text>
+<line x1="395" y1="350" x2="445" y2="350" stroke="#4f8cff" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)"/>
+<line x1="770" y1="350" x2="820" y2="350" stroke="#4f8cff" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)"/>
+<line x1="1145" y1="350" x2="1195" y2="350" stroke="#4f8cff" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="80" y="560" width="1440" height="94" rx="18" fill="#0e1829" stroke="#31415f" stroke-width="2"/>
+<text x="110" y="596" fill="#31d2c2" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" text-anchor="start" font-weight="700">OBSERVED</text>
+<text x="110" y="632" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" text-anchor="start" font-weight="400">65,536 bytes transmitted · duplicate recognised · ledger reopened</text>
+<text x="80" y="730" fill="#ff6b6b" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" text-anchor="start" font-weight="700">BOUNDARY</text>
+<text x="205" y="730" fill="#9fb0c9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19" text-anchor="start" font-weight="400">same project · bounded subset · no supplier, terminal or physical link</text>
+</svg>

@@ -12,6 +12,7 @@ legible in the repository without storing a second raster copy.
 | [`s017-durable-restart.svg`](../figures/s017-durable-restart.svg) | `results/S017_durable_restart.json` | Clean local restart, not power-loss qualification |
 | [`s019-authenticated-binding.svg`](../figures/s019-authenticated-binding.svg) | `results/S019_authenticated_transport.json` | Local HMAC/replay test, not deployed or flight security |
 | [`s020-transaction-recovery.svg`](../figures/s020-transaction-recovery.svg) | `results/S020_abrupt_restart.json` | Coordinated process kills, not electrical power-loss qualification |
+| [`s021-independent-adapter.svg`](../figures/s021-independent-adapter.svg) | `results/S021_independent_adapter.json` | Separate project code paths, not external supplier interoperability |
 
 Generated figures are checked for byte-for-byte drift in CI. A changed result therefore changes
 its visual in the same commit or fails verification.
