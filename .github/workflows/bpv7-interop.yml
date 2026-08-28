@@ -57,6 +57,7 @@ jobs:
             } else { fail(fmt.Errorf("unknown mode")) }
           }
           GO
+          go mod tidy
           go build -o /tmp/gx-go-bridge .
       - name: Exchange bundles through fault-injected GatewayCX
         run: python -m gatewaycx.bpv7_interop_lab --go-bridge /tmp/gx-go-bridge --rust-bp7 /tmp/gx-rust/bin/bp7 --output S030_bpv7_interop.json
