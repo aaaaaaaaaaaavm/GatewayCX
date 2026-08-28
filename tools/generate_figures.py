@@ -479,6 +479,37 @@ def simulation_ceiling() -> None:
     write("s024-s027-simulation-ceiling.svg", svg(1600, 760, "GatewayCX S024 to S027 simulation ceiling", body))
 
 
+def regional_fault_lab() -> None:
+    result = load("S028_regional_fault_lab.json")
+    recovery = result["experiments"]["storage_recovery"]
+    experiments = [
+        ("X07", "IDENTITY", "stale → expiry → revocation", BLUE),
+        ("X08", "CONSISTENCY", "fail closed · merge · escrow", CYAN),
+        ("X14", "UPDATE", "digest · A/B · migration rollback", GOLD),
+        ("X16", "BLACK START", "5 child processes · no Earth", RED),
+        ("X18", "RECOVERY", f'{recovery["restored_rows"]} exact rows restored', BLUE),
+    ]
+    body = [
+        text(80, 82, "THE LUNAR REGION NOW FAILS IN EXECUTABLE SOFTWARE", 32, TEXT, weight=700),
+        text(80, 120, "S028 · real signatures, payloads, SQLite transactions, processes and corruption", 21, MUTED),
+    ]
+    for index, (identifier, heading, detail, color) in enumerate(experiments):
+        x = 80 + index * 300
+        body.extend([
+            rect(x, 220, 270, 300, PANEL, stroke=color, stroke_width=3),
+            text(x + 24, 275, identifier, 18, color, weight=700),
+            text(x + 24, 340, heading, 21, TEXT, weight=700),
+            text(x + 24, 405, detail, 15, MUTED),
+            text(x + 24, 475, "PASS", 22, color, weight=700),
+        ])
+    body.extend([
+        rect(80, 600, 1440, 90, "#0e1829", stroke=LINE, stroke_width=2),
+        text(110, 636, "BOUNDARY", 16, RED, weight=700),
+        text(110, 672, "reference software · no production PKI, flight services, electrical start or raw-device qualification", 20, TEXT),
+    ])
+    write("s028-regional-fault-lab.svg", svg(1600, 760, "S028 executable regional fault laboratory", body))
+
+
 def main() -> int:
     architecture()
     latency()
@@ -490,7 +521,8 @@ def main() -> int:
     lunar_orbit_envelope()
     ground_offload()
     simulation_ceiling()
-    print("wrote 10 GatewayCX SVG figures")
+    regional_fault_lab()
+    print("wrote 11 GatewayCX SVG figures")
     return 0
 
 

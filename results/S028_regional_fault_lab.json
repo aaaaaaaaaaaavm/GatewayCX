@@ -1,0 +1,146 @@
+{
+  "checks": {
+    "black_start_uses_real_child_processes": true,
+    "consistency_policies_fail_or_merge_by_class": true,
+    "offline_identity_is_bounded_and_reconciled": true,
+    "recovery_detects_corruption_and_restores_exact_commits": true,
+    "update_faults_preserve_active_state": true
+  },
+  "evidence_class": "TEST",
+  "experiments": {
+    "black_start": {
+      "earth_available": false,
+      "experiment_id": "X16",
+      "lost_holdover_time": {
+        "dns": {
+          "reason": "time_independent_local_zone",
+          "started": true
+        },
+        "gateway": {
+          "reason": "identity_dependency",
+          "started": false
+        },
+        "holdover_time": {
+          "reason": "fault_injected",
+          "started": false
+        },
+        "identity": {
+          "reason": "trust_dependency",
+          "started": false
+        },
+        "local_trust": {
+          "reason": "time_dependency",
+          "started": false
+        }
+      },
+      "nominal_process_start": {
+        "dns": {
+          "clean_exit": true,
+          "started": true
+        },
+        "gateway": {
+          "clean_exit": true,
+          "started": true
+        },
+        "holdover_time": {
+          "clean_exit": true,
+          "started": true
+        },
+        "identity": {
+          "clean_exit": true,
+          "started": true
+        },
+        "local_trust": {
+          "clean_exit": true,
+          "started": true
+        }
+      }
+    },
+    "consistency_partition": {
+      "escrow_counter": {
+        "earth_used": 5,
+        "global_limit": 10,
+        "moon_used": 4,
+        "oversubscribed": false
+      },
+      "eventual_register": {
+        "converged": true,
+        "earth_write": "earth-v2",
+        "moon_write": "moon-v2",
+        "resolution": "moon-v2"
+      },
+      "experiment_id": "X08",
+      "strong_command_during_partition": {
+        "accepted": false,
+        "reason": "quorum_unavailable"
+      }
+    },
+    "identity_partition": {
+      "after_holdover_expiry": {
+        "accepted": false,
+        "reason": "expired"
+      },
+      "after_reconnection": {
+        "accepted": false,
+        "reason": "revoked"
+      },
+      "during_partition": {
+        "accepted": true,
+        "reason": "accepted",
+        "revocation_visibility": "stale"
+      },
+      "experiment_id": "X07",
+      "forged_token": {
+        "accepted": false,
+        "reason": "signature"
+      },
+      "mechanism": "HMAC-signed offline capability with bounded expiry and serial revocation"
+    },
+    "signed_update": {
+      "corrupt_payload": {
+        "accepted": false,
+        "reason": "payload_digest"
+      },
+      "experiment_id": "X14",
+      "failed_health_check": {
+        "active_slot": "A",
+        "candidate_slot": "B"
+      },
+      "migration_fault": {
+        "schema_version_after_rollback": 1
+      },
+      "valid_payload": {
+        "accepted": true,
+        "reason": "verified",
+        "staged_sha256": "8881195db3bd6351b2c35e96566a025319479d81ce416c1bb58333b4a7674845"
+      }
+    },
+    "storage_recovery": {
+      "attempted_transactions": 60,
+      "committed_before_corruption": 23,
+      "corruption_detected": true,
+      "durable_rows_before_corruption": 23,
+      "experiment_id": "X18",
+      "fault_distribution": {
+        "after_commit": 13,
+        "after_insert": 22,
+        "before_insert": 15,
+        "none": 10
+      },
+      "integrity_after_restore": "ok",
+      "integrity_before_corruption": "ok",
+      "restored_rows": 23,
+      "rolled_back_transactions": 37,
+      "seed": 9171
+    }
+  },
+  "interpretation_boundary": [
+    "HMAC test keys demonstrate signature and stale-revocation semantics, not PKI, protected key custody or production identity.",
+    "The consistency experiment uses two local SQLite replicas and declared merge policies, not a distributed database product.",
+    "The update experiment writes and hashes real payloads and rolls back a SQLite migration, but does not implement secure boot or a transparency log.",
+    "Black start launches real child processes without Earth, but does not exercise electrical power, flight computers, oscillators or network interfaces.",
+    "Recovery injects deterministic transaction faults and corrupts/restores a database file; it is not raw-device power-loss or radiation testing."
+  ],
+  "study_id": "S028",
+  "title": "Executable lunar-region fault laboratory"
+}

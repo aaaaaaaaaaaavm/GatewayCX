@@ -16,6 +16,7 @@ legible in the repository without storing a second raster copy.
 | [`s022-lunar-orbit-envelope.svg`](../figures/s022-lunar-orbit-envelope.svg) | `results/S022_lunar_orbits.json` | Two-body and ideal equatorial screen, not constellation selection |
 | [`s023-ground-offload.svg`](../figures/s023-ground-offload.svg) | `results/S023_ground_offload.json` | Synthetic isolation, not mission or DSN scheduling data |
 | [`s024-s027-simulation-ceiling.svg`](../figures/s024-s027-simulation-ceiling.svg) | `results/S024_ephemeris.json` through `S027_economics.json` | Architecture-class simulations, not hardware, operations or market evidence |
+| [`s028-regional-fault-lab.svg`](../figures/s028-regional-fault-lab.svg) | `results/S028_regional_fault_lab.json` | Local reference software faults, not production or flight qualification |
 
 Generated figures are checked for byte-for-byte drift in CI. A changed result therefore changes
 its visual in the same commit or fails verification.

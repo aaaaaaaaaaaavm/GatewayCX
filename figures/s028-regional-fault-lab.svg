@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="760" viewBox="0 0 1600 760" role="img" aria-labelledby="title">
+<title id="title">S028 executable regional fault laboratory</title>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4f8cff"/></marker></defs>
+<rect x="0" y="0" width="1600" height="760" rx="0" fill="#0b1220" stroke="none" stroke-width="0"/>
+<text x="80" y="82" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="32" text-anchor="start" font-weight="700">THE LUNAR REGION NOW FAILS IN EXECUTABLE SOFTWARE</text>
+<text x="80" y="120" fill="#9fb0c9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" text-anchor="start" font-weight="400">S028 · real signatures, payloads, SQLite transactions, processes and corruption</text>
+<rect x="80" y="220" width="270" height="300" rx="18" fill="#121d31" stroke="#4f8cff" stroke-width="3"/>
+<text x="104" y="275" fill="#4f8cff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" text-anchor="start" font-weight="700">X07</text>
+<text x="104" y="340" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" text-anchor="start" font-weight="700">IDENTITY</text>
+<text x="104" y="405" fill="#9fb0c9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" text-anchor="start" font-weight="400">stale → expiry → revocation</text>
+<text x="104" y="475" fill="#4f8cff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" text-anchor="start" font-weight="700">PASS</text>
+<rect x="380" y="220" width="270" height="300" rx="18" fill="#121d31" stroke="#31d2c2" stroke-width="3"/>
+<text x="404" y="275" fill="#31d2c2" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" text-anchor="start" font-weight="700">X08</text>
+<text x="404" y="340" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" text-anchor="start" font-weight="700">CONSISTENCY</text>
+<text x="404" y="405" fill="#9fb0c9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" text-anchor="start" font-weight="400">fail closed · merge · escrow</text>
+<text x="404" y="475" fill="#31d2c2" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" text-anchor="start" font-weight="700">PASS</text>
+<rect x="680" y="220" width="270" height="300" rx="18" fill="#121d31" stroke="#ffbf47" stroke-width="3"/>
+<text x="704" y="275" fill="#ffbf47" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" text-anchor="start" font-weight="700">X14</text>
+<text x="704" y="340" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" text-anchor="start" font-weight="700">UPDATE</text>
+<text x="704" y="405" fill="#9fb0c9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" text-anchor="start" font-weight="400">digest · A/B · migration rollback</text>
+<text x="704" y="475" fill="#ffbf47" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" text-anchor="start" font-weight="700">PASS</text>
+<rect x="980" y="220" width="270" height="300" rx="18" fill="#121d31" stroke="#ff6b6b" stroke-width="3"/>
+<text x="1004" y="275" fill="#ff6b6b" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" text-anchor="start" font-weight="700">X16</text>
+<text x="1004" y="340" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" text-anchor="start" font-weight="700">BLACK START</text>
+<text x="1004" y="405" fill="#9fb0c9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" text-anchor="start" font-weight="400">5 child processes · no Earth</text>
+<text x="1004" y="475" fill="#ff6b6b" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" text-anchor="start" font-weight="700">PASS</text>
+<rect x="1280" y="220" width="270" height="300" rx="18" fill="#121d31" stroke="#4f8cff" stroke-width="3"/>
+<text x="1304" y="275" fill="#4f8cff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" text-anchor="start" font-weight="700">X18</text>
+<text x="1304" y="340" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" text-anchor="start" font-weight="700">RECOVERY</text>
+<text x="1304" y="405" fill="#9fb0c9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" text-anchor="start" font-weight="400">23 exact rows restored</text>
+<text x="1304" y="475" fill="#4f8cff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" text-anchor="start" font-weight="700">PASS</text>
+<rect x="80" y="600" width="1440" height="90" rx="18" fill="#0e1829" stroke="#31415f" stroke-width="2"/>
+<text x="110" y="636" fill="#ff6b6b" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" text-anchor="start" font-weight="700">BOUNDARY</text>
+<text x="110" y="672" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" text-anchor="start" font-weight="400">reference software · no production PKI, flight services, electrical start or raw-device qualification</text>
+</svg>

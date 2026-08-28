@@ -111,6 +111,11 @@
 | C094 | A positive S025 optical or RF margin proves service availability. | — | Acquisition, weather, interference and hardware are not closed | Rejected |
 | C095 | S026 sizes a flight-ready lunar data centre. | — | Comparative class model omits major subsystems and qualification | Rejected |
 | C096 | S027 establishes a viable market or customer price. | — | Cost and utilisation inputs are synthetic | Rejected |
+| C097 | S028 accepts a valid offline identity during a partition, bounds it by expiry, and rejects it after revocation becomes visible. | TEST | S028 X07 | HMAC reference key; not federated identity or protected key custody |
+| C098 | S028 resolves every database workload with one consistency policy. | — | X08 deliberately assigns fail-closed, convergent and escrow semantics by class | Rejected |
+| C099 | S028 rejects a corrupt update payload and rolls back an interrupted SQLite schema migration while slot A stays active. | TEST | S028 X14 | No secure boot, registry or real application deployment |
+| C100 | S028 performs electrical lunar black start. | — | X16 launches local child processes only | Rejected |
+| C101 | S028 restores exactly 23 committed rows after 60 seeded transaction cases and deliberate SQLite header corruption. | TEST | S028 X18 | Local file/backup test, not raw-device or power-loss qualification |
 
 The ledger will grow when the evidence grows. A claim does not become stronger by appearing in the
 README.

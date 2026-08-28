@@ -32,3 +32,4 @@ separate prose run sheet is added only when method, interpretation or external d
 | S025 | RF/optical link budgets | DERIVATION + MODEL | Class margins plus pointing, weather and fallback sensitivities |
 | S026 | Lunar data-centre physical trade | MODEL | Power, radiator, radiation, mass and protected-storage classes |
 | S027 | Delivered/retained-bit economics | MODEL | Synthetic utilisation, availability and annualised-cost sensitivity |
+| S028 | Lunar regional fault laboratory | TEST | Executable identity, consistency, update, black-start and storage-recovery faults |

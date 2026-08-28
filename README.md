@@ -126,6 +126,7 @@ The study register establishes the starting point:
 | S025 | Which RF/optical architecture classes close on paper, and how sensitive are they to pointing, loss, weather and fallback? |
 | S026 | How do surface, orbital and hybrid lunar compute classes trade power, heat rejection, radiation, mass and storage? |
 | S027 | What do declared utilisation and availability do to cost per delivered and retained bit? |
+| S028 | Do lunar identity, consistency, updates, black start and storage recovery fail safely in executable software? |
 
 The current declared inputs produce:
 
@@ -166,6 +167,8 @@ or network.
 <p align="center"><img src="figures/s023-ground-offload.svg" alt="S023 shared versus separated ground pools and optical relay pipeline" width="100%"></p>
 
 <p align="center"><img src="figures/s024-s027-simulation-ceiling.svg" alt="S024 to S027 ephemeris, link, data-centre and economics simulation summary" width="100%"></p>
+
+<p align="center"><img src="figures/s028-regional-fault-lab.svg" alt="S028 executable lunar regional identity, consistency, update, black-start and recovery fault laboratory" width="100%"></p>
 
 <p align="center"><sub>All three charts are generated from committed model or test results. They
 are not terminal measurements or flight evidence.</sub></p>
