@@ -22,3 +22,4 @@ separate prose run sheet is added only when method, interpretation or external d
 | S015 | Integrated RF/optical durable recovery | MODEL + TEST | S010, S005 and GX-O1 composed on one synthetic timeline |
 | S016 | GX-A1 executable bearer adapter probe | MODEL + TEST | Optical/RF profiles exercised through one reference runtime seam |
 | S017 | Cross-process durable traffic-ledger restart | TEST | Clean restart preserves partial progress and duplicate semantics |
+| S018 | GX-A1 local process-boundary transport | TEST | Loopback JSONL binding, malformed-input isolation and ledger reopen |

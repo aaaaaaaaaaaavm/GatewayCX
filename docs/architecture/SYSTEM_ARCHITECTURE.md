@@ -71,6 +71,10 @@ current binding remains an in-process reference implementation.
 queue with a payload-blind SQLite ledger and verifies traffic progress across separate seed and
 recovery processes. Link and acquisition state deliberately restart from unavailable.
 
+[`S018`](../../studies/S018_ADAPTER_TRANSPORT.md) moves GX-A1 across a loopback JSONL process
+boundary. The service plane can now call the adapter without importing its implementation, while
+authentication and an independently written supplier endpoint remain open.
+
 ## Operating modes
 
 | Mode | Backbone state | Expected behaviour |

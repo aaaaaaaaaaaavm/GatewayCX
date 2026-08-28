@@ -26,6 +26,7 @@ This register prevents a passing test suite from being mistaken for a closed arc
 | Do warm handover, durable delivery and GX-O1 conserve the same traffic state? | S015 integrated replay | Closed for the shared synthetic ledger | Executable adapters, durable store, packets and injected link process |
 | Can one runtime seam drive the optical and RF profile semantics? | S016 GX-A1 adapter probe | Closed for two profiles using one reference class | Out-of-process binding, independent implementation and hardware control |
 | Does accepted adapter progress survive a gateway-process restart? | S017 SQLite restart probe | Closed for a clean two-process local restart | Abrupt kill, power loss, corrupt media, multi-node store and flight hardware |
+| Can the service plane call GX-A1 without sharing the adapter process? | S018 loopback JSONL probe | Closed for the reference implementation and local transport | Authentication, stable schema, independent adapter and terminal SDK |
 | Is the system commercially viable? | None yet | Open | Demand, deployment and operating-cost model |
 
 CI closes consistency questions. It does not close physics, hardware, operations or markets.

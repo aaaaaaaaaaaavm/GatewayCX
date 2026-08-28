@@ -1,0 +1,48 @@
+{
+  "checks": {
+    "acquisition_reaches_ready": true,
+    "binding_is_loopback_only": true,
+    "capabilities_cross_process_boundary": true,
+    "initial_link_is_unavailable": true,
+    "malformed_json_is_rejected": true,
+    "payload_content_crossed_rpc": false,
+    "profile_capacity_drains_unit": true,
+    "restart_preserves_traffic_ledger": true,
+    "restart_resets_link_state": true,
+    "rpc_version_is_stable": true,
+    "separate_client_and_server_processes": true,
+    "server_survives_malformed_request": true,
+    "submission_is_accepted_pending": true
+  },
+  "evidence_class": "TEST",
+  "first_server": {
+    "malformed_request_error": "invalid_json",
+    "persistence_scope": "sqlite_file",
+    "ready_at_s": 21.0,
+    "submit_status": "accepted_pending",
+    "transmitted_bytes": 65536
+  },
+  "inputs": {
+    "bind_address": "127.0.0.1",
+    "framing": "one JSON line per connection",
+    "payload_content_supplied": false,
+    "profile_path": "profiles/bearers/reference-rf.json",
+    "traffic_unit_bytes": 65536,
+    "transport": "TCP loopback"
+  },
+  "interpretation_boundary": [
+    "The binding is loopback TCP JSONL, not a deployed network protocol or supplier standard.",
+    "Loopback limits reachability to the host but does not provide application authentication, authorisation, confidentiality or message integrity.",
+    "Both server launches still use the GatewayCX reference adapter; no independent supplier implementation participates.",
+    "The request carries traffic metadata only. It does not carry payload content, packets or BPv7 bundles.",
+    "The server controls no terminal, modem, pointing system or physical link."
+  ],
+  "second_server": {
+    "accepted_bytes": 65536,
+    "link_state": "unavailable",
+    "queue_bytes": 0,
+    "transmitted_bytes": 65536
+  },
+  "study_id": "S018",
+  "title": "GX-A1 local process-boundary transport"
+}

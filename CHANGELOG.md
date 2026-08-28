@@ -38,3 +38,6 @@
   acquisition, capacity, fault-preservation and reacquisition checks across optical and RF inputs.
 - Added S017, a payload-blind SQLite traffic ledger that preserves accepted and partially
   transmitted byte state across separate seed and recovery processes.
+- Added S018, a loopback JSONL GX-A1 process binding with malformed-input isolation and persistent
+  ledger reopen, while leaving authentication and independent supplier implementation open.
+- Added four deterministic SVG figures generated from the architecture and committed results.

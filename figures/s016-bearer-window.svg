@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="800" viewBox="0 0 1600 800" role="img" aria-labelledby="title">
+<title id="title">S016 bearer capacity comparison</title>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4f8cff"/></marker></defs>
+<rect x="0" y="0" width="1600" height="800" rx="0" fill="#0b1220" stroke="none" stroke-width="0"/>
+<text x="80" y="82" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="34" text-anchor="start" font-weight="700">ONE ADAPTER SURFACE, DIFFERENT BEARER CAPACITY</text>
+<text x="80" y="120" fill="#9fb0c9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" text-anchor="start" font-weight="400">first 100 ms after acquisition · 7,995,392 accepted bytes</text>
+<text x="80" y="235" fill="#31d2c2" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" text-anchor="start" font-weight="700">OPTICAL</text>
+<text x="240" y="235" fill="#9fb0c9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" text-anchor="start" font-weight="400">gx-reference-optical</text>
+<rect x="240" y="267" width="820.7852723168545" height="70" rx="10" fill="#31d2c2" stroke="none" stroke-width="0"/>
+<rect x="1060.7852723168544" y="267" width="229.2147276831455" height="70" rx="10" fill="#263550" stroke="none" stroke-width="0"/>
+<text x="260" y="313" fill="#0b1220" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" text-anchor="start" font-weight="700">6.25 MB sent</text>
+<text x="1320" y="313" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" text-anchor="end" font-weight="400">1.75 MB queued</text>
+<text x="80" y="455" fill="#ffbf47" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" text-anchor="start" font-weight="700">RF</text>
+<text x="240" y="455" fill="#9fb0c9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" text-anchor="start" font-weight="400">gx-reference-rf</text>
+<rect x="240" y="487" width="164.1570544633709" height="70" rx="10" fill="#ffbf47" stroke="none" stroke-width="0"/>
+<rect x="404.1570544633709" y="487" width="885.8429455366291" height="70" rx="10" fill="#263550" stroke="none" stroke-width="0"/>
+<text x="260" y="533" fill="#0b1220" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" text-anchor="start" font-weight="700">1.25 MB sent</text>
+<text x="1320" y="533" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" text-anchor="end" font-weight="400">6.75 MB queued</text>
+<rect x="240" y="660" width="34" height="20" rx="4" fill="#31d2c2" stroke="none" stroke-width="0"/>
+<text x="290" y="678" fill="#9fb0c9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" text-anchor="start" font-weight="400">transmitted</text>
+<rect x="460" y="660" width="34" height="20" rx="4" fill="#263550" stroke="none" stroke-width="0"/>
+<text x="510" y="678" fill="#9fb0c9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" text-anchor="start" font-weight="400">still queued</text>
+<text x="80" y="735" fill="#ff6b6b" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" text-anchor="start" font-weight="700">ASSUMED PROFILE VALUES · BYTE-BUDGET TEST · NO TERMINAL OR LINK</text>
+</svg>

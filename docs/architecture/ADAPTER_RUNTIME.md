@@ -65,6 +65,9 @@ media descriptions. It does not prove independent implementation, process isolat
 control or multi-vendor interoperability. The next binding must put the same semantics across a
 process boundary and connect one independently written adapter.
 
+[`The reference process binding`](ADAPTER_PROCESS_BINDING.md) moves the same operations across
+loopback JSONL for S018. It proves process separation, not authentication or vendor independence.
+
 [`The durable traffic ledger`](DURABLE_TRAFFIC_LEDGER.md) separates queued traffic progress from
 the adapter's transient link state. SQLite is one reference store binding, not part of GX-A1's
 portable supplier contract.

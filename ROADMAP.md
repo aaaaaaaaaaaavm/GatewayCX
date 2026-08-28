@@ -59,6 +59,7 @@ within bounded time after recovery.
 - Model link acquisition, pointing, weather, handover, capacity and failure.
 - Connect at least two independently implemented bearer adapters to the reference service plane.
 - Move GX-A1 from its in-process reference class to an authenticated process boundary.
+- Replace S018 loopback JSONL with a versioned authenticated binding and an independent adapter.
 
 **Exit:** a traffic session changes bearer or provider without changing the user application.
 

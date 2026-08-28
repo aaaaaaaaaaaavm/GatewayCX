@@ -79,6 +79,10 @@
 | C062 | S017 rejects a changed-size reuse of an accepted traffic-unit ID without changing the ledger. | TEST | S017 | One SQLite implementation |
 | C063 | The S017 traffic-unit schema has no payload-content column. | TEST | S017 schema inspection | Identifiers, sizes and classes remain metadata |
 | C064 | S017 proves survival through power loss or qualifies storage for flight. | — | No abrupt-loss or hardware test | Rejected |
+| C065 | S018 drives GX-A1 capability, queue, acquisition and transmission operations through a separate server process. | TEST | S018 | GatewayCX reference implementation on both sides |
+| C066 | The S018 server rejects malformed JSON and remains available for a subsequent operation. | TEST | S018 | Local loopback test only |
+| C067 | Restricting the reference binding to loopback authenticates or authorises its client. | — | Reachability is not identity or policy | Rejected |
+| C068 | S018 demonstrates independent supplier or terminal interoperability. | — | No external adapter or hardware participates | Rejected |
 
 The ledger will grow when the evidence grows. A claim does not become stronger by appearing in the
 README.

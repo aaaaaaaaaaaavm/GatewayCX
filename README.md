@@ -19,6 +19,10 @@ The unavoidable difference is light time. At the mean Earth–Moon separation, i
 about 1.282 seconds one way and 2.565 seconds round trip. Relays, queues and processing add to it.
 Optical communications can move more bits; they cannot make those bits outrun light.
 
+<p align="center">
+  <img src="figures/architecture-overview.svg" alt="GatewayCX Earth, cislunar backbone and lunar regional architecture" width="100%">
+</p>
+
 The system therefore cannot be a long cable with better marketing. GatewayCX treats Earth and the
 Moon as two autonomous Internet regions joined by a resilient cislunar backbone. Ordinary IP runs
 where continuity permits. Local lunar compute keeps local work local. Caches and replicas remove
@@ -105,6 +109,7 @@ The study register establishes the starting point:
 | S015 | Do bearer handover, durable recovery and diagnostics agree on one traffic ledger? |
 | S016 | Can one executable runtime seam apply optical and RF profiles through fault and recovery? |
 | S017 | Does accepted partial-transfer state survive a clean gateway-process restart? |
+| S018 | Can the GX-A1 adapter run across a process boundary and reject malformed traffic safely? |
 
 The current declared inputs produce:
 
@@ -116,6 +121,18 @@ The current declared inputs produce:
 
 Those figures compare architecture assumptions. They do not predict a particular website, terminal
 or network.
+
+<p align="center">
+  <img src="figures/baseline-latency.svg" alt="GatewayCX baseline elapsed-time comparison" width="100%">
+</p>
+
+<p align="center">
+  <img src="figures/s016-bearer-window.svg" alt="S016 optical and RF profile capacity comparison" width="49%">
+  <img src="figures/s017-durable-restart.svg" alt="S017 traffic-ledger state across process restart" width="49%">
+</p>
+
+<p align="center"><sub>All three charts are generated from committed model or test results. They
+are not terminal measurements or flight evidence.</sub></p>
 
 The generated record is [`results/baseline.json`](results/baseline.json). Its checks are tested in
 CI. It is not a network simulator, a link-budget tool or evidence of hardware performance yet.
@@ -141,6 +158,10 @@ deterministic model.
   executable runtime seam beneath the service plane.
 - [`docs/architecture/DURABLE_TRAFFIC_LEDGER.md`](docs/architecture/DURABLE_TRAFFIC_LEDGER.md)
   defines the payload-blind persistent queue and byte-ledger invariants.
+- [`docs/architecture/ADAPTER_PROCESS_BINDING.md`](docs/architecture/ADAPTER_PROCESS_BINDING.md)
+  defines the local GX-A1 JSONL process boundary and its unfinished security requirements.
+- [`docs/FIGURE_INDEX.md`](docs/FIGURE_INDEX.md) maps generated visuals back to their sources and
+  evidence limits.
 - [`docs/architecture/OPERATIONS_DIAGNOSTICS.md`](docs/architecture/OPERATIONS_DIAGNOSTICS.md)
   defines the GX-O1 portable fault-code and network flight-recorder seam.
 - [`research/TRAFFIC_AND_DSN_BOUNDARY.md`](research/TRAFFIC_AND_DSN_BOUNDARY.md) separates a lunar

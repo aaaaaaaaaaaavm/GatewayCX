@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="850" viewBox="0 0 1600 850" role="img" aria-labelledby="title">
+<title id="title">S017 cross-process durable restart</title>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4f8cff"/></marker></defs>
+<rect x="0" y="0" width="1600" height="850" rx="0" fill="#0b1220" stroke="none" stroke-width="0"/>
+<text x="80" y="82" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="34" text-anchor="start" font-weight="700">TRAFFIC PROGRESS SURVIVES A CLEAN PROCESS RESTART</text>
+<text x="80" y="120" fill="#9fb0c9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" text-anchor="start" font-weight="400">SQLite traffic ledger · same accepted bytes before and after restart</text>
+<text x="80" y="243" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" text-anchor="start" font-weight="400">seed before transmit</text>
+<rect x="350" y="205" width="0.0" height="60" rx="8" fill="#4f8cff" stroke="none" stroke-width="0"/>
+<rect x="350.0" y="205" width="1000.0" height="60" rx="8" fill="#ffbf47" stroke="none" stroke-width="0"/>
+<text x="1380" y="244" fill="#9fb0c9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" text-anchor="end" font-weight="400">0.00 / 8.00 MB</text>
+<text x="80" y="368" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" text-anchor="start" font-weight="400">seed exit</text>
+<rect x="350" y="330" width="156.34005186987704" height="60" rx="8" fill="#4f8cff" stroke="none" stroke-width="0"/>
+<rect x="506.340051869877" y="330" width="843.659948130123" height="60" rx="8" fill="#ffbf47" stroke="none" stroke-width="0"/>
+<text x="1380" y="369" fill="#9fb0c9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" text-anchor="end" font-weight="400">1.25 / 6.75 MB</text>
+<line x1="320" y1="422" x2="1410" y2="422" stroke="#ff6b6b" stroke-width="2" stroke-linecap="round" stroke-dasharray="8 8"/>
+<text x="1410" y="445" fill="#ff6b6b" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" text-anchor="end" font-weight="700">process boundary</text>
+<text x="80" y="493" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" text-anchor="start" font-weight="400">recovery entry</text>
+<rect x="350" y="455" width="156.34005186987704" height="60" rx="8" fill="#4f8cff" stroke="none" stroke-width="0"/>
+<rect x="506.340051869877" y="455" width="843.659948130123" height="60" rx="8" fill="#ffbf47" stroke="none" stroke-width="0"/>
+<text x="1380" y="494" fill="#9fb0c9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" text-anchor="end" font-weight="400">1.25 / 6.75 MB</text>
+<text x="80" y="618" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" text-anchor="start" font-weight="400">recovery exit</text>
+<rect x="350" y="580" width="1000.0" height="60" rx="8" fill="#4f8cff" stroke="none" stroke-width="0"/>
+<rect x="1350.0" y="580" width="0.0" height="60" rx="8" fill="#ffbf47" stroke="none" stroke-width="0"/>
+<text x="1380" y="619" fill="#9fb0c9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" text-anchor="end" font-weight="400">8.00 / 0.00 MB</text>
+<rect x="350" y="720" width="34" height="20" rx="4" fill="#4f8cff" stroke="none" stroke-width="0"/>
+<text x="400" y="738" fill="#9fb0c9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" text-anchor="start" font-weight="400">transmitted</text>
+<rect x="570" y="720" width="34" height="20" rx="4" fill="#ffbf47" stroke="none" stroke-width="0"/>
+<text x="620" y="738" fill="#9fb0c9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" text-anchor="start" font-weight="400">queued</text>
+<text x="80" y="795" fill="#ff6b6b" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" text-anchor="start" font-weight="700">CLEAN RESTART ONLY · NOT POWER-LOSS OR FLIGHT-STORAGE QUALIFICATION</text>
+</svg>

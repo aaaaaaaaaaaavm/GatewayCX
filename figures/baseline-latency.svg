@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="780" viewBox="0 0 1600 780" role="img" aria-labelledby="title">
+<title id="title">GatewayCX baseline elapsed-time comparison</title>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4f8cff"/></marker></defs>
+<rect x="0" y="0" width="1600" height="780" rx="0" fill="#0b1220" stroke="none" stroke-width="0"/>
+<text x="80" y="82" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="34" text-anchor="start" font-weight="700">AVOIDABLE DISTANCE IS THE FIRST OPTIMISATION</text>
+<text x="80" y="120" fill="#9fb0c9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" text-anchor="start" font-weight="400">elapsed time from the deterministic baseline · logarithmic labels avoided</text>
+<text x="80" y="230" fill="#4f8cff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" text-anchor="start" font-weight="700">S001</text>
+<text x="180" y="230" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" text-anchor="start" font-weight="400">Native direct Earth service</text>
+<rect x="180" y="258" width="1050" height="38" rx="8" fill="#18253b" stroke="none" stroke-width="0"/>
+<rect x="180" y="258" width="1050.0" height="38" rx="8" fill="#4f8cff" stroke="none" stroke-width="0"/>
+<text x="1260" y="288" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="25" text-anchor="start" font-weight="650">16.047 s</text>
+<text x="80" y="380" fill="#31d2c2" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" text-anchor="start" font-weight="700">S002</text>
+<text x="180" y="380" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" text-anchor="start" font-weight="400">Lunar edge-assisted service</text>
+<rect x="180" y="408" width="1050" height="38" rx="8" fill="#18253b" stroke="none" stroke-width="0"/>
+<rect x="180" y="408" width="344.3459594051147" height="38" rx="8" fill="#31d2c2" stroke="none" stroke-width="0"/>
+<text x="1260" y="438" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="25" text-anchor="start" font-weight="650">5.263 s</text>
+<text x="80" y="530" fill="#ffbf47" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" text-anchor="start" font-weight="700">S003</text>
+<text x="180" y="530" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" text-anchor="start" font-weight="400">Partitioned lunar region</text>
+<rect x="180" y="558" width="1050" height="38" rx="8" fill="#18253b" stroke="none" stroke-width="0"/>
+<rect x="180" y="558" width="8" height="38" rx="8" fill="#ffbf47" stroke="none" stroke-width="0"/>
+<text x="1260" y="588" fill="#edf4ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="25" text-anchor="start" font-weight="650">0.009 s</text>
+<text x="80" y="710" fill="#ff6b6b" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" text-anchor="start" font-weight="700">MODEL BOUNDARY</text>
+<text x="265" y="710" fill="#9fb0c9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19" text-anchor="start" font-weight="400">scenario assumptions, not a measured lunar user experience</text>
+</svg>
