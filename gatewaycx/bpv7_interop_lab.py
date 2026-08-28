@@ -22,7 +22,11 @@ SECRET = hashlib.sha256(b"gatewaycx-s030-interop-key").digest()
 
 
 def _run(command: list[str], payload: bytes, check: bool = True) -> subprocess.CompletedProcess[bytes]:
-    return subprocess.run(command, input=payload, capture_output=True, check=check, timeout=120)
+    completed = subprocess.run(command, input=payload, capture_output=True, check=False, timeout=120)
+    if check and completed.returncode != 0:
+        stderr = completed.stderr.decode("utf-8", errors="replace").strip()
+        raise RuntimeError(f"external command {command!r} failed ({completed.returncode}): {stderr}")
+    return completed
 
 
 class FaultInjectedGateway:
