@@ -2,6 +2,9 @@
 
 ## 0.1.0-dev — 2026-08-27
 
+- Reframed GatewayCX explicitly as an interoperable service and operations profile around LNIS V5,
+  Internet standards and operational NASA DTN rather than a competing Bundle Protocol architecture.
+
 - Replaced Apache License 2.0 with the GatewayCX Proprietary Licence, asserting Avisys Services
   ownership for current and later versions while preserving the legal history of earlier grants.
 

@@ -2,6 +2,13 @@
 
 The roadmap is gated by evidence, not file count. A phase closes when its exit criteria are met.
 
+## Programme boundary
+
+M0–M5 drive GatewayCX to the ceiling of repeatable software, emulation and simulation evidence.
+LNIS V5, Internet standards and BPv7 are inherited; GatewayCX implements and tests the service,
+regional, bearer, operational and commercial profile around them. M6 remains a deliberate hardware
+boundary and is not part of the current build push.
+
 ## M0: Foundation record
 
 **Purpose:** make the idea inspectable.

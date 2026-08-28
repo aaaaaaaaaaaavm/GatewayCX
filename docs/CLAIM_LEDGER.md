@@ -101,6 +101,10 @@
 | C084 | In S023, separating 60 synthetic lunar units clears both constructed pools. | MODEL | S023 | Not real DSN demand or capacity |
 | C085 | Optical inter-satellite links alone deliver lunar data to Earth. | — | Earth trunk and ground gateway remain required | Rejected |
 | C086 | A lunar relay automatically offloads Voyager, JWST or Parker Solar Probe traffic. | — | Those missions require compatible end-to-end services | Rejected |
+| C087 | GatewayCX defines a replacement for LunaNet or BPv7. | — | LNIS V5 and RFC 9171 are inherited baselines | Rejected |
+| C088 | LNIS V5 permits IPv4, IPv6 and BPv7 at LNSP-user network-layer interfaces, including over bilaterally defined non-LNIS links. | STANDARD | LNIS V5 §4.5 Table 12 | Source reviewed |
+| C089 | NASA reports that DTN became operational in the Near Space Network and Deep Space Network after its DTN Project completed in January 2026. | PUBLIC FACT | NASA SCaN DTN page | Source reviewed 2026-08-28; not a GatewayCX result |
+| C090 | A GatewayCX profile test establishes LunaNet compliance. | — | LNIS defines compliance at its own service/interface level and applicable documents | Rejected |
 
 The ledger will grow when the evidence grows. A claim does not become stronger by appearing in the
 README.

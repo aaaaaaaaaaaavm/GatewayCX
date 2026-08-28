@@ -1,6 +1,6 @@
 # Standards baseline
 
-**Baseline date:** 2026-08-27  
+**Baseline date:** 2026-08-28
 **Purpose:** identify the interfaces GatewayCX can inherit before proposing new ones.
 
 This is a research baseline, not a declaration of conformance. A row marked *inherit* means the
@@ -13,10 +13,10 @@ mapping. It does not mean the underlying protocol is being replaced.
 | Local addressing and forwarding | IPv6, RFC 8200 | Inherit | Standard reviewed; implementation not tested |
 | Secure web service | TLS 1.3, HTTP/2, HTTP/3 | Inherit and test | Standards identified; socket tests pending |
 | Continuous-path transport | TCP and QUIC | Inherit and measure | Satellite guidance exists; cislunar behaviour pending |
-| Disrupted delivery | BPv7, RFC 9171 and updates | Profile by traffic class | S005 semantic model; no GatewayCX node yet |
+| Disrupted delivery | LNIS V5 §3.1.2; BPv7, RFC 9171 and updates | Inherit BPv7; profile service/operations semantics around it | S005 semantic model; real implementation interop pending |
 | Bundle security | BPSec, RFC 9172 | Profile | Standard identified; threat model pending |
 | Scheduled routing | CCSDS SABR | Evaluate | Public recommended standard; no contact-plan trial yet |
-| Lunar service interoperability | LNIS V5 | Align | Current public specification reviewed at programme level |
+| Lunar service interoperability | LNIS V5 | Treat as the current baseline and map every applicable seam | Sections 3.1.1.2, 3.1.2, 3.1.3, 4.5, 5.1, 6.1 and 6.4 mapped |
 | Lunar access | 3GPP NTN and local radio systems | Adapt below IP | Capability family identified; lunar profile pending |
 | Optical and RF bearers | Provider-specific terminals | Define a neutral capability contract | No provider qualified |
 | Naming, identity and trust | DNS and Web PKI | Preserve across regions | Architecture decision; partition tests pending |
@@ -34,16 +34,26 @@ The terminology matters:
 GatewayCX will therefore say *BPv7/RFC 9171* unless a tested implementation conforms to a stated
 CCSDS BPv7 experimental profile. It will not use “CCSDS BPv7” as an undifferentiated label.
 
-## Relationship to LunaNet
+## Relationship to LunaNet and operational NASA DTN
 
-LNIS V5 is the primary public lunar interoperability baseline. It covers cooperative services for
-missions in transit to, around and on the Moon, including Direct-With-Earth and lunar relay cases.
-GatewayCX should align its bearer and inter-network interfaces with LNIS where applicable.
+LNIS V5 is the primary public lunar interoperability baseline. It defines a network of cooperating
+networks and expects multiple public and private LunaNet Service Providers. GatewayCX inherits that
+model. LNIS V5 §3.1.1.2 defines real-time IP service; §3.1.2 requires BPv7 for disruption-tolerant
+service; §4.5 permits IPv4, IPv6 and BPv7 network-layer interfaces over links both inside and outside
+the LNIS physical-link set; and §§5.1, 6.1 and 6.4 establish provider-to-provider communication and
+crosslink boundaries.
 
-GatewayCX asks an additional end-to-end product question: what service placement, identity,
-replication, failure semantics and operations are needed so an ordinary terrestrial Internet client
-can use the same service namespace from a lunar region? This is a study focus, not a claim that
-LunaNet excludes Internet protocols or edge services.
+NASA now states that, after the multi-centre DTN Project completed in January 2026, DTN is an
+operational service in both the Near Space Network and Deep Space Network. GatewayCX consequently
+does not treat DTN or Bundle Protocol as its invention. It must interoperate with that standards and
+operations ecosystem.
+
+GatewayCX asks the layer-above and layer-around question: what service placement, identity,
+replication, bearer abstraction, failure semantics, operations and commercial machinery are needed
+so an ordinary terrestrial Internet client can use the same service namespace from an autonomous
+lunar region? This is a profile and implementation focus, not a claim that LunaNet excludes Internet
+protocols or edge services. The exact boundary is recorded in
+[`INTEROPERABILITY_LAYERING.md`](../docs/architecture/INTEROPERABILITY_LAYERING.md).
 
 ## What the evidence already rules out
 
@@ -70,7 +80,7 @@ LunaNet excludes Internet protocols or edge services.
 - Extend the existing unmodified HTTPS socket result to packet-level DNS, IPv6, HTTP/2 and HTTP/3.
 - Measure cold TLS, first byte and connection reuse separately.
 - Define a bearer capability document independent of optical or RF supplier telemetry.
-- Map each GatewayCX service interface to the exact LNIS V5 section before claiming alignment.
+- Extend the LNIS section mapping into field-level conformance cases as applicable documents mature.
 - Trial two BPv7 implementations before choosing any implementation-specific gateway contract.
 - Implement the S005 acceptance, adapter-delivery and application-receipt states across that trial.
 

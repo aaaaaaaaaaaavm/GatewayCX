@@ -9,7 +9,7 @@
 
 The Internet should not stop being the Internet because its next user is 384,400 km away.
 
-GatewayCX is an exploratory cislunar telecommunications architecture study that I initiated at
+GatewayCX is an exploratory cislunar telecommunications architecture and interoperability study that I initiated at
 Avisys Services in April 2026. I am working out what it takes for an ordinary terrestrial Internet
 client to operate natively across an Earth–Moon network: the same browser, domain names, accounts,
 certificates and encrypted services, with no mission-specific application required merely to get
@@ -22,6 +22,13 @@ Optical communications can move more bits; they cannot make those bits outrun li
 <p align="center">
   <img src="figures/architecture-overview.svg" alt="GatewayCX Earth, cislunar backbone and lunar regional architecture" width="100%">
 </p>
+
+GatewayCX is explicitly a service and operations profile around the existing standards ecosystem.
+LunaNet Interoperability Specification V5 is the baseline; IPv4/IPv6 and BPv7 remain the network
+mechanisms it defines. NASA's DTN service is operational in the Near Space Network and Deep Space
+Network. GatewayCX does not reinvent Bundle Protocol. It makes the remaining product problem
+executable: an Earth-like service experience, lunar regional autonomy, bearer abstraction,
+multi-provider operations, recovery and commercial service architecture.
 
 The system therefore cannot be a long cable with better marketing. GatewayCX treats Earth and the
 Moon as two autonomous Internet regions joined by a resilient cislunar backbone. Ordinary IP runs
@@ -171,6 +178,8 @@ deterministic model.
 - [`docs/REQUIREMENTS.md`](docs/REQUIREMENTS.md) turns the idea into verifiable requirements.
 - [`docs/architecture/SYSTEM_ARCHITECTURE.md`](docs/architecture/SYSTEM_ARCHITECTURE.md) defines the
   initial system boundary and planes.
+- [`docs/architecture/INTEROPERABILITY_LAYERING.md`](docs/architecture/INTEROPERABILITY_LAYERING.md)
+  fixes the LNIS/DTN boundary and the claim grammar for GatewayCX additions.
 - [`docs/CLAIM_LEDGER.md`](docs/CLAIM_LEDGER.md) labels every material claim by evidence class.
 - [`docs/PROVENANCE.md`](docs/PROVENANCE.md) says what the present results are and are not.
 - [`research/STANDARDS_BASELINE.md`](research/STANDARDS_BASELINE.md) records which public

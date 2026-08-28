@@ -1,7 +1,13 @@
-# GatewayCX interoperability profile
+# GatewayCX service and operations interoperability profile
 
 - **Document status:** pre-draft 0.1
 - **Normative status:** none
+- **Standards baseline:** LunaNet Interoperability Specification V5
+
+GatewayCX profiles an Earth-like service experience, lunar regional autonomy, bearer abstraction,
+operations and commercial federation around existing Internet, LunaNet and DTN standards. It does
+not replace LunaNet, IPv6, BPv7, BPSec or their convergence layers. Conformance to this pre-draft is
+not a claim of LunaNet compliance.
 
 The key words **MUST**, **MUST NOT**, **SHOULD**, **SHOULD NOT** and **MAY** are intended in the
 sense of BCP 14 when this document becomes normative. At present they identify the shape of the
@@ -21,11 +27,14 @@ future profile and are not a conformance claim.
 | Interface | Purpose | Initial compatibility target |
 |---|---|---|
 | GX-U1 | Client to regional network | IPv6 and ordinary Internet access |
-| GX-R1 | Regional interconnection | Routing, policy and service reachability |
+| GX-R1 | Regional interconnection | LNIS V5 IPv4/IPv6/BPv7 routing, policy and service reachability |
 | GX-B1 | Gateway to bearer adapter | Capacity, contacts, delay, health and reservation |
 | GX-D1 | Service to deferred delivery | Submit, status, expiry, receipt and cancellation |
 | GX-S1 | Regional service discovery | Same logical service, region-appropriate instance |
 | GX-O1 | Operations telemetry | Traces, queues, faults, utilisation and SLA state |
+
+The LNIS mapping and permitted claim language are normative inputs to future profile work and are
+maintained in [`INTEROPERABILITY_LAYERING.md`](../docs/architecture/INTEROPERABILITY_LAYERING.md).
 
 ## Delivery modes
 

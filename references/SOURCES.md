@@ -1,7 +1,7 @@
 # Sources and standards map
 
 This is the starting research map, not yet a standards-conformance statement. Links point to the
-publishing organisation where possible. Accessed 2026-08-27.
+publishing organisation where possible. Accessed 2026-08-28.
 
 ## Internet and transport
 
@@ -41,7 +41,7 @@ publishing organisation where possible. Accessed 2026-08-27.
 - NASA/ESA/JAXA, [LunaNet Interoperability Specification Version
   5](https://www.nasa.gov/wp-content/uploads/2025/02/lunanet-interoperability-specification-v5-baseline.pdf),
   29 January 2025
-- NASA SCaN, [Delay/Disruption Tolerant Networking](https://www.nasa.gov/directorates/somd/space-communications-navigation-program/delay-disruption-tolerant-networking/)
+- NASA SCaN, [Delay/Disruption Tolerant Networking](https://www.nasa.gov/communicating-with-missions/delay-disruption-tolerant-networking/), stating that completion of the DTN Project in January 2026 made DTN operational in the Near Space Network and Deep Space Network
 - NASA, [Deep Space Optical Communications](https://www.jpl.nasa.gov/missions/deep-space-optical-communications-dsoc/)
 - NASA, [Lunar Laser Communications Demonstration](https://www.nasa.gov/mission/lunar-laser-communications-demonstration-llcd/)
 - NASA, [LLCD experiments with DTN over optical communications](https://www.nasa.gov/directorates/somd/space-communications-navigation-program/disruption-tolerant-networking-experiments-with-optical-communications/)
