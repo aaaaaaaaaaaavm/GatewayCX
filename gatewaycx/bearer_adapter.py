@@ -9,13 +9,17 @@ from __future__ import annotations
 import argparse
 import copy
 import json
-from collections import deque
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Protocol
 
 from .conformance import validate_bearer_profile
 from .diagnostics import FAULT_CODES
+from .traffic_store import (
+    InMemoryTrafficStore,
+    StoredTrafficUnit,
+    TrafficStore,
+)
 
 
 @dataclass(frozen=True)
@@ -26,12 +30,6 @@ class TrafficUnit:
     payload_bytes: int
     traffic_class: str
     deferred: bool = True
-
-
-@dataclass
-class _QueuedUnit:
-    traffic_unit: TrafficUnit
-    remaining_bytes: int
 
 
 class BearerAdapter(Protocol):
@@ -61,7 +59,11 @@ class ProfileBackedAdapter:
 
     API_VERSION = "GX-A1/0.1"
 
-    def __init__(self, profile: dict[str, Any]) -> None:
+    def __init__(
+        self,
+        profile: dict[str, Any],
+        store: TrafficStore | None = None,
+    ) -> None:
         errors = validate_bearer_profile(profile)
         if errors:
             raise ValueError(f"invalid GX-B1 profile: {'; '.join(errors)}")
@@ -71,18 +73,19 @@ class ProfileBackedAdapter:
         self._link_state = "unavailable"
         self._ready_at_s: float | None = None
         self._fault_codes: list[str] = []
-        self._queue: deque[_QueuedUnit] = deque()
-        self._known_ids: set[str] = set()
-        self._accepted_bytes = 0
-        self._transmitted_bytes = 0
+        self._store = store if store is not None else InMemoryTrafficStore()
         self._link_epoch = 0
 
     @classmethod
-    def from_file(cls, path: Path) -> ProfileBackedAdapter:
+    def from_file(
+        cls,
+        path: Path,
+        store: TrafficStore | None = None,
+    ) -> ProfileBackedAdapter:
         profile = json.loads(path.read_text(encoding="utf-8"))
         if not isinstance(profile, dict):
             raise ValueError("GX-B1 profile root must be an object")
-        return cls(profile)
+        return cls(profile, store=store)
 
     @property
     def bearer_id(self) -> str:
@@ -90,7 +93,7 @@ class ProfileBackedAdapter:
 
     @property
     def queue_bytes(self) -> int:
-        return sum(item.remaining_bytes for item in self._queue)
+        return self._store.snapshot()["queue_bytes"]
 
     def _at(self, offset_s: float) -> None:
         if offset_s + 1e-9 < self._offset_s:
@@ -123,11 +126,12 @@ class ProfileBackedAdapter:
                 "inject_fault",
                 "clear_faults",
             ],
-            reference_persistence_scope="process_memory",
+            reference_persistence_scope=self._store.persistence_scope,
         )
 
     def snapshot(self) -> dict[str, Any]:
         performance = self._profile["performance"]
+        ledger = self._store.snapshot()
         return self._envelope(
             "snapshot",
             "ok",
@@ -138,13 +142,13 @@ class ProfileBackedAdapter:
             rx_rate_mbps=(
                 performance["return_capacity_mbps"] if self._link_state == "ready" else 0.0
             ),
-            queue_bytes=self.queue_bytes,
+            queue_bytes=ledger["queue_bytes"],
             next_contact_utc=None,
             fault_codes=list(self._fault_codes),
             link_epoch=self._link_epoch,
-            accepted_bytes=self._accepted_bytes,
-            transmitted_bytes=self._transmitted_bytes,
-            reference_persistence_scope="process_memory",
+            accepted_bytes=ledger["accepted_bytes"],
+            transmitted_bytes=ledger["transmitted_bytes"],
+            reference_persistence_scope=self._store.persistence_scope,
         )
 
     def submit(self, traffic_unit: TrafficUnit) -> dict[str, Any]:
@@ -157,23 +161,32 @@ class ProfileBackedAdapter:
             return self._envelope(
                 "submit", "rejected", reason="traffic_unit_too_large", maximum_bytes=maximum
             )
-        if traffic_unit.traffic_unit_id in self._known_ids:
-            return self._envelope("submit", "duplicate_known", queue_bytes=self.queue_bytes)
         queue_profile = self._profile["queue"]
         if self._link_state != "ready" and not (
             traffic_unit.deferred and queue_profile["deferred_delivery"]
         ):
             return self._envelope("submit", "rejected", reason="link_unavailable")
-        if self.queue_bytes + traffic_unit.payload_bytes > queue_profile["durable_bytes"]:
-            return self._envelope("submit", "rejected", reason="durable_queue_full")
-        self._queue.append(_QueuedUnit(traffic_unit, traffic_unit.payload_bytes))
-        self._known_ids.add(traffic_unit.traffic_unit_id)
-        self._accepted_bytes += traffic_unit.payload_bytes
+        decision = self._store.accept(
+            StoredTrafficUnit(
+                traffic_unit_id=traffic_unit.traffic_unit_id,
+                payload_bytes=traffic_unit.payload_bytes,
+                traffic_class=traffic_unit.traffic_class,
+                deferred=traffic_unit.deferred,
+            ),
+            int(queue_profile["durable_bytes"]),
+        )
+        if decision["status"] != "accepted_pending":
+            return self._envelope(
+                "submit",
+                decision["status"],
+                queue_bytes=self.queue_bytes,
+                **({"reason": decision["reason"]} if "reason" in decision else {}),
+            )
         return self._envelope(
             "submit",
             "accepted_pending",
             traffic_unit_id=traffic_unit.traffic_unit_id,
-            accepted_bytes=traffic_unit.payload_bytes,
+            accepted_bytes=decision["accepted_bytes"],
             queue_bytes=self.queue_bytes,
         )
 
@@ -233,24 +246,8 @@ class ProfileBackedAdapter:
             * duration_s
             / 8
         )
-        sent_by_unit: list[dict[str, Any]] = []
-        transmitted = 0
-        while byte_budget > 0 and self._queue:
-            queued = self._queue[0]
-            sent = min(queued.remaining_bytes, byte_budget)
-            queued.remaining_bytes -= sent
-            byte_budget -= sent
-            transmitted += sent
-            sent_by_unit.append(
-                {
-                    "traffic_unit_id": queued.traffic_unit.traffic_unit_id,
-                    "bytes": sent,
-                    "complete": queued.remaining_bytes == 0,
-                }
-            )
-            if queued.remaining_bytes == 0:
-                self._queue.popleft()
-        self._transmitted_bytes += transmitted
+        sent_by_unit = self._store.transmit(byte_budget)
+        transmitted = sum(fragment["bytes"] for fragment in sent_by_unit)
         self._offset_s += duration_s
         return self._envelope(
             "transmit",
@@ -259,6 +256,9 @@ class ProfileBackedAdapter:
             queue_bytes=self.queue_bytes,
             fragments=sent_by_unit,
         )
+
+    def close(self) -> None:
+        self._store.close()
 
     def inject_fault(self, fault_code: str, offset_s: float) -> dict[str, Any]:
         self._at(offset_s)

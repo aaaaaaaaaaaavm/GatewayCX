@@ -104,6 +104,7 @@ The study register establishes the starting point:
 | S014 | Can one provider-neutral flight record reconstruct an interrupted delivery without payload access? |
 | S015 | Do bearer handover, durable recovery and diagnostics agree on one traffic ledger? |
 | S016 | Can one executable runtime seam apply optical and RF profiles through fault and recovery? |
+| S017 | Does accepted partial-transfer state survive a clean gateway-process restart? |
 
 The current declared inputs produce:
 
@@ -138,6 +139,8 @@ deterministic model.
   machine-readable GX-B1 hardware/service seam.
 - [`docs/architecture/ADAPTER_RUNTIME.md`](docs/architecture/ADAPTER_RUNTIME.md) defines the GX-A1
   executable runtime seam beneath the service plane.
+- [`docs/architecture/DURABLE_TRAFFIC_LEDGER.md`](docs/architecture/DURABLE_TRAFFIC_LEDGER.md)
+  defines the payload-blind persistent queue and byte-ledger invariants.
 - [`docs/architecture/OPERATIONS_DIAGNOSTICS.md`](docs/architecture/OPERATIONS_DIAGNOSTICS.md)
   defines the GX-O1 portable fault-code and network flight-recorder seam.
 - [`research/TRAFFIC_AND_DSN_BOUNDARY.md`](research/TRAFFIC_AND_DSN_BOUNDARY.md) separates a lunar

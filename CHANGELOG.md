@@ -36,3 +36,5 @@
   and GX-O1 diagnostics with a conserved 1 GB byte ledger.
 - Added GX-A1 and S016, an executable profile-backed bearer adapter probe with MTU, duplicate,
   acquisition, capacity, fault-preservation and reacquisition checks across optical and RF inputs.
+- Added S017, a payload-blind SQLite traffic ledger that preserves accepted and partially
+  transmitted byte state across separate seed and recovery processes.

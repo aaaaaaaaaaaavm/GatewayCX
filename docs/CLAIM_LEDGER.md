@@ -75,6 +75,10 @@
 | C058 | Under S016 profile inputs, a 100 ms window moves 6.25 MB through optical and 1.25 MB through RF. | MODEL + TEST | S016 | Profile-driven byte budgets, not measurements |
 | C059 | The S016 reference adapter preserves 1,745,392 optical-queue bytes and 6,745,392 RF-queue bytes across its injected fault. | MODEL + TEST | S016 | In-process state only; not crash durability |
 | C060 | S016 demonstrates independent vendor or hardware interoperability. | — | Both instances share one implementation and no hardware | Rejected |
+| C061 | S017 preserves 7,995,392 accepted bytes, 1,250,000 transmitted bytes and 6,745,392 queued bytes across a clean process restart. | TEST | S017 | Local SQLite/software test only |
+| C062 | S017 rejects a changed-size reuse of an accepted traffic-unit ID without changing the ledger. | TEST | S017 | One SQLite implementation |
+| C063 | The S017 traffic-unit schema has no payload-content column. | TEST | S017 schema inspection | Identifiers, sizes and classes remain metadata |
+| C064 | S017 proves survival through power loss or qualifies storage for flight. | — | No abrupt-loss or hardware test | Rejected |
 
 The ledger will grow when the evidence grows. A claim does not become stronger by appearing in the
 README.

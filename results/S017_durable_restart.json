@@ -1,0 +1,83 @@
+{
+  "checks": {
+    "all_units_accepted_before_restart": true,
+    "configured_sqlite_modes_are_active": true,
+    "conflicting_duplicate_is_rejected": true,
+    "final_byte_ledger_conserved": true,
+    "first_window_uses_rf_profile_capacity": true,
+    "matching_duplicate_is_idempotent": true,
+    "queue_drained_after_recovery": true,
+    "restart_preserves_accepted_bytes": true,
+    "restart_preserves_queue_bytes": true,
+    "restart_preserves_transmitted_bytes": true,
+    "schema_contains_no_payload_content_column": true,
+    "second_reopen_preserves_final_ledger": true,
+    "workers_are_distinct_processes": true
+  },
+  "database_settings": {
+    "journal_mode": "WAL",
+    "synchronous_mode": "FULL"
+  },
+  "evidence_class": "TEST",
+  "final_reopen": {
+    "accepted_bytes": 7995392,
+    "pending_units": 0,
+    "queue_bytes": 0,
+    "traffic_units": 122,
+    "transmitted_bytes": 7995392
+  },
+  "inputs": {
+    "accepted_bytes": 7995392,
+    "payload_content_supplied": false,
+    "profile_path": "profiles/bearers/reference-rf.json",
+    "sqlite_journal_mode": "WAL",
+    "sqlite_synchronous_mode": "FULL",
+    "traffic_unit_bytes": 65536,
+    "traffic_unit_count": 122,
+    "transmit_window_s": 0.1
+  },
+  "interpretation_boundary": [
+    "The probe starts separate seed and recovery Python processes over one temporary SQLite file.",
+    "SQLite persistence is real software behaviour here, but abrupt power loss, storage corruption and hardware durability are not tested.",
+    "The ledger stores identifiers, traffic classes and byte counts; it does not store or transmit payload content.",
+    "A transmitted byte count is adapter-ledger progress, not BPv7 delivery or remote application completion.",
+    "The RF profile capacity remains an illustrative assumed input and no modem or link is connected."
+  ],
+  "recovery_process": {
+    "after_restart": {
+      "accepted_bytes": 7995392,
+      "persistence_scope": "sqlite_file",
+      "queue_bytes": 6745392,
+      "transmitted_bytes": 1250000
+    },
+    "conflicting_duplicate_status": "duplicate_conflict",
+    "duplicate_status": "duplicate_known",
+    "final": {
+      "accepted_bytes": 7995392,
+      "queue_bytes": 0,
+      "transmitted_bytes": 7995392
+    },
+    "reacquired_at_s": 21.0,
+    "recovery_transmit_windows": 6
+  },
+  "seed_process": {
+    "accepted_units": 122,
+    "before_exit": {
+      "accepted_bytes": 7995392,
+      "queue_bytes": 6745392,
+      "transmitted_bytes": 1250000
+    },
+    "before_transmit": {
+      "accepted_bytes": 7995392,
+      "queue_bytes": 7995392,
+      "transmitted_bytes": 0
+    },
+    "first_transmit": {
+      "queue_bytes": 6745392,
+      "transmitted_bytes": 1250000
+    },
+    "persistence_scope": "sqlite_file"
+  },
+  "study_id": "S017",
+  "title": "Cross-process durable traffic-ledger restart"
+}

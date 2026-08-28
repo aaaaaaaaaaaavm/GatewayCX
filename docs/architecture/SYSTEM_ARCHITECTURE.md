@@ -67,6 +67,10 @@ acknowledgements onto one event ledger.
 runtime seam for capabilities, contact, acquisition, transmission, queue state and faults. The
 current binding remains an in-process reference implementation.
 
+[`S017`](../../studies/S017_DURABLE_RESTART.md) replaces the reference adapter's process-memory
+queue with a payload-blind SQLite ledger and verifies traffic progress across separate seed and
+recovery processes. Link and acquisition state deliberately restart from unavailable.
+
 ## Operating modes
 
 | Mode | Backbone state | Expected behaviour |

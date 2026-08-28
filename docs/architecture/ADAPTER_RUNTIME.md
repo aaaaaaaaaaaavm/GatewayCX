@@ -50,7 +50,8 @@ availability claim.
 - An offline unit is accepted only when both the unit and the profile allow deferred delivery.
 - Accepted bytes always equal transmitted plus queued bytes inside the reference ledger.
 - A contact loss blocks transmission but does not erase accepted queued bytes.
-- The reference reports `process_memory` persistence explicitly; it does not claim crash durability.
+- The adapter reports its persistence scope. The default is `process_memory`; S017 supplies the
+  `sqlite_file` traffic store and tests a clean cross-process restart.
 
 ## Supplier boundary
 
@@ -63,3 +64,7 @@ illustrative profiles. It proves that the proposed service-plane code can use on
 media descriptions. It does not prove independent implementation, process isolation, physical
 control or multi-vendor interoperability. The next binding must put the same semantics across a
 process boundary and connect one independently written adapter.
+
+[`The durable traffic ledger`](DURABLE_TRAFFIC_LEDGER.md) separates queued traffic progress from
+the adapter's transient link state. SQLite is one reference store binding, not part of GX-A1's
+portable supplier contract.

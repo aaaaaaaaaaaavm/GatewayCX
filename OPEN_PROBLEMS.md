@@ -22,4 +22,4 @@ close it.
 | P15 | Predictive cache value | S012 synthetic admission trace | Held-out lunar demand, calibrated candidate, drift and contact-aware replay |
 | P16 | Lunar black start | S013 logical graph and single faults | Time/trust holdover, electrical start, real service graph and reconnection tests |
 | P17 | Federated diagnostics | S014 GX-O1 generated reference trace | Independent adapters, authenticated event transport, clock model and observed fault replay |
-| P18 | Integrated recovery testbed | S016 in-process profile-backed adapter; S015 shared event ledger | Out-of-process adapter, durable object store, packets and fault-injected link process |
+| P18 | Integrated recovery testbed | S017 clean cross-process SQLite ledger; S016 adapter; S015 shared event ledger | Abrupt-fault store test, out-of-process adapter transport, packets and link process |
