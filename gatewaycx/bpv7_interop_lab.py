@@ -114,9 +114,17 @@ def build_bpv7_interop_lab(go_bridge: Path, rust_bp7: Path) -> dict[str, Any]:
             rust_received = _rust_decode(rust_bp7, go_retry).stdout
 
             rust_bundle = _rust_encode(rust_bp7, payload_rust, root)
+            rust_self_received = _rust_decode(rust_bp7, rust_bundle).stdout
             rust_retry, rust_record = gateway.transfer(rust_bundle, "s030-rust-go", 2)
             rust_fault_decode = _run([str(go_bridge), "decode"], rust_record.pop("faulted_wire_image"), check=False)
-            go_received = _run([str(go_bridge), "decode"], rust_retry).stdout
+            try:
+                go_received = _run([str(go_bridge), "decode"], rust_retry).stdout
+            except RuntimeError as error:
+                raise RuntimeError(
+                    f"Go rejected Rust wire image: bytes={len(rust_retry)}, "
+                    f"head={rust_retry[:24].hex()}, tail={rust_retry[-24:].hex()}, "
+                    f"Rust self-decode exact={rust_self_received == payload_rust}; {error}"
+                ) from error
             final_snapshot = gateway.adapter.snapshot()
         finally:
             gateway.close()
