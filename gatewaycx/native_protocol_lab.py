@@ -221,7 +221,7 @@ async def _http3_roundtrip(server_port: int, client_port: int, certificate: Path
             super().__init__(*args, **kwargs); self.http = H3Connection(self._quic); self.future: asyncio.Future[bytes] | None = None; self.body = bytearray()
         async def request(self) -> bytes:
             stream_id = self._quic.get_next_available_stream_id(); self.future = asyncio.get_running_loop().create_future()
-            self.http.send_headers(stream_id, [(b":method", b"GET"), (b":scheme", b"https"), (b":authority", b"gatewaycx.test"), (b":path", b"/")], end_stream=True); self.transmit(); return await asyncio.wait_for(self.future, 20)
+            self.http.send_headers(stream_id, [(b":method", b"GET"), (b":scheme", b"https"), (b":authority", b"gatewaycx.test"), (b":path", b"/")], end_stream=True); self.transmit(); return await asyncio.wait_for(self.future, 60)
         def quic_event_received(self, event: Any) -> None:
             for item in self.http.handle_event(event):
                 if isinstance(item, DataReceived):
@@ -263,7 +263,7 @@ async def run_lab(method: str, one_way_delay_ms: float) -> dict[str, Any]:
         smtp_port = smtp_relay.port if smtp_relay else smtp.port
         message = "From: moon@gatewaycx.test\r\nTo: earth@gatewaycx.test\r\nSubject: S029\r\n\r\nregional email\r\n"
         started = time.monotonic()
-        client = smtplib.SMTP("::1", smtp_port, timeout=20); client.sendmail("moon@gatewaycx.test", ["earth@gatewaycx.test"], message); client.quit(); smtp.join(2)
+        client = smtplib.SMTP("::1", smtp_port, timeout=60); client.sendmail("moon@gatewaycx.test", ["earth@gatewaycx.test"], message); client.quit(); smtp.join(5)
         smtp_result = {"elapsed_s": round(time.monotonic() - started, 6), "message_sha256": smtp.message_sha256, "bytes": len(message.encode())}
 
         # Bind the QUIC server to a fixed free port so a userspace UDP relay can target it.
@@ -295,7 +295,7 @@ async def run_lab(method: str, one_way_delay_ms: float) -> dict[str, Any]:
             "The userspace method delays forwarded TCP chunks and UDP datagrams; the kernel-netem method must be invoked under an independently configured Linux qdisc.",
             "CI captures loopback packets for both methods. Local environments without CAP_NET_ADMIN or CAP_NET_RAW cannot reproduce kernel impairment or capture.",
             "The HTTP/2 and HTTP/3 clients are standards libraries, not browsers; SMTP is deliberately minimal and unauthenticated because identity is tested separately.",
-            "Short CI delays validate protocol and impairment wiring. A lunar-delay run is a separate performance experiment and cannot be inferred by scaling every timeout linearly.",
+            "The CI matrix runs both short delay and 1,282 ms mean one-way lunar light-time; this is loopback protocol evidence, not a prediction of application usability or a time-varying cislunar channel.",
         ],
     }
 

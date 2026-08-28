@@ -65,6 +65,28 @@ def optical_budget(profile: dict[str, float | str], pointing_error_urad: float) 
     }
 
 
+def acquisition_yield(
+    acquisition_s: float,
+    contact_s: float = 600.0,
+    optical_rate_mbps: float = 1_000.0,
+    rf_fallback_mbps: float = 100.0,
+    optical_availability: float = 0.9,
+) -> dict[str, Any]:
+    """Bound contact yield after terminal acquisition, with RF during optical outage."""
+    usable_s = max(0.0, contact_s - acquisition_s)
+    hybrid_mbits = usable_s * (
+        optical_rate_mbps * optical_availability
+        + rf_fallback_mbps * (1.0 - optical_availability)
+    )
+    return {
+        "contact_s": contact_s,
+        "acquisition_s": acquisition_s,
+        "usable_s": usable_s,
+        "usable_contact_fraction": round(usable_s / contact_s, 6),
+        "hybrid_contact_yield_mbits": round(hybrid_mbits, 6),
+    }
+
+
 def build_link_budget_study() -> dict[str, Any]:
     rf_cases = []
     for profile in RF_CLASSES:
@@ -83,19 +105,24 @@ def build_link_budget_study() -> dict[str, Any]:
         {"optical_availability": availability, "optical_mbps": 1000.0 * availability, "rf_fallback_mbps": 100.0, "hybrid_average_mbps": 1000.0 * availability + 100.0 * (1 - availability)}
         for availability in (0.5, 0.8, 0.95, 0.99)
     ]
+    acquisition = [acquisition_yield(seconds) for seconds in (5.0, 20.0, 60.0, 180.0)]
     checks = {
         "rf_degradation_reduces_margin_by_six_db": all(round(row["clear"]["margin_db"] - row["degraded"]["margin_db"], 6) == 6.0 for row in rf_cases),
         "optical_pointing_error_reduces_margin": all(row["pointing_sensitivity"][0]["margin_db"] > row["pointing_sensitivity"][-1]["margin_db"] for row in optical_cases),
         "rf_fallback_preserves_nonzero_weather_blocked_service": all(row["hybrid_average_mbps"] > row["optical_mbps"] for row in weather),
         "higher_optical_availability_increases_hybrid_capacity": all(a["hybrid_average_mbps"] < b["hybrid_average_mbps"] for a, b in zip(weather, weather[1:])),
+        "longer_acquisition_reduces_contact_yield": all(a["hybrid_contact_yield_mbits"] > b["hybrid_contact_yield_mbits"] for a, b in zip(acquisition, acquisition[1:])),
+        "rf_fallback_preserves_acquired_contact_yield": all(row["hybrid_contact_yield_mbits"] > 0 for row in acquisition),
     }
     return {
         "study_id": "S025", "title": "Class-based RF and optical link-budget sensitivity", "evidence_class": "DERIVATION + MODEL",
-        "rf_classes": rf_cases, "optical_classes": optical_cases, "weather_and_fallback": weather, "checks": checks,
+        "rf_classes": rf_cases, "optical_classes": optical_cases, "weather_and_fallback": weather,
+        "acquisition_and_fallback": acquisition, "checks": checks,
         "interpretation_boundary": [
             "Every terminal parameter is a declared architecture class, not vendor data or measured performance.",
             "RF uses free-space loss and a simplified C/N0-to-Eb/N0 budget; coding implementation loss, interference, polarisation dynamics and regulatory constraints require separate inputs.",
-            "Optical capture uses a far-field spot approximation and Gaussian pointing penalty; atmospheric turbulence, scintillation, cloud correlation and acquisition dynamics are not resolved.",
+            "Optical capture uses a far-field spot approximation and Gaussian pointing penalty; acquisition is a declared elapsed-time sensitivity, not a terminal-control simulation.",
+            "Atmospheric turbulence, scintillation and cloud correlation are not resolved.",
             "A positive paper margin is not availability, acquisition success, hardware qualification or a service guarantee.",
         ],
     }

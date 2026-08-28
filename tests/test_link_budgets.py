@@ -1,6 +1,6 @@
 import unittest
 
-from gatewaycx.link_budgets import RF_CLASSES, build_link_budget_study, rf_budget
+from gatewaycx.link_budgets import RF_CLASSES, acquisition_yield, build_link_budget_study, rf_budget
 
 
 class LinkBudgetTests(unittest.TestCase):
@@ -11,6 +11,12 @@ class LinkBudgetTests(unittest.TestCase):
 
     def test_s025_checks_pass(self) -> None:
         self.assertTrue(all(build_link_budget_study()["checks"].values()))
+
+    def test_acquisition_consumes_contact_capacity(self) -> None:
+        fast = acquisition_yield(5)
+        slow = acquisition_yield(60)
+        self.assertGreater(fast["usable_contact_fraction"], slow["usable_contact_fraction"])
+        self.assertGreater(fast["hybrid_contact_yield_mbits"], slow["hybrid_contact_yield_mbits"])
 
 
 if __name__ == "__main__": unittest.main()

@@ -1,15 +1,48 @@
 {
+  "acquisition_and_fallback": [
+    {
+      "acquisition_s": 5.0,
+      "contact_s": 600.0,
+      "hybrid_contact_yield_mbits": 541450.0,
+      "usable_contact_fraction": 0.991667,
+      "usable_s": 595.0
+    },
+    {
+      "acquisition_s": 20.0,
+      "contact_s": 600.0,
+      "hybrid_contact_yield_mbits": 527800.0,
+      "usable_contact_fraction": 0.966667,
+      "usable_s": 580.0
+    },
+    {
+      "acquisition_s": 60.0,
+      "contact_s": 600.0,
+      "hybrid_contact_yield_mbits": 491400.0,
+      "usable_contact_fraction": 0.9,
+      "usable_s": 540.0
+    },
+    {
+      "acquisition_s": 180.0,
+      "contact_s": 600.0,
+      "hybrid_contact_yield_mbits": 382200.0,
+      "usable_contact_fraction": 0.7,
+      "usable_s": 420.0
+    }
+  ],
   "checks": {
     "higher_optical_availability_increases_hybrid_capacity": true,
+    "longer_acquisition_reduces_contact_yield": true,
     "optical_pointing_error_reduces_margin": true,
     "rf_degradation_reduces_margin_by_six_db": true,
+    "rf_fallback_preserves_acquired_contact_yield": true,
     "rf_fallback_preserves_nonzero_weather_blocked_service": true
   },
   "evidence_class": "DERIVATION + MODEL",
   "interpretation_boundary": [
     "Every terminal parameter is a declared architecture class, not vendor data or measured performance.",
     "RF uses free-space loss and a simplified C/N0-to-Eb/N0 budget; coding implementation loss, interference, polarisation dynamics and regulatory constraints require separate inputs.",
-    "Optical capture uses a far-field spot approximation and Gaussian pointing penalty; atmospheric turbulence, scintillation, cloud correlation and acquisition dynamics are not resolved.",
+    "Optical capture uses a far-field spot approximation and Gaussian pointing penalty; acquisition is a declared elapsed-time sensitivity, not a terminal-control simulation.",
+    "Atmospheric turbulence, scintillation and cloud correlation are not resolved.",
     "A positive paper margin is not availability, acquisition success, hardware qualification or a service guarantee."
   ],
   "optical_classes": [

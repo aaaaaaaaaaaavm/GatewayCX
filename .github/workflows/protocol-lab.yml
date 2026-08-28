@@ -32,11 +32,18 @@ jobs:
           echo $! > protocol-artifacts/tcpdump.pid
       - name: Run userspace packet/stream impairment
         run: python -m gatewaycx.native_protocol_lab --method userspace --one-way-delay-ms 25 --output protocol-artifacts/S029_userspace.json
+      - name: Run userspace at mean lunar light-time
+        run: python -m gatewaycx.native_protocol_lab --method userspace --one-way-delay-ms 1282 --output protocol-artifacts/S029_lunar_userspace.json
       - name: Run independent kernel netem impairment
         run: |
           sudo tc qdisc add dev lo root netem delay 25ms rate 100mbit
           trap 'sudo tc qdisc del dev lo root || true' EXIT
           python -m gatewaycx.native_protocol_lab --method kernel-netem --one-way-delay-ms 25 --output protocol-artifacts/S029_kernel_netem.json
+      - name: Run independent kernel netem at mean lunar light-time
+        run: |
+          sudo tc qdisc add dev lo root netem delay 1282ms rate 100mbit
+          trap 'sudo tc qdisc del dev lo root || true' EXIT
+          python -m gatewaycx.native_protocol_lab --method kernel-netem --one-way-delay-ms 1282 --output protocol-artifacts/S029_lunar_kernel_netem.json
       - name: Stop packet capture
         if: always()
         run: |
@@ -48,7 +55,9 @@ jobs:
           import json
           from pathlib import Path
           records = [json.loads(path.read_text()) for path in sorted(Path("protocol-artifacts").glob("S029_*.json"))]
+          assert len(records) == 4
           assert {record["method"] for record in records} == {"userspace", "kernel-netem"}
+          assert {record["configured_one_way_delay_ms"] for record in records} == {25.0, 1282.0}
           assert all(all(record["checks"].values()) for record in records)
           assert Path("protocol-artifacts/s029-dual-method.pcap").stat().st_size > 24
           PY
