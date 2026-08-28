@@ -6,6 +6,7 @@ import argparse
 import asyncio
 import contextlib
 import hashlib
+import heapq
 import ipaddress
 import platform
 import smtplib
@@ -78,15 +79,26 @@ class _UdpRelay(threading.Thread):
         self.delay_s = delay_s; self.client: tuple[Any, ...] | None = None; self.stop = threading.Event()
 
     def run(self) -> None:
+        pending: list[tuple[float, int, bytes, tuple[Any, ...]]] = []
+        sequence = 0
         while not self.stop.is_set():
+            now = time.monotonic()
+            while pending and pending[0][0] <= now:
+                _, _, queued, destination = heapq.heappop(pending)
+                try: self.socket.sendto(queued, destination)
+                except OSError: return
+            timeout = min(0.2, max(0.001, pending[0][0] - now)) if pending else 0.2
+            self.socket.settimeout(timeout)
             try: data, address = self.socket.recvfrom(65535)
             except socket.timeout: continue
             except OSError: return
-            time.sleep(self.delay_s)
             if address[1] == self.target[1]:
-                if self.client is not None: self.socket.sendto(data, self.client)
+                destination = self.client
             else:
-                self.client = address; self.socket.sendto(data, self.target)
+                self.client = address; destination = self.target
+            if destination is not None:
+                sequence += 1
+                heapq.heappush(pending, (time.monotonic() + self.delay_s, sequence, data, destination))
 
     def close(self) -> None:
         self.stop.set(); self.socket.close(); self.join(1)
