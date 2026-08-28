@@ -46,5 +46,7 @@
   committed-state survival without claiming electrical power-loss or flight qualification.
 - Added S021 and a standalone standard-library RF adapter, crossing the authenticated GX-A1
   binding without importing GatewayCX runtime code while keeping external validation open.
+- Added S022, a two-body lunar relay-shell envelope that rejects a simple circular lunar-GSO
+  baseline and quantifies the first-order coverage-versus-range trade without selecting an orbit.
 - Added deterministic SVG figures generated from the architecture and committed results, including
   the S019 trust and replay boundary.

@@ -94,6 +94,10 @@
 | C077 | S021 drives GX-A1 operations through an authenticated server implementation that imports no GatewayCX runtime module. | TEST | S021 source inspection and process probe | Separate code path in the same repository |
 | C078 | S021 preserves accepted and transmitted byte state across a restart of the standalone adapter. | TEST | S021 | Local standalone SQLite implementation |
 | C079 | S021 proves external supplier, multi-organisation or hardware interoperability. | — | Both implementations are authored in this project and no hardware participates | Rejected |
+| C080 | Under the S022 inputs, the two-body Moon-synchronous radius is about 88,452 km from lunar centre, versus an approximate Hill radius of 61,524 km. | DERIVATION | S022 | First-order screen, not propagated stability analysis |
+| C081 | A roughly 24-hour circular lunar orbit is stationary over the lunar surface. | — | The Moon's sidereal rotation is about 27.32 days | Rejected |
+| C082 | Under S022 zero-elevation equatorial geometry, the ideal minimum falls from ten satellites at 100 km to three at 5,000–8,000 km. | DERIVATION | S022 | Not global coverage or a constellation design |
+| C083 | S022 selects the production lunar relay orbit. | — | No multi-body propagation, sites, link budgets, failures or capacity | Rejected |
 
 The ledger will grow when the evidence grows. A claim does not become stronger by appearing in the
 README.

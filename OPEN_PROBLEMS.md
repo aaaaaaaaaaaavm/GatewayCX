@@ -7,7 +7,7 @@ close it.
 |---|---|---|---|
 | P01 | Native protocol behaviour | S004 TLS 1.3/HTTP 1.1 socket measurement | Independent packet-level emulation of DNS, IPv6, TLS, HTTP/2 and HTTP/3 |
 | P02 | IP/DTN boundary | S005 semantic and trust-boundary model | Working gateway, two BPv7 implementations and fault-injected security evidence |
-| P03 | Lunar regional topology | No orbit or surface design selected | Coverage, contact, capacity and failure trade study |
+| P03 | Lunar regional topology | S022 rejects simple lunar GSO and screens four ideal shells | Ephemeris-based global coverage, contact, capacity and failure trade study |
 | P04 | Optical link performance | GX-B1 illustrative profile only; no terminal or link budget | Class-based link budgets plus hardware/field data |
 | P05 | RF fallback capacity | GX-B1 illustrative profile only | Link budget and degraded-mode service analysis |
 | P06 | Cache and replica placement | S007 synthetic exhaustive model | Trace-driven demand and physical resource model |

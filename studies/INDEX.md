@@ -26,3 +26,4 @@ separate prose run sheet is added only when method, interpretation or external d
 | S019 | Authenticated GX-A1 transport | TEST | HMAC request/response integrity and restart-surviving replay rejection |
 | S020 | Abrupt transaction-boundary restart | TEST | Pre-commit rollback and committed-state recovery after `SIGKILL` |
 | S021 | Independent-code GX-A1 adapter | TEST | Authenticated client crosses into a standalone standard-library server |
+| S022 | Lunar relay-shell envelope | DERIVATION | Synchronous/Hill-radius screen and ideal equatorial shell trade |

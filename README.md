@@ -113,6 +113,7 @@ The study register establishes the starting point:
 | S019 | Can the process boundary authenticate a client and reject replay across restart? |
 | S020 | Does the durable ledger recover around a `SIGKILL` at transaction boundaries? |
 | S021 | Can the authenticated client operate a separately implemented adapter code path? |
+| S022 | Does a lunar-GSO analogue survive a first physics screen, and how do relay shells trade coverage for range? |
 
 The current declared inputs produce:
 
@@ -144,6 +145,10 @@ or network.
 
 <p align="center">
   <img src="figures/s021-independent-adapter.svg" alt="S021 GatewayCX client and standalone adapter interoperability boundary" width="100%">
+</p>
+
+<p align="center">
+  <img src="figures/s022-lunar-orbit-envelope.svg" alt="S022 lunar relay shell coverage and Moon-synchronous Hill-radius screen" width="100%">
 </p>
 
 <p align="center"><sub>All three charts are generated from committed model or test results. They
@@ -179,6 +184,8 @@ deterministic model.
   defines the S019 pre-shared-key integrity and durable replay-rejection boundary.
 - [`adapters/README.md`](adapters/README.md) defines why the S021 standalone adapter is a separate
   code path without presenting it as supplier validation.
+- [`docs/architecture/RELAY_ORBIT_ENVELOPE.md`](docs/architecture/RELAY_ORBIT_ENVELOPE.md) rejects
+  a simple lunar-GSO layer and defines the geometry questions that precede constellation choice.
 - [`docs/FIGURE_INDEX.md`](docs/FIGURE_INDEX.md) maps generated visuals back to their sources and
   evidence limits.
 - [`docs/architecture/OPERATIONS_DIAGNOSTICS.md`](docs/architecture/OPERATIONS_DIAGNOSTICS.md)

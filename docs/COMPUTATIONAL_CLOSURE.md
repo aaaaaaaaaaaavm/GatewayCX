@@ -12,6 +12,8 @@ This register prevents a passing test suite from being mistaken for a closed arc
 | Where should IP terminate and DTN begin? | ADR-0002 + S005 semantic replay | Partially closed as an explicit contract | Gateway prototypes, BPv7 interoperability and security analysis |
 | What state is required to use a declared capacity? | S006 BDP and outage derivation | Closed for stated arithmetic inputs | Transport implementation and queue measurements |
 | What backbone capacity is available? | Scenario assumption | Open | Link budgets, contact geometry and terminal data |
+| Is a circular Moon-synchronous “lunar GSO” a valid baseline? | S022 two-body/Hill-radius derivation | Rejected as a simple baseline under stated inputs | Multi-body trajectory propagation for candidate orbit families |
+| How does circular relay altitude change first-order visibility? | S022 ideal equatorial horizon geometry | Closed for zero-elevation great-circle arithmetic | Global sites, terrain, elevation margin, planes, failures, contacts and capacity |
 | Where should declared services be placed? | S007 exhaustive bounded search | Closed for stated abstract inputs | Trace-derived demand and physical resource models |
 | Is a lunar data centre feasible? | Abstract S007 resource budgets only | Open | Power, thermal, radiation, mass and maintenance models |
 | Is the minimum bearer profile machine-readable? | S008 schema and semantic checker | Closed for pre-draft fields | Independent schema review and API binding |

@@ -63,6 +63,9 @@ publishing organisation where possible. Accessed 2026-08-27.
   384,400 km
 - NASA Space Place, [Earth–Moon distance range](https://spaceplace.nasa.gov/moon-distance/en/),
   225,309–251,903 miles on the cited page
+- NASA JPL Solar System Dynamics, [Planetary physical parameters](https://ssd.jpl.nasa.gov/planets/phys_par.html),
+  starting reference for lunar radius, gravitational parameter, mass ratio and rotation inputs used
+  in the S022 first-order derivation
 
 ## Terrestrial access and non-terrestrial networks
 

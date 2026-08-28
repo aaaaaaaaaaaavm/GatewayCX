@@ -1,0 +1,77 @@
+{
+  "checks": {
+    "earth_day_orbit_is_not_lunar_stationary": true,
+    "eight_thousand_km_period_is_about_one_earth_day": true,
+    "every_shell_remains_inside_approximate_hill_radius": true,
+    "higher_shell_increases_surface_slant_range": true,
+    "higher_shell_reduces_ideal_equatorial_count": true,
+    "moon_synchronous_radius_exceeds_approximate_hill_radius": true,
+    "one_hundred_km_period_is_about_two_hours": true
+  },
+  "evidence_class": "DERIVATION",
+  "inputs": {
+    "earth_moon_semimajor_km": 384400.0,
+    "earth_to_moon_mass_ratio": 81.30056,
+    "light_speed_km_s": 299792.458,
+    "moon_gm_km3_s2": 4902.800066,
+    "moon_radius_km": 1737.4,
+    "moon_sidereal_period_days": 27.321661,
+    "shell_altitudes_km": [
+      100.0,
+      1000.0,
+      5000.0,
+      8000.0
+    ]
+  },
+  "interpretation_boundary": [
+    "The lunar stationary analogy requires a period equal to the Moon's sidereal rotation, not a 24-hour Earth day.",
+    "The two-body synchronous radius lies beyond this study's approximate lunar Hill radius, so a simple circular lunar-GSO architecture is rejected as a baseline.",
+    "Hill radius is an approximate stability screen, not a trajectory propagation or proof that every orbit inside it is stable.",
+    "The satellite-count metric covers an ideal equatorial great circle to zero-degree elevation with no overlap; it is not global surface coverage and excludes poles, terrain, occultation, inclination, outages and capacity.",
+    "Real cislunar relays may use elliptical, frozen, resonant, Lagrange-region or other multi-body trajectories that this two-body shell model does not evaluate.",
+    "The shell comparison is an architecture envelope, not a constellation selection, link budget or mission design."
+  ],
+  "relay_shells": [
+    {
+      "altitude_km": 100.0,
+      "horizon_one_way_light_time_ms": 1.994367,
+      "horizon_slant_range_km": 597.896312,
+      "ideal_equatorial_satellites_min": 10,
+      "orbital_period_h": 1.963183,
+      "surface_horizon_half_angle_deg": 18.99002
+    },
+    {
+      "altitude_km": 1000.0,
+      "horizon_one_way_light_time_ms": 7.056122,
+      "horizon_slant_range_km": 2115.372308,
+      "ideal_equatorial_satellites_min": 4,
+      "orbital_period_h": 3.569954,
+      "surface_horizon_half_angle_deg": 50.603015
+    },
+    {
+      "altitude_km": 5000.0,
+      "horizon_one_way_light_time_ms": 21.71346,
+      "horizon_slant_range_km": 6509.531473,
+      "ideal_equatorial_satellites_min": 3,
+      "orbital_period_h": 13.784587,
+      "surface_horizon_half_angle_deg": 75.056052
+    },
+    {
+      "altitude_km": 8000.0,
+      "horizon_one_way_light_time_ms": 31.95927,
+      "horizon_slant_range_km": 9581.148157,
+      "ideal_equatorial_satellites_min": 3,
+      "orbital_period_h": 23.950787,
+      "surface_horizon_half_angle_deg": 79.72194
+    }
+  ],
+  "study_id": "S022",
+  "synchronous_case": {
+    "approximate_hill_radius_km": 61524.078141,
+    "inside_approximate_hill_sphere": false,
+    "synchronous_to_hill_ratio": 1.437685,
+    "two_body_synchronous_altitude_km": 86714.814301,
+    "two_body_synchronous_radius_km": 88452.214301
+  },
+  "title": "Lunar relay-shell and synchronous-orbit envelope"
+}

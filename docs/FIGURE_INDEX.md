@@ -13,6 +13,7 @@ legible in the repository without storing a second raster copy.
 | [`s019-authenticated-binding.svg`](../figures/s019-authenticated-binding.svg) | `results/S019_authenticated_transport.json` | Local HMAC/replay test, not deployed or flight security |
 | [`s020-transaction-recovery.svg`](../figures/s020-transaction-recovery.svg) | `results/S020_abrupt_restart.json` | Coordinated process kills, not electrical power-loss qualification |
 | [`s021-independent-adapter.svg`](../figures/s021-independent-adapter.svg) | `results/S021_independent_adapter.json` | Separate project code paths, not external supplier interoperability |
+| [`s022-lunar-orbit-envelope.svg`](../figures/s022-lunar-orbit-envelope.svg) | `results/S022_lunar_orbits.json` | Two-body and ideal equatorial screen, not constellation selection |
 
 Generated figures are checked for byte-for-byte drift in CI. A changed result therefore changes
 its visual in the same commit or fails verification.

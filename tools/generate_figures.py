@@ -359,6 +359,57 @@ def independent_adapter() -> None:
     )
 
 
+def lunar_orbit_envelope() -> None:
+    result = load("S022_lunar_orbits.json")
+    synchronous = result["synchronous_case"]
+    shells = result["relay_shells"]
+    body = [
+        text(80, 82, "A LUNAR RELAY SHELL IS NOT LUNAR GEO", 34, TEXT, weight=700),
+        text(80, 120, "S022 two-body screen · ideal equatorial coverage only", 21, MUTED),
+        text(80, 195, "MOON-SYNCHRONOUS RADIUS", 18, CYAN, weight=700),
+    ]
+    scale = 640 / float(synchronous["two_body_synchronous_radius_km"])
+    hill_width = float(synchronous["approximate_hill_radius_km"]) * scale
+    sync_width = float(synchronous["two_body_synchronous_radius_km"]) * scale
+    body.extend(
+        [
+            rect(80, 230, 640, 54, "#18253b", radius=8),
+            rect(80, 230, hill_width, 54, GOLD, radius=8),
+            line(80 + sync_width, 215, 80 + sync_width, 302, RED, 5),
+            text(80, 330, f'Hill screen  {synchronous["approximate_hill_radius_km"]:,.0f} km', 19, GOLD),
+            text(720, 330, f'synchronous  {synchronous["two_body_synchronous_radius_km"]:,.0f} km', 19, RED, anchor="end"),
+            text(830, 195, "IDEAL EQUATORIAL SATELLITE COUNT", 18, CYAN, weight=700),
+        ]
+    )
+    maximum = max(int(item["ideal_equatorial_satellites_min"]) for item in shells)
+    for index, item in enumerate(shells):
+        y = 235 + index * 92
+        count = int(item["ideal_equatorial_satellites_min"])
+        width = 500 * count / maximum
+        color = (BLUE, CYAN, GOLD, RED)[index]
+        body.extend(
+            [
+                text(830, y + 34, f'{item["altitude_km"]:,.0f} km', 18, TEXT),
+                rect(970, y, width, 50, color, radius=7),
+                text(1495, y + 34, str(count), 21, TEXT, anchor="end", weight=700),
+            ]
+        )
+    body.extend(
+        [
+            rect(80, 520, 640, 132, "#0e1829", stroke=LINE, stroke_width=2),
+            text(110, 560, "SCREEN RESULT", 16, RED, weight=700),
+            text(110, 600, "synchronous radius / Hill radius", 20, MUTED),
+            text(110, 635, f'{synchronous["synchronous_to_hill_ratio"]:.3f}  → outside', 28, RED, weight=700),
+            text(80, 730, "BOUNDARY", 16, RED, weight=700),
+            text(205, 730, "zero elevation · no poles, terrain, link budget, failures or multi-body propagation", 19, MUTED),
+        ]
+    )
+    write(
+        "s022-lunar-orbit-envelope.svg",
+        svg(1600, 790, "S022 lunar relay orbit envelope", body),
+    )
+
+
 def main() -> int:
     architecture()
     latency()
@@ -367,7 +418,8 @@ def main() -> int:
     authenticated_binding()
     transaction_recovery()
     independent_adapter()
-    print("wrote 7 GatewayCX SVG figures")
+    lunar_orbit_envelope()
+    print("wrote 8 GatewayCX SVG figures")
     return 0
 
 
