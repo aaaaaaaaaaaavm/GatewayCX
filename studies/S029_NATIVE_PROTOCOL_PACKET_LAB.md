@@ -32,7 +32,7 @@ The kernel method requires `CAP_NET_ADMIN`; capture requires `CAP_NET_RAW`. The 
 configures and removes the qdisc in an isolated hosted runner and uploads the pcap/results as the
 `s029-native-protocol-evidence` artifact.
 
-## First external run
+## External evidence
 
 [GitHub run 33220236500](https://github.com/aaaaaaaaaaaavm/GatewayCX/actions/runs/33220236500)
 passed both impairment methods and every protocol assertion on commit
@@ -40,9 +40,15 @@ passed both impairment methods and every protocol assertion on commit
 records and the 124,067-byte pcap; its recorded digest is
 `sha256:8692117f99a8103b6d4f28a2ca10cd9b83627a8bf942343f515ffc53d5b98f95`.
 
+[GitHub run 33221887795](https://github.com/aaaaaaaaaaaavm/GatewayCX/actions/runs/33221887795)
+then passed both methods at both 25 ms and 1,282 ms fixed one-way delay after the userspace UDP
+emulator was corrected to schedule concurrent datagrams instead of serialising QUIC traffic.
+Artifact `9705500244` contains four JSON records plus capture data, is 266,939 bytes and has digest
+`sha256:c0d158cdbb1879d7a91af51d81a301a6a663903a152f64c8c14289354076d6b8`.
+
 ## Boundary
 
 The HTTP clients are standards libraries, not an ordinary browser, and the SMTP agent is minimal.
-The initial CI delay is short so it proves wiring and captures without conflating that with lunar
-usability. Full M1 evidence still needs the same matrix at 1.282 seconds one-way with controlled
-loss, reordering, timeout and recovery cases, plus review of the capture itself.
+The 1,282 ms case is a fixed loopback delay, so it establishes protocol completion but not lunar
+usability. Full M1 evidence still needs controlled loss, reordering, timeout and recovery cases,
+ordinary GUI clients and review of the capture itself.

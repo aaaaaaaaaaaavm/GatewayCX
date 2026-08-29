@@ -1,30 +1,35 @@
 {
   "artifact": {
-    "digest": "sha256:8692117f99a8103b6d4f28a2ca10cd9b83627a8bf942343f515ffc53d5b98f95",
-    "expires_at": "2026-11-26T23:22:52Z",
-    "id": 9704881339,
+    "digest": "sha256:c0d158cdbb1879d7a91af51d81a301a6a663903a152f64c8c14289354076d6b8",
+    "expires_at": "2026-11-26T23:53:57Z",
+    "id": 9705500244,
     "name": "s029-native-protocol-evidence",
-    "size_bytes": 124067
+    "size_bytes": 266939
   },
   "asserted_by_workflow": {
+    "configured_one_way_delay_ms": [
+      25.0,
+      1282.0
+    ],
     "methods": [
       "kernel-netem",
       "userspace"
     ],
     "non_empty_pcap": true,
-    "protocol_checks_all_passed": true
+    "protocol_checks_all_passed": true,
+    "result_records": 4
   },
-  "commit_sha": "539b8535bee86377f8cd36ff18bfb26064ace16e",
+  "commit_sha": "7da6ddd1ef08fd5a407f13d7d0e84ba286bc4a9b",
   "evidence_class": "EXTERNAL CI MEASUREMENT POINTER",
   "interpretation_boundary": [
     "This record points to GitHub-hosted measurement artifacts; it does not duplicate their expiring binary payload in the repository.",
-    "The workflow used 25 ms configured one-way impairment, not mean Earth-Moon light time.",
-    "Passing library clients and a minimal SMTP exchange does not establish browser or mail-client user experience."
+    "The 1,282 ms case is fixed mean one-way light-time on loopback, not a time-varying cislunar channel.",
+    "Passing standards-library clients and a minimal SMTP exchange does not establish browser or mail-client user experience."
   ],
   "run": {
     "conclusion": "success",
-    "id": 33220236500,
-    "url": "https://github.com/aaaaaaaaaaaavm/GatewayCX/actions/runs/33220236500"
+    "id": 33221887795,
+    "url": "https://github.com/aaaaaaaaaaaavm/GatewayCX/actions/runs/33221887795"
   },
   "study_id": "S029"
 }

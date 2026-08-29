@@ -34,9 +34,10 @@ boundary and is not part of the current build push.
 
 **Current executable gate:** S029 runs the same DNS/IPv6, TLS 1.3, HTTP/2, HTTP/3, SMTP and file
 matrix through a userspace TCP/UDP impairment engine and an independently configured Linux netem
-qdisc. GitHub run 33220236500 passed both methods, captured them into one 124,067-byte pcap and
-uploaded the two measurement records. This closes the short-delay dual-method harness gate;
-lunar-delay, loss/reordering and ordinary GUI clients remain follow-on evidence before M1 exit.
+qdisc. GitHub run 33221887795 passed both methods at 25 ms and 1,282 ms one-way delay, captured the
+four runs into one artifact and uploaded four measurement records. This closes the requested
+dual-method fixed-delay packet gate; loss/reordering, ordinary GUI clients and capture review remain
+follow-on evidence before M1 exit.
 
 ## M2: Resilient cislunar interconnect
 

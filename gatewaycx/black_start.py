@@ -121,7 +121,7 @@ def build_black_start_study() -> dict[str, Any]:
             "The graph models logical start dependencies, not electrical power or hardware boot.",
             "A running node means dependencies are present; it does not prove correctness, security or capacity.",
             "Service names and dependency edges are architecture assumptions for fault discovery.",
-            "Holdover duration, clock error, trust freshness and key compromise are not modelled.",
+            "This dependency model leaves holdover duration and clock error as declared inputs; S028 separately executes trust expiry, revocation and authentication faults.",
             "Single faults do not cover correlated failure, Byzantine behaviour or recovery ordering after state divergence.",
         ],
     }

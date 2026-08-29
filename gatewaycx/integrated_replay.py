@@ -236,7 +236,7 @@ def build_integrated_replay() -> dict[str, Any]:
         "interpretation_boundary": [
             "All traffic, capacities and event times are synthetic assumptions inherited from S010 or declared here.",
             "The replay allocates byte budgets, not packets, congestion windows, BP bundles or radio resources.",
-            "RF and optical failure domains are assumed independent and terminal power is not modelled.",
+            "RF and optical failure domains are assumed independent; terminal-power coupling remains an explicit parameter for measured hardware evidence.",
             "Zero retransmission follows from the persistent object ledger assumption; no protocol implements it here.",
             "The GX-O1 events are generated evidence, not observed provider telemetry.",
         ],
