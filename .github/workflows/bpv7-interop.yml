@@ -27,7 +27,44 @@ jobs:
       - name: Install GatewayCX
         run: python -m pip install -e .
       - name: Build pinned Rust BPv7 implementation
-        run: cargo install --git https://github.com/dtn7/bp7-rs.git --rev e3289bca2aed8f86585790d7aebd340d7bde7289 bp7 --bin bp7 --root /tmp/gx-rust
+        run: |
+          mkdir -p /tmp/gx-rust/src
+          cd /tmp/gx-rust
+          cat > Cargo.toml <<'TOML'
+          [package]
+          name = "gx-rust-bridge"
+          version = "0.1.0"
+          edition = "2024"
+
+          [dependencies]
+          bp7 = { git = "https://github.com/dtn7/bp7-rs.git", rev = "e3289bca2aed8f86585790d7aebd340d7bde7289" }
+          TOML
+          cat > src/main.rs <<'RS'
+          use std::convert::{TryFrom, TryInto};
+          use std::io::{self, Read, Write};
+
+          fn main() {
+              let mode = std::env::args().nth(1).expect("encode|decode");
+              let mut data = Vec::new();
+              io::stdin().read_to_end(&mut data).unwrap();
+              if mode == "encode" {
+                  let source: bp7::EndpointID = "dtn://rust/source".try_into().unwrap();
+                  let destination: bp7::EndpointID = "dtn://go/destination".try_into().unwrap();
+                  let mut bundle = bp7::new_std_payload_bundle(source, destination, data);
+                  bundle.set_crc(bp7::crc::CRC_32);
+                  io::stdout().write_all(&bundle.to_cbor()).unwrap();
+              } else if mode == "decode" {
+                  let mut bundle = bp7::Bundle::try_from(data).expect("decode bundle");
+                  bundle.validate().expect("validate bundle");
+                  assert!(bundle.crc_valid(), "bundle CRC");
+                  io::stdout().write_all(bundle.payload().expect("payload")).unwrap();
+              } else {
+                  panic!("unknown mode");
+              }
+          }
+          RS
+          cargo build --release
+          cp target/release/gx-rust-bridge /tmp/gx-rust-bridge
       - name: Build pinned Go BPv7 bridge
         run: |
           mkdir -p /tmp/gx-go
@@ -60,7 +97,7 @@ jobs:
           go mod tidy
           go build -o /tmp/gx-go-bridge .
       - name: Exchange bundles through fault-injected GatewayCX
-        run: python -m gatewaycx.bpv7_interop_lab --go-bridge /tmp/gx-go-bridge --rust-bp7 /tmp/gx-rust/bin/bp7 --output S030_bpv7_interop.json
+        run: python -m gatewaycx.bpv7_interop_lab --go-bridge /tmp/gx-go-bridge --rust-bp7 /tmp/gx-rust-bridge --output S030_bpv7_interop.json
       - name: Assert external interop and ledger checks
         run: |
           python - <<'PY'

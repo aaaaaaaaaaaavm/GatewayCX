@@ -91,15 +91,12 @@ class FaultInjectedGateway:
         self.adapter.close(); self.replay.close()
 
 
-def _rust_encode(binary: Path, payload: bytes, root: Path) -> bytes:
-    manifest = root / "rust.manifest"; source = root / "rust.payload"
-    manifest.write_text("source=dtn://rust/source\ndestination=dtn://go/destination\nlifetime=1h\n", encoding="utf-8")
-    source.write_bytes(payload)
-    return _run([str(binary), "encode", str(manifest), str(source)], b"").stdout
+def _rust_encode(binary: Path, payload: bytes) -> bytes:
+    return _run([str(binary), "encode"], payload).stdout
 
 
 def _rust_decode(binary: Path, bundle: bytes, check: bool = True) -> subprocess.CompletedProcess[bytes]:
-    return _run([str(binary), "decode", "-", "-p"], bundle, check=check)
+    return _run([str(binary), "decode"], bundle, check=check)
 
 
 def build_bpv7_interop_lab(go_bridge: Path, rust_bp7: Path) -> dict[str, Any]:
@@ -113,7 +110,7 @@ def build_bpv7_interop_lab(go_bridge: Path, rust_bp7: Path) -> dict[str, Any]:
             go_fault_decode = _rust_decode(rust_bp7, go_record.pop("faulted_wire_image"), check=False)
             rust_received = _rust_decode(rust_bp7, go_retry).stdout
 
-            rust_bundle = _rust_encode(rust_bp7, payload_rust, root)
+            rust_bundle = _rust_encode(rust_bp7, payload_rust)
             rust_self_received = _rust_decode(rust_bp7, rust_bundle).stdout
             rust_retry, rust_record = gateway.transfer(rust_bundle, "s030-rust-go", 2)
             rust_fault_decode = _run([str(go_bridge), "decode"], rust_record.pop("faulted_wire_image"), check=False)
