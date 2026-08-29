@@ -50,7 +50,7 @@ jobs:
               if mode == "encode" {
                   let source: bp7::EndpointID = "dtn://rust/source".try_into().unwrap();
                   let destination: bp7::EndpointID = "dtn://go/destination".try_into().unwrap();
-                  let mut bundle = bp7::new_std_payload_bundle(source, destination, data);
+                  let mut bundle = bp7::bundle::new_std_payload_bundle(source, destination, data);
                   bundle.set_crc(bp7::crc::CRC_32);
                   io::stdout().write_all(&bundle.to_cbor()).unwrap();
               } else if mode == "decode" {
