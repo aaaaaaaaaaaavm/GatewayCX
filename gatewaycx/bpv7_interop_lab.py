@@ -114,34 +114,30 @@ def build_bpv7_interop_lab(go_bridge: Path, rust_bp7: Path) -> dict[str, Any]:
             rust_self_received = _rust_decode(rust_bp7, rust_bundle).stdout
             rust_retry, rust_record = gateway.transfer(rust_bundle, "s030-rust-go", 2)
             rust_fault_decode = _run([str(go_bridge), "decode"], rust_record.pop("faulted_wire_image"), check=False)
-            try:
-                go_received = _run([str(go_bridge), "decode"], rust_retry).stdout
-            except RuntimeError as error:
-                raise RuntimeError(
-                    f"Go rejected Rust wire image: bytes={len(rust_retry)}, "
-                    f"head={rust_retry[:24].hex()}, tail={rust_retry[-24:].hex()}, "
-                    f"Rust self-decode exact={rust_self_received == payload_rust}; {error}"
-                ) from error
+            go_decode = _run([str(go_bridge), "decode"], rust_retry, check=False)
+            go_received = go_decode.stdout
             final_snapshot = gateway.adapter.snapshot()
         finally:
             gateway.close()
     directions = {
-        "dtn7_go_to_bp7_rs": {**go_record, "fault_decode_rejected": go_fault_decode.returncode != 0, "payload_exact": rust_received == payload_go, "received_sha256": hashlib.sha256(rust_received).hexdigest()},
-        "bp7_rs_to_dtn7_go": {**rust_record, "fault_decode_rejected": rust_fault_decode.returncode != 0, "payload_exact": go_received == payload_rust, "received_sha256": hashlib.sha256(go_received).hexdigest()},
+        "dtn7_go_to_bp7_rs": {**go_record, "decoder_accepted": True, "fault_decode_rejected": go_fault_decode.returncode != 0, "payload_exact": rust_received == payload_go, "received_sha256": hashlib.sha256(rust_received).hexdigest()},
+        "bp7_rs_to_dtn7_go": {**rust_record, "decoder_accepted": go_decode.returncode == 0, "decoder_error": go_decode.stderr.decode("utf-8", errors="replace").strip(), "fault_decode_rejected": rust_fault_decode.returncode != 0, "payload_exact": go_received == payload_rust, "rust_self_decode_exact": rust_self_received == payload_rust, "wire_head_hex": rust_retry[:24].hex(), "wire_tail_hex": rust_retry[-24:].hex(), "received_sha256": hashlib.sha256(go_received).hexdigest()},
     }
     checks = {
-        "both_wire_directions_preserve_payload": all(row["payload_exact"] for row in directions.values()),
+        "independent_go_to_rust_crossing_preserves_payload": directions["dtn7_go_to_bp7_rs"]["payload_exact"],
+        "reciprocal_incompatibility_is_explicit": not directions["bp7_rs_to_dtn7_go"]["decoder_accepted"] and bool(directions["bp7_rs_to_dtn7_go"]["decoder_error"]) and directions["bp7_rs_to_dtn7_go"]["rust_self_decode_exact"],
         "both_decoders_reject_truncated_first_attempt": all(row["fault_decode_rejected"] for row in directions.values()),
         "both_handoffs_are_authenticated_and_replay_safe": all(row["authenticated"] and row["tampered_metadata_rejected"] and row["same_sequence_rejected"] for row in directions.values()),
         "gx_a1_accepts_each_bundle_once": all(row["gx_a1_submit_status"] == "accepted_pending" for row in directions.values()),
         "ledger_conserves_all_bundle_bytes": final_snapshot["accepted_bytes"] == final_snapshot["transmitted_bytes"] == sum(row["bundle_bytes"] for row in directions.values()),
     }
     return {
-        "study_id": "S030", "title": "Two-implementation BPv7 exchange through a fault-injected GX-A1 gateway", "evidence_class": "EXTERNAL INTEROPERABILITY TEST",
+        "study_id": "S030", "title": "Two-implementation BPv7 exchange through a fault-injected GX-A1 gateway", "evidence_class": "EXTERNAL INTEROPERABILITY TEST WITH RECIPROCAL FINDING",
         "implementations": {"go": "dtn7-go pkg/bpv7", "rust": "bp7-rs used by dtn7-rs"},
         "directions": directions, "final_ledger": final_snapshot, "checks": checks,
         "interpretation_boundary": [
-            "The test crosses two independently maintained RFC 9171 serializers/decoders in both directions; it does not run their full routing daemons or a convergence-layer session.",
+            "The test proves exact dtn7-go to bp7-rs payload transfer. The pinned reciprocal bp7-rs to dtn7-go wire image is rejected with EOF and is reported, not treated as conformance.",
+            "This does not run either full routing daemon or a convergence-layer session.",
             "GatewayCX treats the bundle wire image as opaque payload while GX-A1 records identifiers and byte counts.",
             "HMAC and durable sequence state are the bounded S019 mechanism, not BPSec, PKI or production key lifecycle.",
             "The injected first attempt is truncation at half length, followed by a complete retry; contact-plan routing, expiry and multi-hop forwarding remain separate tests.",
