@@ -54,9 +54,11 @@ validate the model against a lunar communication link. There are currently:
 - one socket-level delayed-byte HTTPS result, with a local undelayed TCP handshake;
 - one dual-method S029 packet artifact covering DNS/IPv6, TLS 1.3, HTTP/2, HTTP/3, SMTP and file
   transfer at 25 ms and 1,282 ms fixed one-way delay;
+- one exact external BPv7 wire crossing from pinned `dtn7-go` to pinned `bp7-rs`, plus a recorded
+  reciprocal `EOF` parser incompatibility, through the S030 authenticated fault gateway;
 - no vendor-private performance inputs;
 - no flight data; and
-- no independent implementation.
+- no independent hardware implementation or full external DTN-node exchange.
 
 That is an ordinary starting point. Concealing it would not improve the engineering.
 

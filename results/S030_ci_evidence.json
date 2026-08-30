@@ -1,0 +1,34 @@
+{
+  "artifact": {
+    "digest": "sha256:caaeca94be6cb8d890c1b0bc2572be3b3f910d65d1a06e6932049c0c300fb79b",
+    "expires_at": "2026-11-28T05:19:11Z",
+    "id": 9726959611,
+    "name": "s030-bpv7-external-interop",
+    "size_bytes": 1724
+  },
+  "asserted_by_workflow": {
+    "authenticated_fault_gateway_handoffs": 2,
+    "dtn7_go_to_bp7_rs_payload_exact": true,
+    "gx_a1_and_ledger_checks_passed": true,
+    "reciprocal_bp7_rs_to_dtn7_go_decoder_error": "EOF",
+    "reciprocal_bp7_rs_wire_self_decodes": true,
+    "truncated_first_attempts_rejected": 2
+  },
+  "commit_sha": "e0581d06b217385630dedf05fccf67d80327e795",
+  "evidence_class": "EXTERNAL CI INTEROPERABILITY POINTER WITH RECIPROCAL FINDING",
+  "implementations": {
+    "bp7_rs_revision": "e3289bca2aed8f86585790d7aebd340d7bde7289",
+    "dtn7_go_revision": "53d0208fe8da6dc3d4cb5d54c859cd4d59d921e7"
+  },
+  "interpretation_boundary": [
+    "The run proves one exact external wire crossing from dtn7-go to bp7-rs through the GatewayCX authentication, fault and ledger path.",
+    "The pinned reciprocal bp7-rs wire image self-decodes but dtn7-go rejects it with EOF; this is a recorded interoperability finding, not bidirectional conformance.",
+    "Neither full routing daemon, a convergence-layer session, BPSec, contact routing nor remote application completion is exercised."
+  ],
+  "run": {
+    "conclusion": "success",
+    "id": 33294426808,
+    "url": "https://github.com/aaaaaaaaaaaavm/GatewayCX/actions/runs/33294426808"
+  },
+  "study_id": "S030"
+}

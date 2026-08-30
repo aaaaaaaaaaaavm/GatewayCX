@@ -34,4 +34,4 @@ separate prose run sheet is added only when method, interpretation or external d
 | S027 | Delivered/retained-bit economics | MODEL | Synthetic utilisation, availability and annualised-cost sensitivity |
 | S028 | Lunar regional fault laboratory | TEST | Executable identity, consistency, update, black-start and storage-recovery faults |
 | S029 | Native protocol packet laboratory | MEASUREMENT HARNESS | Userspace relay and Linux netem methods with one shared packet capture |
-| S030 | External BPv7 fault-gateway interop | EXTERNAL INTEROPERABILITY HARNESS | Bidirectional dtn7-go/bp7-rs wire exchange through GX-A1 ledger/auth faults |
+| S030 | External BPv7 fault-gateway interop | EXTERNAL INTEROPERABILITY TEST | Exact dtn7-go → bp7-rs crossing; reciprocal parser incompatibility through GX-A1 ledger/auth faults |

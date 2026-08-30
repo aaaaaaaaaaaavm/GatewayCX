@@ -118,7 +118,7 @@
 | C101 | S028 restores exactly 23 committed rows after 60 seeded transaction cases and deliberate SQLite header corruption. | TEST | S028 X18 | Local file/backup test, not raw-device or power-loss qualification |
 | C102 | S029 passes two independent impairment methods and a loopback packet-capture gate for DNS/IPv6, TLS 1.3, HTTP/2, HTTP/3, SMTP and file transfer at 25 ms and 1,282 ms fixed one-way delay. | MEASUREMENT | GitHub run 33221887795 and artifact 9705500244 | Standards-library clients and minimal SMTP; no loss/reordering |
 | C103 | The S029 fixed-delay loopback matrix proves native lunar Internet usability. | — | Protocol completion does not establish GUI experience or a time-varying cislunar channel | Rejected |
-| C104 | S030 defines a bidirectional external BPv7 wire test using pinned dtn7-go and bp7-rs code through GX-A1, SQLite ledger and HMAC/replay faults. | TEST | S030 source and workflow | External execution pending |
+| C104 | S030 proves exact dtn7-go → bp7-rs payload transfer through GX-A1, SQLite ledger and HMAC/replay faults; the reciprocal bp7-rs image self-decodes but dtn7-go rejects it with `EOF`. | EXTERNAL TEST | GitHub run 33294426808 and artifact 9726959611 | Directional interoperability only; not bidirectional conformance |
 | C105 | Bundle wire-image interoperability proves full DTN node or convergence-layer interoperability. | — | Routing daemons, CL sessions, BPSec and contact plans are outside S030 | Rejected |
 
 The ledger will grow when the evidence grows. A claim does not become stronger by appearing in the

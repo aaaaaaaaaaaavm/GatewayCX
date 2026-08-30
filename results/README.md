@@ -64,5 +64,8 @@ Additional bounded studies have separate records:
   `python -m gatewaycx.regional_fault_lab`.
 - `S029_ci_evidence.json` is a stable pointer to the successful GitHub dual-method packet run and
   its expiring pcap/result artifact; the measurement JSON and pcap are uploaded by the workflow.
+- `S030_ci_evidence.json` is a stable pointer to the successful external BPv7 workflow and its
+  expiring result artifact. It records one exact dtn7-go-to-bp7-rs crossing and the reciprocal
+  bp7-rs-to-dtn7-go `EOF` incompatibility without claiming bidirectional conformance.
 
 No result is evidence of a flight network or hardware qualification.

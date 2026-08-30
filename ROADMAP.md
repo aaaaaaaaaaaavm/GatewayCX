@@ -54,10 +54,12 @@ follow-on evidence before M1 exit.
 or silently dropping committed traffic classes.
 
 **Current executable gate:** S030 fetches pinned `dtn7-go` and `bp7-rs` revisions without vendoring
-them, exchanges RFC 9171 bundle wire images in both directions, and passes each through the existing
-GX-A1 adapter, SQLite byte ledger and S019 HMAC/replay mechanism. Each first wire attempt is
-truncated and must be rejected before a complete retry. External CI must pass before this becomes
-interop evidence; full daemons, convergence layers, BPSec and contact routing remain outside it.
+them and passes both RFC 9171 bundle wire images through the existing GX-A1 adapter, SQLite byte
+ledger and S019 HMAC/replay mechanism. Run 33294426808 proves exact `dtn7-go` to `bp7-rs` payload
+transfer after an injected truncation and retry. The reciprocal `bp7-rs` image self-decodes but the
+pinned `dtn7-go` parser rejects it with `EOF`; that measured incompatibility keeps bidirectional
+wire interoperability open. Full daemons, convergence layers, BPSec and contact routing also remain
+outside this gate.
 
 ## M3: Lunar regional Internet and compute
 
